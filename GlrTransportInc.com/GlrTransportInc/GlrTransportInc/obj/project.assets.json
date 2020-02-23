@@ -207,11 +207,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/peter/Desktop/GLR-Project/GlrTransportInc.com/GlrTransportInc/GlrTransportInc/GlrTransportInc.csproj",
+      "projectUniqueName": "/Users/peter/Desktop/GlrTransportInc/GlrTransportInc.com/GlrTransportInc/GlrTransportInc/GlrTransportInc.csproj",
       "projectName": "GlrTransportInc",
-      "projectPath": "/Users/peter/Desktop/GLR-Project/GlrTransportInc.com/GlrTransportInc/GlrTransportInc/GlrTransportInc.csproj",
+      "projectPath": "/Users/peter/Desktop/GlrTransportInc/GlrTransportInc.com/GlrTransportInc/GlrTransportInc/GlrTransportInc.csproj",
       "packagesPath": "/Users/peter/.nuget/packages/",
-      "outputPath": "/Users/peter/Desktop/GLR-Project/GlrTransportInc.com/GlrTransportInc/GlrTransportInc/obj/",
+      "outputPath": "/Users/peter/Desktop/GlrTransportInc/GlrTransportInc.com/GlrTransportInc/GlrTransportInc/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/peter/.config/NuGet/NuGet.Config"
