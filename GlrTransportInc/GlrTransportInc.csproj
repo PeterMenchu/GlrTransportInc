@@ -8,5 +8,9 @@
 
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="4.4.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Pages\Shared\EmptyClass.cs" />
   </ItemGroup>
 </Project>
