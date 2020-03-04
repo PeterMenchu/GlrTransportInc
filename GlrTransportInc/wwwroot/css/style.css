@@ -1,7 +1,7 @@
-﻿.home {
+﻿.main {
     padding-top: 30px;
     padding-bottom: 30px;
-    margin-top: 75px;
+    margin-top: 85px;
     margin-right: 50px;
     margin-left: 50px;
     padding-right: 45px;
@@ -12,9 +12,11 @@
 .loginBox {
     padding-top: 30px;
     padding-bottom: 30px;
+    padding-right: 140px;
+    padding-left: 140px;
     margin-top: 75px;
-    margin-right: 115px;
-    margin-left: 115px;
+    margin-right: 185px;
+    margin-left: 185px;
     background-color: gainsboro;
 }
 
