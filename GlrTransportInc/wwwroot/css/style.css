@@ -1,0 +1,25 @@
+﻿.home {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 75px;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding-right: 45px;
+    padding-left: 45px;
+    background-color: gainsboro;
+}
+
+.loginBox {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 75px;
+    margin-right: 115px;
+    margin-left: 115px;
+    background-color: gainsboro;
+}
+
+.loginForm {
+    display: inline-block;
+}
+
+
