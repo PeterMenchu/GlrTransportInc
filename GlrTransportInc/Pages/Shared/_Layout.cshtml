@@ -6,7 +6,6 @@
     <title>@ViewData["Title"] - GlrTransportInc</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/style.css" />
 </head>
 <body>
     <header>
@@ -43,38 +42,33 @@
                             <a class="dropdown-item" asp-page="/MyProfile">View my profile</a>
                         </div>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link text-white" asp-page="/LoginPage">Login <span class="sr-only">(current)</span></a>
-                    </li>
-                    <!-- example of a disabled (grayed out unselectable) menu option
-                    <li class="nav-item text-white">
-                        <a class="nav-link disabled" href="#">My Profile</a>
-                    </li>
-                    -->
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-light my-2 my-sm-0 text-white" type="submit">Go</button>
-                    </form>
-                </div>
-            </nav>
-        </header>
-        <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
-
-        <footer class="border-top footer text-muted text-center">
-            <div class="container">
-                &copy; 2020 - Glr Transport Inc. - <a asp-area="" asp-page="/Privacy">Privacy</a>
+                    
+                    <partial name="_LoginPartial" />
+        
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light my-2 my-sm-0 text-white" type="submit">Go</button>
+                </form>
             </div>
-        </footer>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
 
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+    <footer class="border-top footer text-muted text-center">
+        <div class="container">
+            &copy; 2020 - Glr Transport Inc. - <a asp-area="" asp-page="/Privacy" class="text-success">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
-        @RenderSection("Scripts", required: false)
-    </body>
-    </html>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
