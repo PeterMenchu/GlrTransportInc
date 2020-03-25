@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8979df5-96ff-4d25-97ab-ccc78999580a" name="Default Changelist" comment="" />
+    <list default="true" id="e8979df5-96ff-4d25-97ab-ccc78999580a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GlrTransportInc/Models/FreightBill.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GlrTransportInc/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Models/FreightBill.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Login.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/GlrTransportInc/Models/FreightBill.cs" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Models/User.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1ZYymJNxn62PmNp1RlI4JkHG2E5" />
   <component name="ProjectViewState">
@@ -24,7 +43,10 @@
   <component name="PropertiesComponent">
     <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TWShift.3" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.GlrTransportInc">
     <configuration name="GlrTransportInc" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -69,30 +91,46 @@
       <option name="presentableId" value="Default" />
       <updated>1585030480972</updated>
       <workItem from="1585030485463" duration="2122000" />
+      <workItem from="1585132594212" duration="2929000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1358" height="268" key="GridCell.Tab.0.bottom" timestamp="1585036945114">
+    <state width="1358" height="268" key="GridCell.Tab.0.bottom" timestamp="1585137340804">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1358" height="268" key="GridCell.Tab.0.bottom/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585036945114" />
-    <state width="1358" height="268" key="GridCell.Tab.0.center" timestamp="1585036945113">
+    <state width="1358" height="268" key="GridCell.Tab.0.bottom/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585137340804" />
+    <state width="1358" height="268" key="GridCell.Tab.0.center" timestamp="1585137340803">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1358" height="268" key="GridCell.Tab.0.center/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585036945113" />
-    <state width="1358" height="268" key="GridCell.Tab.0.left" timestamp="1585036945112">
+    <state width="1358" height="268" key="GridCell.Tab.0.center/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585137340803" />
+    <state width="1358" height="268" key="GridCell.Tab.0.left" timestamp="1585137340803">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1358" height="268" key="GridCell.Tab.0.left/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585036945112" />
-    <state width="1358" height="268" key="GridCell.Tab.0.right" timestamp="1585036945113">
+    <state width="1358" height="268" key="GridCell.Tab.0.left/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585137340803" />
+    <state width="1358" height="268" key="GridCell.Tab.0.right" timestamp="1585137340803">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1358" height="268" key="GridCell.Tab.0.right/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585036945113" />
+    <state width="1358" height="268" key="GridCell.Tab.0.right/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585137340803" />
+    <state x="813" y="187" key="SettingsEditor" timestamp="1585134907947">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="813" y="187" key="SettingsEditor/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585134907947" />
   </component>
 </project>

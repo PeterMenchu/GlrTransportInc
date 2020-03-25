@@ -96,6 +96,10 @@
           </e>
         </e>
         <e p="GlrTransportInc.csproj" t="IncludeRecursive" />
+        <e p="Models" t="Include">
+          <e p="FreightBill.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -107,10 +111,26 @@
         <e p="Pages" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
+          <e p="about.cshtml" t="Include" />
+          <e p="About.cshtml.cs" t="Include" />
+          <e p="AddDriver.cshtml" t="Include" />
+          <e p="AddDriver.cshtml.cs" t="Include" />
+          <e p="AddFreight.cshtml" t="Include" />
+          <e p="AddFreight.cshtml.cs" t="Include" />
+          <e p="Drivers.cshtml" t="Include" />
+          <e p="Drivers.cshtml.cs" t="Include" />
           <e p="Error.cshtml" t="Include" />
           <e p="Error.cshtml.cs" t="Include" />
+          <e p="Freight.cshtml" t="Include" />
+          <e p="Freight.cshtml.cs" t="Include" />
           <e p="Index.cshtml" t="Include" />
           <e p="Index.cshtml.cs" t="Include" />
+          <e p="MapResources.cshtml" t="Include" />
+          <e p="MapResources.cshtml.cs" t="Include" />
+          <e p="MyFreights.cshtml" t="Include" />
+          <e p="MyFreights.cshtml.cs" t="Include" />
+          <e p="MyProfile.cshtml" t="Include" />
+          <e p="MyProfile.cshtml.cs" t="Include" />
           <e p="Privacy.cshtml" t="Include" />
           <e p="Privacy.cshtml.cs" t="Include" />
           <e p="Shared" t="Include">
@@ -192,6 +212,6 @@
       <e p="packages" t="ExcludeRecursive" />
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_GlrTransportInc.825426167.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_GlrTransportInc.-240863561.00" t="ExcludeRecursive" />
   </component>
 </project>
