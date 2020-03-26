@@ -34,11 +34,15 @@
                             <input asp-for="Input.ConfirmPassword" class="form-control" />
                             <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary bg-success">Register</button>
+                        <button type="submit" class="btn btn-primary bg-success">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
+        <!-- Not sure if this next element (Scripts) is needed, but I added it in case it affects the form -->
+        @section Scripts {
+            <partial name="_ValidationScriptsPartial" />
+        }
     }
     else
     {
