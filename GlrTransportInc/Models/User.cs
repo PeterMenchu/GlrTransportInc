@@ -24,9 +24,7 @@ namespace GlrTransportInc.Models
             }return false;
         }
         
-        public User()
-        {
-            // this.FullName => $"{FirstName} {LastName}";
+        public User(){
             this.TypeOfEmployee = -1;
         }
     }
