@@ -1,24 +1,99 @@
-﻿@{
+﻿<!-- IGNORE THIS LAYOUT. ANYTHING USING THIS LAYOUT MUST BE IN THE MAIN PAGES FOLDER AND USE THE STANDARD LAYOUT INSTEAD. -->
+@{
     // the path originally given here was /Areas/Identity/Pages/_Layout.cshtml
     // which showed an error, although everything still worked
-    Layout = "/Areas/Identity/Pages/Account/Manage/_Layout.cshtml";
+    // Layout = "/Areas/Identity/Pages/Account/Manage/_Layout.cshtml";
+    <!-- Layout = "/Areas/Identity/Pages/_Layout.cshtml"; -->
+    <!-- this only works with the path immediately above, but it spams console with error warnings so avoid this layout -->
 }
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GlrTransportInc</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+            <a class="navbar-brand text-white" asp-page="/Index">Glr Transport Inc.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<h1>Manage your account</h1>
-
-<div>
-    <h4>Change your account settings</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-3">
-            <partial name="_ManageNav" />
-        </div>
-        <div class="col-md-9">
-            @RenderBody()
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" asp-page="/about">About<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Freights
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" asp-page="/Freight">View freight listings</a>
+                            <a class="dropdown-item" asp-page="/AddFreight">Add a freight (manager login required)</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" asp-page="/MyFreights">View my freights</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Users
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" asp-page="/Drivers">View driver directory</a>
+                            <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Add a user (manager login required)</a>
+                            <!-- Original link to MyProfile
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" asp-page="/MyProfile">View my profile</a>
+                            --> 
+                        </div>
+                    </li>
+                    
+                    <partial name="_LoginPartial" />
+                
+                </ul>
+                <!-- The search bar -->
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light my-2 my-sm-0 text-white" type="submit">Go</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <h1>Manage your account</h1>
+    
+    <div>
+        <h4>Change your account settings</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-3">
+                <partial name="_ManageNav" />
+            </div>
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
         </div>
     </div>
-</div>
 
-@section Scripts {
-    @RenderSection("Scripts", required: false)
-}
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted text-center">
+        <div class="container">
+            &copy; 2020 - Glr Transport Inc. - <a asp-area="" asp-page="/Privacy" class="text-success">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @section Scripts {
+        @RenderSection("Scripts", required: false)
+    }
+</body>
+</html>

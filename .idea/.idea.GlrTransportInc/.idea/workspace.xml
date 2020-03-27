@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8979df5-96ff-4d25-97ab-ccc78999580a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ChangePassword.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ChangePassword.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/Email.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/Email.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ManageNavPages.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/MyProfile.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/MyProfile.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/_ManageNav.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/_StatusMessage.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/AddFreight.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/AddFreight.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/MyProfile.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/MyProfile.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/MyProfile.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/MyProfile.cshtml.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_LoginPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlrTransportInc/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,24 +28,36 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Models/FreightBill.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/AddFreight.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/MyProfile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/AddFreight.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/ManageNavPages.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Login.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/_StatusMessage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ManageNavPages.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_LoginPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Models/FreightBill.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/MyProfile.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/_ManageNav.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/AddFreight.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/Email.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/Email.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/MyProfile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ChangePassword.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ChangePassword.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/AddFreight.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -43,13 +65,25 @@
         <option value="$PROJECT_DIR$/GlrTransportInc/Models/FreightBill.cs" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Models/User.cs" />
         <option value="$PROJECT_DIR$/GlrTransportInc/appsettings.Development.json" />
-        <option value="$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/_Layout.cshtml" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/AddFreight.cshtml.cs" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/AddFreight.cshtml" />
-        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_LoginPartial.cshtml" />
-        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/MyProfile.cshtml.cs" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/MyProfile.cshtml" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ManageNavPages.cs" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_LoginPartial.cshtml" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/MyProfile.cshtml.cs" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/Email.cshtml.cs" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ChangePassword.cshtml.cs" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/PersonalData.cshtml.cs" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/PersonalData.cshtml" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/Email.cshtml" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ChangePassword.cshtml" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/MyProfile.cshtml" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/_ManageNav.cshtml" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/wwwroot/css/site.css" />
       </list>
     </option>
   </component>
@@ -111,7 +145,8 @@
       <updated>1585030480972</updated>
       <workItem from="1585030485463" duration="2122000" />
       <workItem from="1585132594212" duration="2929000" />
-      <workItem from="1585201384620" duration="4828000" />
+      <workItem from="1585201384620" duration="5342000" />
+      <workItem from="1585292107169" duration="7269000" />
     </task>
     <servers />
   </component>
@@ -134,26 +169,30 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="115" key="GridCell.Tab.0.bottom" timestamp="1585206752481">
-      <screen x="0" y="23" width="1440" height="852" />
+    <state width="1878" height="153" key="GridCell.Tab.0.bottom" timestamp="1585299410312">
+      <screen x="0" y="23" width="1920" height="1032" />
     </state>
     <state width="1398" height="115" key="GridCell.Tab.0.bottom/0.23.1440.852@0.23.1440.852" timestamp="1585206752481" />
-    <state width="1358" height="268" key="GridCell.Tab.0.bottom/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585137340804" />
-    <state width="1398" height="115" key="GridCell.Tab.0.center" timestamp="1585206752480">
-      <screen x="0" y="23" width="1440" height="852" />
+    <state width="1878" height="153" key="GridCell.Tab.0.bottom/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585296157315" />
+    <state width="1878" height="153" key="GridCell.Tab.0.bottom/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585299410312" />
+    <state width="1878" height="153" key="GridCell.Tab.0.center" timestamp="1585299410311">
+      <screen x="0" y="23" width="1920" height="1032" />
     </state>
     <state width="1398" height="115" key="GridCell.Tab.0.center/0.23.1440.852@0.23.1440.852" timestamp="1585206752480" />
-    <state width="1358" height="268" key="GridCell.Tab.0.center/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585137340803" />
-    <state width="1398" height="115" key="GridCell.Tab.0.left" timestamp="1585206752479">
-      <screen x="0" y="23" width="1440" height="852" />
+    <state width="1878" height="153" key="GridCell.Tab.0.center/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585296157313" />
+    <state width="1878" height="153" key="GridCell.Tab.0.center/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585299410311" />
+    <state width="1878" height="153" key="GridCell.Tab.0.left" timestamp="1585299410311">
+      <screen x="0" y="23" width="1920" height="1032" />
     </state>
     <state width="1398" height="115" key="GridCell.Tab.0.left/0.23.1440.852@0.23.1440.852" timestamp="1585206752479" />
-    <state width="1358" height="268" key="GridCell.Tab.0.left/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585137340803" />
-    <state width="1398" height="115" key="GridCell.Tab.0.right" timestamp="1585206752481">
-      <screen x="0" y="23" width="1440" height="852" />
+    <state width="1878" height="153" key="GridCell.Tab.0.left/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585296157312" />
+    <state width="1878" height="153" key="GridCell.Tab.0.left/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585299410311" />
+    <state width="1878" height="153" key="GridCell.Tab.0.right" timestamp="1585299410312">
+      <screen x="0" y="23" width="1920" height="1032" />
     </state>
     <state width="1398" height="115" key="GridCell.Tab.0.right/0.23.1440.852@0.23.1440.852" timestamp="1585206752481" />
-    <state width="1358" height="268" key="GridCell.Tab.0.right/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585137340803" />
+    <state width="1878" height="153" key="GridCell.Tab.0.right/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585296157314" />
+    <state width="1878" height="153" key="GridCell.Tab.0.right/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585299410312" />
     <state x="813" y="187" key="SettingsEditor" timestamp="1585134907947">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>

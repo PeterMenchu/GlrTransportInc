@@ -129,10 +129,19 @@
           <e p="MapResources.cshtml.cs" t="Include" />
           <e p="MyFreights.cshtml" t="Include" />
           <e p="MyFreights.cshtml.cs" t="Include" />
-          <e p="MyProfile.cshtml" t="Include" />
-          <e p="MyProfile.cshtml.cs" t="Include" />
           <e p="Privacy.cshtml" t="Include" />
           <e p="Privacy.cshtml.cs" t="Include" />
+          <e p="Profile" t="Include">
+            <e p="_ManageNav.cshtml" t="Include" />
+            <e p="_StatusMessage.cshtml" t="Include" />
+            <e p="ChangePassword.cshtml" t="Include" />
+            <e p="ChangePassword.cshtml.cs" t="Include" />
+            <e p="Email.cshtml" t="Include" />
+            <e p="Email.cshtml.cs" t="Include" />
+            <e p="ManageNavPages.cs" t="Include" />
+            <e p="MyProfile.cshtml" t="Include" />
+            <e p="MyProfile.cshtml.cs" t="Include" />
+          </e>
           <e p="Shared" t="Include">
             <e p="_Layout.cshtml" t="Include" />
             <e p="_LoginPartial.cshtml" t="Include" />

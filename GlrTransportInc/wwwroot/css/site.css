@@ -14,6 +14,12 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 /*------- End index -------*/
 /*------- Nav bar style -------*/
+/*
+.nav > .active > a{
+    background-color: #5cb85c;
+}
+*/
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -22,7 +28,8 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  /* color: #0366d6; */
+    color: #5cb85c;
 }
 .navbar {
     
@@ -30,14 +37,19 @@ a {
 }
 .btn-primary {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  /* background-color: #1b6ec2; */
+  background-color: #5cb85c;  
+  /* border-color: #1861ac; */
+  border-color: #5cb85c;   
+}
+.nav-item > a:hover {
+    color: #e83e8c;
 }
 /*------- End Nav -------*/
 /* Sticky footer styles
