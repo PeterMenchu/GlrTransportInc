@@ -1,19 +1,26 @@
 ﻿@page
 @model MyFreightsModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 @{
+    ViewData["Title"] = "My Freight Bills";
 }
-
-<head>
-    <br />
-    <br />
-    <h1 class="text-center">Please log in to view freight listings associated with your profile.</h1>
-</head>
-<!-- TEMPORARILY USING THE HOMEPAGE STYLING below, may change later -->
 <body>
-    <div class="main text-center">
-        <a asp-page="/LoginPage" class="p text-success">Click here to log in</a>
-        <p>
-
-        </p>
-    </div>
+    @if (SignInManager.IsSignedIn(User)) {
+        <div class="main text-center">
+            <h1 class="text-center">My Freight Bills</h1>
+            <p>(This feature soon display freight bills listed for a logged in driver, may not be available for other 
+                user types. Page is still in maintenance.)</p>
+        </div>
+        @section Scripts {
+            <partial name="_ValidationScriptsPartial" />
+        }
+    } else {
+        <div class="main text-center">
+            <h1 class="text-center">My Freight Bills</h1>
+            <p>You must log in to an account to view your freight bills.</p>
+            <a asp-area="Identity" asp-page="/Account/Login" class="p text-success">Click here to log in</a>
+        </div>
+    }
 </body>
