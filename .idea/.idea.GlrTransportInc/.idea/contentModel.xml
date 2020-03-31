@@ -117,6 +117,7 @@
           <e p="AddDriver.cshtml.cs" t="Include" />
           <e p="AddFreight.cshtml" t="Include" />
           <e p="AddFreight.cshtml.cs" t="Include" />
+          <e p="Contact.cshtml" t="Include" />
           <e p="Drivers.cshtml" t="Include" />
           <e p="Drivers.cshtml.cs" t="Include" />
           <e p="Error.cshtml" t="Include" />
