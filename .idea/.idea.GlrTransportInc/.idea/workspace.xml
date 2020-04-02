@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8979df5-96ff-4d25-97ab-ccc78999580a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Privacy.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Privacy.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Freight.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Freight.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlrTransportInc/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +82,6 @@
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/Email.cshtml" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ChangePassword.cshtml" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/MyProfile.cshtml" />
-        <option value="$PROJECT_DIR$/GlrTransportInc/wwwroot/css/site.css" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/AddDriver.cshtml" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/_ManageNav.cshtml" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_LoginPartial.cshtml" />
@@ -89,10 +90,11 @@
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_Layout.cshtml" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Contact.cshtml" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Drivers.cshtml" />
-        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Freight.cshtml" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/MyFreights.cshtml" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Login.cshtml" />
         <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Privacy.cshtml" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/wwwroot/css/site.css" />
+        <option value="$PROJECT_DIR$/GlrTransportInc/Pages/Freight.cshtml" />
       </list>
     </option>
   </component>
@@ -160,7 +162,10 @@
       <workItem from="1585451739965" duration="413000" />
       <workItem from="1585476029435" duration="735000" />
       <workItem from="1585641300111" duration="5299000" />
-      <workItem from="1585648478719" duration="3893000" />
+      <workItem from="1585648478719" duration="4135000" />
+      <workItem from="1585775491289" duration="910000" />
+      <workItem from="1585793542485" duration="1290000" />
+      <workItem from="1585813721597" duration="1174000" />
     </task>
     <servers />
   </component>
@@ -183,33 +188,37 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1878" height="66" key="GridCell.Tab.0.bottom" timestamp="1585652607484">
-      <screen x="0" y="23" width="1920" height="1032" />
+    <state width="1398" height="50" key="GridCell.Tab.0.bottom" timestamp="1585814922880">
+      <screen x="1920" y="162" width="1440" height="877" />
     </state>
     <state width="1398" height="115" key="GridCell.Tab.0.bottom/0.23.1440.852@0.23.1440.852" timestamp="1585206752481" />
     <state width="1878" height="153" key="GridCell.Tab.0.bottom/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585296157315" />
-    <state width="1878" height="66" key="GridCell.Tab.0.bottom/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585652607484" />
+    <state width="1878" height="66" key="GridCell.Tab.0.bottom/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585652811703" />
+    <state width="1398" height="50" key="GridCell.Tab.0.bottom/1920.162.1440.877/0.23.1920.1032@1920.162.1440.877" timestamp="1585814922880" />
     <state width="1878" height="44" key="GridCell.Tab.0.bottom/1920.162.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1585648125603" />
-    <state width="1878" height="66" key="GridCell.Tab.0.center" timestamp="1585652607484">
-      <screen x="0" y="23" width="1920" height="1032" />
+    <state width="1398" height="50" key="GridCell.Tab.0.center" timestamp="1585814922871">
+      <screen x="1920" y="162" width="1440" height="877" />
     </state>
     <state width="1398" height="115" key="GridCell.Tab.0.center/0.23.1440.852@0.23.1440.852" timestamp="1585206752480" />
     <state width="1878" height="153" key="GridCell.Tab.0.center/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585296157313" />
-    <state width="1878" height="66" key="GridCell.Tab.0.center/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585652607484" />
+    <state width="1878" height="66" key="GridCell.Tab.0.center/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585652811702" />
+    <state width="1398" height="50" key="GridCell.Tab.0.center/1920.162.1440.877/0.23.1920.1032@1920.162.1440.877" timestamp="1585814922871" />
     <state width="1878" height="44" key="GridCell.Tab.0.center/1920.162.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1585648125602" />
-    <state width="1878" height="66" key="GridCell.Tab.0.left" timestamp="1585652607483">
-      <screen x="0" y="23" width="1920" height="1032" />
+    <state width="1398" height="50" key="GridCell.Tab.0.left" timestamp="1585814922865">
+      <screen x="1920" y="162" width="1440" height="877" />
     </state>
     <state width="1398" height="115" key="GridCell.Tab.0.left/0.23.1440.852@0.23.1440.852" timestamp="1585206752479" />
     <state width="1878" height="153" key="GridCell.Tab.0.left/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585296157312" />
-    <state width="1878" height="66" key="GridCell.Tab.0.left/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585652607483" />
+    <state width="1878" height="66" key="GridCell.Tab.0.left/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585652811702" />
+    <state width="1398" height="50" key="GridCell.Tab.0.left/1920.162.1440.877/0.23.1920.1032@1920.162.1440.877" timestamp="1585814922865" />
     <state width="1878" height="44" key="GridCell.Tab.0.left/1920.162.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1585648125601" />
-    <state width="1878" height="66" key="GridCell.Tab.0.right" timestamp="1585652607484">
-      <screen x="0" y="23" width="1920" height="1032" />
+    <state width="1398" height="50" key="GridCell.Tab.0.right" timestamp="1585814922876">
+      <screen x="1920" y="162" width="1440" height="877" />
     </state>
     <state width="1398" height="115" key="GridCell.Tab.0.right/0.23.1440.852@0.23.1440.852" timestamp="1585206752481" />
     <state width="1878" height="153" key="GridCell.Tab.0.right/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585296157314" />
-    <state width="1878" height="66" key="GridCell.Tab.0.right/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585652607484" />
+    <state width="1878" height="66" key="GridCell.Tab.0.right/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585652811703" />
+    <state width="1398" height="50" key="GridCell.Tab.0.right/1920.162.1440.877/0.23.1920.1032@1920.162.1440.877" timestamp="1585814922876" />
     <state width="1878" height="44" key="GridCell.Tab.0.right/1920.162.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1585648125602" />
     <state x="813" y="187" key="SettingsEditor" timestamp="1585134907947">
       <screen x="0" y="23" width="1920" height="1057" />

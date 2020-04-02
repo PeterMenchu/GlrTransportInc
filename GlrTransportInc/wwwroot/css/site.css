@@ -2,15 +2,22 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 /*------- Index style -------*/
+/* Since bootstrap prefers mobile first design, this first block is for mobile */
 .main {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-top: 85px;
-    margin-right: 50px;
-    margin-left: 50px;
-    padding-right: 45px;
-    padding-left: 45px;
-    background-color: gainsboro;
+    
+    margin-top: 25px;
+    
+}
+/* Medium devices (tablets, 768px and up). Everything else will be for mobile, within 
+   this query will be the styling for tablets and desktop*/
+@media (min-width: 768px) {
+    .main {
+        margin-top: 85px;
+        margin-right: 50px;
+        margin-left: 50px;
+        padding: 30px 45px;
+        background-color: gainsboro;
+    }
 }
 /*------- End index -------*/
 /*------- Nav bar style -------*/

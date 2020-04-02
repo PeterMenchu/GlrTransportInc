@@ -6,14 +6,24 @@
 @{
     ViewData["Title"] = "View Freight Bills";
 }
+<!-- temporary variable -->
+@{
+    int freightCount = 0;
+}
+
 <body>
     @if (SignInManager.IsSignedIn(User)) {
-        <div class="main text-center">
-            <h1 class="text-center">View Freight Bills</h1>
-            <p>(This feature soon display table views of all freight bills. Page is still in maintenance.)</p>
-        </div>
-        @section Scripts {
-            <partial name="_ValidationScriptsPartial" />
+        @if (freightCount == 0) {
+            <div class="main text-center">
+                <h1 class="text-center">View Freight Bills</h1>
+                <p>There are currently no freight bills listed.</p>
+            </div>
+            @section Scripts {
+                <partial name="_ValidationScriptsPartial"/>
+            }
+        }
+        else {
+            <p>Not sure how you're able to see this, this is an error check. Bill view is not ready.</p>
         }
     } else {
         <div class="main text-center">
