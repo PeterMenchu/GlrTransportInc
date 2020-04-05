@@ -11,17 +11,20 @@ namespace GlrTransportInc.Pages.Profile
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
-
+        //private readonly RoleManager<IdentityUser> _roleManager;
         public MyProfileModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager)
+            //RoleManager<IdentityUser> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            //_roleManager = roleManager;
         }
 
         public string Username { get; set; }
-
+        public string UserPosition { get; set; }
+        
         [TempData]
         public string StatusMessage { get; set; }
 
@@ -33,19 +36,24 @@ namespace GlrTransportInc.Pages.Profile
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
         }
 
         private async Task LoadAsync(IdentityUser user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-
+            //var position = await _roleManager.GetRoleNameAsync(user);
             Username = userName;
+            //UserPosition = position;
 
             Input = new InputModel
             {
                 PhoneNumber = phoneNumber
+                
             };
+            
+            
         }
 
         public async Task<IActionResult> OnGetAsync()

@@ -16,10 +16,13 @@ for details on configuring this project to bundle and minify static web assets. 
         margin-right: 50px;
         margin-left: 50px;
         padding: 30px 45px;
-        background-color: gainsboro;
+        /* background-color: gainsboro; */
     }
 }
 /*------- End index -------*/
+/*------- Form style -------*/
+
+/*------- End form style -------*/
 /*------- Nav bar style -------*/
 /*
 .nav > .active > a{
