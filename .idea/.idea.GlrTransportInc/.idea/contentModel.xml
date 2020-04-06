@@ -87,6 +87,9 @@
           </e>
         </e>
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="SqlDataController.cs" t="Include" />
+        </e>
         <e p="Data" t="Include">
           <e p="ApplicationDbContext.cs" t="Include" />
           <e p="Migrations" t="Include">
@@ -137,6 +140,8 @@
             <e p="_StatusMessage.cshtml" t="Include" />
             <e p="ChangePassword.cshtml" t="Include" />
             <e p="ChangePassword.cshtml.cs" t="Include" />
+            <e p="EditProfile.cshtml" t="Include" />
+            <e p="EditProfile.cshtml.cs" t="Include" />
             <e p="Email.cshtml" t="Include" />
             <e p="Email.cshtml.cs" t="Include" />
             <e p="ManageNavPages.cs" t="Include" />

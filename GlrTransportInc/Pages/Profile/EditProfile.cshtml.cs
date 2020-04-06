@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -7,12 +7,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace GlrTransportInc.Pages.Profile
 {
-    public class MyProfileModel : PageModel
+    public class EditProfileModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         //private readonly RoleManager<IdentityUser> _roleManager;
-        public MyProfileModel(
+        public EditProfileModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager)
             //RoleManager<IdentityUser> roleManager)
@@ -23,11 +23,6 @@ namespace GlrTransportInc.Pages.Profile
         }
 
         public string Username { get; set; }
-        public static string UserPosition { get; set; }
-        public static string Name { get; private set; }
-        public static string EmployeeId { get; private set; }
-        public static string Email { get; private set; }
-        public static string Phone { get; private set; }
         [TempData]
         public string StatusMessage { get; set; }
 
@@ -39,7 +34,7 @@ namespace GlrTransportInc.Pages.Profile
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
-
+            public string Name { get; set; }
         }
 
         private async Task LoadAsync(IdentityUser user)
@@ -48,8 +43,6 @@ namespace GlrTransportInc.Pages.Profile
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
             //var position = await _roleManager.GetRoleNameAsync(user);
             Username = userName;
-            Email = userName;
-            Phone = phoneNumber;
             //UserPosition = position;
 
             Input = new InputModel
@@ -57,8 +50,10 @@ namespace GlrTransportInc.Pages.Profile
                 PhoneNumber = phoneNumber
                 
             };
+            
+            
         }
-        
+
         public async Task<IActionResult> OnGetAsync()
         {
             var user = await _userManager.GetUserAsync(User);
