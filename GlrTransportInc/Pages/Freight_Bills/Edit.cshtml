@@ -1,0 +1,89 @@
+﻿@page
+@model GlrTransportInc.EditModel
+
+<h4>FreightBill</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FreightBill.ID" />
+            <div class="form-group">
+                <label asp-for="FreightBill.Customer" class="control-label"></label>
+                <input asp-for="FreightBill.Customer" class="form-control" />
+                <span asp-validation-for="FreightBill.Customer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreightBill.Driver" class="control-label"></label>
+                <input asp-for="FreightBill.Driver" class="form-control" />
+                <span asp-validation-for="FreightBill.Driver" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreightBill.Date" class="control-label"></label>
+                <input asp-for="FreightBill.Date" class="form-control" />
+                <span asp-validation-for="FreightBill.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreightBill.FromLocation" class="control-label"></label>
+                <input asp-for="FreightBill.FromLocation" class="form-control" />
+                <span asp-validation-for="FreightBill.FromLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreightBill.PoNumber" class="control-label"></label>
+                <input asp-for="FreightBill.PoNumber" class="form-control" />
+                <span asp-validation-for="FreightBill.PoNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreightBill.TruckNumber" class="control-label"></label>
+                <input asp-for="FreightBill.TruckNumber" class="form-control" />
+                <span asp-validation-for="FreightBill.TruckNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreightBill.PhoneNumber" class="control-label"></label>
+                <input asp-for="FreightBill.PhoneNumber" class="form-control" />
+                <span asp-validation-for="FreightBill.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreightBill.EmailAddress" class="control-label"></label>
+                <input asp-for="FreightBill.EmailAddress" class="form-control" />
+                <span asp-validation-for="FreightBill.EmailAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreightBill.ToZip" class="control-label"></label>
+                <input asp-for="FreightBill.ToZip" class="form-control" />
+                <span asp-validation-for="FreightBill.ToZip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreightBill.ToState" class="control-label"></label>
+                <input asp-for="FreightBill.ToState" class="form-control" />
+                <span asp-validation-for="FreightBill.ToState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreightBill.ToStreet" class="control-label"></label>
+                <input asp-for="FreightBill.ToStreet" class="form-control" />
+                <span asp-validation-for="FreightBill.ToStreet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreightBill.ToCity" class="control-label"></label>
+                <input asp-for="FreightBill.ToCity" class="form-control" />
+                <span asp-validation-for="FreightBill.ToCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreightBill.Status" class="control-label"></label>
+                <select asp-for="FreightBill.Status" class="form-control"></select>
+                <span asp-validation-for="FreightBill.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
