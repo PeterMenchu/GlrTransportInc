@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model GlrTransportInc.IndexModel
 @{
     ViewBag.Title = "Index";
@@ -9,32 +9,6 @@
 @{
     ViewBag.Title = "Home Page";
 }
-
-@section scripts{
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#calendar').fullCalendar({
-                theme: true,
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                },
-
-                defaultView: 'agendaDay',
-                editable: true,
-                allDaySlot: false,
-                selectable: true,
-                slotMinutes: 15,
-                events: "/home/getevents/"
-            });
-        });
-    </script>
-
-}
-
-
 <div class="jumbotron">
     <h1>Calendar</h1>
 </div>
@@ -47,5 +21,61 @@
 
 </div>
 
+<!--Needs to be update to new Full Calendar-->
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet" media=" = " print" />
+    
+@section scripts{
+    <!--Needs tob e changed for new Full Calendar-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            var events = [];
+            /*$('#calendar').fullCalendar('destroy');
+            $('#calendar').fullCalendar({
+                contentHeight = 500,
+                defaultDate = new Date,
+                theme: true,
+                header: {
+                    left: 'month,agendaWeek,agendaDay',
+                    center: 'title',
+                    right: 'prev,next today'
+                },
 
+                defaultView: 'agendaDay',
+                eventLimit: true,
+                editable: true,
+                allDaySlot: false,
+                selectable: true,
+                slotMinutes: 15,
+                events: "/home/GetEvents/"
+            });*/
+            GenerateCalendar(events);
+
+            function GenerateCalendar(events) {
+                $('#calendar').fullCalendar('destroy');
+                $('#calendar').fullCalendar({
+                    contentHeight: 700,
+                    defaultDate: new Date(),
+                    timeFormat: 'h(:mm)a',
+                    header: {
+                        left: 'month,basicWeek,basicDay,agenda',
+                        center: 'title',
+                        right: 'prev,next today'
+                    },
+                    footer: {
+                        left: 'prev',
+                        right: 'next'
+                    },
+                    defaultView: 'agenda',
+                    eventLimit: true,
+                    eventColor: '#378006',
+                    events: '/home/GetEvents'
+                });
+            }
+        });
+    </script>
+
+}
