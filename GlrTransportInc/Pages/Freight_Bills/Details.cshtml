@@ -1,7 +1,19 @@
 ﻿@page
 @model GlrTransportInc.DetailsModel
 
-<div>
+<script language="javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+    }
+</script>
+<div id="PrintDiv">
     <h4>FreightBill</h4>
     <hr />
     <dl class="row">
@@ -89,5 +101,5 @@
     <a asp-page="./Edit" asp-route-id="@Model.FreightBill.ID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
     <br />
-    <button type="submit" class="btn btn-primary bg-success" onclick="window.print()">Print Freight Bill</button>
+    <button type="submit" class="btn btn-primary bg-success" onclick="printDiv('PrintDiv')">Print Freight Bill</button>
 </div>
