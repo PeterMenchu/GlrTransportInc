@@ -1,0 +1,123 @@
+﻿@page
+@model GlrTransportInc.Pages.Map.IndexModel
+@{
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Responders</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        #map {
+            height: 100vh;
+            width: 100%;
+            right: 7.3%;
+        }
+    </style>
+    <style>
+        body {
+            background-color: #5cb85c;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="split left">
+            <div id="map"></div>
+            <script>function initMap(){
+              var options = {
+                zoom:15,
+                  center: { lat: 33.1501, lng: -97.6873}
+              }
+
+              // new map
+
+              var map = new google.maps.Map(document.getElementById('map'), options);
+
+              // Listen for click on map
+              google.maps.event.addListener(map, 'click',
+                function(event){
+                  // Add marker
+                  addMarker({coords:event.latLng});
+              });
+
+              // Array of markers with example of how to plot coordinates
+              var markers = [
+              {
+                coords:{lat:42.4668,lng:-70.9495},
+                content:'<h1>Person 1</h1>',
+                iconImage: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+              },
+              {
+                coords:{lat:42.8584,lng:-70.9300},
+                content:'<h1>Person 2</h1>',
+                iconImage: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+              },
+              {
+                coords:{lat:42.7762,lng:-71.0773},
+                content:'<h1>Person 3</h1>',
+                iconImage: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+              }
+
+              ];
+
+              // Loop through markers
+              for(var i = 0;i < markers.length;i++){
+                addMarker(markers[i]); // add marker
+              }
+
+              // Add Marker Function
+              function addMarker(props){
+                var marker = new google.maps.Marker({
+                position:props.coords,
+                map:map,
+                icon:props.iconImage
+
+              });
+
+              if(props.content){
+                var infoWindow = new google.maps.InfoWindow({
+                content:props.content
+
+              });
+              }
+
+
+
+              marker.addListener('click', function(){
+                infoWindow.open(map, marker);
+
+              })
+              }
+
+
+
+            }</script>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuFMUETuTk6T4c8FDqosv_oY4925-pw10&callback=initMap"
+                    async defer></script>
+
+
+
+
+            </h1>
+        </div>
+        <div class="split right">
+            <h2>People in Need</h2>
+
+        </div>
+
+    </div>
+
+
+    <app-root></app-root>
+
+</body>
+</html>
