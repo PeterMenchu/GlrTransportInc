@@ -1,9 +1,13 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using GlrTransportInc.Controllers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.CodeAnalysis.Differencing;
+using static GlrTransportInc.Pages.Profile.EmployeeProcessor;
+using System.Collections.Generic;
 
 namespace GlrTransportInc.Pages.Profile
 {
@@ -22,7 +26,7 @@ namespace GlrTransportInc.Pages.Profile
             //_roleManager = roleManager;
         }
 
-        public string Username { get; set; }
+        public static string Username { get; set; }
         [TempData]
         public string StatusMessage { get; set; }
 
@@ -34,7 +38,10 @@ namespace GlrTransportInc.Pages.Profile
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
-            public string Name { get; set; }
+            public string Fullname { get; set; }
+            
+            
+            
         }
 
         private async Task LoadAsync(IdentityUser user)
@@ -90,7 +97,9 @@ namespace GlrTransportInc.Pages.Profile
                     throw new InvalidOperationException($"Unexpected error occurred setting phone number for user with ID '{userId}'.");
                 }
             }
-
+            
+            int set = addName(EditProfileModel.Username, Input.Fullname);
+            
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
             return RedirectToPage();

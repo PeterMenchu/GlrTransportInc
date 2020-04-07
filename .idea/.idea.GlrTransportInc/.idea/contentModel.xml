@@ -95,6 +95,8 @@
           <e p="Migrations" t="Include">
             <e p="00000000000000_CreateIdentitySchema.cs" t="Include" />
             <e p="00000000000000_CreateIdentitySchema.Designer.cs" t="Include" />
+            <e p="20200406213514_FreightBill.cs" t="Include" />
+            <e p="20200406213514_FreightBill.Designer.cs" t="Include" />
             <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
           </e>
         </e>
@@ -120,13 +122,30 @@
           <e p="AddDriver.cshtml.cs" t="Include" />
           <e p="AddFreight.cshtml" t="Include" />
           <e p="AddFreight.cshtml.cs" t="Include" />
+          <e p="Calendar" t="Include">
+            <e p="HomeController.cs" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+            <e p="Index.cshtml.cs" t="Include" />
+          </e>
           <e p="Contact.cshtml" t="Include" />
-          <e p="Drivers.cshtml" t="Include" />
-          <e p="Drivers.cshtml.cs" t="Include" />
+          <e p="Directory.cshtml" t="Include" />
+          <e p="Directory.cshtml.cs" t="Include" />
           <e p="Error.cshtml" t="Include" />
           <e p="Error.cshtml.cs" t="Include" />
           <e p="Freight.cshtml" t="Include" />
           <e p="Freight.cshtml.cs" t="Include" />
+          <e p="Freight_Bills" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Create.cshtml.cs" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Delete.cshtml.cs" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Details.cshtml.cs" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Edit.cshtml.cs" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+            <e p="Index.cshtml.cs" t="Include" />
+          </e>
           <e p="Index.cshtml" t="Include" />
           <e p="Index.cshtml.cs" t="Include" />
           <e p="MapResources.cshtml" t="Include" />
@@ -144,6 +163,7 @@
             <e p="EditProfile.cshtml.cs" t="Include" />
             <e p="Email.cshtml" t="Include" />
             <e p="Email.cshtml.cs" t="Include" />
+            <e p="EmployeeProcessor.cs" t="Include" />
             <e p="ManageNavPages.cs" t="Include" />
             <e p="MyProfile.cshtml" t="Include" />
             <e p="MyProfile.cshtml.cs" t="Include" />
@@ -167,6 +187,8 @@
           <e p="favicon.ico" t="Include" />
           <e p="Images" t="Include">
             <e p="customTruck_Green.png" t="Include" />
+            <e p="delete-icon.png" t="Include" />
+            <e p="edit-icon.png" t="Include" />
           </e>
           <e p="js" t="Include">
             <e p="site.js" t="Include" />

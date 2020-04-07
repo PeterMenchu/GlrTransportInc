@@ -2,7 +2,7 @@ using System;
 
 namespace GlrTransportInc.Models
 {
-    public class User
+    public class UserModel
     {
         public int ID { get; set; }
         public int TypeOfEmployee { get; set; }
@@ -10,7 +10,7 @@ namespace GlrTransportInc.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
-        public string FullName => $"{FirstName} {LastName}";
+        public string FullName { get; set; }
 
         public bool LoggedIn { get; set; }
         public bool IsaFieldEmpty()
@@ -24,8 +24,8 @@ namespace GlrTransportInc.Models
             }return false;
         }
         
-        public User(){
-            this.TypeOfEmployee = -1;
+        public UserModel(){
+            //this.TypeOfEmployee = -1;
         }
     }
 }

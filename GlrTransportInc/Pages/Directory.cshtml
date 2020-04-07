@@ -1,0 +1,26 @@
+﻿@page
+@model DriversModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Employee Directory";
+}
+<body>
+    @if (SignInManager.IsSignedIn(User)) {
+        <div class="main text-center">
+            <h1 class="text-center">Driver Directory</h1>
+            <p>(This feature soon display a directory of drivers, possibly all employees instead. Page is still in 
+                maintenance.)</p>
+        </div>
+        @section Scripts {
+            <partial name="_ValidationScriptsPartial" />
+        }
+    } else {
+        <div class="main text-center">
+            <h1 class="text-center">Driver Directory</h1>
+            <p>You must log in to an account to view this directory.</p>
+            <a asp-area="Identity" asp-page="/Account/Login" class="p text-success">Click here to log in</a>
+        </div>
+    }
+</body>
