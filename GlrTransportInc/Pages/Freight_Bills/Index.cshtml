@@ -1,102 +1,56 @@
 ﻿@page
 @model GlrTransportInc.IndexModel
 
+<br />
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-primary btn-lg btn-block bg-success">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].Customer)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].Driver)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].FromLocation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].PoNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].TruckNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].EmailAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].ToZip)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].ToState)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].ToStreet)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].ToCity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreightBill[0].Status)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.FreightBill) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Customer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Driver)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FromLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PoNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TruckNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ToZip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ToState)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ToStreet)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ToCity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Driver
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Delete
+                </th>
+                <th>
+                    View
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model.FreightBill) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Driver)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">
+                        <img src="~/Images/edit-icon.png" style="width:25px; height:25px;">
+                    </a>
+                </td>
+                <td>
+                    <a asp-page="./Delete" asp-route-id="@item.ID">
+                        <img src="~/Images/delete-icon.png" style="width:25px; height:25px;">
+                    </a>
+                </td>
+                <td>
+                    <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>

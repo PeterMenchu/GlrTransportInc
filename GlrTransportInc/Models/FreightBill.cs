@@ -4,9 +4,9 @@ namespace GlrTransportInc.Models
 {
     public enum FbStatus
     {
-        FreightPending,
-        FreightCompleted,
-        FreightCanceled
+        Pending,
+        Completed,
+        Canceled
     }
 
     public class FreightBill
@@ -35,7 +35,7 @@ namespace GlrTransportInc.Models
 
         public FreightBill()
         {
-            this.Status = FbStatus.FreightPending;
+            this.Status = FbStatus.Pending;
         }
         
     }
