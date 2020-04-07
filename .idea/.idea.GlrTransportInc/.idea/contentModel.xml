@@ -120,8 +120,6 @@
           <e p="About.cshtml.cs" t="Include" />
           <e p="AddDriver.cshtml" t="Include" />
           <e p="AddDriver.cshtml.cs" t="Include" />
-          <e p="AddFreight.cshtml" t="Include" />
-          <e p="AddFreight.cshtml.cs" t="Include" />
           <e p="Calendar" t="Include">
             <e p="HomeController.cs" t="Include" />
             <e p="Index.cshtml" t="Include" />
@@ -132,8 +130,6 @@
           <e p="Directory.cshtml.cs" t="Include" />
           <e p="Error.cshtml" t="Include" />
           <e p="Error.cshtml.cs" t="Include" />
-          <e p="Freight.cshtml" t="Include" />
-          <e p="Freight.cshtml.cs" t="Include" />
           <e p="Freight_Bills" t="Include">
             <e p="Create.cshtml" t="Include" />
             <e p="Create.cshtml.cs" t="Include" />

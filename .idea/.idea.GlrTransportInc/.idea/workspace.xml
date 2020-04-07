@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8979df5-96ff-4d25-97ab-ccc78999580a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/EmployeeProcessor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Drivers.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Directory.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Drivers.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Directory.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/EditProfile.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/EditProfile.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/EditProfile.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Profile/EditProfile.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_LoginPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Drivers.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Drivers.cshtml.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +193,7 @@
       <workItem from="1586134916207" duration="484000" />
       <workItem from="1586148990661" duration="15424000" />
       <workItem from="1586245015706" duration="73000" />
-      <workItem from="1586245493937" duration="12859000" />
+      <workItem from="1586245493937" duration="13384000" />
     </task>
     <servers />
   </component>
@@ -227,36 +216,36 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1878" height="43" key="GridCell.Tab.0.bottom" timestamp="1586259817159">
+    <state width="1878" height="43" key="GridCell.Tab.0.bottom" timestamp="1586261409064">
       <screen x="0" y="23" width="1920" height="1032" />
     </state>
     <state width="1398" height="115" key="GridCell.Tab.0.bottom/0.23.1440.852@0.23.1440.852" timestamp="1585206752481" />
     <state width="1878" height="153" key="GridCell.Tab.0.bottom/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585296157315" />
-    <state width="1878" height="43" key="GridCell.Tab.0.bottom/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586259817159" />
+    <state width="1878" height="43" key="GridCell.Tab.0.bottom/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586261409064" />
     <state width="1398" height="50" key="GridCell.Tab.0.bottom/1920.162.1440.877/0.23.1920.1032@1920.162.1440.877" timestamp="1585815457095" />
     <state width="1878" height="44" key="GridCell.Tab.0.bottom/1920.162.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1585648125603" />
-    <state width="1878" height="43" key="GridCell.Tab.0.center" timestamp="1586259817158">
+    <state width="1878" height="43" key="GridCell.Tab.0.center" timestamp="1586261409063">
       <screen x="0" y="23" width="1920" height="1032" />
     </state>
     <state width="1398" height="115" key="GridCell.Tab.0.center/0.23.1440.852@0.23.1440.852" timestamp="1585206752480" />
     <state width="1878" height="153" key="GridCell.Tab.0.center/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585296157313" />
-    <state width="1878" height="43" key="GridCell.Tab.0.center/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586259817158" />
+    <state width="1878" height="43" key="GridCell.Tab.0.center/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586261409063" />
     <state width="1398" height="50" key="GridCell.Tab.0.center/1920.162.1440.877/0.23.1920.1032@1920.162.1440.877" timestamp="1585815457095" />
     <state width="1878" height="44" key="GridCell.Tab.0.center/1920.162.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1585648125602" />
-    <state width="1878" height="43" key="GridCell.Tab.0.left" timestamp="1586259817157">
+    <state width="1878" height="43" key="GridCell.Tab.0.left" timestamp="1586261409062">
       <screen x="0" y="23" width="1920" height="1032" />
     </state>
     <state width="1398" height="115" key="GridCell.Tab.0.left/0.23.1440.852@0.23.1440.852" timestamp="1585206752479" />
     <state width="1878" height="153" key="GridCell.Tab.0.left/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585296157312" />
-    <state width="1878" height="43" key="GridCell.Tab.0.left/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586259817157" />
+    <state width="1878" height="43" key="GridCell.Tab.0.left/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586261409062" />
     <state width="1398" height="50" key="GridCell.Tab.0.left/1920.162.1440.877/0.23.1920.1032@1920.162.1440.877" timestamp="1585815457094" />
     <state width="1878" height="44" key="GridCell.Tab.0.left/1920.162.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1585648125601" />
-    <state width="1878" height="43" key="GridCell.Tab.0.right" timestamp="1586259817158">
+    <state width="1878" height="43" key="GridCell.Tab.0.right" timestamp="1586261409063">
       <screen x="0" y="23" width="1920" height="1032" />
     </state>
     <state width="1398" height="115" key="GridCell.Tab.0.right/0.23.1440.852@0.23.1440.852" timestamp="1585206752481" />
     <state width="1878" height="153" key="GridCell.Tab.0.right/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585296157314" />
-    <state width="1878" height="43" key="GridCell.Tab.0.right/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586259817158" />
+    <state width="1878" height="43" key="GridCell.Tab.0.right/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586261409063" />
     <state width="1398" height="50" key="GridCell.Tab.0.right/1920.162.1440.877/0.23.1920.1032@1920.162.1440.877" timestamp="1585815457095" />
     <state width="1878" height="44" key="GridCell.Tab.0.right/1920.162.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1585648125602" />
     <state x="813" y="187" key="SettingsEditor" timestamp="1585134907947">
