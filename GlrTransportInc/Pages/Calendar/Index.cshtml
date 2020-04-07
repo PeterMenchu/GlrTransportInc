@@ -5,6 +5,47 @@
 }
 
 <h2>Work in Progress</h2>
-     
-        
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@section scripts{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#calendar').fullCalendar({
+                theme: true,
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+
+                defaultView: 'agendaDay',
+                editable: true,
+                allDaySlot: false,
+                selectable: true,
+                slotMinutes: 15,
+                events: "/home/getevents/"
+            });
+        });
+    </script>
+
+}
+
+
+<div class="jumbotron">
+    <h1>Calendar</h1>
+</div>
+
+<div class="row">
+
+    <div class="col-md-12">
+        <div id="calendar"></div>
+    </div>
+
+</div>
+
+
 

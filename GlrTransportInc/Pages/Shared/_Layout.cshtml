@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - GlrTransportInc</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css" /> 
 </head>
 <body>
     <header>
@@ -44,12 +44,12 @@
                             <!-- Original link to MyProfile
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" asp-page="/MyProfile">View my profile</a>
-                            --> 
+                            -->
                         </div>
                     </li>
-                    
+
                     <partial name="_LoginPartial" />
-        
+
                 </ul>
                 <!-- The search bar -->
                 <form class="form-inline my-2 my-lg-0">
@@ -59,7 +59,7 @@
             </div>
         </nav>
     </header>
-    
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -71,6 +71,7 @@
             &copy; 2020 - Glr Transport Inc. - <a asp-area="" asp-page="/Privacy" class="text-success">Privacy</a>
         </div>
     </footer>
+  
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
