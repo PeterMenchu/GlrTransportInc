@@ -8,28 +8,34 @@
 <div class="table-responsive">
     <table class="table">
         <thead>
-            <tr>
-                <th>
-                    Driver
-                </th>
-                <th>
-                    Status
-                </th>
-                <th>
-                    Edit
-                </th>
-                <th>
-                    Delete
-                </th>
-                <th>
-                    View
-                </th>
-                <th></th>
-            </tr>
+        <tr>
+            <th>
+                Customer
+            </th>
+            <th>
+                Driver
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
+            <th>
+                View
+            </th>
+            <th></th>
+        </tr>
         </thead>
         <tbody>
-    @foreach (var item in Model.FreightBill) {
+        @foreach (var item in Model.FreightBill) {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Driver)
                 </td>
@@ -38,19 +44,19 @@
                 </td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.ID">
-                        <img src="~/Images/edit-icon.png" style="width:25px; height:25px;">
+                        <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
                     </a>
                 </td>
                 <td>
                     <a asp-page="./Delete" asp-route-id="@item.ID">
-                        <img src="~/Images/delete-icon.png" style="width:25px; height:25px;">
+                        <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
                     </a>
                 </td>
                 <td>
                     <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
                 </td>
             </tr>
-    }
+        }
         </tbody>
     </table>
 </div>
