@@ -10,7 +10,7 @@
         <thead>
             <tr>
                 <th>
-                    Customer
+                    Driver
                 </th>
                 <th>
                     Status
@@ -31,7 +31,7 @@
     @foreach (var item in Model.FreightBill) {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Customer)
+                    @Html.DisplayFor(modelItem => item.Driver)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Status)
