@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Collections.Generic;
 
 namespace GlrTransportInc.Pages.Profile
 {
@@ -32,10 +31,9 @@ namespace GlrTransportInc.Pages.Profile
         [TempData]
         public string StatusMessage { get; set; }
 
-        //[BindProperty]
-        //public InputModel Input { get; set; }
+        [BindProperty]
+        public InputModel Input { get; set; }
 
-        /*
         public class InputModel
         {
             [Phone]
@@ -43,26 +41,22 @@ namespace GlrTransportInc.Pages.Profile
             public string PhoneNumber { get; set; }
 
         }
-        */
+
         private async Task LoadAsync(IdentityUser user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-            var id = await _userManager.GetUserIdAsync(user);
-            //var role = await _userManager.GetRolesAsync(user);
-            //var role = await _roleManager.GetRoleNameAsync(user);
+            //var position = await _roleManager.GetRoleNameAsync(user);
             Username = userName;
             Email = userName;
             Phone = phoneNumber;
-            EmployeeId = id;
-            //UserPosition = role;
-            /*
+            //UserPosition = position;
+
             Input = new InputModel
             {
                 PhoneNumber = phoneNumber
                 
             };
-            */
         }
         
         public async Task<IActionResult> OnGetAsync()
@@ -76,7 +70,7 @@ namespace GlrTransportInc.Pages.Profile
             await LoadAsync(user);
             return Page();
         }
-        /*
+
         public async Task<IActionResult> OnPostAsync()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -101,11 +95,10 @@ namespace GlrTransportInc.Pages.Profile
                     throw new InvalidOperationException($"Unexpected error occurred setting phone number for user with ID '{userId}'.");
                 }
             }
-            
+
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
             return RedirectToPage();
-            
-        }*/
+        }
     }
 }
