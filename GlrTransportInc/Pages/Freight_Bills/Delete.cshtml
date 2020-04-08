@@ -13,58 +13,46 @@
             @Html.DisplayFor(model => model.FreightBill.Customer)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.Driver)
+            @Html.DisplayNameFor(model => model.FreightBill.FreightBillNumber)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.Driver)
+            @Html.DisplayFor(model => model.FreightBill.FreightBillNumber)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.Date)
+            @Html.DisplayNameFor(model => model.FreightBill.FromName)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.Date)
+            @Html.DisplayFor(model => model.FreightBill.FromName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.FromLocation)
+            @Html.DisplayNameFor(model => model.FreightBill.FromStreet)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.FromLocation)
+            @Html.DisplayFor(model => model.FreightBill.FromStreet)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.PoNumber)
+            @Html.DisplayNameFor(model => model.FreightBill.FromCity)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.PoNumber)
+            @Html.DisplayFor(model => model.FreightBill.FromCity)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.TruckNumber)
+            @Html.DisplayNameFor(model => model.FreightBill.FromState)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.TruckNumber)
+            @Html.DisplayFor(model => model.FreightBill.FromState)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.PhoneNumber)
+            @Html.DisplayNameFor(model => model.FreightBill.FromZip)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.PhoneNumber)
+            @Html.DisplayFor(model => model.FreightBill.FromZip)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.EmailAddress)
+            @Html.DisplayNameFor(model => model.FreightBill.ToName)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.EmailAddress)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.ToZip)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.ToZip)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.ToState)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.ToState)
+            @Html.DisplayFor(model => model.FreightBill.ToName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FreightBill.ToStreet)
@@ -77,6 +65,216 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FreightBill.ToCity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.ToState)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.ToState)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.ToZip)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.ToZip)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.ScheduledDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.ScheduledDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Size)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Size)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.BranchAndDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.BranchAndDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Unit)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Unit)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.PoNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.PoNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.DocJob)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.DocJob)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Comments)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Comments)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Labor1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Labor1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Labor2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Labor2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Labor3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Labor3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Labor4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Labor4)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Labor5)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Labor5)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Labor6)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Labor6)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Labor7)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Labor7)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Labor8)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Labor8)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Labor9)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Labor9)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Cost1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Cost1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Cost2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Cost2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Cost3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Cost3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Cost4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Cost4)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Cost5)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Cost5)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Cost6)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Cost6)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Cost7)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Cost7)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Cost8)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Cost8)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Cost9)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Cost9)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.TruckNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.TruckNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.Driver)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.Driver)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.ReceivedBy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.ReceivedBy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.CompletionDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.CompletionDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.SiteName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.SiteName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.SitePhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.SitePhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.DueDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.DueDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreightBill.EmailAddress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreightBill.EmailAddress)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FreightBill.Status)
