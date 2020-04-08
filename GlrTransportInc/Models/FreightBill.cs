@@ -5,6 +5,7 @@ namespace GlrTransportInc.Models
     public enum FbStatus
     {
         Pending,
+        Shipped,
         Completed,
         Canceled
     }
