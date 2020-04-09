@@ -1,27 +1,80 @@
 ﻿@page
-@model DriversModel
-@using Microsoft.AspNetCore.Identity
 @using GlrTransportInc.Models
+@model GlrTransportInc.DirectoryModel
 @inject SignInManager<UserModel> SignInManager
-@inject UserManager<UserModel> UserManager
 @{
     ViewData["Title"] = "Employee Directory";
 }
-<body>
-    @if (SignInManager.IsSignedIn(User)) {
-        <div class="main text-center">
-            <h1 class="text-center">Driver Directory</h1>
-            <p>(This feature soon display a directory of drivers, possibly all employees instead. Page is still in 
-                maintenance.)</p>
-        </div>
-        @section Scripts {
-            <partial name="_ValidationScriptsPartial" />
-        }
-    } else {
-        <div class="main text-center">
-            <h1 class="text-center">Driver Directory</h1>
-            <p>You must log in to an account to view this directory.</p>
-            <a asp-area="Identity" asp-page="/Account/Login" class="p text-success">Click here to log in</a>
-        </div>
-    }
-</body>
+
+<br />
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Phone Number
+                    </th>
+                    <th>
+                        Position
+                    </th>
+                    <!--
+                    <th>
+                        Delete
+                    </th>
+                    <th>
+                        View
+                    </th>-->
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.UserModel)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Position)
+                        </td>
+                        <!--
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="item.ID">
+                                <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-page="./Delete" asp-route-id="item.ID">
+                                <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-page="./Details" asp-route-id="item.ID">View Details</a>
+                        </td>-->
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="main text-center">
+        <h1 class="text-center">Driver Directory</h1>
+        <p>You must log in to an account to view this directory.</p>
+        <a asp-area="Identity" asp-page="/Account/Login" class="p text-success">Click here to log in</a>
+    </div>
+}
