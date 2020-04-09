@@ -14,5 +14,6 @@ namespace GlrTransportInc.Data
         {
         }
         public DbSet<GlrTransportInc.Models.FreightBill> FreightBill { get; set; }
+        public DbSet<GlrTransportInc.Models.UserModel> UserModel { get; set; }
     }
 }

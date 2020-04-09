@@ -12,12 +12,12 @@ namespace GlrTransportInc.Pages.Profile
         {
             UserModel data = new UserModel
             {
-                EmailAddress = email,
-                FullName = name
+                Email = email,
+                Name = name
             };
-            string sql = @"INSERT INTO dbo.AspNetUsers (Fullname) 
-                            VALUES (@FullName) 
-                            WHERE UserName=@EmailAddress;";
+            string sql = @"INSERT INTO dbo.AspNetUsers (name) 
+                            VALUES (@Name) 
+                            WHERE UserName=@Email;";
             return SqlDataController.SaveData(sql, data);
         }
         // Next is some code for user directory

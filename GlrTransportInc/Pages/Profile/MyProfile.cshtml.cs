@@ -5,18 +5,19 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
+using GlrTransportInc.Models;
 
 namespace GlrTransportInc.Pages.Profile
 {
     public class MyProfileModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
-        //private readonly RoleManager<IdentityUser> _roleManager;
+        private readonly UserManager<UserModel> _userManager;
+        private readonly SignInManager<UserModel> _signInManager;
+        //private readonly RoleManager<UserModel> _roleManager;
         public MyProfileModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager)
-            //RoleManager<IdentityUser> roleManager)
+            UserManager<UserModel> userManager,
+            SignInManager<UserModel> signInManager)
+            //RoleManager<UserModel> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -44,7 +45,7 @@ namespace GlrTransportInc.Pages.Profile
 
         }
         */
-        private async Task LoadAsync(IdentityUser user)
+        private async Task LoadAsync(UserModel user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
