@@ -1,0 +1,47 @@
+﻿@page
+@model GlrTransportInc.CreateModel2
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <h4>Announcement</h4>
+    <hr />
+    <div class="row">
+        <div class="col-lg-10">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Announcement.Title" class="control-label"></label>
+                    <input asp-for="Announcement.Title" class="form-control" />
+                    <span asp-validation-for="Announcement.Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Announcement.Post" class="control-label"></label>
+                    <textarea asp-for="Announcement.Post" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="Announcement.Post" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="Index">Back to Announcements</a>
+    </div>
+}
+else
+{
+    <body>
+        <div class="main text-center">
+            <p>You must log in to view announcements.</p>
+            <a asp-page="/LoginPage" class="p text-success">Click here to log in</a>
+        </div>
+    </body>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
