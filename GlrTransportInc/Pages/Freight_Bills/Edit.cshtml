@@ -36,6 +36,7 @@
             <div class="form-group">
                 <label asp-for="FreightBill.FromState" class="control-label"></label>
                 <select asp-for="FreightBill.FromState" class="form-control">
+                    <option value="">Select a State</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -113,6 +114,7 @@
             <div class="form-group">
                 <label asp-for="FreightBill.ToState" class="control-label"></label>
                 <select asp-for="FreightBill.ToState" class="form-control">
+                    <option value="">Select a State</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -304,7 +306,16 @@
             </div>
             <div class="form-group">
                 <label asp-for="FreightBill.Driver" class="control-label"></label>
-                <input asp-for="FreightBill.Driver" class="form-control" />
+                <select asp-for="FreightBill.Driver" class="form-control">
+                    <option value="">Select a driver</option>
+                    @foreach (var item in Model.UserModel)
+                    {
+                        @if (item.Position == "Driver")
+                        {
+                            <option value="@item.Name">@item.Name</option>
+                        }
+                    }
+                </select>
                 <span asp-validation-for="FreightBill.Driver" class="text-danger"></span>
             </div>
             <div class="form-group">

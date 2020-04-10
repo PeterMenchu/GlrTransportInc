@@ -1,7 +1,11 @@
 ﻿@page
 @model GlrTransportInc.CreateModel
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
 
-<h4>FreightBill</h4>
+<br />
+
+<h4>Freight Bill</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -255,47 +259,47 @@
             </div>
             <div class="form-group">
                 <label asp-for="FreightBill.Cost1" class="control-label"></label>
-                <input asp-for="FreightBill.Cost1" class="form-control" />
+                <input asp-for="FreightBill.Cost1" class="form-control" value="0" />
                 <span asp-validation-for="FreightBill.Cost1" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FreightBill.Cost2" class="control-label"></label>
-                <input asp-for="FreightBill.Cost2" class="form-control" />
+                <input asp-for="FreightBill.Cost2" class="form-control" value="0"/>
                 <span asp-validation-for="FreightBill.Cost2" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FreightBill.Cost3" class="control-label"></label>
-                <input asp-for="FreightBill.Cost3" class="form-control" />
+                <input asp-for="FreightBill.Cost3" class="form-control" value="0"/>
                 <span asp-validation-for="FreightBill.Cost3" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FreightBill.Cost4" class="control-label"></label>
-                <input asp-for="FreightBill.Cost4" class="form-control" />
+                <input asp-for="FreightBill.Cost4" class="form-control" value="0"/>
                 <span asp-validation-for="FreightBill.Cost4" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FreightBill.Cost5" class="control-label"></label>
-                <input asp-for="FreightBill.Cost5" class="form-control" />
+                <input asp-for="FreightBill.Cost5" class="form-control" value="0"/>
                 <span asp-validation-for="FreightBill.Cost5" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FreightBill.Cost6" class="control-label"></label>
-                <input asp-for="FreightBill.Cost6" class="form-control" />
+                <input asp-for="FreightBill.Cost6" class="form-control" value="0"/>
                 <span asp-validation-for="FreightBill.Cost6" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FreightBill.Cost7" class="control-label"></label>
-                <input asp-for="FreightBill.Cost7" class="form-control" />
+                <input asp-for="FreightBill.Cost7" class="form-control" value="0"/>
                 <span asp-validation-for="FreightBill.Cost7" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FreightBill.Cost8" class="control-label"></label>
-                <input asp-for="FreightBill.Cost8" class="form-control" />
+                <input asp-for="FreightBill.Cost8" class="form-control" value="0"/>
                 <span asp-validation-for="FreightBill.Cost8" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FreightBill.Cost9" class="control-label"></label>
-                <input asp-for="FreightBill.Cost9" class="form-control" />
+                <input asp-for="FreightBill.Cost9" class="form-control" value="0"/>
                 <span asp-validation-for="FreightBill.Cost9" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -305,7 +309,16 @@
             </div>
             <div class="form-group">
                 <label asp-for="FreightBill.Driver" class="control-label"></label>
-                <input asp-for="FreightBill.Driver" class="form-control" />
+                <select asp-for="FreightBill.Driver" class="form-control">
+                    <option value="">Select a driver</option>
+                    @foreach (var item in Model.UserModel)
+                    {
+                        @if (item.Position == "Driver")
+                        {
+                            <option value="@item.Name">@item.Name</option>
+                        }
+                    }
+                </select>
                 <span asp-validation-for="FreightBill.Driver" class="text-danger"></span>
             </div>
             <div class="form-group">
