@@ -34,11 +34,15 @@
                             </div>
                             @if ((User.FindFirst("Name").Value == item.Author))
                             {
-                                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
+                                <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
+                                    <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                                </a>
                             }
                             @if ((User.FindFirst("Name").Value == item.Author) || User.FindFirst("Position").Value == "Manager")
                             {
-                                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                                <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
+                                    <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                                </a>
                             }
                         </div>
                     </td>

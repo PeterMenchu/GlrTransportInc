@@ -16,9 +16,17 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" asp-page="/Freight_Bills/Index">View freight listings</a>
-                <a class="dropdown-item" asp-page="/Freight_Bills/Create">Add a freight (manager login required)</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" asp-page="/Freight_Bills/MyFreights">View my freights</a>
+
+                @if (User.FindFirst("Position").Value == "Manager")
+                {
+                    <a class="dropdown-item" asp-page="/Freight_Bills/Create">Add a freight</a>
+                }
+
+                @if (User.FindFirst("Position").Value == "Driver")
+                {
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" asp-page="/Freight_Bills/MyFreights">View my freights</a>
+                }
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -27,7 +35,10 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" asp-page="/Directory">User Directory</a>
-                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Add a user (manager login required)</a>
+                @if (User.FindFirst("Position").Value == "Manager")
+                {
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Add a user</a>
+                }
             </div>
         </li>
         <li class=" nav-item">
