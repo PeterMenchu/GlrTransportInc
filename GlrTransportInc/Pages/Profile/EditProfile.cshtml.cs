@@ -37,7 +37,7 @@ namespace GlrTransportInc.Pages.Profile
         public class InputModel
         {
             [Phone]
-            [Display(Name = "Phone number")]
+            [Display(Name = "Phone number:")]
             public string PhoneNumber { get; set; }
             public string Fullname { get; set; }
             
@@ -99,7 +99,7 @@ namespace GlrTransportInc.Pages.Profile
                 }
             }
             
-            int set = addName(EditProfileModel.Username, Input.Fullname);
+            int set = addName(User.Identity.Name, Input.Fullname);
             
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";

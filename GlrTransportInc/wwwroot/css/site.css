@@ -80,7 +80,11 @@ a {
   border-color: #5cb85c;   
 }
 .nav-item > a:hover {
-    color: #e83e8c;
+    color: #ff781f;
+}
+a:hover {
+    color: #ff781f;
+    /*color: #e83e8c;*/
 }
 /*------- End Nav -------*/
 /* Sticky footer styles

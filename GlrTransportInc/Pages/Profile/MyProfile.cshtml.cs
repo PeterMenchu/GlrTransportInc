@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 using GlrTransportInc.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GlrTransportInc.Pages.Profile
 {
     public class MyProfileModel : PageModel
     {
+        /*
         private readonly UserManager<UserModel> _userManager;
         private readonly SignInManager<UserModel> _signInManager;
         //private readonly RoleManager<UserModel> _roleManager;
@@ -45,6 +47,7 @@ namespace GlrTransportInc.Pages.Profile
 
         }
         */
+        /*
         private async Task LoadAsync(UserModel user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
@@ -64,7 +67,7 @@ namespace GlrTransportInc.Pages.Profile
                 
             };
             */
-        }
+        /*}
         
         public async Task<IActionResult> OnGetAsync()
         {
@@ -76,7 +79,25 @@ namespace GlrTransportInc.Pages.Profile
 
             await LoadAsync(user);
             return Page();
+        }*/
+        
+        private readonly GlrTransportInc.Data.ApplicationDbContext _context;
+
+        public MyProfileModel(GlrTransportInc.Data.ApplicationDbContext context)
+        {
+            _context = context;
         }
+
+        public IList<UserModel> Users { get; set; }
+
+        public async Task OnGetAsync()
+        {
+            Users = await _context.UserModel.ToListAsync();
+        }
+        
+        
+        
+        
         /*
         public async Task<IActionResult> OnPostAsync()
         {
@@ -109,4 +130,6 @@ namespace GlrTransportInc.Pages.Profile
             
         }*/
     }
+
+    
 }

@@ -16,21 +16,23 @@
     </div>
     <hr />
 </div>
-<h1>@ViewData["Title"]</h1>
-<partial name="_StatusMessage" model="Model.StatusMessage" /> 
-<div class="row">
-    <div class="col-md-6">
-        <form id="profile-form" method="post">
-            <br />
-            <p>Name: @MyProfileModel.Name</p>
-            <p>Email: @MyProfileModel.Email</p>
-            <p>Employee ID: @MyProfileModel.EmployeeId</p>
-            <p>Phone number: @MyProfileModel.Phone</p>
-            <p>Position: @MyProfileModel.UserPosition</p>
-        </form>
-    </div>
-</div>
-
+@foreach (var item in Model.Users)
+{
+    @if ((item.Email) == User.Identity.Name)
+    {
+        <h1>@item.Name</h1>
+        <img gravatar-email="@User.Identity.Name" />
+        <br />
+        <br />
+        <h4>Employee ID: @item.EmployeeId</h4>
+        <br />
+        <h4>Position: @item.Position</h4>
+        <br />
+        <h4>Email: @item.Email</h4>
+        <br />
+        <h4>Phone Number: @item.PhoneNumber</h4>
+    }
+}
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <partial name="_ValidationScriptsPartial"/>
 }

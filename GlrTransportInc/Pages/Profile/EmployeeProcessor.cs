@@ -15,8 +15,8 @@ namespace GlrTransportInc.Pages.Profile
                 Email = email,
                 Name = name
             };
-            string sql = @"INSERT INTO dbo.AspNetUsers (name) 
-                            VALUES (@Name) 
+            string sql = @"UPDATE dbo.AspNetUsers 
+                            SET Name = @name 
                             WHERE UserName=@Email;";
             return SqlDataController.SaveData(sql, data);
         }
