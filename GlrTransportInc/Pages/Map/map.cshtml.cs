@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace GlrTransportInc.Pages.Map
 {
-    public class IndexModel : PageModel
+    public class MapModel : PageModel
     {
         public void OnGet()
         {
