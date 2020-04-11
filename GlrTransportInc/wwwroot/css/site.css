@@ -9,10 +9,13 @@ for details on configuring this project to bundle and minify static web assets. 
     
 }
 
-.listStyle {
-    
-}
 
+.mobileList {
+    display: block;
+}
+.table-responsive{
+    display: none;
+}
  
 /* Medium devices (tablets, 768px and up). Everything else will be for mobile, within 
    this query will be the styling for tablets and desktop*/
@@ -24,10 +27,12 @@ for details on configuring this project to bundle and minify static web assets. 
         padding: 30px 45px;
         /* background-color: gainsboro; */
     }
+    .table-responsive{
+        display: block;
+    }
     
-    .listStyle{
-        margin-right: 100px;
-        margin-left: 100px;
+    .mobileList {
+        display: none;
     }
     .optionButton{
         margin-right: 15px;
