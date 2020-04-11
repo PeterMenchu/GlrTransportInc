@@ -144,6 +144,10 @@
           </e>
           <e p="Index.cshtml" t="Include" />
           <e p="Index.cshtml.cs" t="Include" />
+          <e p="Map" t="Include">
+            <e p="Index.cshtml" t="Include" />
+            <e p="Index.cshtml.cs" t="Include" />
+          </e>
           <e p="MapResources.cshtml" t="Include" />
           <e p="MapResources.cshtml.cs" t="Include" />
           <e p="MyFreights.cshtml" t="Include" />
@@ -248,6 +252,6 @@
       <e p="packages" t="ExcludeRecursive" />
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_GlrTransportInc.-240863561.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_GlrTransportInc.549517622.00" t="ExcludeRecursive" />
   </component>
 </project>

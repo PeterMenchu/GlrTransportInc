@@ -1,31 +1,34 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace GlrTransportInc.Models
 {
-    public class UserModel
+    public class UserModel : IdentityUser
     {
-        public int ID { get; set; }
-        public int TypeOfEmployee { get; set; }
-        public string Password { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailAddress { get; set; }
-        public string FullName { get; set; }
+        public string EmployeeId { get; set; }
+        public string Position { get; set; }
+        public string Name { get; set; }
+    }
 
-        public bool LoggedIn { get; set; }
-        public bool IsaFieldEmpty()
+    public class MyUserClaimsPrincipalFactory : UserClaimsPrincipalFactory<UserModel>
+    {
+        public MyUserClaimsPrincipalFactory(
+            UserManager<UserModel> userManager,
+            IOptions<IdentityOptions> optionsAccessor)
+                : base(userManager, optionsAccessor)
         {
-            if (this.FirstName == null 
-                || this.LastName == null
-                || this.EmailAddress == null
-                || this.Password == null)
-            {
-                return true;
-            }return false;
         }
-        
-        public UserModel(){
-            //this.TypeOfEmployee = -1;
+
+        protected override async Task<ClaimsIdentity> GenerateClaimsAsync(UserModel user)
+        {
+            var identity = await base.GenerateClaimsAsync(user);
+            identity.AddClaim(new Claim("Name", user.Name));
+            identity.AddClaim(new Claim("Position", user.Position));
+            return identity;
         }
     }
 }

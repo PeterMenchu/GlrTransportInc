@@ -4,47 +4,68 @@
     ViewData["Title"] = "Add new user";
 }
 @using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
+@inject UserManager<UserModel> UserManager
 
-@if (SignInManager.IsSignedIn(User)){
-    <div class="main text-center">
-        <div class="row">
-            <div class="col-md-4">
-                <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                    <h4>Create a new user account.</h4>
-                    <hr/>
-                    <div asp-validation-summary="All" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="Input.Email"></label>
-                        <input asp-for="Input.Email" class="form-control"/>
-                        <span asp-validation-for="Input.Email" class="text-danger"></span> 
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Input.Password"></label>
-                        <input asp-for="Input.Password" class="form-control"/>
-                        <span asp-validation-for="Input.Password" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Input.ConfirmPassword"></label>
-                        <input asp-for="Input.ConfirmPassword" class="form-control"/>
-                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Input.EmployeeId"></label>
-                        <input asp-for="Input.EmployeeId" class="form-control"/>
-                        <span asp-validation-for="Input.EmployeeId" class="text-danger"></span> 
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Input.Position"></label>
-                        <input asp-for="Input.Position" class="form-control"/>
-                        <span asp-validation-for="Input.Position" class="text-danger"></span> 
-                    </div>
-                    <button type="submit" class="btn btn-primary bg-success">Submit</button>
-                </form>
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (User.FindFirst("Position").Value == "Manager")
+    {
+        <div class="main text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <h4>Create a new user account.</h4>
+                        <hr />
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Input.Email"></label>
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Password"></label>
+                            <input asp-for="Input.Password" class="form-control" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.ConfirmPassword"></label>
+                            <input asp-for="Input.ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.EmployeeId"></label>
+                            <input asp-for="Input.EmployeeId" class="form-control" />
+                            <span asp-validation-for="Input.EmployeeId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Position"></label>
+                            <select asp-for="Input.Position" class="form-control">
+                                <option value="">Select a Position</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Employee">Employee</option>
+                                <option value="Driver">Driver</option>
+                            </select>
+                            <span asp-validation-for="Input.Position" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Name"></label>
+                            <input asp-for="Input.Name" class="form-control" />
+                            <span asp-validation-for="Input.Name" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary bg-success">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    }
+    else
+    {
+        <div class="main text-center">
+            <p>You must log in to a manager account to add a new user.</p>
+        </div>
+    }
 }
 else
 {

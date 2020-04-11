@@ -8,6 +8,17 @@ for details on configuring this project to bundle and minify static web assets. 
     margin-top: 25px;
     
 }
+
+
+.mobileList {
+    display: block;
+}
+.table-responsive{
+    display: none;
+}
+.optionButton{
+    margin-right: 15px;
+} 
 /* Medium devices (tablets, 768px and up). Everything else will be for mobile, within 
    this query will be the styling for tablets and desktop*/
 @media (min-width: 768px) {
@@ -17,6 +28,16 @@ for details on configuring this project to bundle and minify static web assets. 
         margin-left: 50px;
         padding: 30px 45px;
         /* background-color: gainsboro; */
+    }
+    .table-responsive{
+        display: block;
+    }
+    
+    .mobileList {
+        display: none;
+    }
+    .optionButton{
+        margin-right: 15px;
     }
 }
 /*------- End index -------*/

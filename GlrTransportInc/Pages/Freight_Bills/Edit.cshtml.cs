@@ -22,6 +22,7 @@ namespace GlrTransportInc
 
         [BindProperty]
         public FreightBill FreightBill { get; set; }
+        public IList<UserModel> UserModel { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -36,6 +37,7 @@ namespace GlrTransportInc
             {
                 return NotFound();
             }
+            UserModel = await _context.UserModel.ToListAsync();
             return Page();
         }
 

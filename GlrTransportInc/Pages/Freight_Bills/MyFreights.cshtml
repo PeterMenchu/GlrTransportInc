@@ -1,0 +1,78 @@
+﻿@page
+@model GlrTransportInc.MyFreightsModel
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<br />
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Customer
+                    </th>
+                    <th>
+                        Driver
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Edit
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                    <th>
+                        View
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.FreightBill)
+                {
+                    @if ((item.Driver) == User.FindFirst("Name").Value)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Customer)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Driver)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.ID">
+                                    <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-page="./Delete" asp-route-id="@item.ID">
+                                    <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="main text-center">
+        <p>You must loged in to view your freights</p>
+        <a asp-area="Identity" asp-page="/Account/Login" class="p text-success">Click here to log in</a>
+    </div>
+
+}

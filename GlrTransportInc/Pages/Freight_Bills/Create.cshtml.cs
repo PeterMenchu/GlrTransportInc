@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using GlrTransportInc.Data;
 using GlrTransportInc.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GlrTransportInc
 {
@@ -19,13 +20,16 @@ namespace GlrTransportInc
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public IList<UserModel> UserModel { get; set; }
+        public async Task<IActionResult> OnGetAsync()
         {
+            UserModel = await _context.UserModel.ToListAsync();
             return Page();
         }
 
         [BindProperty]
         public FreightBill FreightBill { get; set; }
+        
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
