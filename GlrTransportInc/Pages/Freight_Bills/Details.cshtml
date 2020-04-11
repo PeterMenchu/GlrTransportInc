@@ -16,79 +16,111 @@ function printDiv(divName) {
 <div id="PrintDiv">
     <h4>FreightBill</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.Customer)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.Customer)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.FreightBillNumber)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.FreightBillNumber)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.FromName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.FromName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.FromStreet)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.FromStreet)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.FromCity)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.FromCity)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.FromState)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.FromState)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.FromZip)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.FromZip)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.ToName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.ToName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.ToStreet)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.ToStreet)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.ToCity)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.ToCity)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.ToState)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.ToState)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.ToZip)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.ToZip)
-        </dd>
+    <div class="container">
+        <div class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FreightBill.Customer)
+            </dt>
+            <dd class="col-sm-4">
+                @Html.DisplayFor(model => model.FreightBill.Customer)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FreightBill.FreightBillNumber)
+            </dt>
+            <dd class="col-sm-4">
+                @Html.DisplayFor(model => model.FreightBill.FreightBillNumber)
+            </dd>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.FreightBill.FromName)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.FreightBill.FromName)
+                    </dd>
+                </div>
+                <div class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.FreightBill.FromStreet)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.FreightBill.FromStreet)
+                    </dd>
+                </div>
+                <div class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.FreightBill.FromCity)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.FreightBill.FromCity)
+                    </dd>
+                </div>
+                <div class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.FreightBill.FromState)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.FreightBill.FromState)
+                    </dd>
+                </div>
+                <div class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.FreightBill.FromZip)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.FreightBill.FromZip)
+                    </dd>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.FreightBill.ToName)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.FreightBill.ToName)
+                    </dd>
+                </div>
+                <div class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.FreightBill.ToStreet)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.FreightBill.ToStreet)
+                    </dd>
+                </div>
+                <div class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.FreightBill.ToCity)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.FreightBill.ToCity)
+                    </dd>
+                </div>
+                <div class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.FreightBill.ToState)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.FreightBill.ToState)
+                    </dd>
+                </div>
+                <div class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.FreightBill.ToZip)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.FreightBill.ToZip)
+                    </dd>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FreightBill.ScheduledDate)
         </dt>
@@ -125,6 +157,7 @@ function printDiv(divName) {
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FreightBill.DocJob)
         </dd>
+    </div>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FreightBill.Comments)
         </dt>
@@ -293,7 +326,6 @@ function printDiv(divName) {
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FreightBill.Status)
         </dd>
-    </dl>
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.FreightBill.ID">Edit</a> |
