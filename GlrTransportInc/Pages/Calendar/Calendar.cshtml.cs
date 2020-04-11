@@ -16,6 +16,7 @@ namespace GlrTransportInc.Pages.Calendar
         public static List<string> BillName = new List<string>();
         public static List<DateTime> StartDate = new List<DateTime>();
         public static List<DateTime> DueDate = new List<DateTime>();
+        public static List<FbStatus> Status = new List<FbStatus>();
         // _context is for grabbing bill data
         private readonly GlrTransportInc.Data.ApplicationDbContext _context;
         public CalendarModel(GlrTransportInc.Data.ApplicationDbContext context)
@@ -35,6 +36,7 @@ namespace GlrTransportInc.Pages.Calendar
                 BillName.Add(item.Customer);
                 StartDate.Add(item.ScheduledDate);
                 DueDate.Add(item.DueDate);
+                Status.Add(item.Status);
             }
         }
     }
