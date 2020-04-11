@@ -121,42 +121,56 @@ function printDiv(divName) {
         </div>
     </div>
     <div class="container">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.ScheduledDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.ScheduledDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.Size)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.Size)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.BranchAndDescription)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.BranchAndDescription)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.Unit)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.Unit)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.PoNumber)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.PoNumber)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FreightBill.DocJob)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FreightBill.DocJob)
-        </dd>
+        <div class="row">
+            <div class="col-sm-2">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.FreightBill.ScheduledDate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.FreightBill.ScheduledDate)
+                </dd>
+            </div>
+            <div class="col-sm-5">
+                <dt class="row">
+                    @Html.DisplayNameFor(model => model.FreightBill.Size)
+                </dt>
+                <dd class="row">
+                    @Html.DisplayFor(model => model.FreightBill.Size)
+                </dd>
+                <dt class="row">
+                    @Html.DisplayNameFor(model => model.FreightBill.Unit)
+                </dt>
+                <dd class="row">
+                    @Html.DisplayFor(model => model.FreightBill.Unit)
+                </dd>
+            </div>
+            <div class="col-sm-5">
+                <dt class="row">
+                    @Html.DisplayNameFor(model => model.FreightBill.BranchAndDescription)
+                </dt>
+                <dd class="row">
+                    @Html.DisplayFor(model => model.FreightBill.BranchAndDescription)
+                </dd>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <dt class="row">
+                            @Html.DisplayNameFor(model => model.FreightBill.PoNumber)
+                        </dt>
+                        <dd class="row">
+                            @Html.DisplayFor(model => model.FreightBill.PoNumber)
+                        </dd>
+                    </div>
+                    <div class="col-sm-6">
+                        <dt class="row">
+                            @Html.DisplayNameFor(model => model.FreightBill.DocJob)
+                        </dt>
+                        <dd class="row">
+                            @Html.DisplayFor(model => model.FreightBill.DocJob)
+                        </dd>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FreightBill.Comments)
