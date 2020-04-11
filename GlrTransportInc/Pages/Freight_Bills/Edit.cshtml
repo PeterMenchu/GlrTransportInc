@@ -1,374 +1,396 @@
 ﻿@page
 @model GlrTransportInc.EditModel
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
 
-<h4>FreightBill</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="FreightBill.ID" />
-            <div class="form-group">
-                <label asp-for="FreightBill.Customer" class="control-label"></label>
-                <input asp-for="FreightBill.Customer" class="form-control" />
-                <span asp-validation-for="FreightBill.Customer" class="text-danger"></span>
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (User.FindFirst("Position").Value == "Manager")
+    {
+        <h4>FreightBill</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="FreightBill.ID" />
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Customer" class="control-label"></label>
+                        <input asp-for="FreightBill.Customer" class="form-control" />
+                        <span asp-validation-for="FreightBill.Customer" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.FreightBillNumber" class="control-label"></label>
+                        <input asp-for="FreightBill.FreightBillNumber" class="form-control" />
+                        <span asp-validation-for="FreightBill.FreightBillNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.FromName" class="control-label"></label>
+                        <input asp-for="FreightBill.FromName" class="form-control" />
+                        <span asp-validation-for="FreightBill.FromName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.FromStreet" class="control-label"></label>
+                        <input asp-for="FreightBill.FromStreet" class="form-control" />
+                        <span asp-validation-for="FreightBill.FromStreet" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.FromCity" class="control-label"></label>
+                        <input asp-for="FreightBill.FromCity" class="form-control" />
+                        <span asp-validation-for="FreightBill.FromCity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.FromState" class="control-label"></label>
+                        <select asp-for="FreightBill.FromState" class="form-control">
+                            <option value="">Select a State</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <span asp-validation-for="FreightBill.FromState" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.FromZip" class="control-label"></label>
+                        <input asp-for="FreightBill.FromZip" class="form-control" />
+                        <span asp-validation-for="FreightBill.FromZip" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.ToName" class="control-label"></label>
+                        <input asp-for="FreightBill.ToName" class="form-control" />
+                        <span asp-validation-for="FreightBill.ToName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.ToStreet" class="control-label"></label>
+                        <input asp-for="FreightBill.ToStreet" class="form-control" />
+                        <span asp-validation-for="FreightBill.ToStreet" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.ToCity" class="control-label"></label>
+                        <input asp-for="FreightBill.ToCity" class="form-control" />
+                        <span asp-validation-for="FreightBill.ToCity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.ToState" class="control-label"></label>
+                        <select asp-for="FreightBill.ToState" class="form-control">
+                            <option value="">Select a State</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <span asp-validation-for="FreightBill.ToState" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.ToZip" class="control-label"></label>
+                        <input asp-for="FreightBill.ToZip" class="form-control" />
+                        <span asp-validation-for="FreightBill.ToZip" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.ScheduledDate" class="control-label"></label>
+                        <input type="date" min="2020-01-01" asp-for="FreightBill.ScheduledDate" class="form-control" />
+                        <span asp-validation-for="FreightBill.ScheduledDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Size" class="control-label"></label>
+                        <input asp-for="FreightBill.Size" class="form-control" />
+                        <span asp-validation-for="FreightBill.Size" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.BranchAndDescription" class="control-label"></label>
+                        <input asp-for="FreightBill.BranchAndDescription" class="form-control" />
+                        <span asp-validation-for="FreightBill.BranchAndDescription" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Unit" class="control-label"></label>
+                        <input asp-for="FreightBill.Unit" class="form-control" />
+                        <span asp-validation-for="FreightBill.Unit" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.PoNumber" class="control-label"></label>
+                        <input asp-for="FreightBill.PoNumber" class="form-control" />
+                        <span asp-validation-for="FreightBill.PoNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.DocJob" class="control-label"></label>
+                        <input asp-for="FreightBill.DocJob" class="form-control" />
+                        <span asp-validation-for="FreightBill.DocJob" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Comments" class="control-label"></label>
+                        <input asp-for="FreightBill.Comments" class="form-control" />
+                        <span asp-validation-for="FreightBill.Comments" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Labor1" class="control-label"></label>
+                        <input asp-for="FreightBill.Labor1" class="form-control" />
+                        <span asp-validation-for="FreightBill.Labor1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Labor2" class="control-label"></label>
+                        <input asp-for="FreightBill.Labor2" class="form-control" />
+                        <span asp-validation-for="FreightBill.Labor2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Labor3" class="control-label"></label>
+                        <input asp-for="FreightBill.Labor3" class="form-control" />
+                        <span asp-validation-for="FreightBill.Labor3" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Labor4" class="control-label"></label>
+                        <input asp-for="FreightBill.Labor4" class="form-control" />
+                        <span asp-validation-for="FreightBill.Labor4" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Labor5" class="control-label"></label>
+                        <input asp-for="FreightBill.Labor5" class="form-control" />
+                        <span asp-validation-for="FreightBill.Labor5" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Labor6" class="control-label"></label>
+                        <input asp-for="FreightBill.Labor6" class="form-control" />
+                        <span asp-validation-for="FreightBill.Labor6" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Labor7" class="control-label"></label>
+                        <input asp-for="FreightBill.Labor7" class="form-control" />
+                        <span asp-validation-for="FreightBill.Labor7" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Labor8" class="control-label"></label>
+                        <input asp-for="FreightBill.Labor8" class="form-control" />
+                        <span asp-validation-for="FreightBill.Labor8" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Labor9" class="control-label"></label>
+                        <input asp-for="FreightBill.Labor9" class="form-control" />
+                        <span asp-validation-for="FreightBill.Labor9" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Cost1" class="control-label"></label>
+                        <input asp-for="FreightBill.Cost1" class="form-control" />
+                        <span asp-validation-for="FreightBill.Cost1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Cost2" class="control-label"></label>
+                        <input asp-for="FreightBill.Cost2" class="form-control" />
+                        <span asp-validation-for="FreightBill.Cost2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Cost3" class="control-label"></label>
+                        <input asp-for="FreightBill.Cost3" class="form-control" />
+                        <span asp-validation-for="FreightBill.Cost3" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Cost4" class="control-label"></label>
+                        <input asp-for="FreightBill.Cost4" class="form-control" />
+                        <span asp-validation-for="FreightBill.Cost4" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Cost5" class="control-label"></label>
+                        <input asp-for="FreightBill.Cost5" class="form-control" />
+                        <span asp-validation-for="FreightBill.Cost5" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Cost6" class="control-label"></label>
+                        <input asp-for="FreightBill.Cost6" class="form-control" />
+                        <span asp-validation-for="FreightBill.Cost6" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Cost7" class="control-label"></label>
+                        <input asp-for="FreightBill.Cost7" class="form-control" />
+                        <span asp-validation-for="FreightBill.Cost7" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Cost8" class="control-label"></label>
+                        <input asp-for="FreightBill.Cost8" class="form-control" />
+                        <span asp-validation-for="FreightBill.Cost8" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Cost9" class="control-label"></label>
+                        <input asp-for="FreightBill.Cost9" class="form-control" />
+                        <span asp-validation-for="FreightBill.Cost9" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.TruckNumber" class="control-label"></label>
+                        <input asp-for="FreightBill.TruckNumber" class="form-control" />
+                        <span asp-validation-for="FreightBill.TruckNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Driver" class="control-label"></label>
+                        <select asp-for="FreightBill.Driver" class="form-control">
+                            <option value="">Select a driver</option>
+                            @foreach (var item in Model.UserModel)
+                            {
+                                @if (item.Position == "Driver")
+                                {
+                                    <option value="@item.Name">@item.Name</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="FreightBill.Driver" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.ReceivedBy" class="control-label"></label>
+                        <input type="date" min="2020-01-01" asp-for="FreightBill.ReceivedBy" class="form-control" />
+                        <span asp-validation-for="FreightBill.ReceivedBy" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.CompletionDate" class="control-label"></label>
+                        <input type="date" min="2020-01-01" asp-for="FreightBill.CompletionDate" class="form-control" />
+                        <span asp-validation-for="FreightBill.CompletionDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.SiteName" class="control-label"></label>
+                        <input asp-for="FreightBill.SiteName" class="form-control" />
+                        <span asp-validation-for="FreightBill.SiteName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.SitePhoneNumber" class="control-label"></label>
+                        <input asp-for="FreightBill.SitePhoneNumber" class="form-control" />
+                        <span asp-validation-for="FreightBill.SitePhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.DueDate" class="control-label"></label>
+                        <input type="date" min="2020-01-01" asp-for="FreightBill.DueDate" class="form-control" />
+                        <span asp-validation-for="FreightBill.DueDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.EmailAddress" class="control-label"></label>
+                        <input asp-for="FreightBill.EmailAddress" class="form-control" />
+                        <span asp-validation-for="FreightBill.EmailAddress" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FreightBill.Status" class="control-label"></label>
+                        <select asp-for="FreightBill.Status" class="form-control">
+                            <option value="">Select a Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Shipped">Shipped</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Canceled">Canceled</option>
+                        </select>
+                        <span asp-validation-for="FreightBill.Status" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.FreightBillNumber" class="control-label"></label>
-                <input asp-for="FreightBill.FreightBillNumber" class="form-control" />
-                <span asp-validation-for="FreightBill.FreightBillNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.FromName" class="control-label"></label>
-                <input asp-for="FreightBill.FromName" class="form-control" />
-                <span asp-validation-for="FreightBill.FromName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.FromStreet" class="control-label"></label>
-                <input asp-for="FreightBill.FromStreet" class="form-control" />
-                <span asp-validation-for="FreightBill.FromStreet" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.FromCity" class="control-label"></label>
-                <input asp-for="FreightBill.FromCity" class="form-control" />
-                <span asp-validation-for="FreightBill.FromCity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.FromState" class="control-label"></label>
-                <select asp-for="FreightBill.FromState" class="form-control">
-                    <option value="">Select a State</option>
-                    <option value="AL">Alabama</option>
-                    <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District Of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
-                    <option value="IN">Indiana</option>
-                    <option value="IA">Iowa</option>
-                    <option value="KS">Kansas</option>
-                    <option value="KY">Kentucky</option>
-                    <option value="LA">Louisiana</option>
-                    <option value="ME">Maine</option>
-                    <option value="MD">Maryland</option>
-                    <option value="MA">Massachusetts</option>
-                    <option value="MI">Michigan</option>
-                    <option value="MN">Minnesota</option>
-                    <option value="MS">Mississippi</option>
-                    <option value="MO">Missouri</option>
-                    <option value="MT">Montana</option>
-                    <option value="NE">Nebraska</option>
-                    <option value="NV">Nevada</option>
-                    <option value="NH">New Hampshire</option>
-                    <option value="NJ">New Jersey</option>
-                    <option value="NM">New Mexico</option>
-                    <option value="NY">New York</option>
-                    <option value="NC">North Carolina</option>
-                    <option value="ND">North Dakota</option>
-                    <option value="OH">Ohio</option>
-                    <option value="OK">Oklahoma</option>
-                    <option value="OR">Oregon</option>
-                    <option value="PA">Pennsylvania</option>
-                    <option value="RI">Rhode Island</option>
-                    <option value="SC">South Carolina</option>
-                    <option value="SD">South Dakota</option>
-                    <option value="TN">Tennessee</option>
-                    <option value="TX">Texas</option>
-                    <option value="UT">Utah</option>
-                    <option value="VT">Vermont</option>
-                    <option value="VA">Virginia</option>
-                    <option value="WA">Washington</option>
-                    <option value="WV">West Virginia</option>
-                    <option value="WI">Wisconsin</option>
-                    <option value="WY">Wyoming</option>
-                </select>
-                <span asp-validation-for="FreightBill.FromState" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.FromZip" class="control-label"></label>
-                <input asp-for="FreightBill.FromZip" class="form-control" />
-                <span asp-validation-for="FreightBill.FromZip" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.ToName" class="control-label"></label>
-                <input asp-for="FreightBill.ToName" class="form-control" />
-                <span asp-validation-for="FreightBill.ToName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.ToStreet" class="control-label"></label>
-                <input asp-for="FreightBill.ToStreet" class="form-control" />
-                <span asp-validation-for="FreightBill.ToStreet" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.ToCity" class="control-label"></label>
-                <input asp-for="FreightBill.ToCity" class="form-control" />
-                <span asp-validation-for="FreightBill.ToCity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.ToState" class="control-label"></label>
-                <select asp-for="FreightBill.ToState" class="form-control">
-                    <option value="">Select a State</option>
-                    <option value="AL">Alabama</option>
-                    <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District Of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
-                    <option value="IN">Indiana</option>
-                    <option value="IA">Iowa</option>
-                    <option value="KS">Kansas</option>
-                    <option value="KY">Kentucky</option>
-                    <option value="LA">Louisiana</option>
-                    <option value="ME">Maine</option>
-                    <option value="MD">Maryland</option>
-                    <option value="MA">Massachusetts</option>
-                    <option value="MI">Michigan</option>
-                    <option value="MN">Minnesota</option>
-                    <option value="MS">Mississippi</option>
-                    <option value="MO">Missouri</option>
-                    <option value="MT">Montana</option>
-                    <option value="NE">Nebraska</option>
-                    <option value="NV">Nevada</option>
-                    <option value="NH">New Hampshire</option>
-                    <option value="NJ">New Jersey</option>
-                    <option value="NM">New Mexico</option>
-                    <option value="NY">New York</option>
-                    <option value="NC">North Carolina</option>
-                    <option value="ND">North Dakota</option>
-                    <option value="OH">Ohio</option>
-                    <option value="OK">Oklahoma</option>
-                    <option value="OR">Oregon</option>
-                    <option value="PA">Pennsylvania</option>
-                    <option value="RI">Rhode Island</option>
-                    <option value="SC">South Carolina</option>
-                    <option value="SD">South Dakota</option>
-                    <option value="TN">Tennessee</option>
-                    <option value="TX">Texas</option>
-                    <option value="UT">Utah</option>
-                    <option value="VT">Vermont</option>
-                    <option value="VA">Virginia</option>
-                    <option value="WA">Washington</option>
-                    <option value="WV">West Virginia</option>
-                    <option value="WI">Wisconsin</option>
-                    <option value="WY">Wyoming</option>
-                </select>
-                <span asp-validation-for="FreightBill.ToState" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.ToZip" class="control-label"></label>
-                <input asp-for="FreightBill.ToZip" class="form-control" />
-                <span asp-validation-for="FreightBill.ToZip" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.ScheduledDate" class="control-label"></label>
-                <input type="date" min="2020-01-01" asp-for="FreightBill.ScheduledDate" class="form-control" />
-                <span asp-validation-for="FreightBill.ScheduledDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Size" class="control-label"></label>
-                <input asp-for="FreightBill.Size" class="form-control" />
-                <span asp-validation-for="FreightBill.Size" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.BranchAndDescription" class="control-label"></label>
-                <input asp-for="FreightBill.BranchAndDescription" class="form-control" />
-                <span asp-validation-for="FreightBill.BranchAndDescription" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Unit" class="control-label"></label>
-                <input asp-for="FreightBill.Unit" class="form-control" />
-                <span asp-validation-for="FreightBill.Unit" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.PoNumber" class="control-label"></label>
-                <input asp-for="FreightBill.PoNumber" class="form-control" />
-                <span asp-validation-for="FreightBill.PoNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.DocJob" class="control-label"></label>
-                <input asp-for="FreightBill.DocJob" class="form-control" />
-                <span asp-validation-for="FreightBill.DocJob" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Comments" class="control-label"></label>
-                <input asp-for="FreightBill.Comments" class="form-control" />
-                <span asp-validation-for="FreightBill.Comments" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Labor1" class="control-label"></label>
-                <input asp-for="FreightBill.Labor1" class="form-control" />
-                <span asp-validation-for="FreightBill.Labor1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Labor2" class="control-label"></label>
-                <input asp-for="FreightBill.Labor2" class="form-control" />
-                <span asp-validation-for="FreightBill.Labor2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Labor3" class="control-label"></label>
-                <input asp-for="FreightBill.Labor3" class="form-control" />
-                <span asp-validation-for="FreightBill.Labor3" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Labor4" class="control-label"></label>
-                <input asp-for="FreightBill.Labor4" class="form-control" />
-                <span asp-validation-for="FreightBill.Labor4" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Labor5" class="control-label"></label>
-                <input asp-for="FreightBill.Labor5" class="form-control" />
-                <span asp-validation-for="FreightBill.Labor5" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Labor6" class="control-label"></label>
-                <input asp-for="FreightBill.Labor6" class="form-control" />
-                <span asp-validation-for="FreightBill.Labor6" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Labor7" class="control-label"></label>
-                <input asp-for="FreightBill.Labor7" class="form-control" />
-                <span asp-validation-for="FreightBill.Labor7" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Labor8" class="control-label"></label>
-                <input asp-for="FreightBill.Labor8" class="form-control" />
-                <span asp-validation-for="FreightBill.Labor8" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Labor9" class="control-label"></label>
-                <input asp-for="FreightBill.Labor9" class="form-control" />
-                <span asp-validation-for="FreightBill.Labor9" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Cost1" class="control-label"></label>
-                <input asp-for="FreightBill.Cost1" class="form-control" />
-                <span asp-validation-for="FreightBill.Cost1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Cost2" class="control-label"></label>
-                <input asp-for="FreightBill.Cost2" class="form-control" />
-                <span asp-validation-for="FreightBill.Cost2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Cost3" class="control-label"></label>
-                <input asp-for="FreightBill.Cost3" class="form-control" />
-                <span asp-validation-for="FreightBill.Cost3" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Cost4" class="control-label"></label>
-                <input asp-for="FreightBill.Cost4" class="form-control" />
-                <span asp-validation-for="FreightBill.Cost4" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Cost5" class="control-label"></label>
-                <input asp-for="FreightBill.Cost5" class="form-control" />
-                <span asp-validation-for="FreightBill.Cost5" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Cost6" class="control-label"></label>
-                <input asp-for="FreightBill.Cost6" class="form-control" />
-                <span asp-validation-for="FreightBill.Cost6" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Cost7" class="control-label"></label>
-                <input asp-for="FreightBill.Cost7" class="form-control" />
-                <span asp-validation-for="FreightBill.Cost7" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Cost8" class="control-label"></label>
-                <input asp-for="FreightBill.Cost8" class="form-control" />
-                <span asp-validation-for="FreightBill.Cost8" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Cost9" class="control-label"></label>
-                <input asp-for="FreightBill.Cost9" class="form-control" />
-                <span asp-validation-for="FreightBill.Cost9" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.TruckNumber" class="control-label"></label>
-                <input asp-for="FreightBill.TruckNumber" class="form-control" />
-                <span asp-validation-for="FreightBill.TruckNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Driver" class="control-label"></label>
-                <select asp-for="FreightBill.Driver" class="form-control">
-                    <option value="">Select a driver</option>
-                    @foreach (var item in Model.UserModel)
-                    {
-                        @if (item.Position == "Driver")
-                        {
-                            <option value="@item.Name">@item.Name</option>
-                        }
-                    }
-                </select>
-                <span asp-validation-for="FreightBill.Driver" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.ReceivedBy" class="control-label"></label>
-                <input type="date" min="2020-01-01" asp-for="FreightBill.ReceivedBy" class="form-control" />
-                <span asp-validation-for="FreightBill.ReceivedBy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.CompletionDate" class="control-label"></label>
-                <input type="date" min="2020-01-01" asp-for="FreightBill.CompletionDate" class="form-control" />
-                <span asp-validation-for="FreightBill.CompletionDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.SiteName" class="control-label"></label>
-                <input asp-for="FreightBill.SiteName" class="form-control" />
-                <span asp-validation-for="FreightBill.SiteName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.SitePhoneNumber" class="control-label"></label>
-                <input asp-for="FreightBill.SitePhoneNumber" class="form-control" />
-                <span asp-validation-for="FreightBill.SitePhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.DueDate" class="control-label"></label>
-                <input type="date" min="2020-01-01" asp-for="FreightBill.DueDate" class="form-control" />
-                <span asp-validation-for="FreightBill.DueDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.EmailAddress" class="control-label"></label>
-                <input asp-for="FreightBill.EmailAddress" class="form-control" />
-                <span asp-validation-for="FreightBill.EmailAddress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FreightBill.Status" class="control-label"></label>
-                <select asp-for="FreightBill.Status" class="form-control">
-                    <option value="">Select a Status</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Shipped">Shipped</option>
-                    <option value="Completed">Completed</option>
-                    <option value="Canceled">Canceled</option>
-                </select>
-                <span asp-validation-for="FreightBill.Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
+
+        <div>
+            <a asp-page="./Index">Back to List</a>
+        </div>
+    }
+    else
+    {
+        <div class="main text-center">
+            <p>You must log in to a manager account to edit a freight bill.</p>
+        </div>
+    }
+}
+else
+{
+    <div class="main text-center">
+        <h1 class="text-center">Edit a freight bill</h1>
+        <p>You must log in to a manager account to edit a freight bill.</p>
+        <a asp-area="Identity" asp-page="/Account/Login" class="p text-success">Click here to log in</a>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
+}
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

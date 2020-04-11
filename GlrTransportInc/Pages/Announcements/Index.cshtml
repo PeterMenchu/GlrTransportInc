@@ -24,10 +24,7 @@
                     <td>
                         <div class="container-fluid">
                             <div class="row">
-                                <a asp-page="./Details" asp-route-id="@item.ID">
-                                    <h1>@item.Title</h1>
-                                </a>
-                                
+                                <h1>@item.Title</h1>
                             </div>
                             <div class="row">
                                 By: @item.Author | Posted: @item.DatePosted
@@ -35,8 +32,14 @@
                             <div class="row">
                                 @Html.DisplayFor(modelItem => item.Post)
                             </div>
-                            <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
-                            <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                            @if ((User.FindFirst("Name").Value == item.Author))
+                            {
+                                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
+                            }
+                            @if ((User.FindFirst("Name").Value == item.Author) || User.FindFirst("Position").Value == "Manager")
+                            {
+                                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                            }
                         </div>
                     </td>
                 </tr>
