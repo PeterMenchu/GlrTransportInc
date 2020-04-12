@@ -12,9 +12,20 @@
 {
     @if (User.FindFirst("Position").Value == "Manager")
     {
-        <div class="main text-center">
-            <div class="row">
-                <div class="col-md-4">
+        <script>
+            function showDiv(divId, element)
+            {
+                document.getElementById(divId).style.display = (element.value == "Manager" || element.value == "Employee") ? 'block' : 'none';
+            }
+        </script>
+        <style>
+            #hidden_div {
+                display: none;
+            }
+        </style>
+        <div class="main text-center" align="center">
+            <div class="row" align="center">
+                <div class="col-md-7" align="center">
                     <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
                         <h4>Create a new user account.</h4>
                         <hr />
@@ -41,13 +52,19 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="Input.Position"></label>
-                            <select asp-for="Input.Position" class="form-control">
+                            <select asp-for="Input.Position" class="form-control" onchange="showDiv('hidden_div', this)">
                                 <option value="">Select a Position</option>
                                 <option value="Manager">Manager</option>
                                 <option value="Employee">Employee</option>
                                 <option value="Driver">Driver</option>
                             </select>
                             <span asp-validation-for="Input.Position" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" id="hidden_div">
+                            <label asp-for="Input.CanDrive"></label><br />
+                            <input type="radio" asp-for="Input.CanDrive" value="true"> Yes <br />
+                            <input type="radio" asp-for="Input.CanDrive" value="false"> No <br />
+                            <span asp-validation-for="Input.CanDrive" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Input.Name"></label>

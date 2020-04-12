@@ -74,6 +74,9 @@ namespace GlrTransportInc.Areas.Identity.Pages.Account
             [Required]
             [Display(Name = "Employee Name:")]
             public string Name { get; set; }
+
+            [Display(Name = "Will this person drive?")]
+            public string CanDrive { get; set; }
         }
         
         public async Task OnGetAsync(string returnUrl = null)
@@ -88,7 +91,11 @@ namespace GlrTransportInc.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new UserModel { UserName = Input.Email, Email = Input.Email, Position = Input.Position, Name = Input.Name, EmployeeId = Input.EmployeeId};
+                if(Input.Position == "Driver")
+                {
+                    Input.CanDrive = "true";
+                }
+                var user = new UserModel { UserName = Input.Email, Email = Input.Email, Position = Input.Position, Name = Input.Name, EmployeeId = Input.EmployeeId, CanDrive = Input.CanDrive};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
