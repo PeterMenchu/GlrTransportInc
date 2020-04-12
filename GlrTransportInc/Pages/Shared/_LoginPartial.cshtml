@@ -22,7 +22,7 @@
                     <a class="dropdown-item" asp-page="/Freight_Bills/Create">Add a freight</a>
                 }
 
-                @if (User.FindFirst("Position").Value == "Driver")
+                @if (User.FindFirst("CanDrive").Value == "true")
                 {
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" asp-page="/Freight_Bills/MyFreights">View my freights</a>
