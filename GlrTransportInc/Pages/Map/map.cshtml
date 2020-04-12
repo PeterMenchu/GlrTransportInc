@@ -7,15 +7,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Responders</title>
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         #map {
-            height: 100vh;
+            height: 90vh;
             width: 100%;
-            right: 7.3%;
         }
         #searchInput {
             background-color: #fff;
@@ -40,13 +38,11 @@
 <body>
 
     <div class="container">
-        <div class="split left">
 
             <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
 
             <div id="map"></div>
 
-        </div>
         <script>function initMap() {
                 // Map options
                 var options = {
@@ -156,25 +152,10 @@
             }</script>
 
 
-        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAuFMUETuTk6T4c8FDqosv_oY4925-pw10&callback=initMap"
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB9C7DAW4th_WxpdTwckQXqyac5pa4CmSw&callback=initMap"
                 async defer></script>
 
-        <ul class="geo-data">
-            <li>Full Address: <span id="location"></span></li>
-            <li>Postal Code: <span id="postal_code"></span></li>
-            <li>Country: <span id="country"></span></li>
-            <li>Latitude: <span id="lat"></span></li>
-            <li>Longitude: <span id="lon"></span></li>
-        </ul>
-
-
-
     </div>
-
-
-
-
-
 
     <app-root></app-root>
 
