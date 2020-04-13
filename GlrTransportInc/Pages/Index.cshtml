@@ -1,18 +1,37 @@
 ﻿@page
 @model IndexModel
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
 @{
     ViewData["Title"] = "Home page";
 }
 <body>
-    <div class="main text-center">
-        <h1>Welcome to Glr Transport!</h1>
-        <img src="~/Images/GLR_Home.png" class="img-fluid" alt="Responsive image">
-        <p>
-            This is a web application built to provide the members of Glr Transport Inc. a platform for managing 
-            freight bills and employees. This site is currently under maintanance by a team of software developers
-            at the University of North Texas in Denton, TX. Apart from information about the company and contact
-            information, access to data on this site is limited to employees and developers, and requires logging in
-            with an employee account. 
-        </p>
-    </div>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <div class="loggedIn text-center">
+            <h1>Hello, @IndexModel.Name!</h1>
+            <img src="~/Images/GLR_Home.png" class="img-fluid" alt="Company Logo">
+            <div class about="row">
+                <h3>Recent Announcements</h3>
+                @for (int i = 0; i < 4; i++) 
+                {
+                    <a class="nav-link" asp-page="./Announcements/Index">@IndexModel.Titles[i]</a>                                          
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="main text-center">
+            <h1>Welcome to Glr Transport!</h1>
+            <img src="~/Images/GLR_Home.png" class="img-fluid" alt="Company Logo">
+            <p>
+                This is a web application built to provide the members of Glr Transport Inc. a platform for managing
+                freight bills and employees. This site is currently under maintanance by a team of software developers
+                at the University of North Texas in Denton, TX. Apart from information about the company and contact
+                information, access to data on this site is limited to employees and developers, and requires logging in
+                with an employee account.
+            </p>
+        </div>
+    }
 </body>
