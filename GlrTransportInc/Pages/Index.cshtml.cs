@@ -13,30 +13,17 @@ namespace GlrTransportInc.Pages
 {
     public class IndexModel : PageModel
     {
-        
         private readonly ILogger<IndexModel> _logger;
         private readonly Data.ApplicationDbContext _context;
-
         public IndexModel(Data.ApplicationDbContext context, ILogger<IndexModel> logger)
         {
             _context = context;
             _logger = logger;
         }
-        
-        public IList<UserModel> Users { get; set; }
-        public static string Name;
         public IList<Announcement> Announcement { get;set; }
         public static List<string> Titles = new List<string>();
         public async Task OnGetAsync()
         {
-            Users = await _context.UserModel.ToListAsync();
-            foreach (var item in Users)
-            {
-                if ((item.Email) == User.Identity.Name)
-                {
-                    Name = item.Name;
-                }
-            }
             Announcement = await _context.Announcement.OrderByDescending(a => a.ID).ToListAsync();
             foreach (var post in Announcement)
             {

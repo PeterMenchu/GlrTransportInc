@@ -9,7 +9,7 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <div class="loggedIn text-center">
-            <h1>Hello, @IndexModel.Name!</h1>
+            <h1>Hello, @User.FindFirst("Name").Value!</h1>
             <img src="~/Images/GLR_Home.png" class="img-fluid" alt="Company Logo">
             <div class about="row">
                 <h3>Recent Announcements</h3>

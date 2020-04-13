@@ -20,10 +20,11 @@ namespace GlrTransportInc
         }
 
         public IList<Announcement> Announcement { get;set; }
-
+        public IList<UserModel> Users { get; set; }
         public async Task OnGetAsync()
         {
             Announcement = await _context.Announcement.OrderByDescending(a => a.ID).ToListAsync();
+            Users = await _context.UserModel.ToListAsync();
         }
     }
 }

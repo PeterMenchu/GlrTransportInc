@@ -26,6 +26,13 @@
                             <div class="row">
                                 <h1 class="postTitle">@item.Title</h1>
                             </div>
+                            @foreach (var user in Model.Users)
+                            {
+                                @if ((user.Name) == item.Author)
+                                {
+                                    <img gravatar-email="@user.Email" alt="Profile Picture"/>
+                                }
+                            }
                             <div class="row">
                                 By: @item.Author | Posted: @item.DatePosted
                             </div>
