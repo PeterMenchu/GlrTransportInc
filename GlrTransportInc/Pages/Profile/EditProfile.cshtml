@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit Profile";
     ViewData["ActivePage"] = ManageNavPages.Edit;
 }
-
+<br />
 <h1>Your Account</h1>
     
 <div>
@@ -24,14 +24,15 @@
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">    
                 <label>Add Profile Picture:</label>
-                <p>To add a profile picture, follow the link below and create an account 
-                    with the same email that you use for this site. Gravatar.com provides a way to create a 
+                <p>To add a profile picture, follow the link below to create an account 
+                    with the same email that you use for this site. Gravatar provides a way to create a 
                     profile picture that is usable on any site that supports it, simply upload the photo
-                    there and it will appear on your profile for this site.</p>
-                <a href="https://en.gravatar.com">Click here to create a profile picture</a>
+                    there and it will appear on your profile for this site. Gravatar uses Wordpress accounts,
+                    so you will be prompted to create an account through Wordpress.</p>
+                <a href="https://en.gravatar.com">Click here to add a profile picture</a>
                 <br />
                 <br />
-                <label>Full name:</label>
+                <label>Edit Full name:</label>
                 <input asp-for="Input.Fullname" class="form-control"/>
                 <span asp-validation-for="Input.Fullname" class="text-danger"></span>
             </div>
