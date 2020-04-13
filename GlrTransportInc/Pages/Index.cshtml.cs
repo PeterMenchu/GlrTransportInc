@@ -25,6 +25,8 @@ namespace GlrTransportInc.Pages
         
         public IList<UserModel> Users { get; set; }
         public static string Name;
+        public IList<Announcement> Announcement { get;set; }
+        public static List<string> Titles = new List<string>();
         public async Task OnGetAsync()
         {
             Users = await _context.UserModel.ToListAsync();
@@ -34,6 +36,11 @@ namespace GlrTransportInc.Pages
                 {
                     Name = item.Name;
                 }
+            }
+            Announcement = await _context.Announcement.OrderByDescending(a => a.ID).ToListAsync();
+            foreach (var post in Announcement)
+            {
+                Titles.Add(post.Title);
             }
         }
     }

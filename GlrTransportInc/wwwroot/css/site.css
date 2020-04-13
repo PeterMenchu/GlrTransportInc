@@ -8,6 +8,9 @@ for details on configuring this project to bundle and minify static web assets. 
     margin-top: 25px;
     
 }
+.loggedIn {
+    margin-top: 15px;
+}
 .mobileList {
     display: block;
 }
@@ -30,6 +33,12 @@ for details on configuring this project to bundle and minify static web assets. 
         margin-left: 50px;
         padding: 30px 45px;
         /* background-color: gainsboro; */
+    }
+    .loggedIn {
+        margin-top: 45px;
+        margin-right: 50px;
+        margin-left: 50px;
+        padding: 30px 45px;
     }
     .table-responsive{
         display: block;
