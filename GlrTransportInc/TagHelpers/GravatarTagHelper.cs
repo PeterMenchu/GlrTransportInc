@@ -24,7 +24,7 @@ namespace TagHelperDemo.TagHelpers
             {
                 var result = md5.ComputeHash(Encoding.ASCII.GetBytes(Email));
                 var hash = BitConverter.ToString(result).Replace("-", "").ToLower();
-                var url = $"http://gravatar.com/avatar/{hash}";
+                var url = $"https://secure.gravatar.com/avatar/{hash}";
                 var queryBuilder = new QueryBuilder();
                 queryBuilder.Add("s", Size.ToString());
                 queryBuilder.Add("d", GetModeValue(Mode));
