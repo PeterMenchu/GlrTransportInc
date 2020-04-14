@@ -8,8 +8,9 @@ for details on configuring this project to bundle and minify static web assets. 
     margin-top: 25px;
     
 }
-
-
+.loggedIn {
+    margin-top: 20px;
+}
 .mobileList {
     display: block;
 }
@@ -18,21 +19,30 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 .optionButton{
     margin-right: 15px;
-} 
+}
+.postTitle{
+    /* Raspberry */
+    color: #E30B5D;
+}
 /* Medium devices (tablets, 768px and up). Everything else will be for mobile, within 
    this query will be the styling for tablets and desktop*/
 @media (min-width: 768px) {
     .main {
-        margin-top: 85px;
+        margin-top: 60px;
         margin-right: 50px;
         margin-left: 50px;
         padding: 30px 45px;
         /* background-color: gainsboro; */
     }
+    .loggedIn {
+        margin-top: 45px;
+        margin-right: 50px;
+        margin-left: 50px;
+        padding: 30px 45px;
+    }
     .table-responsive{
         display: block;
     }
-    
     .mobileList {
         display: none;
     }
@@ -59,7 +69,6 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  /* color: #0366d6; */
     color: #5cb85c;
 }
 .navbar {
@@ -80,7 +89,10 @@ a {
   border-color: #5cb85c;   
 }
 .nav-item > a:hover {
-    color: #e83e8c;
+    color: #E30B5D;
+}
+a:hover {
+    color: #E30B5D;
 }
 /*------- End Nav -------*/
 /* Sticky footer styles

@@ -1,0 +1,32 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "name": "GLR Transport Inc",
+  "scope": "/",
+  "display": "standalone",
+  "start_url": "https://www.glrtransportinc.com/",
+  "short_name": "GLR",
+  "theme_color": "transparent",
+  "description": "",
+  "orientation": "any",
+  "background_color": "transparent",
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "https://www.glrtransportinc.com/favicon.ico",
+      "sizes": "16x16"
+    },
+    {
+      "src": "https://www.glrtransportinc.com/Images/GLR_Home192x192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://www.glrtransportinc.com/Images/GLR_Home512x512.png",
+      "sizes": "512x512"
+    }
+  ],
+  "url": "https://www.glrtransportinc.com/",
+  "screenshots": [],
+  "generated": "true"
+}

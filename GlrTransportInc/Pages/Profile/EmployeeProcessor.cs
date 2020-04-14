@@ -15,16 +15,18 @@ namespace GlrTransportInc.Pages.Profile
                 Email = email,
                 Name = name
             };
-            string sql = @"INSERT INTO dbo.AspNetUsers (name) 
-                            VALUES (@Name) 
+            string sql = @"UPDATE dbo.AspNetUsers 
+                            SET Name = @name 
                             WHERE UserName=@Email;";
             return SqlDataController.SaveData(sql, data);
         }
         // Next is some code for user directory
-        public static List<UserModel> LoadEmployees()
+        // List<UserModel>
+        public static List<UserModel> LoadUser()
         {
-            string sql = @"SELECT UserName, Position
-                            FROM dbo.AspNetUsers;";
+            string sql = @"SELECT *
+                            FROM dbo.AspNetUsers
+                            WHERE Email = email;";
             return SqlDataController.LoadData<UserModel>(sql);
         }
         // GET

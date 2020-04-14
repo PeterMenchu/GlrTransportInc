@@ -2,13 +2,43 @@
 @model GlrTransportInc.MyFreightsModel
 @using GlrTransportInc.Models
 @inject SignInManager<UserModel> SignInManager
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+
 
 <br />
 @if (SignInManager.IsSignedIn(User))
 {
+    <!-- Mobile style starts here -->
+    <div class="mobileList">
+        <body>
+            <h3>Your Freights</h3>
+            <hr />
+            @foreach (var item in Model.FreightBill)
+            {
+                @if ((item.Driver) == User.FindFirst("Name").Value)
+                {
+                    <div class="listStyle">
+                        <hr/>
+                        <h2>
+                            @Html.DisplayFor(modelItem => item.Customer)
+                        </h2>
+                        <p>Driver: @Html.DisplayFor(modelItem => item.Driver)</p>
+                        <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
+                        @if (User.FindFirst("Position").Value == "Manager")
+                        {
+                            <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
+                                <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                            </a>
+                            <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
+                                <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                            </a>
+                        }
+                        <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
+                    </div>
+                }
+            }
+        </body>
+    </div>    
+    <!-- Desktop style starts here -->
     <div class="table-responsive">
         <table class="table">
             <thead>
@@ -24,9 +54,6 @@
                     </th>
                     <th>
                         Edit
-                    </th>
-                    <th>
-                        Delete
                     </th>
                     <th>
                         View
@@ -54,11 +81,6 @@
                                 </a>
                             </td>
                             <td>
-                                <a asp-page="./Delete" asp-route-id="@item.ID">
-                                    <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
-                                </a>
-                            </td>
-                            <td>
                                 <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
                             </td>
                         </tr>
@@ -71,7 +93,7 @@
 else
 {
     <div class="main text-center">
-        <p>You must loged in to view your freights</p>
+        <p>You must logged in to view your freights</p>
         <a asp-area="Identity" asp-page="/Account/Login" class="p text-success">Click here to log in</a>
     </div>
 

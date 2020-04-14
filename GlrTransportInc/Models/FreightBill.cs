@@ -64,6 +64,7 @@ namespace GlrTransportInc.Models
         public string SitePhoneNumber { get; set; } //ok
         public DateTime DueDate { get; set; } //ok
         public string EmailAddress { get; set; } // ok?
+        public byte[] Permit { get; set; }
 
 
         public string ToLocation => $"{ToStreet} {ToCity} {ToState} {ToZip}"; //ok

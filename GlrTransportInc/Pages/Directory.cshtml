@@ -9,12 +9,38 @@
 <br />
 @if (SignInManager.IsSignedIn(User))
 {
+    <div class="mobileList">
+        <body>
+        @foreach (var item in Model.UserModel)
+        {
+            <div class="listStyle">
+                <hr />
+                <h2>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </h2>
+                <img gravatar-email="@item.Email" alt="Profile Picture"/>
+                <br />
+                <br />
+                <p>Position: @Html.DisplayFor(modelItem => item.Position)</p>
+                <p>Employee ID: @Html.DisplayFor(modelItem => item.EmployeeId)</p>
+                <p>Email: @Html.DisplayFor(modelItem => item.Email)</p>
+                <p>Phone Number: @Html.DisplayFor(modelItem => item.PhoneNumber)</p>
+            </div>
+        }
+        </body>
+    </div>
     <div class="table-responsive">
         <table class="table">
             <thead>
                 <tr>
                     <th>
+                        <!-- space for profile pic -->
+                    </th>
+                    <th>
                         Name
+                    </th>
+                    <th>
+                        ID
                     </th>
                     <th>
                         Email
@@ -25,13 +51,6 @@
                     <th>
                         Position
                     </th>
-                    <!--
-                    <th>
-                        Delete
-                    </th>
-                    <th>
-                        View
-                    </th>-->
                 </tr>
             </thead>
             <tbody>
@@ -39,7 +58,13 @@
                 {
                     <tr>
                         <td>
+                            <img gravatar-email="@item.Email" alt="Profile Picture"/>
+                        </td>
+                        <td>
                             @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmployeeId)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Email)

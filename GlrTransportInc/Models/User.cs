@@ -12,6 +12,7 @@ namespace GlrTransportInc.Models
         public string EmployeeId { get; set; }
         public string Position { get; set; }
         public string Name { get; set; }
+        public string CanDrive { get; set; }
     }
 
     public class MyUserClaimsPrincipalFactory : UserClaimsPrincipalFactory<UserModel>
@@ -28,6 +29,7 @@ namespace GlrTransportInc.Models
             var identity = await base.GenerateClaimsAsync(user);
             identity.AddClaim(new Claim("Name", user.Name));
             identity.AddClaim(new Claim("Position", user.Position));
+            identity.AddClaim(new Claim("CanDrive", user.CanDrive));
             return identity;
         }
     }

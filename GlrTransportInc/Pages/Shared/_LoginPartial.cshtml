@@ -3,57 +3,67 @@
 @inject SignInManager<UserModel> SignInManager
 @inject UserManager<UserModel> UserManager
 
-    <ul class="navbar-nav">
-
-        @if (SignInManager.IsSignedIn(User))
-        {
-            <!-- example of displaying the current user's email when logged in
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <!-- example of displaying the current user's email when logged in
         <li class="nav-item">
             <a  class="nav-link text-white" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
         </li> -->
-            <li class=" nav-item">
-                <a class="nav-link text-white" asp-page="/Announcements/Index" title="Manage">Announcements</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Freights
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" asp-page="/Freight_Bills/Index">View freight listings</a>
-                    <a class="dropdown-item" asp-page="/Freight_Bills/Create">Add a freight (manager login required)</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Freight
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" asp-page="/Freight_Bills/Index">View freight listings</a>
+
+                @if (User.FindFirst("Position").Value == "Manager")
+                {
+                    <a class="dropdown-item" asp-page="/Freight_Bills/Create">Add a freight</a>
+                }
+
+                @if (User.FindFirst("CanDrive").Value == "true")
+                {
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" asp-page="/Freight_Bills/MyFreights">View my freights</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Users
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" asp-page="/Directory">View driver directory</a>
-                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Add a user (manager login required)</a>
-                </div>
-            </li>
-            <li class=" nav-item">
-                <a class="nav-link text-white" asp-page="/Calendar/Calendar" title="Manage">Calendar</a>
-            </li>
-            <li class=" nav-item">
-                <a class="nav-link text-white" asp-page="/Map/Map" title="Manage">Map</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" asp-page="/Profile/MyProfile" title="Manage">My Profile</a>
-            </li>
-            <li class="nav-item">
-                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new {area = ""})" method="post">
-                    <button type="submit" class="nav-link btn btn-link text-white">Logout</button>
-                </form>
-            </li>
-        }
-        else
-        {
-            <li class="nav-item">
-                <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Login">Login</a>
-            </li>
-        }
+                }
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Users
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" asp-page="/Directory">User Directory</a>
+                @if (User.FindFirst("Position").Value == "Manager")
+                {
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Add a user</a>
+                }
+            </div>
+        </li>
+        <li class=" nav-item">
+            <a class="nav-link text-white" asp-page="/Calendar/Calendar" title="Manage">Calendar</a>
+        </li>
+        <li class=" nav-item">
+            <a class="nav-link text-white" asp-page="/Map/Map" title="Manage">Map</a>
+        </li>
+        <li class=" nav-item">
+            <a class="nav-link text-white" asp-page="/Announcements/Index" title="Manage">Announcements</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" asp-page="/Profile/MyProfile" title="Manage">My Profile</a>
+        </li>
+        <li class="nav-item">
+            <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new {area = ""})" method="post">
+                <button type="submit" class="nav-link btn btn-link text-white">Logout</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </li>
+    }
 
-    </ul>
+</ul>
