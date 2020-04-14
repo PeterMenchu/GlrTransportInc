@@ -1,5 +1,6 @@
-@page
-@model CalendarModel
+@page 
+@model GlrTransportInc.CalendarModel
+@using GlrTransportInc.Models
 @{
     ViewBag.Title = "Calendar";
 }
@@ -29,36 +30,50 @@
 
     <script>
         $(document).ready(function () {
-            var events = [];
-            /*$('#calendar').fullCalendar('destroy');
-            $('#calendar').fullCalendar({
-                contentHeight = 500,
-                defaultDate = new Date,
-                theme: true,
-                header: {
-                    left: 'month,agendaWeek,agendaDay',
-                    center: 'title',
-                    right: 'prev,next today'
+            var i = 0;
+            var fb[];
+
+            foreach (var item in @CalendarModel.FreightBill) {
+
+                fb = [{ "title": "item.BillName", "start": "item.StartDate", "end": "item.DueDate", "status": "item.Status" }];
+                    }
+                    
+                
+            /*
+            $.ajax({
+                type: "GET",
+                url: 'home/OnGetAsync',
+                success: function (FreightBill) {
+                $.each(FreightBill, function (i, v) {
+                        events.push({ //Pushing Data from DB into "events" object
+                            title: v.CalendarModel.BillName, //Replaced Subject
+                            //driver: v.Driver//, //Replaced Description
+                            start: moment(v.CalendarModel.StartDate),
+                            //end: v.End != null ? moment(v.End) : null, //Used because End Time Can be NULL
+                            end: moment(v.CalendarModel.DueDate),
+                            //color: v.StatusColor //Replaced ThemeColor
+                            status: v.CalendarModel.status
+                        });
+                    });
+
+                    GenerateCalendar(events);
                 },
+                error: function (error) {
+                    alert('failed to generated calendar');
+                }
+            })*/
 
-                defaultView: 'agendaDay',
-                eventLimit: true,
-                editable: true,
-                allDaySlot: false,
-                selectable: true,
-                slotMinutes: 15,
-                events: "/home/GetEvents/"
-            });*/
-            GenerateCalendar(events);
 
-            function GenerateCalendar(events) {
+            GenerateCalendar(fb);
+
+                function GenerateCalendar(fb) {
                 $('#calendar').fullCalendar('destroy');
                 $('#calendar').fullCalendar({
                     contentHeight: 700,
                     defaultDate: new Date(),
                     timeFormat: 'h(:mm)a',
                     header: {
-                        left: 'month,basicWeek,basicDay,agenda',
+                        left: 'month,listWeek,agendaDay,listDay',
                         center: 'title',
                         right: 'prev,next today'
                     },
@@ -66,13 +81,13 @@
                         left: 'prev',
                         right: 'next'
                     },
-                    defaultView: 'agenda',
+                    defaultView: 'listDay',
                     eventLimit: true,
                     eventColor: '#378006',
-                    events: '/home/GetEvents'
+                    events: events
                 });
-            }
-        });
+                }
+            });
     </script>
 
 }

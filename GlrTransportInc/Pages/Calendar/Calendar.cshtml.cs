@@ -8,7 +8,7 @@ using GlrTransportInc.Models;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace GlrTransportInc.Pages.Calendar
+namespace GlrTransportInc
 {
     public class CalendarModel : PageModel
     {
@@ -24,7 +24,7 @@ namespace GlrTransportInc.Pages.Calendar
             _context = context;
         }
         // declare instance of the bill model so data can be grabbed
-        public IList<FreightBill> FreightBill { get;set; }
+        public static IList<FreightBill> FreightBill { get;set; }
         // OnGetAsync is called when page is loaded, sets needed values from freight table
         public async Task OnGetAsync()
         {
