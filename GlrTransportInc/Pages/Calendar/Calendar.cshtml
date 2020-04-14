@@ -79,7 +79,7 @@
 
             function GenerateCalendar(events) {
                 $('#calendar').fullCalendar('destroy');
-                $('#calendar').fullCalendar('refresh');
+                $('#calendar').fullCalendar('removeEvents').fullCalendar('removeEventSources');
                 $('#calendar').fullCalendar({
                     contentHeight: 700,
                     defaultDate: new Date(),
