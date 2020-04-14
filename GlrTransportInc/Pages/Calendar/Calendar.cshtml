@@ -43,6 +43,8 @@
             var tempevents = [];
             //var events = [];
 
+            $('calendar').fullCalendar('destroy');
+            $('calendar').fullCalendar('refresh');
 
             for (i = 0; i < BillName2.length; i++) {
                 var temp = new Object();
@@ -72,11 +74,12 @@
             }
                         
             GenerateCalendar(tempevents);
-            //tempevents = [];
+            var tempevents = [];
             
 
             function GenerateCalendar(events) {
                 $('#calendar').fullCalendar('destroy');
+                $('#calendar').fullCalendar('refresh');
                 $('#calendar').fullCalendar({
                     contentHeight: 700,
                     defaultDate: new Date(),
