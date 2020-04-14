@@ -1,10 +1,9 @@
-@page 
-@model GlrTransportInc.CalendarModel
-@using GlrTransportInc.Models
+@page
+@model CalendarModel
 @{
     ViewBag.Title = "Calendar";
 }
-<!-- syntax of grabbing freight bill data from the model 
+<!-- syntax of grabbing freight bill data from the model
     CalendarModel.BillName[0]
     CalendarModel.StartDate[0]
     CalendarModel.DueDate[0]
@@ -22,51 +21,58 @@
 <!--Needs to be update to new Full Calendar-->
 <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.css" rel="stylesheet" />
 <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.print.css" rel="stylesheet" media="print" />
-    
+
 @section scripts{
     <!--Needs tob e changed for new Full Calendar-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.js"></script>
 
     <script>
+
         $(document).ready(function () {
-            var i = 0;
-            var fb[];
+            var BillName = '@Html.Raw(Json.Serialize(CalendarModel.BillName))';
+            var BillName2 = JSON.parse(BillName);
+            var StartDate = '@Html.Raw(Json.Serialize(CalendarModel.StartDate))';
+            var StartDate2 = JSON.parse(StartDate);
+            var DueDate = '@Html.Raw(Json.Serialize(CalendarModel.DueDate))';
+            var DueDate2 = JSON.parse(DueDate);
+            var Status = '@Html.Raw(Json.Serialize(CalendarModel.Status))';
+            var Status2 = JSON.parse(Status);
+            //var StatusColor;
+            //var data = JSON.parse(model);
+            var tempevents = [];
+            //var events = [];
 
-            foreach (var item in @CalendarModel.FreightBill) {
 
-                fb = [{ "title": "item.BillName", "start": "item.StartDate", "end": "item.DueDate", "status": "item.Status" }];
-                    }
-                    
-                
-            /*
-            $.ajax({
-                type: "GET",
-                url: 'home/OnGetAsync',
-                success: function (FreightBill) {
-                $.each(FreightBill, function (i, v) {
-                        events.push({ //Pushing Data from DB into "events" object
-                            title: v.CalendarModel.BillName, //Replaced Subject
-                            //driver: v.Driver//, //Replaced Description
-                            start: moment(v.CalendarModel.StartDate),
-                            //end: v.End != null ? moment(v.End) : null, //Used because End Time Can be NULL
-                            end: moment(v.CalendarModel.DueDate),
-                            //color: v.StatusColor //Replaced ThemeColor
-                            status: v.CalendarModel.status
-                        });
-                    });
-
-                    GenerateCalendar(events);
-                },
-                error: function (error) {
-                    alert('failed to generated calendar');
+            for (i = 0; i < BillName2.length; i++) {
+                var temp = new Object();
+                temp["title"] = BillName2[i];
+                temp["start"] = StartDate2[i];
+                temp["end"] = DueDate2[i];
+                temp["status"] = Status2[i];
+                //IF statements for different colors
+                if (Status2[i] == 0) {
+                    //Status Pending Color
+                    temp["color"] = "#00bff";
                 }
-            })*/
+                else if (Status2[i] == 1) {
+                    //Status Shipped Color
+                    temp["color"] = "Orange";
+                }
+                else if (Status2[i] == 2) { 
+                    //Status Complete Color
+                    temp["color"] = "#378006";
+                }
+                else {
+                    //Status Canceled or Error Color
+                    temp["color"] = "Red";
+                }
+                tempevents.push(temp);
+            }
+                        
+            GenerateCalendar(tempevents);
 
-
-            GenerateCalendar(fb);
-
-                function GenerateCalendar(fb) {
+            function GenerateCalendar(events) {
                 $('#calendar').fullCalendar('destroy');
                 $('#calendar').fullCalendar({
                     contentHeight: 700,
@@ -86,8 +92,8 @@
                     eventColor: '#378006',
                     events: events
                 });
-                }
-            });
+            }
+        });
     </script>
 
 }
