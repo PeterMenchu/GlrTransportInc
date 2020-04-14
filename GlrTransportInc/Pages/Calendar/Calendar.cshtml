@@ -28,8 +28,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.js"></script>
 
     <script>
-
         $(document).ready(function () {
+            var Id = '@Html.Raw(Json.Serialize(CalendarModel.Id))';
+            var Id2 = JSON.parse(Id);
             var BillName = '@Html.Raw(Json.Serialize(CalendarModel.BillName))';
             var BillName2 = JSON.parse(BillName);
             var StartDate = '@Html.Raw(Json.Serialize(CalendarModel.StartDate))';
@@ -43,11 +44,9 @@
             var tempevents = [];
             //var events = [];
 
-            $('calendar').fullCalendar('destroy');
-            $('calendar').fullCalendar('refresh');
-
             for (i = 0; i < BillName2.length; i++) {
                 var temp = new Object();
+                temp["id"] = Id2[i];
                 temp["title"] = BillName2[i];
                 temp["start"] = StartDate2[i];
                 temp["end"] = DueDate2[i];
@@ -70,16 +69,13 @@
                     temp["color"] = "Red";
                 }
                 tempevents.push(temp);
-                delete tempevents;
             }
-                        
+            $("#calendar").fullCalendar('removeEventSource', tempevents); 
             GenerateCalendar(tempevents);
-            var tempevents = [];
             
 
-            function GenerateCalendar(events) {
-                $('#calendar').fullCalendar('destroy');
-                $('#calendar').fullCalendar('removeEvents').fullCalendar('removeEventSources');
+            function GenerateCalendar(events) { 
+                $("#calendar").fullCalendar('removeEventSource', events);
                 $('#calendar').fullCalendar({
                     contentHeight: 700,
                     defaultDate: new Date(),
