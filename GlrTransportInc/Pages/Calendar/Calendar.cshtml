@@ -71,7 +71,7 @@
             }
                         
             GenerateCalendar(tempevents);
-
+            tempevents = [];
             function GenerateCalendar(events) {
                 $('#calendar').fullCalendar('destroy');
                 $('#calendar').fullCalendar({
@@ -79,7 +79,7 @@
                     defaultDate: new Date(),
                     timeFormat: 'h(:mm)a',
                     header: {
-                        left: 'month,listWeek,agendaDay,listDay',
+                        left: 'month,listWeek,listDay',
                         center: 'title',
                         right: 'prev,next today'
                     },
