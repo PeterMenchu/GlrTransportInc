@@ -68,10 +68,13 @@
                     temp["color"] = "Red";
                 }
                 tempevents.push(temp);
+                delete tempevents;
             }
                         
             GenerateCalendar(tempevents);
-            tempevents = [];
+            //tempevents = [];
+            
+
             function GenerateCalendar(events) {
                 $('#calendar').fullCalendar('destroy');
                 $('#calendar').fullCalendar({
