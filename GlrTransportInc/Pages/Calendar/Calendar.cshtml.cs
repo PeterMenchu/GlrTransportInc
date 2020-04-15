@@ -29,6 +29,7 @@ namespace GlrTransportInc
         // OnGetAsync is called when page is loaded, sets needed values from freight table
         public async Task OnGetAsync()
         {
+            //Data Cleared so data isn't kept after each call
             Id.Clear();
             BillName.Clear();
             StartDate.Clear();
