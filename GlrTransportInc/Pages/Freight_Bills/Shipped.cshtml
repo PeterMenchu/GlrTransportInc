@@ -1,0 +1,109 @@
+@page
+@model GlrTransportInc.IndexModel
+@{
+    ViewData["Title"] = "Freight bills";
+}
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    
+    <br />
+    <div>
+        <h1>@ViewData["Title"]</h1>
+        @if (User.FindFirst("Position").Value == "Manager")
+        {
+            <a asp-page="Create" class="btn btn-primary bg-success">Create New</a>
+        }
+    </div>
+    <div>
+        <div class="row">
+            <div><partial name="FreightNav" /></div>
+        </div>
+    </div>
+    <div class="mobileList">
+        <body>
+            @foreach (var item in Model.FreightBill)
+            {
+                if (item.Status.ToString() == "Shipped")
+                {
+                    <div class="listStyle">
+                        <hr/>
+                        <h2>
+                            @Html.DisplayFor(modelItem => item.Customer)
+                        </h2>
+                        <p>Driver: @Html.DisplayFor(modelItem => item.Driver)</p>
+                        <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
+                        @if (User.FindFirst("Position").Value == "Manager")
+                        {
+                            <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
+                                <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                            </a>
+                            <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
+                                <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                            </a>
+                        }
+                        <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
+                    </div>
+                }
+            }
+        </body>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Driver</th>
+                <th>Status</th>
+                @if (User.FindFirst("Position").Value == "Manager")
+                {
+                    <th>Edit</th>
+                    <th>Delete</th>
+                }
+                <th>Details</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.FreightBill)
+            {
+                if (item.Status.ToString() == "Shipped")
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Customer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Driver)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Status)</td>
+
+                        @if (User.FindFirst("Position").Value == "Manager")
+                        {
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.ID">
+                                    <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-page="./Delete" asp-route-id="@item.ID">
+                                    <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                                </a>
+                            </td>
+                        }
+                        <td>
+                            <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="main text-center">
+        <h1 class="text-center">View freight bill listings</h1>
+        <p>You must log in to view freight bills.</p>
+        <a asp-area="Identity" asp-page="/Account/Login" class="p text-success">Click here to log in</a>
+    </div>
+}
