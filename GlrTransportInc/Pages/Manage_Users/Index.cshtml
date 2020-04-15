@@ -1,4 +1,114 @@
 ﻿@page
+@using GlrTransportInc.Models
 @model GlrTransportInc.Pages.Manage_Users.IndexModel
+@inject SignInManager<UserModel> SignInManager
 @{
+}
+
+<br />
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (User.FindFirst("Position").Value == "Manager")
+    {
+        <p>
+            <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary btn-lg btn-block bg-success">Create New</a>
+        </p>
+        <div class="mobileList">
+            <body>
+                @foreach (var item in Model.UserModel)
+                {
+                    @if (item.Name.ToString() == User.FindFirst("Name").Value) //Makes sure the user the logged in user doesn't appear on the screen
+                    {
+                        continue;
+                    }
+                    <div class="listStyle">
+                        <hr />
+                        <h2>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </h2>
+                        <img gravatar-email="@item.Email" alt="Profile Picture" />
+                        <br />
+                        <br />
+                        <p>Position: @Html.DisplayFor(modelItem => item.Position)</p>
+                        <p>Employee ID: @Html.DisplayFor(modelItem => item.EmployeeId)</p>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a><br />
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </div>
+                }
+            </body>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <!-- space for profile pic -->
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Position
+                        </th>
+                        <th>
+                            Edit
+                        </th>
+                        <th>
+                            Delete
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.UserModel)
+                    {
+                        @if (item.Name.ToString() == User.FindFirst("Name").Value) //Makes sure the user the logged in user doesn't appear on the screen
+                        {
+                            continue;
+                        }
+                        <tr>
+                            <td>
+                                <img gravatar-email="@item.Email" alt="Profile Picture" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Position)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.Id">
+                                    <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-page="./Delete" asp-route-id="@item.Id">
+                                    <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="main text-center">
+            <p>Unauthorized.</p>
+        </div>
+    }
+}
+else
+{
+    <div class="main text-center">
+        <h1 class="text-center">Driver Directory</h1>
+        <p>You must log in to an account to view this directory.</p>
+        <a asp-area="Identity" asp-page="/Account/Login" class="p text-success">Click here to log in</a>
+    </div>
 }
