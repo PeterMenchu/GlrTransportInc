@@ -11,11 +11,11 @@
         <div class="loggedIn text-center">
             <h1>Hello, @User.FindFirst("Name").Value!</h1>
             <img src="~/Images/GLR_Home.png" class="img-fluid" alt="Company Logo">
-            <div class about="row">
+            <div about="row">
                 <h3>Recent Announcements</h3>
-                @for (int i = 0; i < 4; i++) 
+                @foreach (var item in Model.Announcement.Take(4)) 
                 {
-                    <a class="nav-link" asp-page="./Announcements/Index">@IndexModel.Titles[i]</a>                                          
+                    <a class="nav-link" asp-page="./Announcements/Index">@item.Title (@item.DatePosted)</a>                                          
                 }
             </div>
         </div>

@@ -21,14 +21,9 @@ namespace GlrTransportInc.Pages
             _logger = logger;
         }
         public IList<Announcement> Announcement { get;set; }
-        public static List<string> Titles = new List<string>();
         public async Task OnGetAsync()
         {
             Announcement = await _context.Announcement.OrderByDescending(a => a.ID).ToListAsync();
-            foreach (var post in Announcement)
-            {
-                Titles.Add(post.Title);
-            }
         }
     }
 }
