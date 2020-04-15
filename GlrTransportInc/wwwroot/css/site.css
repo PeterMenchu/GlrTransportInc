@@ -27,6 +27,12 @@ for details on configuring this project to bundle and minify static web assets. 
 .sortNav li{
     display: inline;
 }
+.img-fluid{
+    display: none;
+}
+.MobileImg{
+    display: inline-block;
+}
 /* Medium devices (tablets, 768px and up). Everything else will be for mobile, within 
    this query will be the styling for tablets and desktop*/
 @media (min-width: 768px) {
@@ -51,6 +57,12 @@ for details on configuring this project to bundle and minify static web assets. 
     }
     .optionButton{
         margin-right: 15px;
+    }
+    .img-fluid{
+        display: inline-block;
+    }
+    .MobileImg{
+        display: none;
     }
 }
 /*------- End index -------*/
