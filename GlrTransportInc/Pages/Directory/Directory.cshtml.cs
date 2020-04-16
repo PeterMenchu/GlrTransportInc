@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using GlrTransportInc.Data;
 using GlrTransportInc.Models;
 
-namespace GlrTransportInc
+namespace GlrTransportInc.Pages.Directory
 {
     public class DirectoryModel : PageModel
     {

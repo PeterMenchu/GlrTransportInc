@@ -1,14 +1,21 @@
 ﻿@page
 @using GlrTransportInc.Models
-@model GlrTransportInc.DirectoryModel
+@model DirectoryModel
 @inject SignInManager<UserModel> SignInManager
 @{
     ViewData["Title"] = "Employee Directory";
 }
 
 <br />
+<h1>@ViewData["Title"]</h1>
 @if (SignInManager.IsSignedIn(User))
 {
+    
+    <div>
+        <div class="row">
+            <div><partial name="DirectoryNav" /></div>
+        </div>
+    </div>
     <div class="mobileList">
         <body>
         @foreach (var item in Model.UserModel)
@@ -75,20 +82,6 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Position)
                         </td>
-                        <!--
-                        <td>
-                            <a asp-page="./Edit" asp-route-id="item.ID">
-                                <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
-                            </a>
-                        </td>
-                        <td>
-                            <a asp-page="./Delete" asp-route-id="item.ID">
-                                <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
-                            </a>
-                        </td>
-                        <td>
-                            <a asp-page="./Details" asp-route-id="item.ID">View Details</a>
-                        </td>-->
                     </tr>
                 }
             </tbody>
