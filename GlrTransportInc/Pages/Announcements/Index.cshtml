@@ -28,29 +28,34 @@
                             </div>
                             @foreach (var user in Model.Users)
                             {
-                                @if ((user.Name) == item.Author)
+                                @if (user.Name == item.Author)
                                 {
-                                    <img gravatar-email="@user.Email" alt="Profile Picture"/>
+                                    <div class="row">
+                                        <img gravatar-email="@user.Email" alt="Profile Picture"/>
+                                    </div>
                                 }
                             }
                             <div class="row">
                                 By: @item.Author | Posted: @item.DatePosted
                             </div>
+                            <br />
                             <div class="row">
-                                @Html.DisplayFor(modelItem => item.Post)
+                                <p style="white-space: pre-line">@Html.DisplayFor(modelItem => item.Post)</p>
                             </div>
-                            @if ((IndexModel2.Name == item.Author))
-                            {
-                                <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
-                                    <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
-                                </a>
-                            }
-                            @if ((IndexModel2.Name == item.Author) || IndexModel2.Position == "Manager")
-                            {
-                                <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
-                                    <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
-                                </a>
-                            }
+                            <div class="row">
+                                @if (IndexModel2.Name == item.Author)
+                                {
+                                    <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
+                                        <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                                    </a>
+                                }
+                                @if (IndexModel2.Name == item.Author || IndexModel2.Position == "Manager")
+                                {
+                                    <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
+                                        <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                                    </a>
+                                }
+                            </div>
                         </div>
                     </td>
                 </tr>
