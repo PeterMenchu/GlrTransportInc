@@ -16,7 +16,7 @@ namespace GlrTransportInc
         public static List<int> Id = new List<int>();
         public static List<string> BillName = new List<string>();
         public static List<DateTime> StartDate = new List<DateTime>();
-        public static List<DateTime> DueDate = new List<DateTime>();
+        //public static List<DateTime> DueDate = new List<DateTime>();
         public static List<FbStatus> Status = new List<FbStatus>();
         // _context is for grabbing bill data
         private readonly GlrTransportInc.Data.ApplicationDbContext _context;
@@ -33,7 +33,7 @@ namespace GlrTransportInc
             Id.Clear();
             BillName.Clear();
             StartDate.Clear();
-            DueDate.Clear();
+            //DueDate.Clear();
             Status.Clear();
 
             // enable data retrieval from DB to bill model
@@ -44,7 +44,7 @@ namespace GlrTransportInc
                 Id.Add(item.ID);
                 BillName.Add(item.Customer);
                 StartDate.Add(item.ScheduledDate);
-                DueDate.Add(item.DueDate);
+                //DueDate.Add(item.DueDate);
                 Status.Add(item.Status);
             }
         }

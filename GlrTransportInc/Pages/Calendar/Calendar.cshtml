@@ -35,8 +35,6 @@
             var BillName2 = JSON.parse(BillName);
             var StartDate = '@Html.Raw(Json.Serialize(CalendarModel.StartDate))';
             var StartDate2 = JSON.parse(StartDate);
-            var DueDate = '@Html.Raw(Json.Serialize(CalendarModel.DueDate))';
-            var DueDate2 = JSON.parse(DueDate);
             var Status = '@Html.Raw(Json.Serialize(CalendarModel.Status))';
             var Status2 = JSON.parse(Status);
             //var StatusColor;
@@ -49,7 +47,6 @@
                 temp["id"] = Id2[i];
                 temp["title"] = BillName2[i];
                 temp["start"] = StartDate2[i];
-                temp["end"] = DueDate2[i];
                 temp["status"] = Status2[i];
                 //IF statements for different colors
                 if (Status2[i] == 0) {
@@ -85,11 +82,16 @@
                         center: 'title',
                         right: 'prev,next today'
                     },
+                    buttonText: {
+                        listWeek: 'List Week',
+                        listDay: 'List Day',
+                        month: 'Month'
+                    },
                     footer: {
                         left: 'prev',
                         right: 'next'
                     },
-                    defaultView: 'listDay',
+                    defaultView: 'month',
                     eventLimit: true,
                     eventColor: '#378006',
                     events: events,
