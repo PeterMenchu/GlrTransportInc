@@ -55,14 +55,14 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 border">
+                <div class="col-sm-6 border border-bottom-0">
                     <b>
                         Customer:
                     </b>
                     <br />
                     @Html.DisplayFor(model => model.FreightBill.Customer)
                 </div>
-                <div class="col-sm-6 border">
+                <div class="col-sm-6 border border-bottom-0 border-left-0">
                     <b>
                         Freight Bill #:
                     </b>
@@ -73,7 +73,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 border">
+                <div class="col-sm-6 border border-bottom-0">
                     <b>
                         Origin:
                     </b>
@@ -91,7 +91,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-sm-6 border">
+                <div class="col-sm-6 border border-bottom-0 border-left-0">
                     <b>
                         Destination:
                     </b>
@@ -113,15 +113,15 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-4 border">
+                <div class="col-sm-2 border border-bottom-0">
                     <b>
                         Scheduled Date:
                     </b>
                     <br />
                     @Model.FreightBill.ScheduledDate.ToShortDateString()
                 </div>
-                <div class="col-sm-4 border">
-                    <div class="row border">
+                <div class="col-sm-4 border border-bottom-0 border-left-0">
+                    <div class="row border-bottom">
                         <div class="col-sm-12">
                             <b>
                                 Size:
@@ -140,8 +140,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 border">
-                    <div class="row">
+                <div class="col-sm-6 border border-bottom-0 border-left-0">
+                    <div class="row border-bottom">
                         <div class="col">
                             <b>
                                 Branch And Description:
@@ -151,14 +151,14 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6 border">
+                        <div class="col-sm-6 border-right">
                             <b>
                                 PO #:
                             </b>
                             <br />
                             @Html.DisplayFor(model => model.FreightBill.PoNumber)
                         </div>
-                        <div class="col-sm-6 border">
+                        <div class="col-sm-6">
                             <b>
                                 Doc / Job #:
                             </b>
@@ -171,14 +171,14 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 border">
+                <div class="col-sm-6 border border-bottom-0">
                     <b>
                         Comments:
                     </b>
                     <br />
                     @Html.DisplayFor(model => model.FreightBill.Comments)
                 </div>
-                <div class="col-sm-6 border">
+                <div class="col-sm-6 border border-bottom-0 border-left-0">
                     <table class="table">
                         <thead>
                             <tr>
@@ -284,7 +284,7 @@
                             @Html.DisplayFor(model => model.FreightBill.TruckNumber)
                         </div>
                     </div>
-                    <div class="row border">
+                    <div class="row border-top border-bottom">
                         <div class="col-sm-12">
                             <b>
                                 Driver:
@@ -303,14 +303,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-2 border">
+                <div class="col-sm-2 border border-left-0">
                     <b>
                         Completion Date:
                     </b>
                     <br />
                     @Model.FreightBill.CompletionDate.ToShortDateString()
                 </div>
-                <div class="col-sm-3 border">
+                <div class="col-sm-3 border border-left-0">
                     <b>
                         Site Contact:
                     </b>
@@ -319,7 +319,7 @@
                     <a href="@string.Format("tel:{0}", Model.FreightBill.SitePhoneNumber)">@Model.FreightBill.SitePhoneNumber</a><br />
                     <a href="@string.Format("mailto:{0}", Model.FreightBill.EmailAddress)">@Model.FreightBill.EmailAddress</a>
                 </div>
-                <div class="col-sm-3 border">
+                <div class="col-sm-3 border border-left-0">
                     <b>
                         Payment Due Date:
                     </b>
