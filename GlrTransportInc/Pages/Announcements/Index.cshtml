@@ -39,7 +39,7 @@
                             <div class="row">
                                 @Html.DisplayFor(modelItem => item.Post)
                             </div>
-                            @if ((User.FindFirst("Name").Value == item.Author))
+                            @if ((IndexModel2.Name == item.Author))
                             {
                                 <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
                                     <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">

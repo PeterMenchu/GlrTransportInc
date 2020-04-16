@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using GlrTransportInc.Data;
 using GlrTransportInc.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GlrTransportInc
 {
@@ -26,6 +27,8 @@ namespace GlrTransportInc
 
         [BindProperty]
         public Announcement Announcement { get; set; }
+        public IList<UserModel> Users { get; set; }
+        public static string Name;
         /*get
         {
             return Announcement;
@@ -44,7 +47,15 @@ namespace GlrTransportInc
             {
                 return Page();
             }
-            var post = new Announcement { Title = Announcement.Title, Post = Announcement.Post, Author = User.FindFirst("Name").Value, DatePosted = DateTime.Now };
+            Users = await _context.UserModel.ToListAsync();
+            foreach (var item in Users)
+            {
+                if ((item.Email) == User.Identity.Name)
+                {
+                    Name = item.Name;
+                }
+            }
+            var post = new Announcement { Title = Announcement.Title, Post = Announcement.Post, Author = Name, DatePosted = DateTime.Now };
             _context.Announcement.Add(post);
             await _context.SaveChangesAsync();
 

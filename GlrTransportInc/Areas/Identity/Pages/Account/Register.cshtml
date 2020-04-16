@@ -10,7 +10,7 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    @if (User.FindFirst("Position").Value == "Manager")
+    @if (RegisterModel.Position2 == "Manager")
     {
         <script>
             function showDiv(divId, element)

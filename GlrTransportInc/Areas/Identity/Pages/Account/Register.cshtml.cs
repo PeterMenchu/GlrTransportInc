@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace GlrTransportInc.Areas.Identity.Pages.Account
@@ -21,6 +22,7 @@ namespace GlrTransportInc.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
+        private readonly Data.ApplicationDbContext _context;
         private readonly SignInManager<UserModel> _signInManager;
         private readonly UserManager<UserModel> _userManager;
         private readonly ILogger<RegisterModel> _logger;
@@ -30,12 +32,14 @@ namespace GlrTransportInc.Areas.Identity.Pages.Account
             UserManager<UserModel> userManager,
             SignInManager<UserModel> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            GlrTransportInc.Data.ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _context = context;
         }
 
         [BindProperty]
@@ -78,9 +82,21 @@ namespace GlrTransportInc.Areas.Identity.Pages.Account
             [Display(Name = "Will this person drive?")]
             public string CanDrive { get; set; }
         }
-        
+        public IList<UserModel> Users { get; set; }
+        public static string Name;
+        public static string Position2;
+
         public async Task OnGetAsync(string returnUrl = null)
         {
+            Users = await _context.UserModel.ToListAsync();
+            foreach (var item in Users)
+            {
+                if ((item.Email) == User.Identity.Name)
+                {
+                    Name = item.Name;
+                    Position2 = item.Position;
+                }
+            }
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
