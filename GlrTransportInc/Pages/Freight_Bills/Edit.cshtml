@@ -5,7 +5,7 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    @if (User.FindFirst("Position").Value == "Manager")
+    @if (EditModel.Position == "Manager")
     {
         <br />
 

@@ -12,7 +12,7 @@
     <br />
     <div>
         <h1>@ViewData["Title"]</h1>
-        @if (User.FindFirst("Position").Value == "Manager")
+        @if (IndexModel.Position == "Manager")
         {
             <a asp-page="Create" class="btn btn-primary bg-success">Create New</a>
         }
@@ -35,7 +35,7 @@
                         </h2>
                         <p>Driver: @Html.DisplayFor(modelItem => item.Driver)</p>
                         <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
-                        @if (User.FindFirst("Position").Value == "Manager")
+                        @if (IndexModel.Position == "Manager")
                         {
                             <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
                                 <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
@@ -58,7 +58,7 @@
                 <th>Customer</th>
                 <th>Driver</th>
                 <th>Status</th>
-                @if (User.FindFirst("Position").Value == "Manager")
+                @if (IndexModel.Position == "Manager")
                 {
                     <th>Edit</th>
                     <th>Delete</th>
@@ -76,7 +76,7 @@
                         <td>@Html.DisplayFor(modelItem => item.Driver)</td>
                         <td>@Html.DisplayFor(modelItem => item.Status)</td>
 
-                        @if (User.FindFirst("Position").Value == "Manager")
+                        @if (IndexModel.Position == "Manager")
                         {
                             <td>
                                 <a asp-page="./Edit" asp-route-id="@item.ID">

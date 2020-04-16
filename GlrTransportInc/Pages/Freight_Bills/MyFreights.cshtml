@@ -14,7 +14,7 @@
             <hr />
             @foreach (var item in Model.FreightBill)
             {
-                @if ((item.Driver) == User.FindFirst("Name").Value)
+                @if ((item.Driver) == MyFreightsModel.Name)
                 {
                     <div class="listStyle">
                         <hr/>
@@ -23,7 +23,7 @@
                         </h2>
                         <p>Driver: @Html.DisplayFor(modelItem => item.Driver)</p>
                         <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
-                        @if (User.FindFirst("Position").Value == "Manager")
+                        @if (MyFreightsModel.Position == "Manager")
                         {
                             <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
                                 <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
@@ -63,7 +63,7 @@
             <tbody>
                 @foreach (var item in Model.FreightBill)
                 {
-                    @if ((item.Driver) == User.FindFirst("Name").Value)
+                    @if ((item.Driver) == MyFreightsModel.Name)
                     {
                         <tr>
                             <td>

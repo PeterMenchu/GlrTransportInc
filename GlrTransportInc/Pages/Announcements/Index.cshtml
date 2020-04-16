@@ -45,7 +45,7 @@
                                     <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
                                 </a>
                             }
-                            @if ((User.FindFirst("Name").Value == item.Author) || User.FindFirst("Position").Value == "Manager")
+                            @if ((IndexModel2.Name == item.Author) || IndexModel2.Position == "Manager")
                             {
                                 <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
                                     <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">

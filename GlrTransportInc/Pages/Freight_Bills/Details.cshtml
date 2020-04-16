@@ -330,8 +330,12 @@
         </div>
     </div>
     <div>
-        <a asp-page="./Edit" asp-route-id="@Model.FreightBill.ID">Edit</a> |
-        <a asp-page="./Index">Back to List</a>
+        @if (DetailsModel.Position == "Manager")
+        {
+            <a asp-page="./Edit" asp-route-id="@Model.FreightBill.ID">Edit </a>
+        }
+        |
+        <a asp-page="./Index"> Back to List</a>
         <br />
         <button type="submit" class="btn btn-primary bg-success" onclick="printDiv('PrintDiv', 'ommitThis')">Print Freight Bill</button>
     </div>

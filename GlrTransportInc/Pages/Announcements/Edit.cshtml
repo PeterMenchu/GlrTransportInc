@@ -5,7 +5,7 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    @if ((User.FindFirst("Name").Value == Model.Announcement.Author))
+    @if ((EditModel2.Name == Model.Announcement.Author))
     {
         <h4>Announcement</h4>
         <hr />

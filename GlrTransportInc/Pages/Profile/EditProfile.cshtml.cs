@@ -99,7 +99,7 @@ namespace GlrTransportInc.Pages.Profile
                 }
             }
             
-            int set = addName(User.Identity.Name, Input.Fullname);
+            int set = addName(User.Identity.Name, Input.Fullname, user.Name);
             
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";

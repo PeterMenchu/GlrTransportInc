@@ -8,7 +8,7 @@
 <br />
 @if (SignInManager.IsSignedIn(User))
 {
-    @if (User.FindFirst("Position").Value == "Manager")
+    @if (IndexModel.Position == "Manager")
     {
         <p>
             <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary btn-lg btn-block bg-success">Create New</a>
@@ -17,7 +17,7 @@
             <body>
                 @foreach (var item in Model.UserModel)
                 {
-                    @if (item.Name.ToString() == User.FindFirst("Name").Value) //Makes sure the user the logged in user doesn't appear on the screen
+                    @if (item.Name.ToString() == IndexModel.Name) //Makes sure the user the logged in user doesn't appear on the screen
                     {
                         continue;
                     }
@@ -64,7 +64,7 @@
                 <tbody>
                     @foreach (var item in Model.UserModel)
                     {
-                        @if (item.Name.ToString() == User.FindFirst("Name").Value) //Makes sure the user the logged in user doesn't appear on the screen
+                        @if (item.Name.ToString() == IndexModel.Name) //Makes sure the user the logged in user doesn't appear on the screen
                         {
                             continue;
                         }

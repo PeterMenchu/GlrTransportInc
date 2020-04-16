@@ -20,8 +20,10 @@ namespace GlrTransportInc.Pages.Manage_Users
 
         [BindProperty]
         public UserModel UserModel { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string? id)
+        public IList<UserModel> Users { get; set; }
+        public static string Name;
+        public static string Position;
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
@@ -29,6 +31,15 @@ namespace GlrTransportInc.Pages.Manage_Users
             }
 
             UserModel = await _context.UserModel.FirstOrDefaultAsync(m => m.Id == id);
+            Users = await _context.UserModel.ToListAsync();
+            foreach (var item in Users)
+            {
+                if ((item.Email) == User.Identity.Name)
+                {
+                    Name = item.Name;
+                    Position = item.Position;
+                }
+            }
 
             if (User == null)
             {
@@ -37,7 +48,7 @@ namespace GlrTransportInc.Pages.Manage_Users
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(string? id)
+        public async Task<IActionResult> OnPostAsync(string id)
         {
             if (id == null)
             {
