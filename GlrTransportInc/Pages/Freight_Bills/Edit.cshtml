@@ -1,15 +1,26 @@
 ﻿@page
-@model GlrTransportInc.EditModel
+@model EditModel
 @using GlrTransportInc.Models
 @inject SignInManager<UserModel> SignInManager
-
+@{
+    ViewData["Title"] = "Edit Freight Bill";
+}
 @if (SignInManager.IsSignedIn(User))
 {
     @if (EditModel.Position == "Manager")
     {
         <br />
-
-        <h4>Freight Bill</h4>
+        <h1>@ViewData["Title"]</h1>
+        <!-- Add permit -->
+        <form method="post" enctype="multipart/form-data">    
+            <div class="container-fluid column col-md-12 form-group">
+                <hr />
+                <h3>Add/Edit Permit</h3>
+                <input type="file" asp-for="Upload"/>
+                <input type="submit" asp-route-sessioncount="20"/>
+                <hr />
+            </div>
+        </form>
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="FreightBill.ID" />
@@ -549,8 +560,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- submit button -->
                 <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <input type="submit" value="Save" class="btn btn-primary"/>
                 </div>
             </div>
         </form>

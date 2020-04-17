@@ -1,23 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using GlrTransportInc.Models;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using GlrTransportInc.Data;
-using GlrTransportInc.Models;
+//using static GlrTransportInc.Pages.Freight_Bills.PermitProcessor;
 
-namespace GlrTransportInc
+namespace GlrTransportInc.Pages.Freight_Bills
 {
     public class EditModel : PageModel
     {
         private readonly GlrTransportInc.Data.ApplicationDbContext _context;
-
-        public EditModel(GlrTransportInc.Data.ApplicationDbContext context)
+        private IWebHostEnvironment _environment;
+        public EditModel(GlrTransportInc.Data.ApplicationDbContext context, IWebHostEnvironment environment)
         {
             _context = context;
+            _environment = environment;
         }
 
         [BindProperty]
@@ -25,8 +27,21 @@ namespace GlrTransportInc
         public IList<UserModel> UserModel { get; set; }
         public static string Name;
         public static string Position;
+        [BindProperty]
+        public IFormFile Upload { get; set; }
+        /*
+        public async Task OnSubmitPermit()
+        {
+            var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", Upload.FileName);
+            using (var fileStream = new FileStream(file, FileMode.Create))
+            {
+                await Upload.CopyToAsync(fileStream);
+            }
+        }
+        */
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            Upload = null;
             UserModel = await _context.UserModel.ToListAsync();
             foreach (var item in UserModel)
             {
@@ -53,32 +68,50 @@ namespace GlrTransportInc
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        
+        // public async Task<IActionResult> OnSubmitEdit()
+        public async Task<IActionResult> OnPostAsync(string command)
         {
-            if (!ModelState.IsValid)
+            if (Upload != null)
             {
-                return Page();
-            }
-
-            _context.Attach(FreightBill).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!FreightBillExists(FreightBill.ID))
+                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", Upload.FileName);
+                using (var fileStream = new FileStream(file, FileMode.Create))
                 {
-                    return NotFound();
+                    await Upload.CopyToAsync(fileStream);
                 }
-                else
-                {
-                    throw;
-                }
-            }
+                //AddPermit(FreightBill.ID, file);
 
-            return RedirectToPage("./Index");
+                return RedirectToPage("./Index");
+            }
+            else
+            {
+
+                if (!ModelState.IsValid)
+                {
+                    return Page();
+                }
+
+                _context.Attach(FreightBill).State = EntityState.Modified;
+
+                try
+                {
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!FreightBillExists(FreightBill.ID))
+                    {
+
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+                return RedirectToPage("./Index");
+            }
         }
 
         private bool FreightBillExists(int id)
@@ -87,3 +120,7 @@ namespace GlrTransportInc
         }
     }
 }
+
+
+
+
