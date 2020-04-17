@@ -45,9 +45,6 @@
                         <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
                             <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
                         </a>
-                        <a asp-page="./UploadPermit" asp-route-id="@item.ID" class="optionButton">
-                            Upload a Permit
-                        </a>
                     }
                     <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
                 </div>
@@ -66,7 +63,6 @@
                     {
                         <th>Edit</th>
                         <th>Delete</th>
-                        <th>Upload Permit</th>
                     }
                     <th>Details</th>
                     <th>View Permit</th>
@@ -90,11 +86,6 @@
                         <td>
                             <a asp-page="./Delete" asp-route-id="@item.ID">
                                 <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
-                            </a>
-                        </td>
-                        <td>
-                            <a asp-page="./UploadPermit" asp-route-id="@item.ID" class="optionButton">
-                                Upload a Permit
                             </a>
                         </td>
                     }

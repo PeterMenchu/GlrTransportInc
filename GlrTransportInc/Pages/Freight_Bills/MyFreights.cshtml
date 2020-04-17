@@ -23,6 +23,10 @@
                         </h2>
                         <p>Driver: @Html.DisplayFor(modelItem => item.Driver)</p>
                         <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
+                        @if(item.Permit != null)
+                        {
+                            <a href="@item.Permit">Permit</a>
+                        }
                         @if (MyFreightsModel.Position == "Manager")
                         {
                             <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
@@ -58,6 +62,7 @@
                     <th>
                         View
                     </th>
+                    <th>View Permit</th>
                 </tr>
             </thead>
             <tbody>
@@ -83,6 +88,18 @@
                             <td>
                                 <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
                             </td>
+                            @if (item.Permit != null)
+                            {
+                                <td>
+                                    <a href="@item.Permit">Permit</a>
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <p> </p>
+                                </td>
+                            }
                         </tr>
                     }
                 }

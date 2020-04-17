@@ -12,18 +12,21 @@
         <br />
         <h1>@ViewData["Title"]</h1>
         <!-- Add permit -->
-        <form method="post" enctype="multipart/form-data">    
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FreightBill.ID" />
             <div class="container-fluid column col-md-12 form-group">
                 <hr />
                 <h3>Add/Edit Permit</h3>
-                <input type="file" asp-for="Upload"/>
-                <input type="submit" asp-route-sessioncount="20"/>
+                <label class="btn btn-default">
+                    <input type="file" asp-for="Upload" />
+                </label>
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
                 <hr />
             </div>
-        </form>
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="FreightBill.ID" />
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -562,7 +565,7 @@
                 </div>
                 <!-- submit button -->
                 <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary"/>
+                    <input type="submit" value="Save" class="btn btn-primary" />
                 </div>
             </div>
         </form>

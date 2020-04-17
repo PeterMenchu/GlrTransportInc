@@ -72,46 +72,38 @@ namespace GlrTransportInc.Pages.Freight_Bills
         // public async Task<IActionResult> OnSubmitEdit()
         public async Task<IActionResult> OnPostAsync(string command)
         {
-            if (Upload != null)
+            if (!ModelState.IsValid)
             {
-                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", Upload.FileName);
-                using (var fileStream = new FileStream(file, FileMode.Create))
-                {
-                    await Upload.CopyToAsync(fileStream);
-                }
-                //AddPermit(FreightBill.ID, file);
-
-                return RedirectToPage("./Index");
+                return Page();
             }
-            else
+            FreightBill.Permit = $"Permits/{Upload.FileName}";
+
+            var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", Upload.FileName);
+            using (var fileStream = new FileStream(file, FileMode.Create))
             {
-
-                if (!ModelState.IsValid)
-                {
-                    return Page();
-                }
-
-                _context.Attach(FreightBill).State = EntityState.Modified;
-
-                try
-                {
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!FreightBillExists(FreightBill.ID))
-                    {
-
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-
-                return RedirectToPage("./Index");
+                await Upload.CopyToAsync(fileStream);
             }
+
+            _context.Attach(FreightBill).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!FreightBillExists(FreightBill.ID))
+                {
+
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return RedirectToPage("./Index");
         }
 
         private bool FreightBillExists(int id)
