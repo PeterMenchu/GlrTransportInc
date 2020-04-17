@@ -1,0 +1,1 @@
+This folder contains freight bill permits issued by the state. This file initializes the folder so it can be added to the project.
