@@ -33,6 +33,10 @@
                     </h2>
                     <p>Driver: @Html.DisplayFor(modelItem => item.Driver)</p>
                     <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
+                    @if(item.Permit != null)
+                    {
+                        <a href="@item.Permit">Permit</a>
+                    }
                     @if (IndexModel.Position == "Manager")
                     {
                         <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
@@ -40,6 +44,9 @@
                         </a>
                         <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
                             <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                        </a>
+                        <a asp-page="./UploadPermit" asp-route-id="@item.ID" class="optionButton">
+                            Upload a Permit
                         </a>
                     }
                     <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
@@ -51,17 +58,19 @@
     <div class="table-responsive">
         <table class="table">
             <thead>
-            <tr>
-                <th>Customer</th>
-                <th>Driver</th>
-                <th>Status</th>
-                @if (IndexModel.Position == "Manager")
-                {
-                    <th>Edit</th>
-                    <th>Delete</th>
-                }
-                <th>Details</th>
-            </tr>
+                <tr>
+                    <th>Customer</th>
+                    <th>Driver</th>
+                    <th>Status</th>
+                    @if (IndexModel.Position == "Manager")
+                    {
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <th>Upload Permit</th>
+                    }
+                    <th>Details</th>
+                    <th>View Permit</th>
+                </tr>
             </thead>
             <tbody>
             @foreach (var item in Model.FreightBill)
@@ -83,10 +92,27 @@
                                 <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
                             </a>
                         </td>
+                        <td>
+                            <a asp-page="./UploadPermit" asp-route-id="@item.ID" class="optionButton">
+                                Upload a Permit
+                            </a>
+                        </td>
                     }
                     <td>
                         <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
                     </td>
+                    @if (item.Permit != null)
+                    {
+                        <td>
+                            <a href="@item.Permit">Permit</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <p> </p>
+                        </td>
+                    }
                 </tr>
             }
             </tbody>
