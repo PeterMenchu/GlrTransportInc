@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -76,9 +77,9 @@ namespace GlrTransportInc.Pages.Freight_Bills
             {
                 return Page();
             }
-            FreightBill.Permit = $"Permits/{Upload.FileName}";
-
-            var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", Upload.FileName);
+            FreightBill.Permit = $"Permits/{FreightBill.ID}{Path.GetExtension(Upload.FileName)}";
+            
+            var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{FreightBill.ID}{Path.GetExtension(Upload.FileName)}");
             using (var fileStream = new FileStream(file, FileMode.Create))
             {
                 await Upload.CopyToAsync(fileStream);
