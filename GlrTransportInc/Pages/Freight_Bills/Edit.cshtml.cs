@@ -77,12 +77,15 @@ namespace GlrTransportInc.Pages.Freight_Bills
             {
                 return Page();
             }
-            FreightBill.Permit = $"Permits/{FreightBill.ID}{Path.GetExtension(Upload.FileName)}";
-            
-            var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{FreightBill.ID}{Path.GetExtension(Upload.FileName)}");
-            using (var fileStream = new FileStream(file, FileMode.Create))
+            if (Upload != null)
             {
-                await Upload.CopyToAsync(fileStream);
+                FreightBill.Permit = $"Permits/{FreightBill.ID}{Path.GetExtension(Upload.FileName)}";
+
+                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{FreightBill.ID}{Path.GetExtension(Upload.FileName)}");
+                using (var fileStream = new FileStream(file, FileMode.Create))
+                {
+                    await Upload.CopyToAsync(fileStream);
+                }
             }
 
             _context.Attach(FreightBill).State = EntityState.Modified;
