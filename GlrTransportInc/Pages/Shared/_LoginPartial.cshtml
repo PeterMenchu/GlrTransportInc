@@ -43,8 +43,14 @@
                     }
                 </div>
             </li>
-            <li class=" nav-item">
-                <a class="nav-link text-white" asp-page="/Calendar/Calendar" title="Manage">Calendar</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Calendars
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" asp-page="/Calendar/Calendar">Main Calendar</a>
+                    <a class="dropdown-item" asp-page="/Calendar/UserCalendar">My Calendar</a>
+                </div>
             </li>
             <li class=" nav-item">
                 <a class="nav-link text-white" asp-page="/Map/Map" title="Manage">Map</a>
