@@ -18,6 +18,8 @@ namespace GlrTransportInc.Pages.Calendar
         public static List<DateTime> StartDate = new List<DateTime>();
         //public static List<DateTime> DueDate = new List<DateTime>();
         public static List<FbStatus> Status = new List<FbStatus>();
+        public static string SelectedName;
+        public IList<UserModel> Users { get; set; }
         // _context is for grabbing bill data
         private readonly GlrTransportInc.Data.ApplicationDbContext _context;
         public CalendarModel(GlrTransportInc.Data.ApplicationDbContext context)
@@ -35,7 +37,8 @@ namespace GlrTransportInc.Pages.Calendar
             StartDate.Clear();
             //DueDate.Clear();
             Status.Clear();
-
+            // get current user data for all employees
+            Users = await _context.UserModel.ToListAsync();
             // enable data retrieval from DB to bill model
             FreightBill = await _context.FreightBill.ToListAsync();
             // loop through each freight, set needed values
@@ -47,6 +50,12 @@ namespace GlrTransportInc.Pages.Calendar
                 //DueDate.Add(item.DueDate);
                 Status.Add(item.Status);
             }
+        }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            // just reloads this page for now
+            return RedirectToPage("./Calendar");
         }
     }
 }

@@ -1,10 +1,31 @@
 @page
+@using System.Globalization
 @model CalendarModel
 @{
     ViewBag.Title = "Calendar";
 }
 <br />
 <h2 class="column">Main Calendar</h2>
+<!-- Code for driver selection NOTE THIS IS NOT FULLY FUNCTIONAL YET just takes the value and reloads the main calendar atm-->
+<form method="post">
+    <label asp-for="@CalendarModel.SelectedName" class="control-label">Select a driver to view assignments:</label>
+    <div class="form-inline">
+        <select asp-for="@CalendarModel.SelectedName" class="form-control resizeSelect">   
+            <option value="">Select a driver</option>
+            @foreach (var item in Model.Users)
+            {
+                @if (item.CanDrive == "true")
+                {
+                    <option value="@item.Name">@item.Name</option>
+                }
+            }
+        </select>
+        <div class="form-group">
+            <input type="submit" value="Select" class="btn btn-primary calendarButton" />
+        </div>
+    </div>
+</form>
+<br />
 <div class="row">
     <div class="col-md-12">
         <div id="calendar"></div>
@@ -40,23 +61,24 @@
                 temp["id"] = Id2[i];
                 temp["title"] = BillName2[i];
                 temp["start"] = StartDate2[i];
-                temp["status"] = Status2[i];
+                temp["status"] = Status2[i];              
+                
                 //IF statements for different colors
                 if (Status2[i] == 0) {
                     //Status Pending Color
-                    temp["color"] = "#00bff";
+                    temp["color"] = "#00b2ff";
                 }
                 else if (Status2[i] == 1) {
                     //Status Shipped Color
-                    temp["color"] = "Orange";
+                    temp["color"] = "#f3f315";
                 }
                 else if (Status2[i] == 2) { 
                     //Status Complete Color
-                    temp["color"] = "#378006";
+                    temp["color"] = "#2ef429";
                 }
                 else {
                     //Status Cancelled or Error Color
-                    temp["color"] = "Red";
+                    temp["color"] = "#ff2400";
                 }
                 tempevents.push(temp);
             }
@@ -86,7 +108,7 @@
                     },
                     defaultView: 'month',
                     eventLimit: true,
-                    eventColor: '#378006',
+                    eventColor: '#5cb85c',
                     events: events,
 
                     //This is EventClicker, should redirect to Details Page, kind of hardcoded it
