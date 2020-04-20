@@ -1,0 +1,129 @@
+@page
+@using System.Globalization
+@using GlrTransportInc.Models
+@model MainCalendarModel
+@{
+    ViewBag.Title = "Calendar";
+}
+<br />
+<h2 class="column">Main Calendar</h2>
+<!-- Code for driver selection NOTE THIS IS NOT FULLY FUNCTIONAL YET just takes the value and reloads the main calendar atm-->
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <label name="SelectedName" class="control-label">Select a driver to view assignments:</label>
+    <div class="form-inline">
+        <select name="SelectedName" class="form-control resizeSelect">   
+            <option value="all">Select a driver</option>
+            <option value="all">View All</option>
+            @foreach (var item in Model.Users)
+            {
+                @if (item.CanDrive == "true")
+                {
+                    <option value="@item.Name">@item.Name</option>
+                }
+            }
+        </select>
+        <div class="form-group">
+            <input type="submit" value="Select" class="btn btn-primary calendarButton" />
+        </div>
+    </div>
+</form>
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <div id="calendar"></div>
+    </div>
+</div>
+
+<!--Needs to be update to new Full Calendar-->
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.print.css" rel="stylesheet" media="print" />
+
+@section scripts{
+    <!--Needs tob e changed for new Full Calendar-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var Id = '@Html.Raw(Json.Serialize(MainCalendarModel.Id))';
+            var Id2 = JSON.parse(Id);
+            var BillName = '@Html.Raw(Json.Serialize(MainCalendarModel.BillName))';
+            var BillName2 = JSON.parse(BillName);
+            var StartDate = '@Html.Raw(Json.Serialize(MainCalendarModel.StartDate))';
+            var StartDate2 = JSON.parse(StartDate);
+            var Status = '@Html.Raw(Json.Serialize(MainCalendarModel.Status))';
+            var Status2 = JSON.parse(Status);
+            //var StatusColor;
+            //var data = JSON.parse(model);
+            var tempevents = [];
+            //var events = [];
+
+            for (i = 0; i < BillName2.length; i++) {
+                var temp = new Object();
+                temp["id"] = Id2[i];
+                temp["title"] = BillName2[i];
+                temp["start"] = StartDate2[i];
+                temp["status"] = Status2[i];              
+                
+                //IF statements for different colors
+                if (Status2[i] == 0) {
+                    //Status Pending Color
+                    temp["color"] = "#00b2ff";
+                }
+                else if (Status2[i] == 1) {
+                    //Status Shipped Color
+                    temp["color"] = "#f3f315";
+                }
+                else if (Status2[i] == 2) { 
+                    //Status Complete Color
+                    temp["color"] = "#2ef429";
+                }
+                else {
+                    //Status Cancelled or Error Color
+                    temp["color"] = "#ff2400";
+                }
+                tempevents.push(temp);
+            }
+            $("#calendar").fullCalendar('removeEventSource', tempevents); 
+            GenerateCalendar(tempevents);
+            
+
+            function GenerateCalendar(events) { 
+                $("#calendar").fullCalendar('removeEventSource', events);
+                $('#calendar').fullCalendar({
+                    contentHeight: 700,
+                    defaultDate: new Date(),
+                    timeFormat: 'h(:mm)a',
+                    header: {
+                        left: 'month,listWeek,listDay',
+                        center: 'title',
+                        right: 'prev,next today'
+                    },
+                    buttonText: {
+                        listWeek: 'List Week',
+                        listDay: 'List Day',
+                        month: 'Month'
+                    },
+                    footer: {
+                        left: 'prev',
+                        right: 'next'
+                    },
+                    defaultView: 'month',
+                    eventLimit: true,
+                    eventColor: '#5cb85c',
+                    events: events,
+
+                    //This is EventClicker, should redirect to Details Page, kind of hardcoded it
+
+                    eventClick: function (event) {
+                        //alert('You clicked on ' + event.title);
+                        window.location = "https://www.glrtransportinc.com/Freight_Bills/Details?id=" + event.id;
+                        
+                    }
+                });
+            }
+        });
+    </script>
+
+}
