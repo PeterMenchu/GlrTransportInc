@@ -9,7 +9,81 @@
 {
     @if (EditModel.Position == "Manager")
     {
-        <p>This is a work in progress m8.</p>
+        <script>
+            function showDiv(divId, element) {
+                document.getElementById(divId).style.display = (element.value == "Manager" || element.value == "Employee") ? 'block' : 'none';
+            }
+        </script>
+        <style>
+            #hidden_div {
+                display: none;
+            }
+        </style>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UserModel.LockoutEnabled" />
+            <input type="hidden" asp-for="UserModel.TwoFactorEnabled" />
+            <input type="hidden" asp-for="UserModel.PhoneNumberConfirmed" />
+            <input type="hidden" asp-for="UserModel.PhoneNumber" />
+            <input type="hidden" asp-for="UserModel.ConcurrencyStamp" />
+            <input type="hidden" asp-for="UserModel.SecurityStamp" />
+            <input type="hidden" asp-for="UserModel.PasswordHash" />
+            <input type="hidden" asp-for="UserModel.EmailConfirmed" />
+            <input type="hidden" asp-for="UserModel.NormalizedEmail" />
+            <input type="hidden" asp-for="UserModel.Email" />
+            <input type="hidden" asp-for="UserModel.NormalizedUserName" />
+            <input type="hidden" asp-for="UserModel.UserName" />
+            <input type="hidden" asp-for="UserModel.Id" />
+            <input type="hidden" asp-for="UserModel.LockoutEnd" />
+            <input type="hidden" asp-for="UserModel.AccessFailedCount" />
+            <div class="container-fluid">
+                <h3>Editing details for @Model.UserModel.Name</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="UserModel.EmployeeId" class="control-label">Employee ID:</label>
+                            <input asp-for="UserModel.EmployeeId" class="form-control" />
+                            <span asp-validation-for="UserModel.EmployeeId" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="UserModel.Position"></label>
+                            <select asp-for="UserModel.Position" class="form-control" onchange="showDiv('hidden_div', this)">
+                                <option value="">Select a Position</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Employee">Employee</option>
+                                <option value="Driver">Driver</option>
+                            </select>
+                            <span asp-validation-for="UserModel.Position" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" id="hidden_div">
+                            <label asp-for="UserModel.CanDrive">Will this person drive?</label><br />
+                            <input type="radio" asp-for="UserModel.CanDrive" value="true"> Yes <br />
+                            <input type="radio" asp-for="UserModel.CanDrive" value="false"> No <br />
+                            <span asp-validation-for="UserModel.CanDrive" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="UserModel.Name" class="control-label">Name:</label>
+                            <input asp-for="UserModel.Name" class="form-control" />
+                            <span asp-validation-for="UserModel.Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+        <div>
+            <a asp-page="Index">Back to List</a>
+        </div>
     }
     else
     {

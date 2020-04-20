@@ -6,6 +6,7 @@ using GlrTransportInc.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using static GlrTransportInc.Pages.Profile.EmployeeProcessor;
 
 namespace GlrTransportInc.Pages.Manage_Users
 {
@@ -23,6 +24,7 @@ namespace GlrTransportInc.Pages.Manage_Users
         public IList<UserModel> Users { get; set; }
         public static string Name;
         public static string Position;
+        public static string currentName;
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -46,7 +48,7 @@ namespace GlrTransportInc.Pages.Manage_Users
             {
                 return NotFound();
             }
-
+            currentName = UserModel.Name;
             return Page();
         }
 
@@ -58,8 +60,13 @@ namespace GlrTransportInc.Pages.Manage_Users
             {
                 return Page();
             }
+            if(UserModel.Position == "Driver")
+            {
+                UserModel.CanDrive = "true";
+            }
 
             _context.Attach(UserModel).State = EntityState.Modified;
+            updateNames(UserModel.Name, currentName); //updates dames on freight bills and announcements.
 
             try
             {

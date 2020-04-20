@@ -8,6 +8,30 @@ namespace GlrTransportInc.Pages.Profile
 {
     public class EmployeeProcessor : Controller
     {
+        public static int updateNames(string name, string currentName)
+        {
+            Announcement data2 = new Announcement
+            {
+                Author = name,
+                Post = currentName
+            };
+
+            FreightBill data3 = new FreightBill
+            {
+                Driver = name,
+                Comments = currentName
+            };
+
+            string sql2 = @"UPDATE dbo.Announcement
+                          SET Author = @Author
+                          WHERE Author=@Post;";
+            string sql3 = @"UPDATE dbo.FreightBill
+                            SET Driver = @Driver
+                            WHERE Driver=@Comments;";
+
+            SqlDataController.SaveData(sql2, data2);
+            return SqlDataController.SaveData(sql3, data3);
+        }
         public static int addName(string email, string name, string currentName)
         {
             UserModel data = new UserModel
@@ -41,6 +65,7 @@ namespace GlrTransportInc.Pages.Profile
             SqlDataController.SaveData(sql3, data3);
             return SqlDataController.SaveData(sql, data);
         }
+
         // Next is some code for user directory
         // List<UserModel>
         public static List<UserModel> LoadUser()
