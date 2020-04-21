@@ -217,7 +217,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label asp-for="FreightBill.ScheduledDate" class="control-label">Scheduled Date:</label>
-                            <input type="date" placeholder="mm/dd/yyyy" min="2020-01-01" asp-for="FreightBill.ScheduledDate" class="form-control" />
+                            <input type="date" min="2020-01-01" asp-for="FreightBill.ScheduledDate" class="form-control" />
                            
                             <span asp-validation-for="FreightBill.ScheduledDate" class="text-danger"></span>
                         </div>
