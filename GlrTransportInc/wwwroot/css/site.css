@@ -56,6 +56,12 @@ for details on configuring this project to bundle and minify static web assets. 
     transform: translate(-50%, -50%);
     color: white;
 }
+.mobileSize{
+    display: block;
+}
+.mainSize{
+    display: none;
+}
 /* Medium devices (tablets, 768px and up). Everything else will be for mobile, within 
    this query will be the styling for tablets and desktop*/
 @media (min-width: 768px) {
@@ -123,6 +129,12 @@ for details on configuring this project to bundle and minify static web assets. 
     }
     .mobileCentered {
         display: none;
+    }
+    .mobileSize{
+        display: none;
+    }
+    .mainSize{
+        display: block;
     }
 }
 /* not sure if this next style was supposed to be used

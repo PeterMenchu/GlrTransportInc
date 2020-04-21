@@ -12,10 +12,11 @@
             <h1 class="centered">Hello, @IndexModel.Name!</h1>
         </div>
         <div class="mainMobileBanner">
-            <h3 class="mobileCentered">Hello, @IndexModel.Name!</h3>
+            <p class="mobileCentered">Hello, @IndexModel.Name!</p>
         </div>
         <div about="row" class="text-center main">
-            <h3>Recent Announcements</h3>
+            <h3 class="mainSize">Recent Announcements</h3>
+            <p class="mobileSize">Recent Announcements</p>
             @foreach (var item in Model.Announcement.Take(4)) 
             {
                 <a class="nav-link" asp-page="./Announcements/Index">@item.Title (@item.DatePosted)</a>                                          
@@ -29,7 +30,7 @@
             <h1 class="centered">Welcome to Glr Transport!</h1>
         </div>
         <div class="mainMobileBanner">
-            <h3 class="centered">Welcome to Glr Transport!</h3>
+            <p class="mobileCentered">Welcome to Glr Transport!</p>
         </div>
         <div about="row" class="text-center mainText">
             <p>
