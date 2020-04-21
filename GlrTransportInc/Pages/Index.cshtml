@@ -8,31 +8,34 @@
 <body>
     @if (SignInManager.IsSignedIn(User))
     {
-        <div class="loggedIn text-center">
-            <h1>Hello, @IndexModel.Name!</h1>
-            <img src="~/Images/GLR_Home192x192.png" class="MobileImg" alt="Company Logo">
-            <img src="~/Images/GLR_Home.png" class="img-fluid" alt="Company Logo">
-            <div about="row">
-                <h3>Recent Announcements</h3>
-                @foreach (var item in Model.Announcement.Take(4)) 
-                {
-                    <a class="nav-link" asp-page="./Announcements/Index">@item.Title (@item.DatePosted)</a>                                          
-                }
-            </div>
+        <div class="mainBanner">
+            <h1 class="centered">Hello, @IndexModel.Name!</h1>
         </div>
+        <div class="mainMobileBanner">
+            <h3 class="mobileCentered">Hello, @IndexModel.Name!</h3>
+        </div>
+        <div about="row" class="text-center main">
+            <h3>Recent Announcements</h3>
+            @foreach (var item in Model.Announcement.Take(4)) 
+            {
+                <a class="nav-link" asp-page="./Announcements/Index">@item.Title (@item.DatePosted)</a>                                          
+            }
+        </div>
+        
     }
     else
     {
-        <div class="main text-center">
-            <h1>Welcome to Glr Transport!</h1>
-            <img src="~/Images/GLR_Home192x192.png" class="MobileImg" alt="Company Logo">
-            <img src="~/Images/GLR_Home.png" class="img-fluid" alt="Company Logo">
+        <div class="mainBanner">
+            <h1 class="centered">Welcome to Glr Transport!</h1>
+        </div>
+        <div class="mainMobileBanner">
+            <h3 class="centered">Welcome to Glr Transport!</h3>
+        </div>
+        <div about="row" class="text-center mainText">
             <p>
                 This is a web application built to provide the members of Glr Transport Inc. a platform for managing
-                freight bills and employees. This site is currently under maintanance by a team of software developers
-                at the University of North Texas in Denton, TX. Apart from information about the company and contact
-                information, access to data on this site is limited to employees and developers, and requires logging in
-                with an employee account.
+                freight bills and employees. Please log in to access this site's features, or view the about or 
+                contact page for general information about the company.
             </p>
         </div>
     }

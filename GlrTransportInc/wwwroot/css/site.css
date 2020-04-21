@@ -4,9 +4,10 @@ for details on configuring this project to bundle and minify static web assets. 
 /*------- Index style -------*/
 /* Since bootstrap prefers mobile first design, this first block is for mobile */
 .main {
-    
-    margin-top: 25px;
-    
+    padding-top: 250px;
+}
+.mainText {
+    padding-top: 260px;
 }
 .loggedIn {
     margin-top: 20px;
@@ -33,14 +34,45 @@ for details on configuring this project to bundle and minify static web assets. 
 .MobileImg{
     display: inline-block;
 }
+.mainMobileBanner{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 350px;
+    width: 100%;
+    background: url("../Images/scenic_drive.jpg") no-repeat center center;
+    background-size: cover;
+    /* next is for browser compatibility */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    border-bottom: 7px solid #5cb85c;
+    box-shadow: 0px 5px 5px gainsboro;
+}
+.mobileCentered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
 /* Medium devices (tablets, 768px and up). Everything else will be for mobile, within 
    this query will be the styling for tablets and desktop*/
 @media (min-width: 768px) {
     .main {
-        margin-top: 60px;
+        padding-top: 460px;
+        /*margin-top: 60px;*/
         margin-right: 50px;
         margin-left: 50px;
-        padding: 30px 45px;
+        /*padding: 30px 45px;
+        /* background-color: gainsboro; */
+    }
+    .mainText {
+        padding-top: 480px;
+        /*margin-top: 60px;*/
+        margin-right: 50px;
+        margin-left: 50px;
+        /*padding: 30px 45px;
         /* background-color: gainsboro; */
     }
     .loggedIn {
@@ -64,17 +96,41 @@ for details on configuring this project to bundle and minify static web assets. 
     .MobileImg{
         display: none;
     }
+    .mainBanner{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 500px;
+        width: 100%;
+        background: url("../Images/skyline_drive_header.jpg") no-repeat center center;
+        background-size: cover;
+        /* next is for browser compatibility */
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        border-bottom: 7px solid gainsboro;
+        box-shadow: 0px 5px 5px black;
+    }
+    .mainMobileBanner{
+        display: none;
+    }
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+    .mobileCentered {
+        display: none;
+    }
 }
-/*------- End index -------*/
-/*------- Form style -------*/
-
-/*------- End form style -------*/
-/*------- Nav bar style -------*/
-/*
+/* not sure if this next style was supposed to be used
 .nav > .active > a{
     background-color: #5cb85c;
 }
 */
+/* ~ Some general styling is below ~ */
 .resizeSelect{
     width: 150px;
 }
