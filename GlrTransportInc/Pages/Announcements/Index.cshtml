@@ -22,27 +22,27 @@
             {
                 <tr>
                     <td>
-                        <div class="container-fluid">
-                            <div class="row">
+                        <div class="container-fluid" style="background-color: gainsboro">
+                            <div class="column">
                                 <h1 class="postTitle">@item.Title</h1>
                             </div>
                             @foreach (var user in Model.Users)
                             {
                                 @if (user.Name == item.Author)
                                 {
-                                    <div class="row">
+                                    <div class="column">
                                         <img gravatar-email="@user.Email" alt="Profile Picture"/>
                                     </div>
                                 }
                             }
-                            <div class="row">
+                            <div class="column">
                                 By: @item.Author | Posted: @item.DatePosted
                             </div>
                             <br />
-                            <div class="row">
+                            <div class="column">
                                 <p style="white-space: pre-line">@Html.DisplayFor(modelItem => item.Post)</p>
                             </div>
-                            <div class="row">
+                            <div class="column">
                                 @if (IndexModel2.Name == item.Author)
                                 {
                                     <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
@@ -55,6 +55,8 @@
                                         <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
                                     </a>
                                 }
+                                <br />
+                                <br />
                             </div>
                         </div>
                     </td>

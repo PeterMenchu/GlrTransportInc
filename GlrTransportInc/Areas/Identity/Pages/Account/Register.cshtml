@@ -23,36 +23,36 @@
                 display: none;
             }
         </style>
-        <div class="main text-center" align="center">
-            <div class="row" align="center">
-                <div class="col-md-7" align="center">
+        <div>
+            <div class="row">
+                <div class="col-md-7">
                     <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
                         <h4>Create a new user account.</h4>
-                        <hr />
                         <div asp-validation-summary="All" class="text-danger"></div>
                         <div class="form-group">
+                            <br />
                             <label asp-for="Input.Email"></label>
-                            <input asp-for="Input.Email" class="form-control" />
+                            <input asp-for="Input.Email" class="form-control userForm"/>
                             <span asp-validation-for="Input.Email" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Input.Password"></label>
-                            <input asp-for="Input.Password" class="form-control" />
+                            <input asp-for="Input.Password" class="form-control userForm" />
                             <span asp-validation-for="Input.Password" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Input.ConfirmPassword"></label>
-                            <input asp-for="Input.ConfirmPassword" class="form-control" />
+                            <input asp-for="Input.ConfirmPassword" class="form-control userForm" />
                             <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Input.EmployeeId"></label>
-                            <input asp-for="Input.EmployeeId" class="form-control" />
+                            <input asp-for="Input.EmployeeId" class="form-control userForm" />
                             <span asp-validation-for="Input.EmployeeId" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Input.Position"></label>
-                            <select asp-for="Input.Position" class="form-control" onchange="showDiv('hidden_div', this)">
+                            <select asp-for="Input.Position" class="form-control userForm" onchange="showDiv('hidden_div', this)">
                                 <option value="">Select a Position</option>
                                 <option value="Manager">Manager</option>
                                 <option value="Employee">Employee</option>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="Input.Name"></label>
-                            <input asp-for="Input.Name" class="form-control" />
+                            <input asp-for="Input.Name" class="form-control userForm" />
                             <span asp-validation-for="Input.Name" class="text-danger"></span>
                         </div>
                         <button type="submit" class="btn btn-primary bg-success">Submit</button>
