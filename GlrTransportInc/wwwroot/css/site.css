@@ -4,7 +4,7 @@ for details on configuring this project to bundle and minify static web assets. 
 /*------- Index style -------*/
 /* Since bootstrap prefers mobile first design, this first block is for mobile */
 .main {
-    padding-top: 250px;
+    padding-top: 240px;
 }
 .mainText {
     padding-top: 260px;
@@ -38,7 +38,7 @@ for details on configuring this project to bundle and minify static web assets. 
     position: absolute;
     top: 0px;
     left: 0px;
-    height: 350px;
+    height: 340px;
     width: 100%;
     background: url("../Images/scenic_drive.jpg") no-repeat center center;
     background-size: cover;
