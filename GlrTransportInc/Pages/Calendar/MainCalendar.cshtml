@@ -12,7 +12,7 @@
     <div asp-validation-summary="All" class="text-danger"></div>
     <label name="SelectedName" class="control-label">Select a driver to view assignments:</label>
     <div class="form-inline">
-        <select name="SelectedName" class="form-control resizeSelect">   
+        <select name="SelectedName" class="form-control resizeSelect">
             <option value="all">Select a driver</option>
             <option value="all">View All</option>
             @foreach (var item in Model.Users)
@@ -35,12 +35,14 @@
     </div>
 </div>
 
-<!--Needs to be update to new Full Calendar-->
+<!--Can be changed for latest Full Calendar-->
+<!--Style sheet reference to Full Calendar 3.10.1-->
 <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.css" rel="stylesheet" />
 <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.print.css" rel="stylesheet" media="print" />
 
 @section scripts{
-    <!--Needs tob e changed for new Full Calendar-->
+    <!--Can be changed for latest Full Calendar-->
+    <!--Using Full Calendar 3.10.1-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.js"></script>
 
@@ -64,8 +66,8 @@
                 temp["id"] = Id2[i];
                 temp["title"] = BillName2[i];
                 temp["start"] = StartDate2[i];
-                temp["status"] = Status2[i];              
-                
+                temp["status"] = Status2[i];
+
                 //IF statements for different colors
                 if (Status2[i] == 0) {
                     //Status Pending Color
@@ -75,7 +77,7 @@
                     //Status Shipped Color
                     temp["color"] = "#f3f315";
                 }
-                else if (Status2[i] == 2) { 
+                else if (Status2[i] == 2) {
                     //Status Complete Color
                     temp["color"] = "#2ef429";
                 }
@@ -85,11 +87,11 @@
                 }
                 tempevents.push(temp);
             }
-            $("#calendar").fullCalendar('removeEventSource', tempevents); 
+            $("#calendar").fullCalendar('removeEventSource', tempevents);
             GenerateCalendar(tempevents);
-            
 
-            function GenerateCalendar(events) { 
+            //Function to generate the Full Calendar
+            function GenerateCalendar(events) {
                 $("#calendar").fullCalendar('removeEventSource', events);
                 $('#calendar').fullCalendar({
                     contentHeight: 700,
@@ -103,7 +105,8 @@
                     buttonText: {
                         listWeek: 'List Week',
                         listDay: 'List Day',
-                        month: 'Month'
+                        month: 'Month',
+                        today: 'Today'
                     },
                     footer: {
                         left: 'prev',
@@ -114,12 +117,10 @@
                     eventColor: '#5cb85c',
                     events: events,
 
-                    //This is EventClicker, should redirect to Details Page, kind of hardcoded it
-
+                    //Clicking on a Freight Bill on the calendar will redirect the user to the Details Page of that Freight Bill
                     eventClick: function (event) {
                         //alert('You clicked on ' + event.title);
                         window.location = "https://www.glrtransportinc.com/Freight_Bills/Details?id=" + event.id;
-                        
                     }
                 });
             }

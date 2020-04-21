@@ -8,13 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using GlrTransportInc.Data;
 using GlrTransportInc.Models;
 
+//****Code Not in Use****
+
 namespace GlrTransportInc.Pages.Calendar
 {
     public class IndexModel : PageModel
     {
-        /*public void OnGet()
-        {
-        }*/
         private readonly GlrTransportInc.Data.ApplicationDbContext _context;
 
         public IndexModel(GlrTransportInc.Data.ApplicationDbContext context)

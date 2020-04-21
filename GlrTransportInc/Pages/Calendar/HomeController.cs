@@ -8,6 +8,9 @@ using GlrTransportInc.Models;
 using GlrTransportInc.Controllers;
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
+//****Code Not in Use****
+
+//Home Controller for MVC Application using Full Calendar
 namespace GlrTransportInc.Pages.Calendar
 {
     public class HomeController : Controller
