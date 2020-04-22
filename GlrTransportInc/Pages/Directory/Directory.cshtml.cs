@@ -20,10 +20,16 @@ namespace GlrTransportInc.Pages.Directory
         }
 
         public IList<UserModel> UserModel { get; set; }
-
+        // note, this is used for all directory pages, so all of them will be sorted
         public async Task OnGetAsync()
         {
             UserModel = await _context.UserModel.ToListAsync();
+            // sort by first name
+            IQueryable<UserModel> sortedUsers = from toSort in _context.UserModel
+                select toSort;
+            sortedUsers = sortedUsers.OrderBy(toSort => toSort.Name);
+            // set sorted version of model
+            UserModel = await sortedUsers.AsNoTracking().ToListAsync();
         }
     }
 }
