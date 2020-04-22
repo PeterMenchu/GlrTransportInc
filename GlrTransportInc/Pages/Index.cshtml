@@ -8,12 +8,14 @@
 <body>
     @if (SignInManager.IsSignedIn(User))
     {
+        <!-- header image, desktop then mobile style, toggled via the media query -->
         <div class="mainBanner">
             <h1 class="centered">Hello, @IndexModel.Name!</h1>
         </div>
         <div class="mainMobileBanner">
-            <p class="mobileCentered">Hello, @IndexModel.Name!</p>
+            <h4 class="mobileCentered">Hello, @IndexModel.Name!</h4>
         </div>
+        <!-- Content, notice that Recent Announcements also has two styles -->
         <div about="row" class="text-center main">
             <h3 class="mainSize">Recent Announcements</h3>
             <p class="mobileSize">Recent Announcements</p>
@@ -26,11 +28,12 @@
     }
     else
     {
+        <!-- follows the same format as above, but for logged out view -->
         <div class="mainBanner">
             <h1 class="centered">Welcome to Glr Transport!</h1>
         </div>
         <div class="mainMobileBanner">
-            <p class="mobileCentered">Welcome to Glr Transport!</p>
+            <h4 class="mobileCentered">Welcome to Glr Transport!</h4>
         </div>
         <div about="row" class="text-center mainText">
             <p>
