@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using GlrTransportInc.Data;
 using GlrTransportInc.Models;
 
-namespace GlrTransportInc
+namespace GlrTransportInc.Pages.Freight_Bills
 {
     public class IndexModel : PageModel
     {
-        private readonly GlrTransportInc.Data.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public IndexModel(GlrTransportInc.Data.ApplicationDbContext context)
+        public IndexModel(ApplicationDbContext context)
         {
             _context = context;
         }

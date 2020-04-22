@@ -9,6 +9,7 @@ using Microsoft.CodeAnalysis.Differencing;
 using static GlrTransportInc.Pages.Profile.EmployeeProcessor;
 using System.Collections.Generic;
 using GlrTransportInc.Models;
+using GlrTransportInc.Data;
 
 namespace GlrTransportInc.Pages.Profile
 {
@@ -16,15 +17,17 @@ namespace GlrTransportInc.Pages.Profile
     {
         private readonly UserManager<UserModel> _userManager;
         private readonly SignInManager<UserModel> _signInManager;
+
+        public string Name;
         //private readonly RoleManager<UserModel> _roleManager;
         public EditProfileModel(
             UserManager<UserModel> userManager,
-            SignInManager<UserModel> signInManager)
+            SignInManager<UserModel> signInManager
+            )
             //RoleManager<UserModel> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            //_roleManager = roleManager;
         }
 
         public static string Username { get; set; }
@@ -55,8 +58,8 @@ namespace GlrTransportInc.Pages.Profile
 
             Input = new InputModel
             {
-                PhoneNumber = phoneNumber
-                
+                PhoneNumber = phoneNumber,
+                Fullname = Name
             };
             
             
@@ -69,8 +72,9 @@ namespace GlrTransportInc.Pages.Profile
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
-
+            Name = user.Name;
             await LoadAsync(user);
+
             return Page();
         }
 

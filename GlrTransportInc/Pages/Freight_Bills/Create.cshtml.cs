@@ -9,7 +9,7 @@ using GlrTransportInc.Data;
 using GlrTransportInc.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace GlrTransportInc
+namespace GlrTransportInc.Pages.Freight_Bills
 {
     public class CreateModel : PageModel
     {
