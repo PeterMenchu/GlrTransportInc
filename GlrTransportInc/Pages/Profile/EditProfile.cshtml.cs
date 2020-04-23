@@ -10,6 +10,7 @@ using static GlrTransportInc.Pages.Profile.EmployeeProcessor;
 using System.Collections.Generic;
 using GlrTransportInc.Models;
 using GlrTransportInc.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace GlrTransportInc.Pages.Profile
 {
@@ -18,17 +19,23 @@ namespace GlrTransportInc.Pages.Profile
         // these are used to load data relevant to this page
         private readonly UserManager<UserModel> _userManager;
         private readonly SignInManager<UserModel> _signInManager;
-        // setter value for 
+        private readonly ApplicationDbContext _context;
+        public IList<Announcement> AnnouncementCheck { get;set; }
+        public static IList<FreightBill> FreightBillCheck { get;set; }
+        // setter value for name
         private string _name;
+        // flag for checking if user has bills or announcements, checked for editing the name
+        private int _billFlag;
+        private int _annFlag;
         
         public EditProfileModel(
             UserManager<UserModel> userManager,
-            SignInManager<UserModel> signInManager
-            )
-            //RoleManager<UserModel> roleManager)
+            SignInManager<UserModel> signInManager,
+            Data.ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
         // status message declaration
         [TempData]
@@ -100,7 +107,29 @@ namespace GlrTransportInc.Pages.Profile
             // then check for edited name
             if (Input.Fullname != user.Name && Input.Fullname != null) 
             {
-                int set = addName(User.Identity.Name, Input.Fullname, user.Name);
+                FreightBillCheck = await _context.FreightBill.ToListAsync();
+                AnnouncementCheck = await _context.Announcement.ToListAsync();
+                var curr_user = await _userManager.GetUserAsync(User);
+                _name = curr_user.Name;
+                if (curr_user == null)
+                {
+                    return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                }
+                foreach (var bill in FreightBillCheck)
+                {
+                    if (bill.Driver == _name)
+                    {
+                        _billFlag = 1;
+                    }
+                }
+                foreach (var post in AnnouncementCheck)
+                {
+                    if (post.Author == _name)
+                    {
+                        _annFlag = 1;
+                    }
+                }
+                int set = addName(User.Identity.Name, Input.Fullname, user.Name, _billFlag, _annFlag);
             }
             // finish update
             await _signInManager.RefreshSignInAsync(user);
