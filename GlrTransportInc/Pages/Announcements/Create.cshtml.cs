@@ -55,7 +55,10 @@ namespace GlrTransportInc
                     Name = item.Name;
                 }
             }
-            var post = new Announcement { Title = Announcement.Title, Post = Announcement.Post, Author = Name, DatePosted = DateTime.Now };
+
+            TimeZoneInfo targetZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+            DateTime newDT = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, targetZone);
+            var post = new Announcement { Title = Announcement.Title, Post = Announcement.Post, Author = Name, DatePosted = newDT };
             _context.Announcement.Add(post);
             await _context.SaveChangesAsync();
 
