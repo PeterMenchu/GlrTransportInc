@@ -25,6 +25,10 @@ namespace GlrTransportInc.Pages.Manage_Users
         public static string Name;
         public static string Position;
         public static string currentName;
+        private int _billFlag;
+        private int _annFlag;
+        public IList<Announcement> AnnouncementCheck { get;set; }
+        public static IList<FreightBill> FreightBillCheck { get;set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -65,9 +69,31 @@ namespace GlrTransportInc.Pages.Manage_Users
                 UserModel.CanDrive = "true";
             }
 
-            _context.Attach(UserModel).State = EntityState.Modified;
-            updateNames(UserModel.Name, currentName); //updates dames on freight bills and announcements.
+            if (UserModel.Name != currentName)
+            {
+                FreightBillCheck = await _context.FreightBill.ToListAsync();
+                AnnouncementCheck = await _context.Announcement.ToListAsync();
+                foreach (var bill in FreightBillCheck)
+                {
+                    if (bill.Driver == currentName)
+                    {
+                        _billFlag = 1;
+                        updateNames(UserModel.Name, currentName, _billFlag, _annFlag);
+                        _billFlag = 0;
+                    }
+                }
 
+                foreach (var post in AnnouncementCheck)
+                {
+                    if (post.Author == currentName)
+                    {
+                        _annFlag = 1;
+                        updateNames(UserModel.Name, currentName, _billFlag, _annFlag);
+                        _annFlag = 0;
+                    }
+                }
+            }
+            _context.Attach(UserModel).State = EntityState.Modified;
             try
             {
                 await _context.SaveChangesAsync();

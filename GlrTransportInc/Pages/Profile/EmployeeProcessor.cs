@@ -10,30 +10,40 @@ namespace GlrTransportInc.Pages.Profile
 {
     public class EmployeeProcessor : Controller
     {
-        public static int updateNames(string name, string currentName)
+        public static int updateNames(string name, string currentName, int flag, int flag2)
         {
             
-            Announcement data2 = new Announcement
+            if (flag == 1)
             {
-                Author = name,
-                Post = currentName
-            };
-
-            FreightBill data3 = new FreightBill
-            {
-                Driver = name,
-                Comments = currentName
-            };
-
-            string sql2 = @"UPDATE dbo.Announcement
-                          SET Author = @Author
-                          WHERE Author=@Post;";
-            string sql3 = @"UPDATE dbo.FreightBill
+                FreightBill data3 = new FreightBill
+                {
+                    Driver = name,
+                    Comments = currentName
+                };
+                
+                string sql3 = @"UPDATE dbo.FreightBill
                             SET Driver = @Driver
                             WHERE Driver=@Comments;";
+                
+                return SqlDataController.SaveData(sql3, data3);
+            }
+            if (flag2 == 1)
+            {
+                Announcement data2 = new Announcement
+                {
+                    Author = name,
+                    Post = currentName
+                };
+                
 
-            SqlDataController.SaveData(sql2, data2);
-            return SqlDataController.SaveData(sql3, data3);
+                string sql2 = @"UPDATE dbo.Announcement
+                          SET Author = @Author
+                          WHERE Author=@Post;";
+                
+                return SqlDataController.SaveData(sql2, data2);
+            }
+
+            return 0;
         }
         public static int addName(string email, string name, string currentName, int flag, int flag2)
         {
