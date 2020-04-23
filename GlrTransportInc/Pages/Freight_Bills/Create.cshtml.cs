@@ -8,21 +8,28 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using GlrTransportInc.Data;
 using GlrTransportInc.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace GlrTransportInc.Pages.Freight_Bills
 {
     public class CreateModel : PageModel
     {
         private readonly GlrTransportInc.Data.ApplicationDbContext _context;
+        private IWebHostEnvironment _environment;
 
-        public CreateModel(GlrTransportInc.Data.ApplicationDbContext context)
+        public CreateModel(GlrTransportInc.Data.ApplicationDbContext context, IWebHostEnvironment environment)
         {
             _context = context;
+            _environment = environment;
         }
 
         public IList<UserModel> UserModel { get; set; }
         public static string Name;
         public static string Position;
+        [BindProperty]
+        public IFormFile Upload { get; set; }
         public async Task<IActionResult> OnGetAsync()
         {
             UserModel = await _context.UserModel.ToListAsync();
@@ -53,6 +60,19 @@ namespace GlrTransportInc.Pages.Freight_Bills
 
             _context.FreightBill.Add(FreightBill);
             await _context.SaveChangesAsync();
+            if (Upload != null)
+            {
+                FreightBill.Permit = $"/Permits/{FreightBill.ID}{Path.GetExtension(Upload.FileName)}";
+
+                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{FreightBill.ID}{Path.GetExtension(Upload.FileName)}");
+                using (var fileStream = new FileStream(file, FileMode.Create))
+                {
+                    await Upload.CopyToAsync(fileStream);
+                }
+
+                _context.Attach(FreightBill).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+            }
 
             return RedirectToPage("./Index");
         }
