@@ -6,11 +6,24 @@ namespace GlrTransportInc.Models
 {
     public class Timesheet
     {
+        public int ID { get; set; }
         public string Email { get; set; }
         public DateTime Week { get; set; }
-        public List<float> Hours { get; set; }
-        public List<int> Jobs { get; set; }
-        public List<string> Comments { get; set; }
+        public float Hours1 { get; set; }
+        public float Hours2 { get; set; }
+        public float Hours3 { get; set; }
+        public float Hours4 { get; set; }
+        public float Hours5 { get; set; }
+        public int Jobs1 { get; set; }
+        public int Jobs2 { get; set; }
+        public int Jobs3 { get; set; }
+        public int Jobs4 { get; set; }
+        public int Jobs5 { get; set; }
+        public string Comments1 { get; set; }
+        public string Comments2 { get; set; }
+        public string Comments3 { get; set; }
+        public string Comments4 { get; set; }
+        public string Comments5 { get; set; }
         public float TotalHours { get; set; }
         public float PerHour { get; set; }
         public float Over40PerHour { get; set; }
