@@ -17,17 +17,17 @@
             <a asp-page="Create" class="btn btn-primary bg-success" style="padding-left: 5px">Create New</a>
         }
     </div>
-    <!-- 
-<form asp-page="./Index" method="get">
-    <div class="form-actions no-color">
-        <p>
-            <input type="text" name="input" value="@Model.Current" placeholder="Search"/>
-            <input type="submit" value="Search" class="btn btn-primary" /> |
-            <a asp-page="./Index">Back to full List</a>
-        </p>
-    </div>
-</form>
--->
+    
+    <form asp-page="./Index" method="get">
+        <div class="form-actions no-color">
+            <p>
+                <input type="text" name="input" value="@Model.Current" placeholder="Search all bill fields"/>
+                <input type="submit" value="Search" class="btn btn-primary" /> |
+                <a asp-page="./Index">Back to full List</a>
+            </p>
+        </div>
+    </form>
+
     <div>
         <div class="row">
             <div><partial name="FreightNav" /></div>
