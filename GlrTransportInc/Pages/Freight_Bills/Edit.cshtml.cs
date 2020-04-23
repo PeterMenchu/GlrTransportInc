@@ -79,7 +79,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
             }
             if (Upload != null)
             {
-                FreightBill.Permit = $"Permits/{FreightBill.ID}{Path.GetExtension(Upload.FileName)}";
+                FreightBill.Permit = $"/Permits/{FreightBill.ID}{Path.GetExtension(Upload.FileName)}";
 
                 var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{FreightBill.ID}{Path.GetExtension(Upload.FileName)}");
                 using (var fileStream = new FileStream(file, FileMode.Create))
