@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using GlrTransportInc.Data;
 using GlrTransportInc.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.InteropServices;
 
 namespace GlrTransportInc
 {
@@ -56,7 +57,17 @@ namespace GlrTransportInc
                 }
             }
 
-            TimeZoneInfo targetZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+            TimeZoneInfo targetZone = null;
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                targetZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+            }
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                targetZone = TimeZoneInfo.FindSystemTimeZoneById("America/Chicago");
+            }
+            
             DateTime newDT = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, targetZone);
             var post = new Announcement { Title = Announcement.Title, Post = Announcement.Post, Author = Name, DatePosted = newDT };
             _context.Announcement.Add(post);
