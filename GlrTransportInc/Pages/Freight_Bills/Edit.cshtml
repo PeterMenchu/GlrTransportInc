@@ -496,6 +496,7 @@
                             <label asp-for="FreightBill.Driver" class="control-label">Driver:</label>
                             <select asp-for="FreightBill.Driver" class="form-control">
                                 <option value="">Select a driver</option>
+                                <option value="Unassigned">Needs Assignment</option>
                                 @foreach (var item in Model.UserModel)
                                 {
                                     @if (item.CanDrive == "true")

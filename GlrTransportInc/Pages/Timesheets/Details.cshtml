@@ -1,0 +1,133 @@
+﻿@page
+@model DetailsModel3
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div>
+        <h4>Timesheet</h4>
+        <hr />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 border">
+                    Week of:
+                    @Model.Timesheet.Week.ToShortDateString()
+                </div>
+                <div class="col-md-9 border">
+                    Employee: <br />
+                    @Html.DisplayFor(model => model.Timesheet.Email)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 border">
+                    Friday <br />
+                    @Html.DisplayFor(model => model.Timesheet.Hours1) hrs.
+                </div>
+                <div class="col-md-8 border">
+                    @Html.DisplayFor(model => model.Timesheet.Comments1)
+                </div>
+                <div class="col-md-2 border">
+                    @Html.DisplayFor(model => model.Timesheet.Jobs1) jobs
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 border">
+                    Monday <br />
+                    @Html.DisplayFor(model => model.Timesheet.Hours2) hrs.
+                </div>
+                <div class="col-md-8 border">
+                    @Html.DisplayFor(model => model.Timesheet.Comments2)
+                </div>
+                <div class="col-md-2 border">
+                    @Html.DisplayFor(model => model.Timesheet.Jobs2) jobs
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 border">
+                    Tuesday <br />
+                    @Html.DisplayFor(model => model.Timesheet.Hours3) hrs.
+                </div>
+                <div class="col-md-8 border">
+                    @Html.DisplayFor(model => model.Timesheet.Comments3)
+                </div>
+                <div class="col-md-2 border">
+                    @Html.DisplayFor(model => model.Timesheet.Jobs3) jobs
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 border">
+                    Wednesday <br />
+                    @Html.DisplayFor(model => model.Timesheet.Hours4) hrs.
+                </div>
+                <div class="col-md-8 border">
+                    @Html.DisplayFor(model => model.Timesheet.Comments4)
+                </div>
+                <div class="col-md-2 border">
+                    @Html.DisplayFor(model => model.Timesheet.Jobs4) jobs
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 border">
+                    Thursday <br>
+                    @Html.DisplayFor(model => model.Timesheet.Hours5) hrs.
+                </div>
+                <div class="col-md-8 border">
+                    @Html.DisplayFor(model => model.Timesheet.Comments5)
+                </div>
+                <div class="col-md-2 border">
+                    @Html.DisplayFor(model => model.Timesheet.Jobs5) jobs
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 border">
+                    @Html.DisplayFor(model => model.Timesheet.TotalHours) hrs. =
+                </div>
+                <div class="col-md-4 border">
+                    $@Html.DisplayFor(model => model.Timesheet.PerHour) /hr.
+                </div>
+                <div class="col-md-4 border">
+                    If 40 hrs. then $ @Html.DisplayFor(model => model.Timesheet.Over40PerHour) /hr.
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <h6>For office Use Only:</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 border">
+                    Total jobs <br />
+                    @Html.DisplayFor(model => model.Timesheet.Total)
+                </div>
+                <div class="col-md-2 border">
+                    Pay date <br />
+                    @Model.Timesheet.PayDate.ToShortDateString()
+                </div>
+                <div class="col-md-6 border">
+                    Net Pay <br />
+                    @Html.DisplayFor(model => model.Timesheet.NetPay)
+                </div>
+                <div class="col-md-2 border">
+                    Personal days off <br />
+                    @Html.DisplayFor(model => model.Timesheet.DaysOff)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Timesheet.ID">Edit</a> |
+        <a asp-page="./Index">Back to List</a>
+    </div>
+}
+else
+{
+    <body>
+        <div class="main text-center">
+            <p>You must log in to view details.</p>
+            <a asp-page="/LoginPage" class="p text-success">Click here to log in</a>
+        </div>
+    </body>
+}
