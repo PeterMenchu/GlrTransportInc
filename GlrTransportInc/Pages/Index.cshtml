@@ -21,7 +21,7 @@
             <p class="mobileSize">Recent Announcements</p>
             @foreach (var item in Model.Announcement.Take(4)) 
             {
-                <a class="nav-link" asp-page="./Announcements/Index">@item.Title (@item.DatePosted)</a>                                          
+                <a class="nav-link" asp-page="./Announcements/Index">@item.Title (@string.Format("{0:MM/dd/yyyy hh:mm:ss tt}",item.DatePosted))</a> 
             }
         </div>
         
