@@ -69,7 +69,7 @@ namespace GlrTransportInc.Pages.Manage_Users
                 UserModel.CanDrive = "true";
             }
 
-            if (UserModel.Name != currentName)
+            if (UserModel.Name != currentName && UserModel.Name != null)
             {
                 FreightBillCheck = await _context.FreightBill.ToListAsync();
                 AnnouncementCheck = await _context.Announcement.ToListAsync();
