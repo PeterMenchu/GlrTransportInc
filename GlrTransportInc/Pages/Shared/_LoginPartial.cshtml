@@ -36,7 +36,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" asp-page="/Directory/Directory">User Directory</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" asp-page="/Timesheet/MyIndex">My Timesheets</a>
+                    <a class="dropdown-item" asp-page="/Timesheets/MyIndex">My Timesheets</a>
                     @if (User.FindFirst("Position").Value == "Manager")
                     {
                         <div class="dropdown-divider"></div>
