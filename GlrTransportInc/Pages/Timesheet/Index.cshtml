@@ -1,0 +1,67 @@
+﻿@page
+@model GlrTransportInc.IndexModel
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (IndexModel.Position == "Manager")
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Week of
+                    </th>
+                    <th>
+                        Edit
+                    </th>
+                    <th>
+                        View details
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Timesheet)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @item.Week.Date.ToShortDateString()
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.ID">
+                                <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-page="./Details" asp-route-id="@item.ID">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <body>
+            <div class="main text-center">
+                <p>Unautorized.</p>
+            </div>
+        </body>
+    }
+}
+else
+{
+    <body>
+        <div class="main text-center">
+            <p>You must log in to view timesheets.</p>
+            <a asp-page="/LoginPage" class="p text-success">Click here to log in</a>
+        </div>
+    </body>
+}

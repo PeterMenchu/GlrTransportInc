@@ -7,7 +7,7 @@ namespace GlrTransportInc.Models
     public class Timesheet
     {
         public int ID { get; set; }
-        public string Email { get; set; }
+        public string Email { get; set; } //Author name, we don't need their email. Didn't bother to change it in the database.
         public DateTime Week { get; set; }
         public float Hours1 { get; set; }
         public float Hours2 { get; set; }
