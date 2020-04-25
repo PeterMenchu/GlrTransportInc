@@ -14,15 +14,15 @@
         <h1>@ViewData["Title"]</h1>
         @if (IndexModel.Position == "Manager")
         {
-            <a asp-page="Create" class="btn btn-primary bg-success" style="padding-left: 5px">Create New</a>
+            <a asp-page="Create" class="btn btn-primary bg-success">Create New</a>
         }
     </div>
-    
+    <hr/>
     <form asp-page="./Index" method="get">
         <div class="form-actions no-color">
             <p>
                 <input type="text" name="input" value="@Model.Current" placeholder="Search all bill fields"/>
-                <input type="submit" value="Search" class="btn btn-primary" /> |
+                <input type="submit" value="Search" class="btn btn-primary bg-success" /> |
                 <a asp-page="./Index">Back to full List</a>
             </p>
         </div>

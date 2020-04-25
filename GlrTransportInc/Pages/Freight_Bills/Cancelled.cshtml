@@ -17,11 +17,12 @@
             <a asp-page="Create" class="btn btn-primary bg-success">Create New</a>
         }
     </div>
+    <hr/>
     <form asp-page="./Cancelled" method="get">
         <div class="form-actions no-color">
             <p>
                 <input type="text" name="input" value="@Model.Current" placeholder="Search all bill fields"/>
-                <input type="submit" value="Search" class="btn btn-primary" /> |
+                <input type="submit" value="Search" class="btn btn-primary bg-success" /> |
                 <a asp-page="./Cancelled">Back to full List</a>
             </p>
         </div>
