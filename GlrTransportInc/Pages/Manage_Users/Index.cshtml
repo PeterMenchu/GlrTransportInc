@@ -31,8 +31,12 @@
                         <br />
                         <p>Position: @Html.DisplayFor(modelItem => item.Position)</p>
                         <p>Employee ID: @Html.DisplayFor(modelItem => item.EmployeeId)</p>
-                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a><br />
-                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">
+                            <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                        </a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id">
+                            <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                        </a>
                     </div>
                 }
             </body>
