@@ -2,43 +2,45 @@
 @using System.Globalization
 @using GlrTransportInc.Models
 @model SelectCalendarModel
+@inject SignInManager<UserModel> SignInManager
 @{
     ViewBag.Title = "Calendar";
 }
+@if (SignInManager.IsSignedIn(User))
+{
+    <h3 class="column">Calendar for @CalendarSelection.Selection</h3>
 
-<h3 class="column">Calendar for @CalendarSelection.Selection</h3>
-
-<form method="post">
-    <div asp-validation-summary="All" class="text-danger"></div>
-    <label name="SelectedName" class="control-label">Select a driver to view assignments:</label>
-    <div class="form-inline">
-        <select name="SelectedName" class="form-control resizeSelect">
-            <option value="all">Select a driver</option>
-            <option value="all">View All</option>
-            @foreach (var item in Model.Users)
-            {
-                @if (item.CanDrive == "true")
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <label name="SelectedName" class="control-label">Select a driver to view assignments:</label>
+        <div class="form-inline">
+            <select name="SelectedName" class="form-control resizeSelect">
+                <option value="all">Select a driver</option>
+                <option value="all">View All</option>
+                @foreach (var item in Model.Users)
                 {
-                    <option value="@item.Name">@item.Name</option>
+                    @if (item.CanDrive == "true")
+                    {
+                        <option value="@item.Name">@item.Name</option>
+                    }
                 }
-            }
-        </select>
-        <div class="form-group">
-            <input type="submit" value="Select" class="btn btn-primary calendarButton" />
+            </select>
+            <div class="form-group">
+                <input type="submit" value="Select" class="btn btn-primary calendarButton"/>
+            </div>
+        </div>
+    </form>
+    <br/>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="calendar"></div>
         </div>
     </div>
-</form>
-<br />
-<div class="row">
-    <div class="col-md-12">
-        <div id="calendar"></div>
-    </div>
-</div>
 
-<!--Can be changed for latest Full Calendar-->
-<!--Style sheet reference to Full Calendar 3.10.1-->
-<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.css" rel="stylesheet" />
-<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.print.css" rel="stylesheet" media="print" />
+    <!--Can be changed for latest Full Calendar-->
+    <!--Style sheet reference to Full Calendar 3.10.1-->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.css" rel="stylesheet"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.print.css" rel="stylesheet" media="print"/>
 
 @section scripts{
     <!--Can be changed for latest Full Calendar-->
@@ -124,4 +126,8 @@
         });
     </script>
 
+}
+}
+else{
+    <h1 class="text-center">You must be logged in to view this page.</h1>
 }

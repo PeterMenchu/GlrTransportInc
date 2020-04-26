@@ -1,19 +1,22 @@
 @page
 @model UserCalendarModel
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
 @{
     ViewBag.Title = "User Calendar";
 }
-
-<h2 class="column">Employee calendar for @UserCalendarModel.DriverName</h2>
-<div class="row">
-    <div class="col-md-12">
-        <div id="calendar"></div>
+@if (SignInManager.IsSignedIn(User))
+{
+    <h2 class="column">Employee calendar for @UserCalendarModel.DriverName</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="calendar"></div>
+        </div>
     </div>
-</div>
-<!--Can be changed for latest Full Calendar-->
-<!--Style sheet reference to Full Calendar 3.10.1-->
-<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.css" rel="stylesheet" />
-<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.print.css" rel="stylesheet" media="print" />
+    <!--Can be changed for latest Full Calendar-->
+    <!--Style sheet reference to Full Calendar 3.10.1-->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.css" rel="stylesheet"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.print.css" rel="stylesheet" media="print"/>
 
 @section scripts{
     <!--Can be changed for latest Full Calendar-->
@@ -98,4 +101,8 @@
         });
     </script>
 
+}
+}
+else{
+    <h1 class="text-center">You must be logged in to view this page.</h1>
 }
