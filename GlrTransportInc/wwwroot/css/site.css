@@ -13,9 +13,7 @@ for details on configuring this project to bundle and minify static web assets. 
 .mainText {
     padding-top: 260px;
 }
-.loggedIn {
-    margin-top: 20px;
-}
+
 .mobileList {
     display: block;
 }
@@ -92,12 +90,6 @@ for details on configuring this project to bundle and minify static web assets. 
         /*padding: 30px 45px;
         /* background-color: gainsboro; */
     }
-    .loggedIn {
-        margin-top: 45px;
-        margin-right: 50px;
-        margin-left: 50px;
-        padding: 30px 45px;
-    }
     .table-responsive{
         display: block;
     }
@@ -109,6 +101,8 @@ for details on configuring this project to bundle and minify static web assets. 
     }
     .img-fluid{
         display: inline-block;
+        margin-top: 275px;
+        text-align: center;
     }
     .MobileImg{
         display: none;
