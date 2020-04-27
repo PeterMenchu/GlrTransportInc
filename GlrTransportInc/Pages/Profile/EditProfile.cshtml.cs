@@ -48,6 +48,7 @@ namespace GlrTransportInc.Pages.Profile
         public class InputModel
         {
             [Phone]
+            [StringLength(16, MinimumLength = 10)]
             [Display(Name = "Phone number:")]
             public string PhoneNumber { get; set; }
             public string Fullname { get; set; }
