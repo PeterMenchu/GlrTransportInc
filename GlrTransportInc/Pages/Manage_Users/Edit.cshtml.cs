@@ -27,8 +27,10 @@ namespace GlrTransportInc.Pages.Manage_Users
         public static string currentName;
         private int _billFlag;
         private int _annFlag;
+        private int _timeFlag;
         public IList<Announcement> AnnouncementCheck { get;set; }
         public static IList<FreightBill> FreightBillCheck { get;set; }
+        public IList<Timesheet> TimesheetCheck { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -73,12 +75,13 @@ namespace GlrTransportInc.Pages.Manage_Users
             {
                 FreightBillCheck = await _context.FreightBill.ToListAsync();
                 AnnouncementCheck = await _context.Announcement.ToListAsync();
+                TimesheetCheck = await _context.Timesheet.ToListAsync();
                 foreach (var bill in FreightBillCheck)
                 {
                     if (bill.Driver == currentName)
                     {
                         _billFlag = 1;
-                        updateNames(UserModel.Name, currentName, _billFlag, _annFlag);
+                        updateNames(UserModel.Name, currentName, _billFlag, _annFlag, _timeFlag);
                         _billFlag = 0;
                     }
                 }
@@ -88,8 +91,18 @@ namespace GlrTransportInc.Pages.Manage_Users
                     if (post.Author == currentName)
                     {
                         _annFlag = 1;
-                        updateNames(UserModel.Name, currentName, _billFlag, _annFlag);
+                        updateNames(UserModel.Name, currentName, _billFlag, _annFlag, _timeFlag);
                         _annFlag = 0;
+                    }
+                }
+
+                foreach (var timesheet in TimesheetCheck)
+                {
+                    if (timesheet.Email == currentName)
+                    {
+                        _timeFlag = 1;
+                        updateNames(UserModel.Name, currentName, _billFlag, _annFlag, _timeFlag);
+                        _timeFlag = 0;
                     }
                 }
             }

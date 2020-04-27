@@ -22,11 +22,13 @@ namespace GlrTransportInc.Pages.Profile
         private readonly ApplicationDbContext _context;
         public IList<Announcement> AnnouncementCheck { get;set; }
         public static IList<FreightBill> FreightBillCheck { get;set; }
+        public IList<Timesheet> TimeSheetCheck { get; set; }
         // setter value for name
         private string _name;
         // flag for checking if user has bills or announcements, checked for editing the name
         private int _billFlag;
         private int _annFlag;
+        private int _timeFlag;
         
         public EditProfileModel(
             UserManager<UserModel> userManager,
@@ -110,6 +112,7 @@ namespace GlrTransportInc.Pages.Profile
             {
                 FreightBillCheck = await _context.FreightBill.ToListAsync();
                 AnnouncementCheck = await _context.Announcement.ToListAsync();
+                TimeSheetCheck = await _context.Timesheet.ToListAsync();
                 var curr_user = await _userManager.GetUserAsync(User);
                 _name = curr_user.Name;
                 if (curr_user == null)
@@ -130,7 +133,14 @@ namespace GlrTransportInc.Pages.Profile
                         _annFlag = 1;
                     }
                 }
-                int set = addName(User.Identity.Name, Input.Fullname, user.Name, _billFlag, _annFlag);
+                foreach (var timesheet in TimeSheetCheck)
+                {
+                    if (timesheet.Email == _name)
+                    {
+                        _timeFlag = 1;
+                    }
+                }
+                int set = addName(User.Identity.Name, Input.Fullname, user.Name, _billFlag, _annFlag, _timeFlag);
             }
             // finish update
             await _signInManager.RefreshSignInAsync(user);

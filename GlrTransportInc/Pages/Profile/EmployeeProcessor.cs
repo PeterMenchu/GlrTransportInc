@@ -10,7 +10,7 @@ namespace GlrTransportInc.Pages.Profile
 {
     public class EmployeeProcessor : Controller
     {
-        public static int updateNames(string name, string currentName, int flag, int flag2)
+        public static int updateNames(string name, string currentName, int flag, int flag2, int flag3)
         {
             
             if (flag == 1)
@@ -42,10 +42,23 @@ namespace GlrTransportInc.Pages.Profile
                 
                 return SqlDataController.SaveData(sql2, data2);
             }
+            if (flag3 == 1)
+            {
+                Timesheet data4 = new Timesheet
+                {
+                    Email = name,
+                    Comments1 = currentName
+                };
+
+                string sql4 = @"UPDATE dbo.TimeSheet
+                                SET Email = @Email
+                                WHERE EMAIL=@Comments1;";
+                return SqlDataController.SaveData(sql4, data4);
+            }
 
             return 0;
         }
-        public static int addName(string email, string name, string currentName, int flag, int flag2)
+        public static int addName(string email, string name, string currentName, int flag, int flag2, int flag3)
         {
             
             UserModel data = new UserModel
@@ -81,6 +94,20 @@ namespace GlrTransportInc.Pages.Profile
                           WHERE Author=@Post;";
                 
                 SqlDataController.SaveData(sql2, data2);
+            }
+            if (flag3 ==1)
+            {
+                Timesheet data4 = new Timesheet
+                {
+                    Email = name,
+                    Comments1 = currentName
+                };
+
+                string sql4 = @"UPDATE dbo.TimeSheet
+                                SET Email = @Email
+                                WHERE EMAIL=@Comments1;";
+
+                SqlDataController.SaveData(sql4, data4);
             }
 
             string sql = @"UPDATE dbo.AspNetUsers 
