@@ -3,8 +3,10 @@
 @using GlrTransportInc.Models
 @inject SignInManager<UserModel> SignInManager
 
+<meta name="viewport" content="width=1024">
 @if (SignInManager.IsSignedIn(User))
 {
+    
     <script language="javascript">
         function printDiv(divName, ommit) {
             var originalContents = document.body.innerHTML;
