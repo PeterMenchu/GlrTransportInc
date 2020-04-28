@@ -6,7 +6,7 @@
   "display": "standalone",
   "start_url": "https://www.glrtransportinc.com/",
   "short_name": "GLR",
-  "theme_color": "transparent",
+  "theme_color": "#5cb85",
   "description": "",
   "orientation": "any",
   "background_color": "transparent",
