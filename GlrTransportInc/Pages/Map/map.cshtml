@@ -14,7 +14,7 @@
         #map {
             height: 90vh;
             width: 100%;
-            margin-right:30%;
+            margin-right:50%;
         }
         #searchInput {
             background-color: #fff;
@@ -24,7 +24,7 @@
             margin-left: 12px;
             padding: 0 13px 0 13px;
             text-overflow: ellipsis;
-            width: 30%;
+            width: 50%;
         }
 
     </style>
@@ -48,7 +48,12 @@
                 // Map options
                 var options = {
                     zoom: 15,
-                    center: { lat: 33.1501, lng: -97.6873 }
+                    center: { lat: 33.1501, lng: -97.6873 },
+                    mapTypeControl: true,
+                    mapTypeControlOptions: {
+                        style: google.maps.MapTypeControlStyle.VERTICAL_BAR,
+                        position: google.maps.ControlPosition.BOTTOM_LEFT
+                    }
                 }
 
                 // New map 
