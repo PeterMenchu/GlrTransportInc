@@ -21,22 +21,6 @@
             document.body.innerHTML = originalContents;
         }
     </script>
-    <div class="blockquote text-center">
-        @if (DetailsModel.Position == "Manager")
-        {
-            <a asp-page="./Edit" asp-route-id="@Model.FreightBill.ID" class="h5">Edit  |</a>
-        }
-        <a asp-page="./Index" class="h5"> Back to List</a>
-    </div>
-    <br />
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <b>Freight Bill Status: </b>
-                @Html.DisplayFor(model => model.FreightBill.Status)
-            </div>
-        </div>
-    </div>
     <div id="PrintDiv">
         <br />
         <div class="container">
