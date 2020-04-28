@@ -12,6 +12,7 @@
         <div class="container-fluid">
             <h3>Editing @Model.Timesheet.Email's time sheet</h3>
             <input type="hidden" asp-for="Timesheet.Email" class="form-control" />
+            <input type="hidden" asp-for="Timesheet.ID" class="form-control" />
             <hr />
             <div class="row">
                 <div class="col-md-12">
@@ -34,7 +35,7 @@
                     <span asp-validation-for="Timesheet.Comments1" class="text-danger"></span>
                     <br />
                     <h6>#jobs:</h6>
-                    <input asp-for="Timesheet.Jobs1" class="form-control"/>
+                    <input asp-for="Timesheet.Jobs1" class="form-control" />
                     <span asp-validation-for="Timesheet.Jobs1" class="text-danger"></span>
                 </div>
             </div>
@@ -59,14 +60,14 @@
                 <div class="col-md-12">
                     <h5>Tuesday:</h5> <br />
                     <h6>Hrs.</h6>
-                    <input asp-for="Timesheet.Hours3" class="form-control"  />
+                    <input asp-for="Timesheet.Hours3" class="form-control" />
                     <span asp-validation-for="Timesheet.Hours3" class="text-danger"></span>
                     <br />
                     <textarea asp-for="Timesheet.Comments3" class="form-control" rows="3"></textarea>
                     <span asp-validation-for="Timesheet.Comments3" class="text-danger"></span>
                     <br />
                     <h6>#jobs:</h6>
-                    <input asp-for="Timesheet.Jobs3" class="form-control"  />
+                    <input asp-for="Timesheet.Jobs3" class="form-control" />
                     <span asp-validation-for="Timesheet.Jobs3" class="text-danger"></span>
                 </div>
             </div>
@@ -75,14 +76,14 @@
                 <div class="col-md-12">
                     <h5>Wednesday:</h5> <br />
                     <h6>Hrs.</h6>
-                    <input asp-for="Timesheet.Hours4" class="form-control"  />
+                    <input asp-for="Timesheet.Hours4" class="form-control" />
                     <span asp-validation-for="Timesheet.Hours4" class="text-danger"></span>
                     <br />
                     <textarea asp-for="Timesheet.Comments4" class="form-control" rows="3"></textarea>
                     <span asp-validation-for="Timesheet.Comments4" class="text-danger"></span>
                     <br />
                     <h6>#jobs:</h6>
-                    <input asp-for="Timesheet.Jobs4" class="form-control"  />
+                    <input asp-for="Timesheet.Jobs4" class="form-control" />
                     <span asp-validation-for="Timesheet.Jobs4" class="text-danger"></span>
                 </div>
             </div>
@@ -91,14 +92,14 @@
                 <div class="col-md-12">
                     <h5>Thursday:</h5> <br />
                     <h6>Hrs.</h6>
-                    <input asp-for="Timesheet.Hours5" class="form-control"  />
+                    <input asp-for="Timesheet.Hours5" class="form-control" />
                     <span asp-validation-for="Timesheet.Hours5" class="text-danger"></span>
                     <br />
                     <textarea asp-for="Timesheet.Comments5" class="form-control" rows="3"></textarea>
                     <span asp-validation-for="Timesheet.Comments5" class="text-danger"></span>
                     <br />
                     <h6>#jobs:</h6>
-                    <input asp-for="Timesheet.Jobs5" class="form-control"  />
+                    <input asp-for="Timesheet.Jobs5" class="form-control" />
                     <span asp-validation-for="Timesheet.Jobs5" class="text-danger"></span>
                 </div>
             </div>
@@ -106,13 +107,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <h6>Total hours:</h6>
-                    <input asp-for="Timesheet.TotalHours" class="form-control"  />
+                    <input asp-for="Timesheet.TotalHours" class="form-control" />
                     <span asp-validation-for="Timesheet.TotalHours" class="text-danger"></span>
                     <br /><h6>$ /hr.</h6>
-                    <input asp-for="Timesheet.PerHour" class="form-control"  />
+                    <input asp-for="Timesheet.PerHour" class="form-control" />
                     <span asp-validation-for="Timesheet.PerHour" class="text-danger"></span>
                     <br /><h6>If 40 hrs. then $ /hr.</h6>
-                    <input asp-for="Timesheet.Over40PerHour" class="form-control"  />
+                    <input asp-for="Timesheet.Over40PerHour" class="form-control" />
                     <span asp-validation-for="Timesheet.Over40PerHour" class="text-danger"></span>
                 </div>
             </div>
@@ -131,15 +132,15 @@
                     <div class="col-md-12">
                         <h3>Office Use:</h3>
                         <h6>Total jobs:</h6>
-                        <input asp-for="Timesheet.Total" class="form-control"  />
+                        <input asp-for="Timesheet.Total" class="form-control" />
                         <span asp-validation-for="Timesheet.Total" class="text-danger"></span>
                         <br />
                         <h6>Pay Date:</h6>
-                        <input type="date" asp-for="Timesheet.PayDate" class="form-control" value="@DateTime.Now" />
+                        <input type="date" asp-for="Timesheet.PayDate" class="form-control" />
                         <span asp-validation-for="Timesheet.PayDate" class="text-danger"></span>
                         <br />
                         <h6>Net Pay: </h6>
-                        <input asp-for="Timesheet.NetPay" class="form-control"  />
+                        <input asp-for="Timesheet.NetPay" class="form-control" />
                         <span asp-validation-for="Timesheet.NetPay" class="text-danger"></span>
                         <br />
                         <h6>Personal Days Off:</h6>
@@ -155,9 +156,17 @@
         </div>
     </form>
 
-    <div>
-        <a asp-page="./Index">Back to List</a>
-    </div>
+    @if(EditModel.Position == "Manager")
+    { 
+        <div>
+            <a asp-page="./Index">Back to List</a>
+        </div>
+    } else
+    {
+        <div>
+            <a asp-page="./MyIndex">Back to list</a>
+        </div>
+    }
 }
 else
 {

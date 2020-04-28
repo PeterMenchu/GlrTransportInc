@@ -29,6 +29,7 @@ namespace GlrTransportInc.Pages.Timesheets
         public Timesheet Timesheet { get; set; }
         public IList<UserModel> Users { get; set; }
         public static string Name;
+        public static string Position;
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -44,6 +45,7 @@ namespace GlrTransportInc.Pages.Timesheets
                 if ((item.Email) == User.Identity.Name)
                 {
                     Name = item.Name;
+                    Position = item.Position;
                 }
             }
             Timesheet.Email = Name;
@@ -51,7 +53,7 @@ namespace GlrTransportInc.Pages.Timesheets
             _context.Timesheet.Add(Timesheet);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./MyIndex");
         }
     }
 }

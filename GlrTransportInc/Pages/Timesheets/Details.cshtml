@@ -4,7 +4,7 @@
 @inject SignInManager<UserModel> SignInManager
 
 
-@if (SignInManager.IsSignedIn(User))
+@if (SignInManager.IsSignedIn(User) && (DetailsModel3.Position == "Manager" || DetailsModel3.Name == Model.Timesheet.Email))
 {
     <div>
         <h4>Timesheet</h4>
@@ -117,10 +117,20 @@
             </div>
         </div>
     </div>
-    <div>
-        <a asp-page="./Edit" asp-route-id="@Model.Timesheet.ID">Edit</a> |
-        <a asp-page="./Index">Back to List</a>
-    </div>
+    @if (DetailsModel3.Position == "Manager")
+    {
+        <div>
+            <a asp-page="./Edit" asp-route-id="@Model.Timesheet.ID">Edit</a> |
+            <a asp-page="./Index">Back to List</a>
+        </div>
+    }
+    else
+    {
+        <div>
+            <a asp-page="./Edit" asp-route-id="@Model.Timesheet.ID">Edit</a> |
+            <a asp-page="./MyIndex">Back to list</a>
+        </div>
+    }
 }
 else
 {

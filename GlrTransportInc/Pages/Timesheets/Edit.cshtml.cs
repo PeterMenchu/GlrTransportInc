@@ -78,7 +78,13 @@ namespace GlrTransportInc.Pages.Timesheets
                 }
             }
 
-            return RedirectToPage("./Index");
+            if (Position == "Manager")
+            {
+                return RedirectToPage("./Index");
+            } else
+            {
+                return RedirectToPage("./MyIndex");
+            }
         }
 
         private bool TimesheetExists(int id)
