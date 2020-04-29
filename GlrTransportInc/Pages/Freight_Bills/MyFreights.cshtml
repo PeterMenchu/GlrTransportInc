@@ -17,16 +17,12 @@
                 @if ((item.Driver) == MyFreightsModel.Name)
                 {
                     <div class="listStyle">
-                        <hr/>
                         <h2>
                             @Html.DisplayFor(modelItem => item.Customer)
                         </h2>
                         <p>Driver: @Html.DisplayFor(modelItem => item.Driver)</p>
                         <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
-                        @if(item.Permit != null)
-                        {
-                            <a href="@item.Permit">Permit</a>
-                        }
+                       
                         <!-- *** ALL USERS MAY NEED TO EDIT BILLS, NEED TO VERIFY *** -->
                         @if (MyFreightsModel.Position == "Manager")
                         {
@@ -37,7 +33,13 @@
                                 <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
                             </a>
                         }
+                        @if(item.Permit != null)
+                        {
+                            <a href="@item.Permit">Permit</a>
+                        }
+                        <p>  </p>
                         <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
+                        <hr/>
                     </div>
                 }
             }
