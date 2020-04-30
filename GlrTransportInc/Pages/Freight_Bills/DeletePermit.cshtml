@@ -1,0 +1,86 @@
+﻿@page
+@model GlrTransportInc.DeletePermitModel
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
+@{
+    ViewData["Title"] = "Delete a permit";
+}
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (DeletePermitModel.Position == "Manager")
+    {
+        <form method="post">
+            <div class="container-fluid column col-md-12 form-group">
+                <h3>Delete the current permit?</h3>
+                <h4>Customer: @Model.FreightBill.Customer</h4>
+                <input type="hidden" asp-for="FreightBill.ID" />
+                <input type="hidden" asp-for="FreightBill.Status" />
+                <input type="hidden" asp-for="FreightBill.Customer" />
+                <input type="hidden" asp-for="FreightBill.FreightBillNumber" />
+                <input type="hidden" asp-for="FreightBill.FromName" />
+                <input type="hidden" asp-for="FreightBill.FromStreet" />
+                <input type="hidden" asp-for="FreightBill.FromCity" />
+                <input type="hidden" asp-for="FreightBill.FromState" />
+                <input type="hidden" asp-for="FreightBill.FromZip" />
+                <input type="hidden" asp-for="FreightBill.ToName" />
+                <input type="hidden" asp-for="FreightBill.ToStreet" />
+                <input type="hidden" asp-for="FreightBill.ToCity" />
+                <input type="hidden" asp-for="FreightBill.ToState" />
+                <input type="hidden" asp-for="FreightBill.ToZip" />
+                <input type="hidden" asp-for="FreightBill.ScheduledDate" />
+                <input type="hidden" asp-for="FreightBill.Size" />
+                <input type="hidden" asp-for="FreightBill.Unit" />
+                <input type="hidden" asp-for="FreightBill.BranchAndDescription" />
+                <input type="hidden" asp-for="FreightBill.PoNumber" />
+                <input type="hidden" asp-for="FreightBill.DocJob" />
+                <input type="hidden" asp-for="FreightBill.Comments" />
+                <input type="hidden" asp-for="FreightBill.Labor1" />
+                <input type="hidden" asp-for="FreightBill.Labor2" />
+                <input type="hidden" asp-for="FreightBill.Labor3" />
+                <input type="hidden" asp-for="FreightBill.Labor4" />
+                <input type="hidden" asp-for="FreightBill.Labor5" />
+                <input type="hidden" asp-for="FreightBill.Labor6" />
+                <input type="hidden" asp-for="FreightBill.Labor7" />
+                <input type="hidden" asp-for="FreightBill.Labor8" />
+                <input type="hidden" asp-for="FreightBill.Labor9" />
+                <input type="hidden" asp-for="FreightBill.Cost1" />
+                <input type="hidden" asp-for="FreightBill.Cost2" />
+                <input type="hidden" asp-for="FreightBill.Cost3" />
+                <input type="hidden" asp-for="FreightBill.Cost4" />
+                <input type="hidden" asp-for="FreightBill.Cost5" />
+                <input type="hidden" asp-for="FreightBill.Cost6" />
+                <input type="hidden" asp-for="FreightBill.Cost7" />
+                <input type="hidden" asp-for="FreightBill.Cost8" />
+                <input type="hidden" asp-for="FreightBill.Cost9" />
+                <input type="hidden" asp-for="FreightBill.Driver" />
+                <input type="hidden" asp-for="FreightBill.TruckNumber" />
+                <input type="hidden" asp-for="FreightBill.ReceivedBy" />
+                <input type="hidden" asp-for="FreightBill.CompletionDate" />
+                <input type="hidden" asp-for="FreightBill.SiteName" />
+                <input type="hidden" asp-for="FreightBill.SitePhoneNumber" />
+                <input type="hidden" asp-for="FreightBill.EmailAddress" />
+                <input type="hidden" asp-for="FreightBill.DueDate" />
+                <div class="form-group">
+                    <button type="submit" value="Submit" class="btn btn-danger">Delete Permit</button>
+                </div>
+                <br />
+                <hr />
+            </div>
+        </form>
+        <div>
+            <a asp-page="Index">Back to List</a>
+        </div>
+    }
+    else
+    {
+        <p>Unautorized.</p>
+    }
+}
+else
+{
+    <div class="text-center">
+        <h1>You must be logged in to view this page.</h1>
+    </div>
+}

@@ -27,6 +27,14 @@
                     <input type="submit" value="Save" class="btn btn-primary" />
                 </div>
                 <hr />
+                @if (Model.FreightBill.Permit != null)
+                {
+                    <h3>Delete the current permit</h3>
+                    <a asp-page="./DeletePermit" asp-route-id="@Model.FreightBill.ID" class="optionButton">
+                        <img src="~/Images/delete-icon.png" style="width:50px; height:50px;" alt="Delete">
+                    </a>
+                    <hr />
+                }
             </div>
             <div class="container-fluid">
                 <div class="row">
