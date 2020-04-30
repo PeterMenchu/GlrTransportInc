@@ -38,7 +38,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
                     Position = item.Position;
                 }
             }
-            indexBills = await _context.FreightBill.ToListAsync();
+            indexBills = await _context.FreightBill.OrderByDescending(a => a.ID).ToListAsync();
             /*
             IList<FreightBill> indexBills = from index in _context.FreightBill
                 select index;*/
