@@ -24,7 +24,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
             _context = context;
             _environment = environment;
         }
-
+        public static IList<FreightBill> AllBills { get; set; }
         public IList<UserModel> UserModel { get; set; }
         public static string Name;
         public static string Position;
@@ -33,6 +33,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
         public async Task<IActionResult> OnGetAsync()
         {
             UserModel = await _context.UserModel.ToListAsync();
+            
             foreach (var item in UserModel)
             {
                 if ((item.Email) == User.Identity.Name)
@@ -41,13 +42,13 @@ namespace GlrTransportInc.Pages.Freight_Bills
                     Position = item.Position;
                 }
             }
+            // below might be a repeated call
             UserModel = await _context.UserModel.ToListAsync();
             return Page();
         }
 
         [BindProperty]
         public FreightBill FreightBill { get; set; }
-        
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -57,7 +58,15 @@ namespace GlrTransportInc.Pages.Freight_Bills
             {
                 return Page();
             }
-
+            AllBills = await _context.FreightBill.ToListAsync();
+            // check for repeated bill #
+            foreach (var bill in AllBills)
+            {
+                if (bill.FreightBillNumber == FreightBill.FreightBillNumber)
+                {
+                    FreightBill.FreightBillNumber = "000";// set 000 as default flag
+                }
+            }
             _context.FreightBill.Add(FreightBill);
             await _context.SaveChangesAsync();
             if (Upload != null)

@@ -111,6 +111,15 @@ namespace GlrTransportInc.Areas.Identity.Pages.Account
                 {
                     Input.CanDrive = "true";
                 }
+                Users = await _context.UserModel.ToListAsync();
+                // check for repeated ID
+                foreach (var check in Users)
+                {
+                    if (check.EmployeeId == Input.EmployeeId)
+                    {
+                        Input.EmployeeId = "000"; // set 000 as default flag
+                    }
+                }
                 var user = new UserModel { UserName = Input.Email, Email = Input.Email, Position = Input.Position, Name = Input.Name, EmployeeId = Input.EmployeeId, CanDrive = Input.CanDrive};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
