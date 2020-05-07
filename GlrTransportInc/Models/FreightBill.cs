@@ -1,5 +1,5 @@
 using System;
-
+using System.ComponentModel.DataAnnotations;
 namespace GlrTransportInc.Models
 {
     public enum FbStatus
@@ -25,8 +25,8 @@ namespace GlrTransportInc.Models
         public string ToCity { get; set; } //ok
         public string ToState { get; set; } //ok
         public string ToZip { get; set; } //ok
-
-        public DateTime ScheduledDate { get; set; } //ok
+        [DataType(DataType.Date)]
+        public DateTime? ScheduledDate { get; set; } //ok
         public string Size { get; set; } //ok
         public string BranchAndDescription { get; set; } //ok
         public string Unit { get; set; } //ok
@@ -59,10 +59,12 @@ namespace GlrTransportInc.Models
         public string TruckNumber { get; set; } //ok
         public string Driver { get; set; } // ok
         public string ReceivedBy { get; set; } //ok
-        public DateTime CompletionDate { get; set; } //ok
+        [DataType(DataType.Date)]
+        public DateTime? CompletionDate { get; set; } //ok
         public string SiteName { get; set; } //ok
         public string SitePhoneNumber { get; set; } //ok
-        public DateTime DueDate { get; set; } //ok
+        [DataType(DataType.Date)]
+        public DateTime? DueDate { get; set; } //ok
         public string EmailAddress { get; set; } // ok?
         public string Permit { get; set; }
 

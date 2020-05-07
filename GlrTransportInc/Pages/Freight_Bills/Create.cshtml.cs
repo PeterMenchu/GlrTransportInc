@@ -67,6 +67,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
                     FreightBill.FreightBillNumber = "000";// set 000 as default flag
                 }
             }
+            
             _context.FreightBill.Add(FreightBill);
             await _context.SaveChangesAsync();
             if (Upload != null)

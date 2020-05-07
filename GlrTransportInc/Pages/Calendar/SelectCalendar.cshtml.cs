@@ -15,7 +15,7 @@ namespace GlrTransportInc.Pages.Calendar
         // variables for the calendar 
         public static List<int> Id = new List<int>();
         public static List<string> BillName = new List<string>();
-        public static List<DateTime> StartDate = new List<DateTime>();
+        public static List<DateTime?> StartDate = new List<DateTime?>();
         private DateTime _check = new DateTime(2020, 01, 01, 0, 00, 00);
         //public static List<DateTime> DueDate = new List<DateTime>();
         public static List<FbStatus> Status = new List<FbStatus>();
@@ -46,7 +46,7 @@ namespace GlrTransportInc.Pages.Calendar
             // loop through each freight, set needed values
             foreach (var item in FreightBill)
             {
-                if (DateTime.Compare(item.ScheduledDate, _check) != 0)
+                if (item.ScheduledDate != null)
                 {
                     if (item.Driver == CalendarSelection.Selection)
                     {

@@ -112,12 +112,12 @@
                         Scheduled Date:
                     </b>
                     <br />
-                    @if (@Model.FreightBill.ScheduledDate.ToShortDateString() == "01/01/2020"){
+                    @if (@Model.FreightBill.ScheduledDate == null){
                                                                 
                     }
                     else
                     {
-                        @Model.FreightBill.ScheduledDate.ToShortDateString()
+                        @Model.FreightBill.ScheduledDate.Value.ToShortDateString()
                     }
                 </div>
                 <div class="col-sm-4 border border-bottom-0 border-left-0">
@@ -308,12 +308,12 @@
                         Completion Date:
                     </b>
                     <br />
-                    @if (@Model.FreightBill.CompletionDate.ToShortDateString() == "01/01/2020"){
+                    @if (@Model.FreightBill.CompletionDate == null){
                         
                     }
                     else
                     {
-                        @Model.FreightBill.CompletionDate.ToShortDateString()
+                        @Model.FreightBill.CompletionDate.Value.ToShortDateString()
                     }
                 </div>
                 <div class="col-sm-3 border border-left-0">
@@ -330,12 +330,12 @@
                         Payment Due Date:
                     </b>
                     <br />
-                    @if (@Model.FreightBill.DueDate.ToShortDateString() == "01/01/2020"){
+                    @if (@Model.FreightBill.DueDate == null){
                                             
                     }
                     else
                     {
-                        @Model.FreightBill.DueDate.ToShortDateString()
+                        @Model.FreightBill.DueDate.Value.ToShortDateString()
                     }
                 </div>
             </div>

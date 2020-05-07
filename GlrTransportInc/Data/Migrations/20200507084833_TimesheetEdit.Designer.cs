@@ -4,14 +4,16 @@ using GlrTransportInc.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GlrTransportInc.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200507084833_TimesheetEdit")]
+    partial class TimesheetEdit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +60,7 @@ namespace GlrTransportInc.Data.Migrations
                     b.Property<string>("Comments")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CompletionDate")
+                    b.Property<DateTime>("CompletionDate")
                         .HasColumnType("datetime2");
 
                     b.Property<float>("Cost1")
@@ -97,7 +99,7 @@ namespace GlrTransportInc.Data.Migrations
                     b.Property<string>("Driver")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DueDate")
+                    b.Property<DateTime>("DueDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EmailAddress")
@@ -157,7 +159,7 @@ namespace GlrTransportInc.Data.Migrations
                     b.Property<string>("ReceivedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("ScheduledDate")
+                    b.Property<DateTime>("ScheduledDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("SiteName")

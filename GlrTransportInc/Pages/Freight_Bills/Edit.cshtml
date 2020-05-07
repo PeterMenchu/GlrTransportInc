@@ -241,7 +241,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label asp-for="FreightBill.ScheduledDate" class="control-label">Scheduled Date:</label>
-                            <input type="date" min="2020-01-01" asp-for="FreightBill.ScheduledDate" class="form-control" />
+                            <input type="date" asp-for="FreightBill.ScheduledDate" class="form-control" />
                             <span asp-validation-for="FreightBill.ScheduledDate" class="text-danger"></span>
                         </div>
                     </div>
@@ -537,7 +537,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label asp-for="FreightBill.CompletionDate" class="control-label">Completion Date:</label>
-                            <input type="date" min="2020-01-01" asp-for="FreightBill.CompletionDate" class="form-control" />
+                            <input type="date" asp-for="FreightBill.CompletionDate" class="form-control" />
                             <span asp-validation-for="FreightBill.CompletionDate" class="text-danger"></span>
                         </div>
                     </div>
@@ -568,7 +568,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label asp-for="FreightBill.DueDate" class="control-label">Payment due date:</label>
-                            <input type="date" min="2020-01-01" asp-for="FreightBill.DueDate" class="form-control" />
+                            <input type="date" asp-for="FreightBill.DueDate" class="form-control" />
                             <span asp-validation-for="FreightBill.DueDate" class="text-danger"></span>
                         </div>
                     </div>
@@ -585,7 +585,7 @@
     }
     else
     {
-        <div class="main text-center">
+        <div class="text-center">
             <p>You must log in to a manager account to edit a freight bill.</p>
         </div>
     }
