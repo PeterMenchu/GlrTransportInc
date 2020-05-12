@@ -6,10 +6,11 @@
 @{
     ViewBag.Title = "Calendar";
 }
+
+<!-- Calendar built with JS "FullCalendar" -->
 @if (SignInManager.IsSignedIn(User))
 {
-<!-- <h2 class="column">Main Calendar</h2> -->
-<form method="post">
+    <form method="post">
     <div asp-validation-summary="All" class="text-danger"></div>
     <label name="SelectedName" class="control-label">Select a driver to view assignments:</label>
     <div class="form-inline">
@@ -98,6 +99,7 @@
                     contentHeight: 575,
                     defaultDate: new Date(),
                     timeFormat: 'h(:mm)a',
+                    displayEventTime: false,
                     header: {
                         left: 'month,listWeek,listDay',
                         center: 'title',
