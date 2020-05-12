@@ -5,6 +5,8 @@
 @{
     ViewBag.Title = "User Calendar";
 }
+
+<!-- uses Javascript "FullCalendar" -->
 @if (SignInManager.IsSignedIn(User))
 {
     <h2 class="column">Employee calendar for @UserCalendarModel.DriverName</h2>

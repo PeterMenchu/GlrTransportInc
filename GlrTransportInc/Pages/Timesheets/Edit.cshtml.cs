@@ -60,6 +60,7 @@ namespace GlrTransportInc.Pages.Timesheets
                 return Page();
             }
 
+            Timesheet.End = Timesheet.Week.AddDays(6);
             _context.Attach(Timesheet).State = EntityState.Modified;
 
             try

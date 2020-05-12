@@ -6,6 +6,8 @@
 @{
     ViewBag.Title = "Calendar";
 }
+
+<!-- uses Javascript "FullCalendar" -->
 @if (SignInManager.IsSignedIn(User))
 {
     <h3 class="column">Calendar for @CalendarSelection.Selection</h3>

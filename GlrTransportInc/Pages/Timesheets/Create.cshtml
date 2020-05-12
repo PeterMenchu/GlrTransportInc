@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label asp-for="Timesheet.Week" class="control-label">Week of:</label>
+                        <label asp-for="Timesheet.Week" class="control-label">Start Date (Friday):</label>
                         <input type="date" asp-for="Timesheet.Week" class="form-control" />
                         <span asp-validation-for="Timesheet.Week" class="text-danger"></span>
                     </div>
@@ -29,14 +29,14 @@
                 <div class="col-md-12">
                     <h5>Friday:</h5> <br />
                     <h6>Hrs.</h6>
-                    <input asp-for="Timesheet.Hours1" class="form-control" value="0" />
+                    <input asp-for="Timesheet.Hours1" class="form-control" />
                     <span asp-validation-for="Timesheet.Hours1" class="text-danger"></span>
                     <br />
                     <textarea asp-for="Timesheet.Comments1" class="form-control" rows="3"></textarea>
                     <span asp-validation-for="Timesheet.Comments1" class="text-danger"></span>
                     <br />
                     <h6>#jobs:</h6>
-                    <input asp-for="Timesheet.Jobs1" class="form-control" value="0" />
+                    <input asp-for="Timesheet.Jobs1" class="form-control"  />
                     <span asp-validation-for="Timesheet.Jobs1" class="text-danger"></span>
                 </div>
             </div>
@@ -45,14 +45,14 @@
                 <div class="col-md-12">
                     <h5>Monday:</h5> <br />
                     <h6>Hrs.</h6>
-                    <input asp-for="Timesheet.Hours2" class="form-control" value="0" />
+                    <input asp-for="Timesheet.Hours2" class="form-control" />
                     <span asp-validation-for="Timesheet.Hours2" class="text-danger"></span>
                     <br />
                     <textarea asp-for="Timesheet.Comments2" class="form-control" rows="3"></textarea>
                     <span asp-validation-for="Timesheet.Comments2" class="text-danger"></span>
                     <br />
                     <h6>#jobs:</h6>
-                    <input asp-for="Timesheet.Jobs2" class="form-control" value="0" />
+                    <input asp-for="Timesheet.Jobs2" class="form-control" />
                     <span asp-validation-for="Timesheet.Jobs2" class="text-danger"></span>
                 </div>
             </div>
@@ -61,14 +61,14 @@
                 <div class="col-md-12">
                     <h5>Tuesday:</h5> <br />
                     <h6>Hrs.</h6>
-                    <input asp-for="Timesheet.Hours3" class="form-control" value="0" />
+                    <input asp-for="Timesheet.Hours3" class="form-control" />
                     <span asp-validation-for="Timesheet.Hours3" class="text-danger"></span>
                     <br />
                     <textarea asp-for="Timesheet.Comments3" class="form-control" rows="3"></textarea>
                     <span asp-validation-for="Timesheet.Comments3" class="text-danger"></span>
                     <br />
                     <h6>#jobs:</h6>
-                    <input asp-for="Timesheet.Jobs3" class="form-control" value="0" />
+                    <input asp-for="Timesheet.Jobs3" class="form-control"  />
                     <span asp-validation-for="Timesheet.Jobs3" class="text-danger"></span>
                 </div>
             </div>
@@ -77,14 +77,14 @@
                 <div class="col-md-12">
                     <h5>Wednesday:</h5> <br />
                     <h6>Hrs.</h6>
-                    <input asp-for="Timesheet.Hours4" class="form-control" value="0" />
+                    <input asp-for="Timesheet.Hours4" class="form-control" />
                     <span asp-validation-for="Timesheet.Hours4" class="text-danger"></span>
                     <br />
                     <textarea asp-for="Timesheet.Comments4" class="form-control" rows="3"></textarea>
                     <span asp-validation-for="Timesheet.Comments4" class="text-danger"></span>
                     <br />
                     <h6>#jobs:</h6>
-                    <input asp-for="Timesheet.Jobs4" class="form-control" value="0" />
+                    <input asp-for="Timesheet.Jobs4" class="form-control" />
                     <span asp-validation-for="Timesheet.Jobs4" class="text-danger"></span>
                 </div>
             </div>
@@ -93,14 +93,14 @@
                 <div class="col-md-12">
                     <h5>Thursday:</h5> <br />
                     <h6>Hrs.</h6>
-                    <input asp-for="Timesheet.Hours5" class="form-control" value="0" />
+                    <input asp-for="Timesheet.Hours5" class="form-control" />
                     <span asp-validation-for="Timesheet.Hours5" class="text-danger"></span>
                     <br />
                     <textarea asp-for="Timesheet.Comments5" class="form-control" rows="3"></textarea>
                     <span asp-validation-for="Timesheet.Comments5" class="text-danger"></span>
                     <br />
                     <h6>#jobs:</h6>
-                    <input asp-for="Timesheet.Jobs5" class="form-control" value="0" />
+                    <input asp-for="Timesheet.Jobs5" class="form-control" />
                     <span asp-validation-for="Timesheet.Jobs5" class="text-danger"></span>
                 </div>
             </div>
@@ -108,13 +108,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <h6>Total hours:</h6>
-                    <input asp-for="Timesheet.TotalHours" class="form-control" value="0" />
+                    <input asp-for="Timesheet.TotalHours" class="form-control" />
                     <span asp-validation-for="Timesheet.TotalHours" class="text-danger"></span>
                     <br /><h6>$ /hr.</h6>
-                    <input asp-for="Timesheet.PerHour" class="form-control" value="0" />
+                    <input asp-for="Timesheet.PerHour" class="form-control" />
                     <span asp-validation-for="Timesheet.PerHour" class="text-danger"></span>
                     <br /><h6>If 40 hrs. then $ /hr.</h6>
-                    <input asp-for="Timesheet.Over40PerHour" class="form-control" value="0" />
+                    <input asp-for="Timesheet.Over40PerHour" class="form-control"  />
                     <span asp-validation-for="Timesheet.Over40PerHour" class="text-danger"></span>
                 </div>
             </div>

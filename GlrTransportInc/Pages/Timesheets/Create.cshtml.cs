@@ -49,7 +49,7 @@ namespace GlrTransportInc.Pages.Timesheets
                 }
             }
             Timesheet.Email = Name;
-
+            Timesheet.End = Timesheet.Week.AddDays(6);
             _context.Timesheet.Add(Timesheet);
             await _context.SaveChangesAsync();
 
