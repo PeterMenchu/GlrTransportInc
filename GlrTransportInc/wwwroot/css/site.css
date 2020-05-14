@@ -162,7 +162,9 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
-
+.billFont {
+    font-size: 1.5rem;
+}
 /* Provide sufficient contrast against white background */
 a {
     color: #5cb85c;

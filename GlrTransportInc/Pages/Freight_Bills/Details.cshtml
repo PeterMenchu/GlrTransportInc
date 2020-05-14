@@ -50,33 +50,41 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 border border-bottom-0">
-                    <b>
+                    <h5 style="font-weight: bold">
                         Customer:
-                    </b>
-                    <br />
+                    </h5>
+                    <h5>
                     @Html.DisplayFor(model => model.FreightBill.Customer)
+                    </h5>
                 </div>
                 <div class="col-sm-6 border border-bottom-0 border-left-0">
-                    <b>
+                    <h5 style="font-weight: bold">
                         Freight Bill #:
-                    </b>
-                    <br />
-                    @Html.DisplayFor(model => model.FreightBill.FreightBillNumber)
+                    </h5>
+                    <h5>
+                        @Html.DisplayFor(model => model.FreightBill.FreightBillNumber)
+                    </h5>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 border border-bottom-0">
-                    <b>
+                    <h5 style="font-weight: bold">
                         Origin:
-                    </b>
-                    <br />
-                    @Html.DisplayFor(model => model.FreightBill.FromName)<br />
-                    @Html.DisplayFor(model => model.FreightBill.FromStreet)<br />
-                    @Html.DisplayFor(model => model.FreightBill.FromCity), @Html.DisplayFor(model => model.FreightBill.FromState)<br />
-                    @Html.DisplayFor(model => model.FreightBill.FromZip)<br />
-                    <br />
+                    </h5>
+                    <h5>
+                        @Html.DisplayFor(model => model.FreightBill.FromName)
+                    </h5>
+                    <h5>
+                        @Html.DisplayFor(model => model.FreightBill.FromStreet)
+                    </h5>
+                    <h5>
+                        @Html.DisplayFor(model => model.FreightBill.FromCity), @Html.DisplayFor(model => model.FreightBill.FromState)
+                    </h5>
+                    <h5>
+                        @Html.DisplayFor(model => model.FreightBill.FromZip)
+                    </h5>
                     <div id="ommitThis">
                         <a target="_blank" href="@string.Format("https://maps.google.com/?q={0}", Model.FreightBill.FromLocation)">
                             <a target="_blank" href="@string.Format("https://maps.apple.com/?q={0}", Model.FreightBill.FromLocation)">
@@ -86,15 +94,21 @@
                     </div>
                 </div>
                 <div class="col-sm-6 border border-bottom-0 border-left-0">
-                    <b>
+                    <h5 style="font-weight: bold">
                         Destination:
-                    </b>
-                    <br />
-                    @Html.DisplayFor(model => model.FreightBill.ToName)<br>
-                    @Html.DisplayFor(model => model.FreightBill.ToStreet)<br>
-                    @Html.DisplayFor(model => model.FreightBill.ToCity), @Html.DisplayFor(model => model.FreightBill.ToState)<br>
-                    @Html.DisplayFor(model => model.FreightBill.ToZip)<br />
-                    <br />
+                    </h5>
+                    <h5>
+                        @Html.DisplayFor(model => model.FreightBill.ToName)
+                    </h5>
+                    <h5>
+                        @Html.DisplayFor(model => model.FreightBill.ToStreet)
+                    </h5>
+                    <h5>
+                        @Html.DisplayFor(model => model.FreightBill.ToCity), @Html.DisplayFor(model => model.FreightBill.ToState)
+                    </h5>
+                    <h5>
+                        @Html.DisplayFor(model => model.FreightBill.ToZip)
+                    </h5>
                     <div id="ommitThis">
                         <a target="_blank" href="@string.Format("https://maps.google.com/?q={0}", Model.FreightBill.ToLocation)">
                             <a target="_blank" href="@string.Format("https://maps.apple.com/?q={0}", Model.FreightBill.ToLocation)">
@@ -108,62 +122,68 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-2 border border-bottom-0">
-                    <b>
+                    <h5 style="font-weight: bold">
                         Scheduled Date:
-                    </b>
-                    <br />
+                    </h5>
                     @if (@Model.FreightBill.ScheduledDate == null){
                                                                 
                     }
                     else
                     {
-                        @Model.FreightBill.ScheduledDate.Value.ToShortDateString()
+                        <h5>
+                            @Model.FreightBill.ScheduledDate.Value.ToShortDateString()
+                        </h5>
                     }
                 </div>
                 <div class="col-sm-4 border border-bottom-0 border-left-0">
                     <div class="row border-bottom">
                         <div class="col-sm-12">
-                            <b>
+                            <h5 style="font-weight: bold">
                                 Size:
-                            </b>
-                            <br />
-                            @Html.DisplayFor(model => model.FreightBill.Size)
+                            </h5>
+                            <h5>
+                                @Html.DisplayFor(model => model.FreightBill.Size)
+                            </h5>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <b>
+                            <h5 style="font-weight: bold">
                                 Unit:
-                            </b>
-                            <br />
-                            @Html.DisplayFor(model => model.FreightBill.Unit)
+                            </h5>
+                            <h5>
+                                @Html.DisplayFor(model => model.FreightBill.Unit)
+                            </h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 border border-bottom-0 border-left-0">
                     <div class="row border-bottom">
                         <div class="col">
-                            <b>
+                            <h5 style="font-weight: bold">
                                 Branch And Description:
-                            </b>
-                            <br />
-                            @Html.DisplayFor(model => model.FreightBill.BranchAndDescription)
+                            </h5>
+                            <h5>
+                                @Html.DisplayFor(model => model.FreightBill.BranchAndDescription)
+                            </h5>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 border-right">
-                            <b>
+                            <h5 style="font-weight: bold">
                                 PO #:
-                            </b>
-                            <br />
-                            @Html.DisplayFor(model => model.FreightBill.PoNumber)
+                            </h5>
+                            <h5>
+                                @Html.DisplayFor(model => model.FreightBill.PoNumber)
+                            </h5>
                         </div>
                         <div class="col-sm-6">
-                            <b>
+                            <h5 style="font-weight: bold">
                                 Doc / Job #:
-                            </b>
-                            <br />
-                            @Html.DisplayFor(model => model.FreightBill.DocJob)
+                            </h5>
+                            <h5>
+                                @Html.DisplayFor(model => model.FreightBill.DocJob)
+                            </h5>
                         </div>
                     </div>
                 </div>
@@ -172,18 +192,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 border border-bottom-0">
-                    <b>
+                    <h5 style="font-weight: bold">
                         Comments:
-                    </b>
-                    <br />
-                    @Html.DisplayFor(model => model.FreightBill.Comments)
+                    </h5>
+                    <h5>
+                        @Html.DisplayFor(model => model.FreightBill.Comments)
+                    </h5>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h5 style="font-weight: bold">Received By:</h5>
                 </div>
                 <div class="col-sm-6 border border-bottom-0 border-left-0">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th class="col-8">Labor</th>
-                                <th class="col-4">Cost ($)</th>
+                                <th class="col-8 h5">Labor</th>
+                                <th class="col-4 h5">Cost($)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -261,10 +287,10 @@
                             </tr>
                             <tr>
                                 <td class="col-8">
-                                    <b>Total</b>
+                                    <h5 style="font-weight: bold">Total</h5>
                                 </td>
                                 <td class="col-4">
-                                    @Model.FreightBill.Total
+                                    <h5>@Model.FreightBill.Total</h5>
                                 </td>
                             </tr>
                         </tbody>
@@ -277,65 +303,66 @@
                 <div class="col-sm-4 border">
                     <div class="row">
                         <div class="col-sm-12">
-                            <b>
+                            <h5>
                                 Truck #:
-                            </b>
-                            <br />
-                            @Html.DisplayFor(model => model.FreightBill.TruckNumber)
+                            </h5>
+                            <h5>
+                                @Html.DisplayFor(model => model.FreightBill.TruckNumber)
+                            </h5>
                         </div>
                     </div>
                     <div class="row border-top border-bottom">
                         <div class="col-sm-12">
-                            <b>
+                            <h5>
                                 Driver:
-                            </b>
-                            <br />
-                            @Html.DisplayFor(model => model.FreightBill.Driver)
+                            </h5>
+                            <h5>
+                                @Html.DisplayFor(model => model.FreightBill.Driver)
+                            </h5>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <b>
-                                Received By:
-                            </b>
-                            <br />
-                            @Html.DisplayFor(model => model.FreightBill.ReceivedBy)
-                        </div>
+                <!--
+                <div class="row">
+                    <div class="col-sm-12">
+                        <b>
+                            Received By:
+                        </b>
+                        <br />
+                        @Html.DisplayFor(model => model.FreightBill.ReceivedBy)
                     </div>
                 </div>
+                -->
+                </div>
                 <div class="col-sm-2 border border-left-0">
-                    <b>
+                    <h5>
                         Completion Date:
-                    </b>
-                    <br />
+                    </h5>
                     @if (@Model.FreightBill.CompletionDate == null){
                         
                     }
                     else
                     {
-                        @Model.FreightBill.CompletionDate.Value.ToShortDateString()
+                        <h5>@Model.FreightBill.CompletionDate.Value.ToShortDateString()</h5>
                     }
                 </div>
                 <div class="col-sm-3 border border-left-0">
-                    <b>
+                    <h5>
                         Site Contact:
-                    </b>
-                    <br />
-                    @Html.DisplayFor(model => model.FreightBill.SiteName)<br>
-                    <a href="@string.Format("tel:{0}", Model.FreightBill.SitePhoneNumber)">@Model.FreightBill.SitePhoneNumber</a><br />
-                    <a href="@string.Format("mailto:{0}", Model.FreightBill.EmailAddress)">@Model.FreightBill.EmailAddress</a>
+                    </h5>
+                    <h5>@Html.DisplayFor(model => model.FreightBill.SiteName)</h5>
+                    <a class="h5" href="@string.Format("tel:{0}", Model.FreightBill.SitePhoneNumber)">@Model.FreightBill.SitePhoneNumber</a>
+                    <a class="h5" href="@string.Format("mailto:{0}", Model.FreightBill.EmailAddress)">@Model.FreightBill.EmailAddress</a>
                 </div>
                 <div class="col-sm-3 border border-left-0">
-                    <b>
+                    <h5>
                         Payment Due Date:
-                    </b>
-                    <br />
+                    </h5>
                     @if (@Model.FreightBill.DueDate == null){
                                             
                     }
                     else
                     {
-                        @Model.FreightBill.DueDate.Value.ToShortDateString()
+                        <h5>@Model.FreightBill.DueDate.Value.ToShortDateString()</h5>
                     }
                 </div>
             </div>
