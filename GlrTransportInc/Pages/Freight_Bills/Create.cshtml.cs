@@ -60,14 +60,17 @@ namespace GlrTransportInc.Pages.Freight_Bills
             }
             AllBills = await _context.FreightBill.ToListAsync();
             // check for repeated bill #
-            foreach (var bill in AllBills)
+            if (FreightBill.FreightBillNumber != null)
             {
-                if (bill.FreightBillNumber == FreightBill.FreightBillNumber)
+                foreach (var bill in AllBills)
                 {
-                    FreightBill.FreightBillNumber = "000";// set 000 as default flag
+                    if (bill.FreightBillNumber == FreightBill.FreightBillNumber)
+                    {
+                        FreightBill.FreightBillNumber = "000"; // set 000 as default flag
+                    }
                 }
             }
-            
+
             _context.FreightBill.Add(FreightBill);
             await _context.SaveChangesAsync();
             if (Upload != null)

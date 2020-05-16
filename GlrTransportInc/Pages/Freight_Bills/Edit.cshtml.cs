@@ -22,7 +22,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
             _context = context;
             _environment = environment;
         }
-
+        public static IList<FreightBill> AllBills { get; set; }
         [BindProperty]
         public FreightBill FreightBill { get; set; }
         public IList<UserModel> UserModel { get; set; }
@@ -58,7 +58,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
             }
 
             FreightBill = await _context.FreightBill.FirstOrDefaultAsync(m => m.ID == id);
-
+            AllBills = await _context.FreightBill.ToListAsync();
             if (FreightBill == null)
             {
                 return NotFound();
@@ -87,7 +87,16 @@ namespace GlrTransportInc.Pages.Freight_Bills
                     await Upload.CopyToAsync(fileStream);
                 }
             }
-
+            if (FreightBill.FreightBillNumber != null)
+            {
+                foreach (var bill in AllBills)
+                {
+                    if (bill.FreightBillNumber == FreightBill.FreightBillNumber && FreightBill.ID != bill.ID)
+                    {
+                        FreightBill.FreightBillNumber = "000"; // set 000 as default flag
+                    }
+                }
+            }
             _context.Attach(FreightBill).State = EntityState.Modified;
 
             try

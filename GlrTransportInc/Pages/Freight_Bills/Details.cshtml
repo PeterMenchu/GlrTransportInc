@@ -61,9 +61,15 @@
                     <h5 style="font-weight: bold">
                         Freight Bill #:
                     </h5>
-                    <h5>
-                        @Html.DisplayFor(model => model.FreightBill.FreightBillNumber)
-                    </h5>
+                    @if (Model.FreightBill.FreightBillNumber != "000")
+                    {
+                        <h5>
+                            @Html.DisplayFor(model => model.FreightBill.FreightBillNumber)
+                        </h5>
+                    }
+                    else {
+                        <h5>Repeated number entered</h5>
+                    }
                 </div>
             </div>
         </div>
