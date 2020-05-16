@@ -118,7 +118,9 @@
                     eventLimit: true,
                     eventColor: '#5cb85c',
                     events: events,
-
+                    eventRender: function(event, element) {
+                                             $(element).tooltip({title: event.title});
+                    },
                     //Clicking on a Freight Bill on the calendar will redirect the user to the Details Page of that Freight Bill
                     eventClick: function (event) {
                         //alert('You clicked on ' + event.title);
