@@ -97,6 +97,10 @@ namespace GlrTransportInc.Pages.Freight_Bills
                     }
                 }
             }
+            if (FreightBill.Customer == null)
+            {
+                FreightBill.Customer = "Untitled";
+            }
             _context.Attach(FreightBill).State = EntityState.Modified;
 
             try

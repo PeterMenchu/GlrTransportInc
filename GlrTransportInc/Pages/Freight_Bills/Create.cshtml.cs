@@ -71,6 +71,10 @@ namespace GlrTransportInc.Pages.Freight_Bills
                 }
             }
 
+            if (FreightBill.Customer == null)
+            {
+                FreightBill.Customer = "Untitled";
+            }
             _context.FreightBill.Add(FreightBill);
             await _context.SaveChangesAsync();
             if (Upload != null)

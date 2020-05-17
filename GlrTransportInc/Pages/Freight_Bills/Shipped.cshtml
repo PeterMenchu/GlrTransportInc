@@ -36,7 +36,7 @@
         <body>
             @foreach (var item in Model.FreightBill)
             {
-                if (item.Status.ToString() == "Shipped")
+                if (item.Status.ToString() == "Confirmed" || item.Status.ToString() == "Shipped")
                 {
                     <div class="listStyle">
                         <hr/>
