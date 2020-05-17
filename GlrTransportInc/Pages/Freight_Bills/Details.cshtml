@@ -26,22 +26,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <img src="~/Images/GLR_Home.png" style="width:130px; height:130px;" alt="Company Logo">
+                    <img src="~/Images/GLR_Home.png" style="width:100px; height:100px;" alt="Company Logo">
                 </div>
                 <div class="col-md-6">
                     <h3 style="text-align:center">GLR Transport, Inc</h3>
                     <h6 style="text-align:center">
-                        1141 CR 3470<br />
-                        Paradise, TX 76073<br />
-                        <br />
+                        1141 CR 3470<br/>
+                        Paradise, TX 76073<br/>
                         Office: (940)-433-5101 Fax: (940)-433-2248 Cell: (940)-210-5907
                     </h6>
                 </div>
                 <div class="col-md-3">
                     <h6 style="text-align:center">
-                        TX DOT #: 006397217C<br />
-                        USDOT #: 1950593<br />
-                        MC #: 707590<br />
+                        <br/>
+                        TX DOT #: 006397217C<br/>
+                        USDOT #: 1950593<br/>
+                        MC #: 707590<br/>
                         glrtransport@earthlink.net
                     </h6>
                 </div>
@@ -309,7 +309,7 @@
                 <div class="col-sm-4 border">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h5>
+                            <h5 style="font-weight: bold">
                                 Truck #:
                             </h5>
                             <h5>
@@ -319,7 +319,7 @@
                     </div>
                     <div class="row border-top border-bottom">
                         <div class="col-sm-12">
-                            <h5>
+                            <h5 style="font-weight: bold">
                                 Driver:
                             </h5>
                             <h5>
@@ -340,7 +340,7 @@
                 -->
                 </div>
                 <div class="col-sm-2 border border-left-0">
-                    <h5>
+                    <h5 style="font-weight: bold">
                         Completion Date:
                     </h5>
                     @if (@Model.FreightBill.CompletionDate == null){
@@ -352,7 +352,7 @@
                     }
                 </div>
                 <div class="col-sm-3 border border-left-0">
-                    <h5>
+                    <h5 style="font-weight: bold">
                         Site Contact:
                     </h5>
                     <h5>@Html.DisplayFor(model => model.FreightBill.SiteName)</h5>
@@ -360,7 +360,7 @@
                     <a class="h5" href="@string.Format("mailto:{0}", Model.FreightBill.EmailAddress)">@Model.FreightBill.EmailAddress</a>
                 </div>
                 <div class="col-sm-3 border border-left-0">
-                    <h5>
+                    <h5 style="font-weight: bold">
                         Payment Due Date:
                     </h5>
                     @if (@Model.FreightBill.DueDate == null){
@@ -375,14 +375,10 @@
         </div>
     </div>
     <div>
-        <div>
-            @if (DetailsModel.Position == "Manager")
-            {
-                <a asp-page="./Edit" asp-route-id="@Model.FreightBill.ID" class="h5">Edit  |</a>
-            }
-            <a asp-page="./Index" class="h5"> Back to List</a>
-        </div>
-        <br />
+        
+        <a asp-page="./Edit" asp-route-id="@Model.FreightBill.ID" class="h5">Edit |</a>
+        <a asp-page="./Index" class="h5"> Back to List</a>
+        <br/>
         <button type="submit" class="btn btn-primary bg-success" onclick="printDiv('PrintDiv', 'ommitThis')">Print Freight Bill</button>
     </div>
 }
