@@ -41,8 +41,9 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label asp-for="FreightBill.Status" class="control-label"></label>
-                            <select asp-for="FreightBill.Status" class="form-control">
-                                <option value="">Select a Status</option>
+                            <select asp-for="FreightBill.Status" class="form-control">                               
+                                <option value="NA">Select a Status</option>
+                                <option value="NA">Not Available</option>
                                 <option value="Pending">Pending</option>
                                 <option value="Confirmed">Confirmed</option>
                                 <option value="Completed">Completed</option>

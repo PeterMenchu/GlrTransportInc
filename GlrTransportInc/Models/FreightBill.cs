@@ -7,7 +7,8 @@ namespace GlrTransportInc.Models
         Pending,
         Confirmed,
         Completed,
-        Cancelled
+        Cancelled,
+        NA
     }
 
     public class FreightBill

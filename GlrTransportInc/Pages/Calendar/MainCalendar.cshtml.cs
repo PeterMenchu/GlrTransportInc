@@ -20,6 +20,10 @@ namespace GlrTransportInc.Pages.Calendar
         //public static List<DateTime> DueDate = new List<DateTime>();
         public static List<FbStatus> Status = new List<FbStatus>();
         public string SelectedName;
+        private string _name;
+        private string _init;
+        public static List<string> DriverInit = new List<string>();
+        public static List<string> NameList = new List<string>();
         public CalendarSelection Selection { get;set; }
         public IList<UserModel> Users { get; set; }
         // _context is for grabbing bill data
@@ -52,6 +56,29 @@ namespace GlrTransportInc.Pages.Calendar
                     BillName.Add(item.Customer);
                     StartDate.Add(item.ScheduledDate);
                     Status.Add(item.Status);
+                    _name = item.Driver;
+                    NameList.Add(item.Driver);
+                    if (_name != "Unassigned" && _name != null)
+                    {
+                        for (int i = 0; i < _name.Length; i++)
+                        {
+                            if (i == 0)
+                            {
+                                _init += _name[i];
+                            }
+                            if (i > 0 && _name[i-1]== ' ' && _name[i] != ' ')
+                            {
+                                _init += _name[i];
+                            }
+                        }
+                        _init += ": ";
+                    }
+                    else
+                    {
+                        _init = "";
+                    }
+                    DriverInit.Add(_init);
+                    _init = null;
                 }
             }
         }
