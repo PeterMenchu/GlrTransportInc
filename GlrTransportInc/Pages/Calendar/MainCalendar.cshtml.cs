@@ -43,6 +43,9 @@ namespace GlrTransportInc.Pages.Calendar
             StartDate.Clear();
             //DueDate.Clear();
             Status.Clear();
+            // Clear name and initials
+            NameList.Clear();
+            DriverInit.Clear();
             // get current user data for all employees
             Users = await _context.UserModel.ToListAsync();
             // enable data retrieval from DB to bill model
