@@ -15,6 +15,7 @@ namespace GlrTransportInc.Models
     {
         public int ID { get; set; }
         public string Customer { get; set; } //ok
+        public string Display { get; set; }
         public string FreightBillNumber { get; set; } //ok
         public string FromName { get; set; } //ok
         public string FromStreet { get; set; } //ok
