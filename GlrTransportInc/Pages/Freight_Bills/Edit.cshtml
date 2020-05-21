@@ -51,11 +51,19 @@
                             </select>
                             <span asp-validation-for="FreightBill.Status" class="text-danger"></span>
                         </div>
+                    </div>    
+                    <!-- Below is selections for title/designation and display name -->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="FreightBill.Customer" class="control-label">Title (including any shipping codes)</label>
+                            <input asp-for="FreightBill.Customer" class="form-control" />
+                            <span asp-validation-for="FreightBill.Customer" class="text-danger"></span>
+                        </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label asp-for="FreightBill.Customer" class="control-label">Customer</label>
-                            <input asp-for="FreightBill.Customer" class="form-control" />
+                            <label asp-for="FreightBill.Display" class="control-label">If you would like to display a different title on the bill itself, enter it below:</label>
+                            <input asp-for="FreightBill.Display" class="form-control" />
                             <span asp-validation-for="FreightBill.Customer" class="text-danger"></span>
                         </div>
                     </div>

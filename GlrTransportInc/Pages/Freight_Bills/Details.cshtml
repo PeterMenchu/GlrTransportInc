@@ -50,12 +50,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 border border-bottom-0">
+                    
                     <h5 style="font-weight: bold">
                         Customer:
                     </h5>
-                    <h5>
-                    @Html.DisplayFor(model => model.FreightBill.Customer)
-                    </h5>
+                    <!-- If no separate display name display full designation -->
+                    <!-- Else show display name -->
+                    @if (Model.FreightBill.Display == null)
+                    {
+                        <h5>
+                            @Html.DisplayFor(model => model.FreightBill.Customer)
+                        </h5>
+                    }
+                    else 
+                    {
+                        <h5>
+                            @Html.DisplayFor(model => model.FreightBill.Display)
+                        </h5>
+                    }
                 </div>
                 <div class="col-sm-6 border border-bottom-0 border-left-0">
                     <h5 style="font-weight: bold">
