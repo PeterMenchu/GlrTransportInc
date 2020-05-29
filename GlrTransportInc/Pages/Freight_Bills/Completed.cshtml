@@ -40,9 +40,8 @@
                 {
                     <div class="listStyle">
                         <hr/>
-                        <h2>
-                            @Html.DisplayFor(modelItem => item.Customer)
-                        </h2>
+                        <h2>@Html.DisplayFor(modelItem => item.Customer)</h2>
+                        <h5>#: @Html.DisplayFor(modelItem => item.FreightBillNumber)</h5>
                         <p>Driver: @Html.DisplayFor(modelItem => item.Driver)</p>
                         <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
                         
@@ -70,6 +69,7 @@
             <thead>
             <tr>
                 <th>Customer</th>
+                <th>#</th>
                 <th>Driver</th>
                 <th>Status</th>
                 @if (IndexModel.Position == "Manager")
@@ -88,6 +88,7 @@
                 {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Customer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FreightBillNumber)</td>
                         <td>@Html.DisplayFor(modelItem => item.Driver)</td>
                         <td>@Html.DisplayFor(modelItem => item.Status)</td>
 
