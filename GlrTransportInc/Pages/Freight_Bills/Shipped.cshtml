@@ -85,7 +85,7 @@
             <tbody>
             @foreach (var item in Model.FreightBill)
             {
-                if (item.Status.ToString() == "Shipped")
+                if (item.Status.ToString() == "Confirmed" || item.Status.ToString() == "Shipped")
                 {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Customer)</td>
