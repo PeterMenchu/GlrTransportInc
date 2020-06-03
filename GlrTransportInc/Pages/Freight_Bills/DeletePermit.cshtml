@@ -9,7 +9,7 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    @if (DeletePermitModel.Position == "Manager")
+    @if (DeletePermitModel.Position != "Placeholder")
     {
         <form method="post">
             <div class="container-fluid column col-md-12 form-group">

@@ -12,7 +12,7 @@
     <br />
     <div>
         <h1>@ViewData["Title"]</h1>
-        @if (IndexModel.Position == "Manager")
+        @if (IndexModel.Position != "Placeholder")
         {
             <a asp-page="Create" class="btn btn-primary bg-success">Create New</a>
         }
@@ -72,11 +72,8 @@
                 <th>#</th>
                 <th>Driver</th>
                 <th>Status</th>
-                @if (IndexModel.Position == "Manager")
-                {
-                    <th>Edit</th>
-                    <th>Delete</th>
-                }
+                <th>Edit</th>
+                <th>Delete</th>
                 <th>Details</th>
                 <th>View Permit</th>
             </tr>
@@ -92,19 +89,18 @@
                         <td>@Html.DisplayFor(modelItem => item.Driver)</td>
                         <td>@Html.DisplayFor(modelItem => item.Status)</td>
 
-                        @if (IndexModel.Position == "Manager")
-                        {
-                            <td>
-                                <a asp-page="./Edit" asp-route-id="@item.ID">
-                                    <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
-                                </a>
-                            </td>
-                            <td>
-                                <a asp-page="./Delete" asp-route-id="@item.ID">
-                                    <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
-                                </a>
-                            </td>
-                        }
+                        
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.ID">
+                                <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-page="./Delete" asp-route-id="@item.ID">
+                                <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                            </a>
+                        </td>
+                    
                         <td>
                             <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
                         </td>

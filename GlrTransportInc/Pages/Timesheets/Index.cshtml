@@ -5,7 +5,7 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    @if (IndexModel.Position == "Manager")
+    @if (IndexModel.Position != "Placeholder")
     {
         <table class="table">
             <thead>
@@ -59,7 +59,7 @@
 else
 {
     <body>
-        <div class="main text-center">
+        <div class="text-center">
             <p>You must log in to view timesheets.</p>
             <a asp-page="/LoginPage" class="p text-success">Click here to log in</a>
         </div>

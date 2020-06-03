@@ -6,7 +6,7 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    @if (DeleteModel.Position == "Manager")
+    @if (DeleteModel.Position != "Placeholder")
     {
         <h3>Are you sure you want to delete this?</h3>
         <div>
@@ -351,8 +351,8 @@
     }
     else
     {
-    <div class="main text-center">
-        <p>You must log in to a manager account to delete a freight bill.</p>
+    <div class="text-center">
+        <p>You must log in to an authorized account to delete a freight bill.</p>
     </div>
     }
 }

@@ -20,19 +20,22 @@
         <body>
         @foreach (var item in Model.UserModel)
         {
-            <div class="listStyle">
-                <hr />
-                <h2>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </h2>
-                <img gravatar-email="@item.Email" alt="Profile Picture"/>
-                <br />
-                <br />
-                <p>Position: @Html.DisplayFor(modelItem => item.Position)</p>
-                <p>Employee ID: @Html.DisplayFor(modelItem => item.EmployeeId)</p>
-                <p>Email: @Html.DisplayFor(modelItem => item.Email)</p>
-                <p>Phone Number: @Html.DisplayFor(modelItem => item.PhoneNumber)</p>
-            </div>
+            if (item.Position != "Dev")
+            {
+                <div class="listStyle">
+                    <hr/>
+                    <h2>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </h2>
+                    <img gravatar-email="@item.Email" alt="Profile Picture"/>
+                    <br/>
+                    <br/>
+                    <p>Position: @Html.DisplayFor(modelItem => item.Position)</p>
+                    <p>Employee ID: @Html.DisplayFor(modelItem => item.EmployeeId)</p>
+                    <p>Email: @Html.DisplayFor(modelItem => item.Email)</p>
+                    <p>Phone Number: @Html.DisplayFor(modelItem => item.PhoneNumber)</p>
+                </div>
+            }
         }
         </body>
     </div>
@@ -63,26 +66,29 @@
             <tbody>
                 @foreach (var item in Model.UserModel)
                 {
-                    <tr>
-                        <td>
-                            <img gravatar-email="@item.Email" alt="Profile Picture"/>
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EmployeeId)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Email)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PhoneNumber)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Position)
-                        </td>
-                    </tr>
+                    if (item.Position != "Dev")
+                    {
+                        <tr>
+                            <td>
+                                <img gravatar-email="@item.Email" alt="Profile Picture"/>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PhoneNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Position)
+                            </td>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>

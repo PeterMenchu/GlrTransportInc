@@ -5,7 +5,7 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    @if (CreateModel.Position == "Manager")
+    @if (CreateModel.Position != "Placeholder")
     {
         <br />
 

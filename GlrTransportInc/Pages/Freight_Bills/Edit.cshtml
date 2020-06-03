@@ -7,7 +7,7 @@
 }
 @if (SignInManager.IsSignedIn(User))
 {
-    @if (EditModel.Position == "Manager")
+    @if (EditModel.Position != "Placeholder")
     {
         <br />
         <h1>@ViewData["Title"]</h1>
@@ -595,7 +595,7 @@
     else
     {
         <div class="text-center">
-            <p>You must log in to a manager account to edit a freight bill.</p>
+            <p>You must log in to an authorized account to edit a freight bill.</p>
         </div>
     }
 }

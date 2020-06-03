@@ -21,10 +21,7 @@
                         <h5>#: @Html.DisplayFor(modelItem => item.FreightBillNumber)</h5>
                         <p>Driver: @Html.DisplayFor(modelItem => item.Driver)</p>
                         <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
-                       
-                        <!-- *** ALL USERS MAY NEED TO EDIT BILLS, NEED TO VERIFY *** -->
-                        
-                        
+
                         <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
                             <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
                         </a>

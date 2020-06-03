@@ -10,12 +10,12 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    @if (RegisterModel.Position2 == "Manager")
+    @if (RegisterModel.Position2 == "Manager" || RegisterModel.Position2 == "Dev")
     {
         <script>
             function showDiv(divId, element)
             {
-                document.getElementById(divId).style.display = (element.value == "Manager" || element.value == "Employee") ? 'block' : 'none';
+                document.getElementById(divId).style.display = (element.value != "Driver") ? 'block' : 'none';
             }
         </script>
         <style>
@@ -57,6 +57,7 @@
                                 <option value="Manager">Manager</option>
                                 <option value="Employee">Employee</option>
                                 <option value="Driver">Driver</option>
+                                <option value="Dev">Developer/IT</option>
                             </select>
                             <span asp-validation-for="Input.Position" class="text-danger"></span>
                         </div>
