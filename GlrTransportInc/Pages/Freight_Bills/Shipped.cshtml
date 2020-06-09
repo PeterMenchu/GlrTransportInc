@@ -50,10 +50,7 @@
                         <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
                             <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
                         </a>
-                        @if(item.Permit != null)
-                        {
-                            <a href="@item.Permit">Permit</a>
-                        }
+                        <a asp-page="./Files" asp-route-id="@item.ID">Files</a>
                         <p>  </p>
                         <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
                     </div>
@@ -73,7 +70,7 @@
                 <th>Edit</th>
                 <th>Delete</th>
                 <th>Details</th>
-                <th>View Permit</th>
+                <th>View Files</th>
             </tr>
             </thead>
             <tbody>
@@ -102,18 +99,10 @@
                         <td>
                             <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
                         </td>
-                        @if (item.Permit != null)
-                        {
-                            <td>
-                                <a href="@item.Permit">Permit</a>
-                            </td>
-                        }
-                        else
-                        {
-                            <td>
-                                <p> </p>
-                            </td>
-                        }
+                        <td>
+                            <!--<a href="@item.Permit">Permit</a>-->
+                            <a asp-page="./Files" asp-route-id="@item.ID">Files</a>
+                        </td>
                     </tr>
                 }
             }
