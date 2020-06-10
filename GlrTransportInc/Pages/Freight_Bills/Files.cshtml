@@ -1,5 +1,6 @@
 @page
 @using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
 @model GlrTransportInc.Pages.Freight_Bills.Files
 
 @{
@@ -13,86 +14,109 @@
     <title></title>
 </head>
 <body>
-    <h4>Files for this bill (Note: This page is not finished, only one file can be added at the moment)</h4>
+@if (SignInManager.IsSignedIn(User))
+{
     <div class="table-responsive" style="display: block !important;">
         <table class="table">
             <thead>
             <tr>
-                <th>Name</th>
+                <th>Files for this bill</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
             <tr>
+                <td>File 1:</td>
                 @if (Model.Filename1 != null)
                 {
                     <td>
                         <a href="@Model.Filename1">@Model.Filename1</a>
-                    </td>
-                    <td>
-                        Remove File
+                        <p>Remove</p>
                     </td>
                 }
                 else
                 {
-                    <td>Add File</td>
-                    <td></td>
+                    <td>
+
+                        <form method="post" enctype="multipart/form-data" class="row">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="container-fluid column col-md-12 form-group">
+                                <label class="btn btn-default row">
+                                    <input type="file" asp-for="Upload" accept=".pdf" id="onlypdf"/>
+                                </label>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Save" class="btn btn-primary"/>
+                                </div>
+
+                            </div>
+                        </form>
+                    </td>
                 }
             </tr>
             <tr>
+                <td>File 2:</td>
                 @if (Model.Filename2 != null)
                 {
                     <td>
                         <a href="@Model.Filename2">@Model.Filename2</a>
-                    </td>
-                    <td>
-                        Remove File
+                        <p>Remove</p>
                     </td>
                 }
                 else
                 {
-                    <td>Add File</td>
-                    <td></td>
+                    <td>
+                        <form method="post" enctype="multipart/form-data" class="row">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="container-fluid column col-md-12 form-group">
+                                <label class="btn btn-default row">
+                                    <input type="file" asp-for="Upload2" accept=".pdf" id="onlypdf"/>
+                                </label>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Save" class="btn btn-primary"/>
+                                </div>
+
+                            </div>
+                        </form>
+                    </td>
                 }
             </tr>
             <tr>
+                <td>File 3:</td>
                 @if (Model.Filename3 != null)
                 {
                     <td>
                         <a href="@Model.Filename3">@Model.Filename3</a>
-                    </td>
-                    <td>
-                        Remove File
+                        <p>Remove</p>
                     </td>
                 }
                 else
                 {
-                    <td>Add File</td>
-                    <td></td>
+                    <td>
+                        <form method="post" enctype="multipart/form-data" class="row">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="container-fluid column col-md-12 form-group">
+                                <label class="btn btn-default row">
+                                    <input type="file" asp-for="Upload3" accept=".pdf" id="onlypdf"/>
+                                </label>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Save" class="btn btn-primary"/>
+                                </div>
+
+                            </div>
+                        </form>
+                    </td>
                 }
             </tr>
             </tbody>
         </table>
     </div>
-<!--
+}
 else
 {
-<form method="post" enctype="multipart/form-data">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="container-fluid column col-md-12 form-group">
-        <hr/>
-        <h3>Add/Edit Permit</h3>
-        <label class="btn btn-default row">
-            <input type="file" asp-for="Upload" accept=".pdf" id="onlypdf"/>
-        </label>
-        <br/>
-        <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-primary"/>
-        </div>
-        <hr/>
-    </div>
-</form>
+    <h4>Page is not available.</h4>
 }
--->
 </body>
 </html>

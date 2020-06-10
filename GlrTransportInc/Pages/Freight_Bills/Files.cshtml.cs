@@ -20,6 +20,8 @@ namespace GlrTransportInc.Pages.Freight_Bills
         public string Filename2;
         public string Filename3;
         public IFormFile Upload { get; set; }
+        public IFormFile Upload2 { get; set; }
+        public IFormFile Upload3 { get; set; }
         private readonly GlrTransportInc.Data.ApplicationDbContext _context;
         private IWebHostEnvironment _environment;
         public static FreightBill FreightBill { get; set; }
@@ -30,6 +32,9 @@ namespace GlrTransportInc.Pages.Freight_Bills
         }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            Upload = null;
+            Upload2 = null;
+            Upload3 = null;
             FreightBill = await _context.FreightBill.FirstOrDefaultAsync(m => m.ID == id);
             Filename1 = FreightBill.Permit;
             return Page();
@@ -40,12 +45,13 @@ namespace GlrTransportInc.Pages.Freight_Bills
             {
                 return Page();
             }
-            
+
+            string name;
             if (Upload != null)
             {
-                FreightBill.Permit = $"/Permits/{FreightBill.ID}{Path.GetExtension(Upload.FileName)}";
-
-                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{FreightBill.ID}{Path.GetExtension(Upload.FileName)}");
+                name = Upload.FileName;
+                FreightBill.Permit = $"/Permits/{name}";
+                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{name}");
                 using (var fileStream = new FileStream(file, FileMode.Create))
                 {
                     await Upload.CopyToAsync(fileStream);
@@ -53,6 +59,32 @@ namespace GlrTransportInc.Pages.Freight_Bills
 
                 _context.Attach(FreightBill).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
+            }
+            if (Upload2 != null)
+            {/*
+                name = Upload2.FileName;
+                FreightBill.Permit = $"/Permits/{name}";
+                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{name}");
+                using (var fileStream = new FileStream(file, FileMode.Create))
+                {
+                    await Upload2.CopyToAsync(fileStream);
+                }
+
+                _context.Attach(FreightBill).State = EntityState.Modified;
+                await _context.SaveChangesAsync();*/
+            }
+            if (Upload3 != null)
+            {/*
+                name = Upload3.FileName;
+                FreightBill.Permit = $"/Permits/{name}";
+                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{name}");
+                using (var fileStream = new FileStream(file, FileMode.Create))
+                {
+                    await Upload3.CopyToAsync(fileStream);
+                }
+
+                _context.Attach(FreightBill).State = EntityState.Modified;
+                await _context.SaveChangesAsync();*/
             }
 
             return RedirectToPage("./Index");
