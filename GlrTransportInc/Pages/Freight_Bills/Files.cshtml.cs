@@ -91,7 +91,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Files", new {id = FreightBill.ID });
         }
     }
 }
