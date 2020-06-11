@@ -70,6 +70,7 @@ namespace GlrTransportInc.Models
         public string EmailAddress { get; set; } // ok?
         public string Permit { get; set; }
         public string File2 { get; set; }
+        /* FIX "file3" NAME :( and remigrate */
         public string file3 { get; set; }
 
         public string ToLocation => $"{ToStreet} {ToCity} {ToState} {ToZip}"; //ok
