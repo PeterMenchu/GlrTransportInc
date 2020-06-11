@@ -69,7 +69,8 @@ namespace GlrTransportInc.Models
         public DateTime? DueDate { get; set; } //ok
         public string EmailAddress { get; set; } // ok?
         public string Permit { get; set; }
-
+        public string File2 { get; set; }
+        public string file3 { get; set; }
 
         public string ToLocation => $"{ToStreet} {ToCity} {ToState} {ToZip}"; //ok
         public string FromLocation => $"{FromStreet} {FromCity} {FromState} {FromZip}"; //ok
