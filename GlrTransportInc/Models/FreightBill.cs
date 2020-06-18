@@ -62,9 +62,11 @@ namespace GlrTransportInc.Models
         public string Driver { get; set; } // ok
         public string ReceivedBy { get; set; } //ok
         [DataType(DataType.Date)]
-        public DateTime? CompletionDate { get; set; } //ok
-        public string SiteName { get; set; } //ok
-        public string SitePhoneNumber { get; set; } //ok
+        public DateTime? CompletionDate { get; set; } 
+        public string SiteName { get; set; } 
+        public string SitePhoneNumber { get; set; }
+        public string Phone2 { get; set; }
+        public string phone3 { get; set; }
         [DataType(DataType.Date)]
         public DateTime? DueDate { get; set; } //ok
         public string EmailAddress { get; set; } // ok?
@@ -72,8 +74,8 @@ namespace GlrTransportInc.Models
         public string File2 { get; set; }
         public string file3 { get; set; }
 
-        public string ToLocation => $"{ToStreet} {ToCity} {ToState} {ToZip}"; //ok
-        public string FromLocation => $"{FromStreet} {FromCity} {FromState} {FromZip}"; //ok
+        public string ToLocation => $"{ToStreet} {ToCity} {ToState} {ToZip}"; 
+        public string FromLocation => $"{FromStreet} {FromCity} {FromState} {FromZip}"; 
 
         public FbStatus Status { get; set; }
         public string CurrentStatus;
