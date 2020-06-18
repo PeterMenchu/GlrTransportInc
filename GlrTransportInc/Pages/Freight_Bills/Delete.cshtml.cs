@@ -69,6 +69,17 @@ namespace GlrTransportInc
                     var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", FreightBill.Permit.Substring(8));
                     System.IO.File.Delete(file);
                 }
+                if (FreightBill.File2 != null)
+                {
+                    var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", FreightBill.File2.Substring(8));
+                    System.IO.File.Delete(file);
+                }
+                /* neeed to change "file3" name later */
+                if (FreightBill.file3 != null)
+                {
+                    var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", FreightBill.file3.Substring(8));
+                    System.IO.File.Delete(file);
+                }
                 _context.FreightBill.Remove(FreightBill);
                 await _context.SaveChangesAsync();
             }

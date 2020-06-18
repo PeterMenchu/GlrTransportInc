@@ -37,6 +37,9 @@ namespace GlrTransportInc.Pages.Freight_Bills
             Upload3 = null;
             FreightBill = await _context.FreightBill.FirstOrDefaultAsync(m => m.ID == id);
             Filename1 = FreightBill.Permit;
+            Filename2 = FreightBill.File2;
+            Filename3 = FreightBill.file3;
+                
             return Page();
         }
         public async Task<IActionResult> OnPostAsync()
@@ -61,9 +64,9 @@ namespace GlrTransportInc.Pages.Freight_Bills
                 await _context.SaveChangesAsync();
             }
             if (Upload2 != null)
-            {/*
+            {
                 name = Upload2.FileName;
-                FreightBill.Permit = $"/Permits/{name}";
+                FreightBill.File2 = $"/Permits/{name}";
                 var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{name}");
                 using (var fileStream = new FileStream(file, FileMode.Create))
                 {
@@ -71,12 +74,13 @@ namespace GlrTransportInc.Pages.Freight_Bills
                 }
 
                 _context.Attach(FreightBill).State = EntityState.Modified;
-                await _context.SaveChangesAsync();*/
+                await _context.SaveChangesAsync();
             }
             if (Upload3 != null)
-            {/*
+            {
                 name = Upload3.FileName;
-                FreightBill.Permit = $"/Permits/{name}";
+                /* FIX "file3" NAME :( */
+                FreightBill.file3 = $"/Permits/{name}";
                 var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{name}");
                 using (var fileStream = new FileStream(file, FileMode.Create))
                 {
@@ -84,10 +88,10 @@ namespace GlrTransportInc.Pages.Freight_Bills
                 }
 
                 _context.Attach(FreightBill).State = EntityState.Modified;
-                await _context.SaveChangesAsync();*/
+                await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Files", new {id = FreightBill.ID });
         }
     }
 }
