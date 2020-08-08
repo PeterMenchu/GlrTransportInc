@@ -10,7 +10,7 @@
     {
         <!-- header image, desktop then mobile style, toggled via the media query -->
         <div class="mainBanner">
-            <h1 class="centered">Hello, @IndexModel.Name!</h1>
+            <h1 class="centered" style="color: #0080ff; font-weight: bold">Hello, @IndexModel.Name!</h1> 
             <div class="text-center">
                 <img src="~/Images/Iphone_Icon.png" class="img-fluid" style="margin-top: 275px;" alt="Company Logo">
             </div>
@@ -19,8 +19,9 @@
                 <img src="~/Images/Iphone_Icon.png" alt="Company Logo">
             </div>-->
         </div>
+        
         <div class="mainMobileBanner">
-            <h5 class="mobileCentered" style="font-weight: bold">Hello, @IndexModel.Name!</h5>
+            <!-- <h5 class="mobileCentered" style="font-weight: bold; color: #0080FE">Hello, @IndexModel.Name!</h5> -->
         </div>
         <!-- Content, notice that Recent Announcements also has two styles -->
         <div about="row" class="text-center main">
@@ -37,19 +38,20 @@
     {
         <!-- follows the same format as above, but for logged out view -->
         <div class="mainBanner">
-            <h1 class="centered">Welcome to GLR Transport!</h1>
+            <h1 class="centered" style="color: #0080ff; font-weight: bold">Welcome!</h1>
             <div class="text-center">
                 <img src="~/Images/Iphone_Icon.png" class="img-fluid" style="margin-top: 275px;" alt="Company Logo">
             </div>
         </div>
         <div class="mainMobileBanner">
-            <h5 class="mobileCentered">Welcome to GLR Transport!</h5>
+            <!--<h4 class="mobileCentered" style="color: #0080ff; font-weight: bold">Welcome to GLR Transport!</h4>-->
         </div>
         <div about="row" class="text-center mainText">
+            <h5>Welcome to GLR Transport Inc.!</h5>
             <p>
                 This is a web application built to provide the members of GLR Transport Inc. a platform for managing
-                freight bills and employees. Please log in to access this site's features, or view the about or 
-                contact page for general information about the company.
+                freight bills and employees. Please log in to access this site's features, or view the about or
+                contact page for general information.
             </p>
         </div>
     }

@@ -16,7 +16,6 @@ namespace GlrTransportInc
     {
         private readonly GlrTransportInc.Data.ApplicationDbContext _context;
         private IWebHostEnvironment _environment;
-
         public DeletePermitModel(GlrTransportInc.Data.ApplicationDbContext context, IWebHostEnvironment environment)
         {
             _context = context;
@@ -27,7 +26,7 @@ namespace GlrTransportInc
         public IList<UserModel> Users { get; set; }
         public static string Name;
         public static string Position;
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id, int? fileNum)
         {
             Users = await _context.UserModel.ToListAsync();
             foreach (var item in Users)
@@ -49,10 +48,12 @@ namespace GlrTransportInc
             {
                 return NotFound();
             }
+
+            
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(int? id, int? fileNum)
         {
             if (id == null)
             {
@@ -62,12 +63,25 @@ namespace GlrTransportInc
 
             if (FreightBill != null)
             {
-                if (FreightBill.Permit != null)
+                if (FreightBill.Permit != null && fileNum == 1)
                 {
-                    var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", FreightBill.Permit.Substring(8));
+                    var file = Path.Combine(_environment.ContentRootPath, "wwwroot/Permits/", FreightBill.Permit);
                     System.IO.File.Delete(file);
                     FreightBill.Permit = null;
                 }
+                if (FreightBill.File2 != null && fileNum == 2)
+                {
+                    var file = Path.Combine(_environment.ContentRootPath, "wwwroot/Permits/", FreightBill.File2);
+                    System.IO.File.Delete(file);
+                    FreightBill.File2 = null;
+                }
+                if (FreightBill.file3 != null && fileNum == 3)
+                {
+                    var file = Path.Combine(_environment.ContentRootPath, "wwwroot/Permits/", FreightBill.file3);
+                    System.IO.File.Delete(file);
+                    FreightBill.file3 = null;
+                }
+                
             }
 
             _context.Attach(FreightBill).State = EntityState.Modified;

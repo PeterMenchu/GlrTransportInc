@@ -9,7 +9,10 @@ for details on configuring this project to bundle and minify static web assets. 
 .aboutMain {
     margin-top: 25px;
 }
-
+.navText {
+    color: #ed1c24;
+    font-weight: bold;
+}
 .mainText {
     padding-top: 260px;
 }
@@ -42,14 +45,14 @@ for details on configuring this project to bundle and minify static web assets. 
     left: 0px;
     height: 330px;
     width: 100%;
-    background: url("../Images/scenic_drive.jpg") no-repeat center center;
+    background: url("../Images/GLR_Homepage.JPG") no-repeat center center;
     background-size: cover;
     /* next is for browser compatibility */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    border-bottom: 7px solid #5cb85c;
-    box-shadow: 0px 5px 5px gainsboro;
+    border-bottom: 7px solid gainsboro;
+    box-shadow: 0px 5px 5px black;
 }
 .mobileCentered {
     position: absolute;
@@ -113,7 +116,7 @@ for details on configuring this project to bundle and minify static web assets. 
         left: 0px;
         height: 500px;
         width: 100%;
-        background: url("../Images/skyline_drive_header.jpg") no-repeat center center;
+        background: url("../Images/GLR_Homepage.jpg") no-repeat center center;
         background-size: cover;
         /* next is for browser compatibility */
         -webkit-background-size: cover;
@@ -166,10 +169,7 @@ a.navbar-brand {
 a {
     color: #5cb85c;
 }
-.navbar {
-    
-    
-}
+
 .btn-primary {
   color: #fff;
   background-color: #5cb85c;
@@ -178,14 +178,13 @@ a {
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  /* background-color: #1b6ec2; */
-  background-color: #5cb85c;  
-  /* border-color: #1861ac; */
+  background-color: #5cb85c;
   border-color: #5cb85c;   
 }
 .nav-item > a:hover {
     color: #E30B5D;
 }
+
 a:hover {
     color: #E30B5D;
 }

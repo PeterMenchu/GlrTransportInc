@@ -19,6 +19,8 @@ namespace GlrTransportInc.Pages.Freight_Bills
         public string Filename1;
         public string Filename2;
         public string Filename3;
+        public int BillId;
+        public int FileNum;
         public IFormFile Upload { get; set; }
         public IFormFile Upload2 { get; set; }
         public IFormFile Upload3 { get; set; }
@@ -32,6 +34,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
         }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            FileNum = 0;
             Upload = null;
             Upload2 = null;
             Upload3 = null;
@@ -39,7 +42,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
             Filename1 = FreightBill.Permit;
             Filename2 = FreightBill.File2;
             Filename3 = FreightBill.file3;
-                
+            BillId = FreightBill.ID;    
             return Page();
         }
         public async Task<IActionResult> OnPostAsync()
@@ -53,8 +56,10 @@ namespace GlrTransportInc.Pages.Freight_Bills
             if (Upload != null)
             {
                 name = Upload.FileName;
-                FreightBill.Permit = $"/Permits/{name}";
-                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{name}");
+                
+                FreightBill.Permit = $"{name}";
+                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/Permits/", $"{name}");
+                
                 using (var fileStream = new FileStream(file, FileMode.Create))
                 {
                     await Upload.CopyToAsync(fileStream);
@@ -66,8 +71,8 @@ namespace GlrTransportInc.Pages.Freight_Bills
             if (Upload2 != null)
             {
                 name = Upload2.FileName;
-                FreightBill.File2 = $"/Permits/{name}";
-                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{name}");
+                FreightBill.File2 = $"{name}";
+                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/Permits/", $"{name}");
                 using (var fileStream = new FileStream(file, FileMode.Create))
                 {
                     await Upload2.CopyToAsync(fileStream);
@@ -80,8 +85,8 @@ namespace GlrTransportInc.Pages.Freight_Bills
             {
                 name = Upload3.FileName;
                 /* FIX "file3" NAME :( */
-                FreightBill.file3 = $"/Permits/{name}";
-                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/permits", $"{name}");
+                FreightBill.file3 = $"{name}";
+                var file = Path.Combine(_environment.ContentRootPath, "wwwroot/Permits/", $"{name}");
                 using (var fileStream = new FileStream(file, FileMode.Create))
                 {
                     await Upload3.CopyToAsync(fileStream);
@@ -90,7 +95,8 @@ namespace GlrTransportInc.Pages.Freight_Bills
                 _context.Attach(FreightBill).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
             }
-
+            
+            FileNum = 0;
             return RedirectToPage("./Files", new {id = FreightBill.ID });
         }
     }

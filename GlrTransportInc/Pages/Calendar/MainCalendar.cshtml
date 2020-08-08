@@ -6,7 +6,8 @@
 @{
     ViewBag.Title = "Calendar";
 }
-
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.print.css" rel="stylesheet" media="print" />
 <!-- Calendar built with JS "FullCalendar" -->
 @if (SignInManager.IsSignedIn(User))
 {
@@ -33,7 +34,7 @@
 <br />
 <div class="row">
     <div class="col-md-12">
-        <div id="calendar"></div>
+        <div id="calendar" style="margin-bottom: 60px; border-top: 1px solid #ddd !important; border-left: 1px solid #ddd !important; border-right: 1px solid #ddd !important;"></div>
     </div>
 </div>
 
@@ -135,6 +136,7 @@
                     eventRender : function(event, element) {
                        element[0].title = event.title;
                     },*/
+                    
                     eventRender: function(event, element) {
                         
                         $(element).tooltip({title: event.name + event.display + '\n' + event.status}, {title: event.status});

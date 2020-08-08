@@ -20,8 +20,9 @@
         <table class="table">
             <thead>
             <tr>
-                <th>Files for this bill</th>
+                <th>Files</th>
                 <th></th>
+                <th>Remove</th>
             </tr>
             </thead>
             <tbody>
@@ -30,8 +31,16 @@
                 @if (Model.Filename1 != null)
                 {
                     <td>
-                        <a href="@Model.Filename1">@Model.Filename1</a>
-                        <p>Remove</p>
+            
+                        <a href="~/Permits/@Model.Filename1">@Model.Filename1</a>
+                    </td>
+                    <td>
+                        <form method="post" enctype="multipart/form-data" class="col">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <a asp-page="./DeletePermit" asp-route-id="@Model.BillId" asp-route-fileNum="1" class="optionButton">
+                                <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Remove File">
+                            </a>
+                        </form>
                     </td>
                 }
                 else
@@ -52,6 +61,7 @@
                             </div>
                         </form>
                     </td>
+                    <td></td>
                 }
             </tr>
             <tr>
@@ -59,8 +69,15 @@
                 @if (Model.Filename2 != null)
                 {
                     <td>
-                        <a href="@Model.Filename2">@Model.Filename2</a>
-                        <p>Remove</p>
+                        <a href="~/Permits/@Model.Filename2">@Model.Filename2</a>
+                    </td>
+                    <td>
+                        <form method="post" enctype="multipart/form-data" class="col">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <a asp-page="./DeletePermit" asp-route-id="@Model.BillId" asp-route-fileNum="2" class="optionButton">
+                                <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Remove File">
+                            </a>
+                        </form>
                     </td>
                 }
                 else
@@ -80,6 +97,7 @@
                             </div>
                         </form>
                     </td>
+                    <td></td>
                 }
             </tr>
             <tr>
@@ -87,8 +105,15 @@
                 @if (Model.Filename3 != null)
                 {
                     <td>
-                        <a href="@Model.Filename3">@Model.Filename3</a>
-                        <p>Remove</p>
+                        <a href="~/Permits/@Model.Filename3">@Model.Filename3</a>
+                    </td>
+                    <td>
+                        <form method="post" enctype="multipart/form-data" class="col">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <a asp-page="./DeletePermit" asp-route-id="@Model.BillId" asp-route-fileNum="3" class="optionButton">
+                                <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Remove File">
+                            </a>
+                        </form>
                     </td>
                 }
                 else
@@ -108,6 +133,7 @@
                             </div>
                         </form>
                     </td>
+                    <td></td>
                 }
             </tr>
             </tbody>

@@ -1,4 +1,8 @@
 ﻿<!DOCTYPE html>
+@using Microsoft.AspNetCore.Identity
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
+@inject UserManager<UserModel> UserManager
 <html lang="en">
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
@@ -7,6 +11,14 @@
     <title>@ViewData["Title"] - GlrTransportInc</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <!-- Below is from theme -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Theme/plugins/fontawesome-free/css/all.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/Theme/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- end theme -->
     <link rel='manifest' href='/manifest.json'>
     <link rel="apple-touch-icon" sizes="180x180" href="~/Images/Iphone_Icon.png">
     <script type="module">
@@ -16,56 +28,461 @@
         document.body.appendChild(el);
     </script>
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top">
-            <a class="navbar-brand text-white" asp-page="/Index">
-                GLR Transport Inc.
-                <img src="~/Images/GLR_Home.png" style="width:30px; height:30px;" alt="Company Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link text-white" asp-page="/About">About<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link text-white" asp-page="/Contact">Contact<span class="sr-only">(current)</span></a>
-                    </li>
-                    <partial name="_LoginPartial" />
-                </ul>
+@if (!SignInManager.IsSignedIn(User))
+{
+    <body>
+    
+        <header>
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <a class="navbar-brand navText" asp-page="/Index">
+                    GLR Transport Inc.
+                    <img src="~/Images/GLR_Home.png" style="width:30px; height:30px;" alt="Company Logo">
+                </a>
+                
+                <a class="nav-link navText" asp-page="/About">About<span class="sr-only">(current)</span></a>
+                <a class="nav-link navText" asp-page="/Contact">Contact<span class="sr-only">(current)</span></a>
+                <partial name="_LoginPartial"/>
                 <!--
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0 text-white" type="submit">Go</button>
-                </form>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
                 -->
-            </div>
-        </nav>
-    </header>
-
-    <div class="container">
-        <main role="main" class="pb-3">
-            <br />
-            <br />
-            <br />
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted text-center">
+                <!--
+                <div id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link navText" asp-page="/About">About<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link navText" asp-page="/Contact">Contact<span class="sr-only">(current)</span></a>
+                        </li>
+                        <partial name="_LoginPartial"/>
+                    </ul>
+                    <!-
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light my-2 my-sm-0 text-white" type="submit">Go</button>
+                    </form>
+                    ->
+                </div>-->
+            </nav>
+        </header>
+        
         <div class="container">
-            &copy; 2020 - GLR Transport Inc. - <a asp-area="" asp-page="/Privacy" class="text-success">Privacy</a>
+            <main role="main" class="pb-3">
+                <br/>
+                <br/>
+                <br/>
+                @RenderBody()
+            </main>
         </div>
-    </footer>
+    
+            
+        <footer class="border-top footer text-muted text-center">
+            <div class="container">
+                &copy; 2020 - GLR Transport Inc. - <a asp-area="" asp-page="/Privacy" class="navText">Privacy</a>
+            </div>
+        </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+        
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <!-- Below is from theme -->
+        <!-- jQuery -->
+        <script src="~/Theme/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="~/Theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="~/Theme/dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="~/Theme/dist/js/demo.js"></script>
+        <!-- end theme -->
+        @RenderSection("Scripts", required: false)
+    </body>
+}
+else
+{
+  <body class="hold-transition sidebar-mini sidebar-collapse layout-fixed">
+  <!-- Site wrapper -->
+  <div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand" style="background-color: #ff2418">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link text-white" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a class="nav-link text-white" asp-page="/Index">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a asp-page="/About" class="nav-link text-white">About</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a asp-page="/Contact" class="nav-link text-white">Contact</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a asp-page="/Profile/ConfirmLogout" class="nav-link text-white">Logout</a>
+      </li>
+    </ul>
+    
+  </nav>
+  <!-- /.navbar -->
 
-    @RenderSection("Scripts", required: false)
-</body>
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #413c40">
+  <!-- Brand Logo -->
+  <a class="brand-link" asp-page="/Index">
+    <img src="~/Images/GLR_Home.png" style="width:30px; height:30px;" alt="Company Logo"
+         class="brand-image img-circle elevation-3">
+    <span class="brand-text font-weight-light">GLR Transport Inc.</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+
+  <!-- Sidebar Menu -->
+  <nav class="mt-2">
+  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+  <!-- Add icons to the links using the .nav-icon class
+  with font-awesome or any other icon font library -->
+  <!-- cal -->
+  <li class="nav-item has-treeview">
+    <a href="#" class="nav-link">
+      <i class="nav-icon far fa-calendar-alt"></i>
+      <p>
+        Calendar
+        <i class="right fas fa-angle-left"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a asp-page="/Calendar/MainCalendar" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Main Calendar</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a asp-page="/Calendar/UserCalendar" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>My Calendar</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!-- end cal -->
+  <!-- bills -->
+  <li class="nav-item has-treeview">
+    <a href="#" class="nav-link">
+      <i class="nav-icon far fa-copy"></i>
+      <p>
+        Freight Bills
+        <i class="fas fa-angle-left right"></i>
+        <!-- notification number <span class="badge badge-info right">6</span> -->
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="/Freight_Bills/Index" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>View List</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/Freight_Bills/Create" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Add</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/Freight_Bills/MyFreights" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>My Freights</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!-- chart icon
+  <li class="nav-item has-treeview">
+    <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-chart-pie"></i>
+      <p>
+        Charts
+        <i class="right fas fa-angle-left"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="../charts/chartjs.html" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>ChartJS</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="../charts/flot.html" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Flot</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="../charts/inline.html" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Inline</p>
+        </a>
+      </li>
+    </ul>
+  </li>-->
+  
+  <li class="nav-item has-treeview">
+    <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-edit"></i>
+      <p>
+        Events
+        <i class="fas fa-angle-left right"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="../forms/general.html" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>View List</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="../forms/advanced.html" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Add</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="../forms/editors.html" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>My Events</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item has-treeview">
+    <a href="#" class="nav-link">
+      <i class="nav-icon far fa-clipboard"></i>
+      <p>
+        Announcements
+        <i class="fas fa-angle-left right"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="/Announcements/Index" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>View List</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/Announcements/Create" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Add Post</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a href="/Map/map" class="nav-link">
+      <i class="nav-icon far fa-image"></i>
+      <p>
+        Map
+      </p>
+    </a>
+  </li>
+  <!-- <li class="nav-header">Employees</li> -->
+  <li class="nav-item has-treeview">
+    <a href="#" class="nav-link">
+      <i class="nav-icon far fa-address-book"></i>
+      <p>
+        User Directoru
+        <i class="fas fa-angle-left right"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="/Directory/Directory" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Directory</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/Manage_Users/Index" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Manage Accounts</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a href="../calendar.html" class="nav-link">
+      <i class="nav-icon far fa-plus-square"></i>
+      <p>
+        Add User Account
+        <!-- <span class="badge badge-info right">2</span> -->
+      </p>
+    </a>
+  </li>
+  <li class="nav-item has-treeview">
+    <a href="#" class="nav-link">
+      <i class="nav-icon far fa-book"></i>
+      <p>
+        Timesheets
+        <i class="fas fa-angle-left right"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="/Timesheets/Index" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>All Timesheets</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/Timesheets/MyIndex" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>My Timesheets</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/Timesheets/Create" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Add Timesheet</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+  
+  <!-- <li class="nav-header">MISCELLANEOUS</li> -->
+  <li class="nav-item">
+    <a href="/Profile/MyProfile" class="nav-link">
+      <i class="nav-icon far fa-address-card"></i>
+      <p>Profile</p>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a href="/About" class="nav-link">
+      <i class="nav-icon far fa-file"></i>
+      <p>About</p>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a href="/Contact" class="nav-link">
+      <i class="nav-icon far fa-envelope"></i>
+      <p>Contact</p>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a href="/Profile/ConfirmLogout" class="nav-link">
+      <i class="nav-icon fas fa-power-off"></i>
+      <p>
+        Logout
+      </p>
+    </a>
+  </li>
+  
+  </ul>
+  </nav>
+  <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+    <!--
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>@ViewData["Title"]</h1>
+          </div>
+           path example
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Layout</a></li>
+              <li class="breadcrumb-item active">Collapsed Sidebar</li>
+            </ol>
+          </div>
+        </div>
+      </div> /.container-fluid -->
+      
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <!-- Default box -->
+            
+            <div class="card">
+              
+              <div class="card-header">
+                <!-- <h3 class="card-title">@ViewData["Title"]</h3> -->
+                <!--
+                collapse and remove
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i></button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                    <i class="fas fa-times"></i></button>
+                </div> -->
+              </div>
+              <div class="card-body">
+                @RenderBody()
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+              </div>
+              <!-- /.card-footer-->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+      
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <!--
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.1.0-pre
+    </div> -->
+    <strong>Copyright &copy; 2020 <a asp-page="../Index">GLR Transport Inc.</a></strong> All rights
+    reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="~/js/site.js" asp-append-version="true"></script>
+  <!-- jQuery -->
+  <script src="~/Theme/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="~/Theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="~/Theme/dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="~/Theme/dist/js/demo.js"></script>
+  @RenderSection("Scripts", required: false)
+  </body>
+
+}    
+
 </html>

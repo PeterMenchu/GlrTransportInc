@@ -14,7 +14,7 @@
         <h1>@ViewData["Title"]</h1>
         @if (IndexModel.Position != "Placeholder")
         {
-            <a asp-page="Create" class="btn btn-primary bg-success">Create New</a>
+            <a asp-page="Create" class="btn btn-primary">Create New</a>
         }
     </div>
     <hr/>
@@ -22,7 +22,7 @@
         <div class="form-actions no-color">
             <p>
                 <input type="text" name="input" value="@Model.Current" placeholder="Search all bill fields"/>
-                <input type="submit" value="Search" class="btn btn-primary bg-success" /> |
+                <input type="submit" value="Search" class="btn btn-primary" /> |
                 <a asp-page="./Completed">Back to full List</a>
             </p>
         </div>
