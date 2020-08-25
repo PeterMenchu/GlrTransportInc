@@ -14,26 +14,26 @@ namespace GlrTransportInc.Models
     public class FreightBill
     {
         public int ID { get; set; }
-        public string Customer { get; set; } //ok
+        public string Customer { get; set; } 
         public string Display { get; set; }
-        public string FreightBillNumber { get; set; } //ok
-        public string FromName { get; set; } //ok
-        public string FromStreet { get; set; } //ok
-        public string FromCity { get; set; } //ok
-        public string FromState { get; set; } //ok
-        public string FromZip { get; set; } //ok
-        public string ToName { get; set; } //ok
-        public string ToStreet { get; set; } //ok
-        public string ToCity { get; set; } //ok
-        public string ToState { get; set; } //ok
-        public string ToZip { get; set; } //ok
+        public string FreightBillNumber { get; set; } 
+        public string FromName { get; set; } 
+        public string FromStreet { get; set; } 
+        public string FromCity { get; set; } 
+        public string FromState { get; set; } 
+        public string FromZip { get; set; } 
+        public string ToName { get; set; } 
+        public string ToStreet { get; set; } 
+        public string ToCity { get; set; } 
+        public string ToState { get; set; }
+        public string ToZip { get; set; } 
         [DataType(DataType.Date)]
-        public DateTime? ScheduledDate { get; set; } //ok
-        public string Size { get; set; } //ok
-        public string BranchAndDescription { get; set; } //ok
-        public string Unit { get; set; } //ok
-        public string PoNumber { get; set; } //ok
-        public string DocJob { get; set; } //ok
+        public DateTime? ScheduledDate { get; set; } 
+        public string Size { get; set; } 
+        public string BranchAndDescription { get; set; }
+        public string Unit { get; set; }
+        public string PoNumber { get; set; }
+        public string DocJob { get; set; }
         public string Comments { get; set; }
 
         public string Labor1 { get; set; }
@@ -55,12 +55,12 @@ namespace GlrTransportInc.Models
         public float Cost8 { get; set; }
         public float Cost9 { get; set; }
 
-        public float Total => Cost1 + Cost2 + Cost3 + Cost4 + Cost5 + Cost6 + Cost7 + Cost8 + Cost9; //ok
+        public float Total => Cost1 + Cost2 + Cost3 + Cost4 + Cost5 + Cost6 + Cost7 + Cost8 + Cost9; 
 
 
-        public string TruckNumber { get; set; } //ok
-        public string Driver { get; set; } // ok
-        public string ReceivedBy { get; set; } //ok
+        public string TruckNumber { get; set; } 
+        public string Driver { get; set; } 
+        public string ReceivedBy { get; set; } 
         [DataType(DataType.Date)]
         public DateTime? CompletionDate { get; set; } 
         public string SiteName { get; set; } 
@@ -68,8 +68,8 @@ namespace GlrTransportInc.Models
         public string Phone2 { get; set; }
         public string phone3 { get; set; }
         [DataType(DataType.Date)]
-        public DateTime? DueDate { get; set; } //ok
-        public string EmailAddress { get; set; } // ok?
+        public DateTime? DueDate { get; set; } 
+        public string EmailAddress { get; set; } 
         public string Permit { get; set; }
         public string File2 { get; set; }
         /* FIX "file3" NAME :( and remigrate */

@@ -12,9 +12,9 @@ namespace GlrTransportInc.Models
 
         [Required]
         public string Title { get; set; }
-        public string Author { get; set; }
-        public DateTime DatePosted { get; set; }
-        [Required]
+        [DataType(DataType.Date)]
+        public DateTime? EventDate { get; set; }
+       
         public string Post { get; set; }
     }
 }
