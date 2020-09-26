@@ -16,5 +16,6 @@ namespace GlrTransportInc.Models
         public DateTime DatePosted { get; set; }
         [Required]
         public string Post { get; set; }
+        public int eventFlag { get; set; }
     }
 }
