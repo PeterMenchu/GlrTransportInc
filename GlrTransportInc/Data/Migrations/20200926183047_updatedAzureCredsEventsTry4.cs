@@ -1,8 +1,8 @@
-﻿ using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GlrTransportInc.Data.Migrations
 {
-    public partial class EventTry3 : Migration
+    public partial class updatedAzureCredsEventsTry4 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
