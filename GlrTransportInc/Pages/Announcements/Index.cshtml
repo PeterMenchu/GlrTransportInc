@@ -18,49 +18,52 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Announcement)
+           @foreach (var item in Model.Announcement)
             {
-                <tr>
-                    <td>
-                        <div class="container-fluid" style="background-color: gainsboro">
-                            <div class="column">
-                                <h1 class="postTitle">@item.Title</h1>
-                            </div>
-                            @foreach (var user in Model.Users)
-                            {
-                                @if (user.Name == item.Author)
+                @if (item.eventFlag != 1)
+                {
+                    <tr>
+                        <td>
+                            <div class="container-fluid" style="background-color: gainsboro">
+                                <div class="column">
+                                    <h1 class="postTitle">@item.Title</h1>
+                                </div>
+                                @foreach (var user in Model.Users)
                                 {
-                                    <div class="column">
-                                        <img gravatar-email="@user.Email" alt="Profile Picture"/>
-                                    </div>
+                                    @if (user.Name == item.Author)
+                                    {
+                                        <div class="column">
+                                            <img gravatar-email="@user.Email" alt="Profile Picture"/>
+                                        </div>
+                                    }
                                 }
-                            }
-                            <div class="column">
-                                By: @item.Author | Posted: @string.Format("{0:MM/dd/yyyy hh:mm:ss tt}",item.DatePosted)
-                            </div>
-                            <br />
-                            <div class="column">
-                                <p style="white-space: pre-line">@Html.DisplayFor(modelItem => item.Post)</p>
-                            </div>
-                            <div class="column">
-                                @if (IndexModel2.Name == item.Author)
-                                {
-                                    <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
-                                        <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
-                                    </a>
-                                }
-                                @if (IndexModel2.Name == item.Author || IndexModel2.Position == "Manager")
-                                {
-                                    <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
-                                        <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
-                                    </a>
-                                }
+                                <div class="column">
+                                    By: @item.Author | Posted: @string.Format("{0:MM/dd/yyyy hh:mm:ss tt}", item.DatePosted)
+                                </div>
                                 <br />
-                                <br />
+                                <div class="column">
+                                    <p style="white-space: pre-line">@Html.DisplayFor(modelItem => item.Post)</p>
+                                </div>
+                                <div class="column">
+                                    @if (IndexModel2.Name == item.Author)
+                                    {
+                                        <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
+                                            <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                                        </a>
+                                    }
+                                    @if (IndexModel2.Name == item.Author || IndexModel2.Position == "Manager")
+                                    {
+                                        <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
+                                            <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                                        </a>
+                                    }
+                                    <br />
+                                    <br />
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
+                }
             }
         </tbody>
     </table>
