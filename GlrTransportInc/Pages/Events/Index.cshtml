@@ -1,0 +1,78 @@
+@page
+@model GlrTransportInc.IndexModel2
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <br />
+    <p>
+        <a asp-page="Create" class="btn btn-primary btn-lg btn-block">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <h3>Events</h3>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach (var item in Model.Announcement)
+            {
+                @if (item.eventFlag == 1)
+                {
+                    <tr>
+                        <td>
+                            <div class="container-fluid" style="background-color: gainsboro">
+                                <div class="column">
+                                    <h1 class="postTitle">@item.Title</h1>
+                                </div>
+                                @foreach (var user in Model.Users)
+                                {
+                                    @if (user.Name == item.Author)
+                                    {
+                                        <div class="column">
+                                            <img gravatar-email="@user.Email" alt="Profile Picture"/>
+                                        </div>
+                                    }
+                                }
+                                <div class="column">
+                                    By: @item.Author | Posted: @string.Format("{0:MM/dd/yyyy hh:mm:ss tt}", item.DatePosted)
+                                </div>
+                                <br />
+                                <div class="column">
+                                    <p style="white-space: pre-line">@Html.DisplayFor(modelItem => item.Post)</p>
+                                </div>
+                                <div class="column">
+                                    @if (IndexModel2.Name == item.Author)
+                                    {
+                                        <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
+                                            <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                                        </a>
+                                    }
+                                    @if (IndexModel2.Name == item.Author || IndexModel2.Position == "Manager")
+                                    {
+                                        <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
+                                            <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                                        </a>
+                                    }
+                                    <br />
+                                    <br />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <body>
+        <div class="text-center">
+            <p>You must log in to view events.</p>
+        </div>
+    </body>
+}

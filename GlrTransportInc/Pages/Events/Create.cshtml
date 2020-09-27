@@ -1,0 +1,52 @@
+@page
+@model GlrTransportInc.CreateModel
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <h4>Event</h4>
+    <hr />
+    <div class="row">
+        <div class="col-lg-10">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Announcement.Title" class="control-label"></label>
+                    <input asp-for="Announcement.Title" class="form-control" />
+                    <span asp-validation-for="Announcement.Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Announcement.Post" class="control-label"></label>
+                    <textarea asp-for="Announcement.Post" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="Announcement.Post" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Announcement.DatePosted" class="control-label">Scheduled Date:</label>
+                    <input type="date" asp-for="Announcement.DatePosted" class="form-control" />
+
+                    <span asp-validation-for="Announcement.DatePosted" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="Index">Back to Events</a>
+    </div>
+}
+else
+{
+    <body>
+    <div class="text-center">
+        <h1>You must log in to view this page.</h1>
+    </div>
+    </body>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
