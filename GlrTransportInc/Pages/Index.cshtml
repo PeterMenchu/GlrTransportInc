@@ -25,11 +25,18 @@
         </div>
         <!-- Content, notice that Recent Announcements also has two styles -->
         <div about="row" class="text-center main">
-            <h3 class="mainSize">Recent Announcements</h3>
-            <p class="mobileSize">Recent Announcements</p>
+            <h3 class="mainSize">Recent Events and Announcements</h3>
+            <p class="mobileSize">Recent Events and Announcements</p>
             @foreach (var item in Model.Announcement.Take(4)) 
             {
-                <a class="nav-link" asp-page="./Announcements/Index">@item.Title (@string.Format("{0:MM/dd/yyyy hh:mm:ss tt}",item.DatePosted))</a> 
+                if (item.eventFlag == 0)
+                {
+                    <a class="nav-link" asp-page="./Announcements/Index">@item.Title (@string.Format("{0:MM/dd/yyyy hh:mm:ss tt}", item.DatePosted))</a>
+                }
+                else
+                {
+                    <a class="nav-link" asp-page="./Events/Index">@item.Title (@string.Format("{0:MM/dd/yyyy}", item.DatePosted))</a>
+                }
             }
         </div>
         

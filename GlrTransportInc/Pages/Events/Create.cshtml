@@ -1,5 +1,5 @@
 @page
-@model GlrTransportInc.CreateModel
+@model GlrTransportInc.CreateEModel
 @using GlrTransportInc.Models
 @inject SignInManager<UserModel> SignInManager
 
@@ -22,9 +22,8 @@
                     <span asp-validation-for="Announcement.Post" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Announcement.DatePosted" class="control-label">Scheduled Date:</label>
+                    <label asp-for="Announcement.DatePosted" class="control-label">Scheduled Date</label>
                     <input type="date" asp-for="Announcement.DatePosted" class="form-control" />
-
                     <span asp-validation-for="Announcement.DatePosted" class="text-danger"></span>
                 </div>
                 <div class="form-group">

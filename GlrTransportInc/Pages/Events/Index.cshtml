@@ -38,8 +38,8 @@
                                     }
                                 }
                                 <div class="column">
-                                    By: @item.Author | Posted: @string.Format("{0:MM/dd/yyyy hh:mm:ss tt}", item.DatePosted)
-                                </div>
+                                    <h5> Event Date: @string.Format("{0:MM/dd/yyyy}", item.DatePosted) </h5>
+                                </div><!-- {0:MM/dd/yyyy hh:mm:ss tt} -->
                                 <br />
                                 <div class="column">
                                     <p style="white-space: pre-line">@Html.DisplayFor(modelItem => item.Post)</p>

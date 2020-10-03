@@ -12,11 +12,11 @@ using System.Runtime.InteropServices;
 
 namespace GlrTransportInc
 {
-    public class CreateModel : PageModel
+    public class CreateEModel : PageModel
     {
         private readonly GlrTransportInc.Data.ApplicationDbContext _context;
 
-        public CreateModel(GlrTransportInc.Data.ApplicationDbContext context)
+        public CreateEModel(GlrTransportInc.Data.ApplicationDbContext context)
         {
             _context = context;
         }
@@ -57,17 +57,9 @@ namespace GlrTransportInc
                 }
             }
             
-            TimeZoneInfo targetZone = null;
-
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                targetZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
-            }
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-            {
-                targetZone = TimeZoneInfo.FindSystemTimeZoneById("America/Chicago");
-            }
-            var post = new Announcement { Title = Announcement.Title, Post = Announcement.Post, Author = Name, eventFlag = 1};
+            
+            var post = new Announcement { Title = Announcement.Title, Post = Announcement.Post, 
+                DatePosted = Announcement.DatePosted, Author = Name, eventFlag = 1};
             _context.Announcement.Add(post);
             await _context.SaveChangesAsync();
 
