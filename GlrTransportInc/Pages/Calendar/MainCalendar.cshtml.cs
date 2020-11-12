@@ -25,6 +25,7 @@ namespace GlrTransportInc.Pages.Calendar
         public static List<string> DriverInit = new List<string>();
         public static List<string> NameList = new List<string>();
         public CalendarSelection Selection { get;set; }
+        public FbStatus Placeholder { get; set; }
         public IList<UserModel> Users { get; set; }
         // _context is for grabbing bill data
         private readonly GlrTransportInc.Data.ApplicationDbContext _context;
@@ -34,6 +35,7 @@ namespace GlrTransportInc.Pages.Calendar
         }
         // declare instance of the bill model so data can be grabbed
         public static IList<FreightBill> FreightBill { get;set; }
+        public IList<Announcement> Announcement { get;set; }
         // OnGetAsync is called when page is loaded, sets needed values from freight table
         public async Task OnGetAsync()
         {
@@ -50,6 +52,7 @@ namespace GlrTransportInc.Pages.Calendar
             Users = await _context.UserModel.ToListAsync();
             // enable data retrieval from DB to bill model
             FreightBill = await _context.FreightBill.ToListAsync();
+            Announcement = await _context.Announcement.ToListAsync();
             // loop through each freight, set needed values
             foreach (var item in FreightBill)
             {
@@ -82,6 +85,46 @@ namespace GlrTransportInc.Pages.Calendar
                     }
                     DriverInit.Add(_init);
                     _init = null;
+                }
+            }
+            // find events, can add announcements if needed
+            foreach (var e in Announcement)
+            {
+                if (e.eventFlag == 1)
+                {
+                    if (e.DatePosted != null)
+                    {
+                        Id.Add(e.ID);
+                        BillName.Add(e.Title);
+                        StartDate.Add(e.DatePosted);
+                        //Status.Add(Placeholder);
+                        _name = "Unassigned";
+                        NameList.Add(null);
+                        if (_name != "Unassigned" && _name != null)
+                        {
+                            for (int i = 0; i < _name.Length; i++)
+                            {
+                                if (i == 0)
+                                {
+                                    _init += _name[i];
+                                }
+
+                                if (i > 0 && _name[i - 1] == ' ' && _name[i] != ' ')
+                                {
+                                    _init += _name[i];
+                                }
+                            }
+
+                            _init += ": ";
+                        }
+                        else
+                        {
+                            _init = "";
+                        }
+
+                        DriverInit.Add(_init);
+                        _init = null;
+                    }
                 }
             }
         }

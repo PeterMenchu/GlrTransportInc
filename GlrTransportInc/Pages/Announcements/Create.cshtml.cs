@@ -56,7 +56,7 @@ namespace GlrTransportInc
                     Name = item.Name;
                 }
             }
-
+            
             TimeZoneInfo targetZone = null;
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))

@@ -57,7 +57,6 @@ namespace GlrTransportInc
                 }
             }
             
-            
             var post = new Announcement { Title = Announcement.Title, Post = Announcement.Post, 
                 DatePosted = Announcement.DatePosted, Author = Name, eventFlag = 1};
             _context.Announcement.Add(post);
