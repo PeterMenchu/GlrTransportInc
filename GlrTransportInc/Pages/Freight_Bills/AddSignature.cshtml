@@ -1,0 +1,33 @@
+@page
+@model GlrTransportInc.Pages.Freight_Bills.AddSignature
+
+@{
+    ViewData["Title"] = "Add Signature";
+}
+
+<body>
+<div id="cont" class="container">
+    <div>
+        <canvas id="signature" width="500px" height="250px" class="border">
+
+        </canvas>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" id="clearBox">Clear</button>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+<script>
+    var signaturePad;
+    function setBox(){
+        var canvas = document.getElementById("signature");
+        
+        signaturePad = new SignaturePad(canvas);
+    }
+    function clearCanvas(){
+        signaturePad.clear();
+    }
+    document.getElementById("clearBox").addEventListener("click",clearCanvas)
+    document.addEventListener("DOMContentLoaded", setBox);
+</script>
+</body>

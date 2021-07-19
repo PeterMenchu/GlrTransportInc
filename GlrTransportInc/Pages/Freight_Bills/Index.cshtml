@@ -33,6 +33,7 @@
             <div><partial name="FreightNav" /></div>
         </div>
     </div>
+    <!-- Code for the mobile list -->
     <div class="mobileList">
         <body>
             @foreach (var item in Model.FreightBill)
@@ -51,28 +52,31 @@
                         <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
                     </a>
                     
-                    <a asp-page="./Files" asp-route-id="@item.ID">Files</a>
-                    <p>  </p>
-                    <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
+                    <a asp-page="./Files" asp-route-id="@item.ID">Files -</a>
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details -</a>
+                    <a asp-page="./AddSignature" asp-route-id="@item.ID">Signature</a>
                 </div>
             }
         </body>
     </div>
-
+    <!-- End mobile, start desktop -->
     <div class="table-responsive">
         <table class="table">
+            <!-- Table headers -->
             <thead>
-                <tr>
-                    <th>Customer</th>
-                    <th>#</th>
-                    <th>Driver</th>
-                    <th>Status</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    <th>Details</th>
-                    <th>View Files</th>
-                </tr>
+            <tr>
+                <th>Customer</th>
+                <th>#</th>
+                <th>Driver</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>Details</th>
+                <th>Files</th>
+                <th>Signature</th>
+            </tr>
             </thead>
+            <!-- Table body -->
             <tbody>
             @foreach (var item in Model.FreightBill)
             {
@@ -82,7 +86,7 @@
                     <td>@Html.DisplayFor(modelItem => item.Driver)</td>
                     <td>@Html.DisplayFor(modelItem => item.Status)</td>
 
-                    
+
                     <td>
                         <a asp-page="./Edit" asp-route-id="@item.ID">
                             <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
@@ -93,16 +97,19 @@
                             <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
                         </a>
                     </td>
-                    
+
                     <td>
-                        <a asp-page="./Details" asp-route-id="@item.ID">View Details</a>
+                        <a asp-page="./Details" asp-route-id="@item.ID">View</a>
                     </td>
-                    
+
                     <td>
                         <!--<a href="@item.Permit">Permit</a>-->
                         <a asp-page="./Files" asp-route-id="@item.ID">Files</a>
                     </td>
-                    
+                    <td>
+                        <a asp-page="./AddSignature" asp-route-id="@item.ID">Signature</a>
+                    </td>
+
                 </tr>
             }
             </tbody>
