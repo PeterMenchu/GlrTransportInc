@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8979df5-96ff-4d25-97ab-ccc78999580a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlrTransportInc/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlrTransportInc/GlrTransportInc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/GlrTransportInc.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/AddSignature.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/AddSignature.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,67 +28,59 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Controllers/SqlDataController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Contact.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/About.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Directory.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C2F82446-E914-423F-8A90-FAC6B878B61C/3/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/MyFreights.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/About.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Directory.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/AddDriver.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Privacy.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Map/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_LoginPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8794DDCE-7AC1-4AE2-8D2C-EC1865478729/1D/UserManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/_ManageNav.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/MyProfile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/MyProfile.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ChangePassword.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/Email.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/EditProfile.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/EmployeeProcessor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/_StatusMessage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ChangePassword.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/Email.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/EditProfile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ManageNavPages.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/appsettings.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Calendar/Index.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Calendar/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Index.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Details.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Data/Migrations/00000000000000_CreateIdentitySchema.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Edit.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Data/Migrations/00000000000000_CreateIdentitySchema.Designer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Data/Migrations/20200406213514_FreightBill.Designer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Data/Migrations/20200406213514_FreightBill.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Edit.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Create.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/IdentityHostingStartup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Models/FreightBill.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/ConfirmEmail.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Login.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Manage/ManageNavPages.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Edit.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/About.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Create.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Privacy.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Details.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Contact.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Edit.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Freight_Bills/Index.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Models/FreightBill.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/About.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Shared/_LoginPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Data/Migrations/20200406213514_FreightBill.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ChangePassword.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/EmployeeProcessor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/EditProfile.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/EditProfile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ChangePassword.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Data/Migrations/00000000000000_CreateIdentitySchema.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/Email.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Data/Migrations/20200406213514_FreightBill.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/MyProfile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/Email.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/_StatusMessage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/MyProfile.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/ManageNavPages.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Profile/_ManageNav.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Data/Migrations/00000000000000_CreateIdentitySchema.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/IdentityHostingStartup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Pages/Calendar/Index.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/ConfirmEmail.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Register.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/Login.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GlrTransportInc/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -137,16 +134,17 @@
   <component name="ProjectId" id="1ZYymJNxn62PmNp1RlI4JkHG2E5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TWShift.3" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.GlrTransportInc">
     <configuration name="GlrTransportInc" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -161,7 +159,7 @@
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
       <method v="2">
-        <option name="Build" enabled="true" />
+        <option name="Build" />
       </method>
     </configuration>
     <configuration name="GlrTransportInc: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -176,10 +174,11 @@
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
       <method v="2">
-        <option name="Build" enabled="true" />
+        <option name="Build" />
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -213,12 +212,19 @@
       <workItem from="1586278106920" duration="2177000" />
       <workItem from="1586282158024" duration="7812000" />
       <workItem from="1586315646084" duration="310000" />
+      <workItem from="1628738111435" duration="47000" />
+      <workItem from="1628738745493" duration="27000" />
+      <workItem from="1628742494668" duration="549000" />
+      <workItem from="1628743069378" duration="712000" />
+      <workItem from="1628744471436" duration="1093000" />
+      <workItem from="1628832263366" duration="871000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,58 +232,18 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state width="1878" height="43" key="GridCell.Tab.0.bottom" timestamp="1586303711128">
-      <screen x="0" y="23" width="1920" height="1032" />
-    </state>
-    <state width="1398" height="115" key="GridCell.Tab.0.bottom/0.23.1440.852@0.23.1440.852" timestamp="1585206752481" />
-    <state width="1878" height="43" key="GridCell.Tab.0.bottom/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1586303519427" />
-    <state width="1878" height="43" key="GridCell.Tab.0.bottom/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586303711128" />
-    <state width="1398" height="50" key="GridCell.Tab.0.bottom/1920.162.1440.877/0.23.1920.1032@1920.162.1440.877" timestamp="1585815457095" />
-    <state width="1878" height="44" key="GridCell.Tab.0.bottom/1920.162.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1585648125603" />
-    <state width="1878" height="43" key="GridCell.Tab.0.center" timestamp="1586303711127">
-      <screen x="0" y="23" width="1920" height="1032" />
-    </state>
-    <state width="1398" height="115" key="GridCell.Tab.0.center/0.23.1440.852@0.23.1440.852" timestamp="1585206752480" />
-    <state width="1878" height="43" key="GridCell.Tab.0.center/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1586303519427" />
-    <state width="1878" height="43" key="GridCell.Tab.0.center/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586303711127" />
-    <state width="1398" height="50" key="GridCell.Tab.0.center/1920.162.1440.877/0.23.1920.1032@1920.162.1440.877" timestamp="1585815457095" />
-    <state width="1878" height="44" key="GridCell.Tab.0.center/1920.162.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1585648125602" />
-    <state width="1878" height="43" key="GridCell.Tab.0.left" timestamp="1586303711126">
-      <screen x="0" y="23" width="1920" height="1032" />
-    </state>
-    <state width="1398" height="115" key="GridCell.Tab.0.left/0.23.1440.852@0.23.1440.852" timestamp="1585206752479" />
-    <state width="1878" height="43" key="GridCell.Tab.0.left/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1586303519426" />
-    <state width="1878" height="43" key="GridCell.Tab.0.left/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586303711126" />
-    <state width="1398" height="50" key="GridCell.Tab.0.left/1920.162.1440.877/0.23.1920.1032@1920.162.1440.877" timestamp="1585815457094" />
-    <state width="1878" height="44" key="GridCell.Tab.0.left/1920.162.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1585648125601" />
-    <state width="1878" height="43" key="GridCell.Tab.0.right" timestamp="1586303711127">
-      <screen x="0" y="23" width="1920" height="1032" />
-    </state>
-    <state width="1398" height="115" key="GridCell.Tab.0.right/0.23.1440.852@0.23.1440.852" timestamp="1585206752481" />
-    <state width="1878" height="43" key="GridCell.Tab.0.right/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1586303519427" />
-    <state width="1878" height="43" key="GridCell.Tab.0.right/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586303711127" />
-    <state width="1398" height="50" key="GridCell.Tab.0.right/1920.162.1440.877/0.23.1920.1032@1920.162.1440.877" timestamp="1585815457095" />
-    <state width="1878" height="44" key="GridCell.Tab.0.right/1920.162.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1585648125602" />
-    <state x="813" y="187" key="SettingsEditor" timestamp="1585134907947">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state x="813" y="187" key="SettingsEditor/1920.162.1440.852/0.23.1920.1057@0.23.1920.1057" timestamp="1585134907947" />
-    <state width="498" height="445" key="SwitcherDM" timestamp="1585649984943">
-      <screen x="0" y="23" width="1920" height="1032" />
-    </state>
-    <state width="498" height="445" key="SwitcherDM/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1585649984943" />
-    <state x="283" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1586256618830">
-      <screen x="0" y="23" width="1920" height="1032" />
-    </state>
-    <state x="283" y="250" width="672" height="678" key="search.everywhere.popup/1920.162.1440.877/0.23.1920.1032@0.23.1920.1032" timestamp="1586256618830" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

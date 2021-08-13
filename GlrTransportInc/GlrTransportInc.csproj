@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>aspnet-GlrTransportInc-ABC90CBD-80C1-4E05-BE9F-DF01E6E3A84D</UserSecretsId>
   </PropertyGroup>
 
