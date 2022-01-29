@@ -23,9 +23,13 @@ namespace GlrTransportInc
         public IList<UserModel> Users { get; set; }
         public static string Name;
         public static string Position;
+        // for signature .png file
+        public static string filename;
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             Users = await _context.UserModel.ToListAsync();
+            // set signature image file's name
+           
             foreach (var item in Users)
             {
                 if ((item.Email) == User.Identity.Name)
@@ -45,6 +49,9 @@ namespace GlrTransportInc
             {
                 return NotFound();
             }
+            //filename = FreightBill.ID.ToString();
+            //filename += ".png";
+            filename = FreightBill.ReceivedBy;
             return Page();
         }
     }

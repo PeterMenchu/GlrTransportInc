@@ -21,6 +21,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
         public string Filename3;
         public int BillId;
         public int FileNum;
+        // file variables that hold the data
         public IFormFile Upload { get; set; }
         public IFormFile Upload2 { get; set; }
         public IFormFile Upload3 { get; set; }
