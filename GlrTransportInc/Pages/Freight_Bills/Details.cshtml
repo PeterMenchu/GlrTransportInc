@@ -396,12 +396,13 @@
         </div>
     </div>
     <div id="ommitThis">
-        
+
         <a asp-page="./Edit" asp-route-id="@Model.FreightBill.ID" class="h5">Edit |</a>
         <a asp-page="./Index" class="h5">To List |</a>
         <a asp-page="./MyFreights" class="h5">My Freights |</a>
-        <a asp-page="../Calendar/MainCalendar" class="h5">Calendar</a>
-        <br/>
+        <a asp-page="../Calendar/MainCalendar" class="h5">Calendar |</a>
+        <a asp-page="./AddSignature" asp-route-id="@Model.FreightBill.ID" class="h5">Signature</a>
+        <br />
         <button type="submit" class="btn btn-primary text-white" style="color: #0080ff" onclick="printDiv('PrintDiv', 'ommitThis')">Print Freight Bill</button>
     </div>
 }
