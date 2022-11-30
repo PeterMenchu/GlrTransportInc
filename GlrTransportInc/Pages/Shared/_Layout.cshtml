@@ -34,13 +34,13 @@
     
         <header>
             <nav class="navbar navbar-expand-lg fixed-top">
-                <a class="navbar-brand navText" asp-page="/Index">
+                <a class="navbar-brand navText" asp-page="/Index" style="-webkit-text-stroke-width: 0.5px; -webkit-text-stroke-color: black;">
                     GLR Transport Inc.
                     <img src="~/Images/GLR_Home.png" style="width:30px; height:30px;" alt="Company Logo">
                 </a>
                 
-                <a class="nav-link navText" asp-page="/About">About<span class="sr-only">(current)</span></a>
-                <a class="nav-link navText" asp-page="/Contact">Contact<span class="sr-only">(current)</span></a>
+                <a class="nav-link navText" asp-page="/About" style="-webkit-text-stroke-width: 0.25px; -webkit-text-stroke-color: black;">About<span class="sr-only">(current)</span></a>
+                <a class="nav-link navText" asp-page="/Contact" style="-webkit-text-stroke-width: 0.25px; -webkit-text-stroke-color: black;">Contact<span class="sr-only">(current)</span></a>
                 <partial name="_LoginPartial"/>
                 <!--
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -145,242 +145,270 @@ else
 
   <!-- Sidebar Menu -->
   <nav class="mt-2">
-  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-  <!-- Add icons to the links using the .nav-icon class
-  with font-awesome or any other icon font library -->
-  <!-- cal -->
-  <li class="nav-item has-treeview">
-    <a href="#" class="nav-link">
-      <i class="nav-icon far fa-calendar-alt"></i>
-      <p>
-        Calendar
-        <i class="right fas fa-angle-left"></i>
-      </p>
-    </a>
-    <ul class="nav nav-treeview">
-      <li class="nav-item">
-        <a asp-page="/Calendar/MainCalendar" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Main Calendar</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a asp-page="/Calendar/UserCalendar" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>My Calendar</p>
-        </a>
-      </li>
-    </ul>
-  </li>
-  <!-- end cal -->
-  <!-- bills -->
-  <li class="nav-item has-treeview">
-    <a href="#" class="nav-link">
-      <i class="nav-icon far fa-copy"></i>
-      <p>
-        Freight Bills
-        <i class="fas fa-angle-left right"></i>
-        <!-- notification number <span class="badge badge-info right">6</span> -->
-      </p>
-    </a>
-    <ul class="nav nav-treeview">
-      <li class="nav-item">
-        <a href="/Freight_Bills/Index" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>View List</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/Freight_Bills/Create" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Add</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/Freight_Bills/MyFreights" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>My Freights</p>
-        </a>
-      </li>
-    </ul>
-  </li>
-  <!-- chart icon
-  <li class="nav-item has-treeview">
-    <a href="#" class="nav-link">
-      <i class="nav-icon fas fa-chart-pie"></i>
-      <p>
-        Charts
-        <i class="right fas fa-angle-left"></i>
-      </p>
-    </a>
-    <ul class="nav nav-treeview">
-      <li class="nav-item">
-        <a href="../charts/chartjs.html" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>ChartJS</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="../charts/flot.html" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Flot</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="../charts/inline.html" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Inline</p>
-        </a>
-      </li>
-    </ul>
-  </li>-->
-  
-  <li class="nav-item has-treeview">
-    <a href="#" class="nav-link">
-      <i class="nav-icon fas fa-edit"></i>
-      <p>
-        Events
-        <i class="fas fa-angle-left right"></i>
-      </p>
-    </a>
-    <ul class="nav nav-treeview">
-      <li class="nav-item">
-        <a href="/Events/Index" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>View List</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/Events/Create" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Add</p>
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="nav-item has-treeview">
-    <a href="#" class="nav-link">
-      <i class="nav-icon far fa-clipboard"></i>
-      <p>
-        Announcements
-        <i class="fas fa-angle-left right"></i>
-      </p>
-    </a>
-    <ul class="nav nav-treeview">
-      <li class="nav-item">
-        <a href="/Announcements/Index" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>View List</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/Announcements/Create" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Add Post</p>
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="nav-item">
-    <a href="/Map/map" class="nav-link">
-      <i class="nav-icon far fa-image"></i>
-      <p>
-        Map
-      </p>
-    </a>
-  </li>
-  <!-- <li class="nav-header">Employees</li> -->
-  <li class="nav-item has-treeview">
-    <a href="#" class="nav-link">
-      <i class="nav-icon far fa-address-book"></i>
-      <p>
-        User Directory
-        <i class="fas fa-angle-left right"></i>
-      </p>
-    </a>
-    <ul class="nav nav-treeview">
-      <li class="nav-item">
-        <a href="/Directory/Directory" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Directory</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/Manage_Users/Index" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Manage Accounts</p>
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="nav-item">
-    <a href="../calendar.html" class="nav-link">
-      <i class="nav-icon far fa-plus-square"></i>
-      <p>
-        Add User Account
-        <!-- <span class="badge badge-info right">2</span> -->
-      </p>
-    </a>
-  </li>
-  <li class="nav-item has-treeview">
-    <a href="#" class="nav-link">
-      <i class="nav-icon fas fa-book"></i>
-      <p>
-        Timesheets
-        <i class="fas fa-angle-left right"></i>
-      </p>
-    </a>
-    <ul class="nav nav-treeview">
-      <li class="nav-item">
-        <a href="/Timesheets/Index" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>All Timesheets</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/Timesheets/MyIndex" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>My Timesheets</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/Timesheets/Create" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Add Timesheet</p>
-        </a>
-      </li>
-    </ul>
-  </li>
-  
-  <!-- <li class="nav-header">MISCELLANEOUS</li> -->
-  <li class="nav-item">
-    <a href="/Profile/MyProfile" class="nav-link">
-      <i class="nav-icon far fa-address-card"></i>
-      <p>Profile</p>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a href="/About" class="nav-link">
-      <i class="nav-icon far fa-file"></i>
-      <p>About</p>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a href="/Contact" class="nav-link">
-      <i class="nav-icon far fa-envelope"></i>
-      <p>Contact</p>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a href="/Profile/ConfirmLogout" class="nav-link">
-      <i class="nav-icon fas fa-power-off"></i>
-      <p>
-        Logout
-      </p>
-    </a>
-  </li>
-  
-  </ul>
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+    with font-awesome or any other icon font library -->
+          <!-- cal -->
+          <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                  <i class="nav-icon far fa-calendar-alt"></i>
+                  <p>
+                      Calendar
+                      <i class="right fas fa-angle-left"></i>
+                  </p>
+              </a>
+              <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                      <a asp-page="/Calendar/MainCalendar" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Main Calendar</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a asp-page="/Calendar/UserCalendar" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>My Calendar</p>
+                      </a>
+                  </li>
+              </ul>
+          </li>
+          <!-- end cal -->
+          <!-- bills -->
+          <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                  <i class="nav-icon far fa-copy"></i>
+                  <p>
+                      Freight Bills
+                      <i class="fas fa-angle-left right"></i>
+                      <!-- notification number <span class="badge badge-info right">6</span> -->
+                  </p>
+              </a>
+              <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                      <a href="/Freight_Bills/Index" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>View List</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/Freight_Bills/Create" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Add</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/Freight_Bills/MyFreights" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>My Freights</p>
+                      </a>
+                  </li>
+              </ul>
+          </li>
+          <!-- chart icon
+    <li class="nav-item has-treeview">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-chart-pie"></i>
+        <p>
+          Charts
+          <i class="right fas fa-angle-left"></i>
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="../charts/chartjs.html" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>ChartJS</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../charts/flot.html" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Flot</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../charts/inline.html" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Inline</p>
+          </a>
+        </li>
+      </ul>
+    </li>-->
+
+          <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-edit"></i>
+                  <p>
+                      Events
+                      <i class="fas fa-angle-left right"></i>
+                  </p>
+              </a>
+              <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                      <a href="/Events/Index" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>View List</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/Events/Create" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Add</p>
+                      </a>
+                  </li>
+              </ul>
+          </li>
+          <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                  <i class="nav-icon far fa-clipboard"></i>
+                  <p>
+                      Announcements
+                      <i class="fas fa-angle-left right"></i>
+                  </p>
+              </a>
+              <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                      <a href="/Announcements/Index" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>View List</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/Announcements/Create" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Add Post</p>
+                      </a>
+                  </li>
+              </ul>
+          </li>
+          <li class="nav-item">
+              <a href="/Map/map" class="nav-link">
+                  <i class="nav-icon far fa-image"></i>
+                  <p>
+                      Map
+                  </p>
+              </a>
+          </li>
+          <!-- <li class="nav-header">Employees</li> -->
+          <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                  <i class="nav-icon far fa-address-book"></i>
+                  <p>
+                      User Directory
+                      <i class="fas fa-angle-left right"></i>
+                  </p>
+              </a>
+              <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                      <a href="/Directory/Directory" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Directory</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/Manage_Users/Index" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Manage Accounts</p>
+                      </a>
+                  </li>
+              </ul>
+          </li>
+          <li class="nav-item">
+              <a href="../calendar.html" class="nav-link">
+                  <i class="nav-icon far fa-plus-square"></i>
+                  <p>
+                      Add User Account
+                      <!-- <span class="badge badge-info right">2</span> -->
+                  </p>
+              </a>
+          </li>
+          <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>
+                      Timesheets
+                      <i class="fas fa-angle-left right"></i>
+                  </p>
+              </a>
+              <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                      <a href="/Timesheets/Index" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>All</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/Timesheets/MyIndex" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>My Sheets</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/Timesheets/Create" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Add</p>
+                      </a>
+                  </li>
+              </ul>
+          </li>
+          <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>
+                      Monthly Timesheets
+                      <i class="fas fa-angle-left right"></i>
+                  </p>
+              </a>
+              <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                      <a href="/Timesheets/Index" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>All</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/Timesheets/MyIndex" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>My Sheets</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/Timesheets/Create" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Add</p>
+                      </a>
+                  </li>
+              </ul>
+          </li>
+          <!-- <li class="nav-header">MISCELLANEOUS</li> -->
+          <li class="nav-item">
+              <a href="/Profile/MyProfile" class="nav-link">
+                  <i class="nav-icon far fa-address-card"></i>
+                  <p>Profile</p>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a href="/About" class="nav-link">
+                  <i class="nav-icon far fa-file"></i>
+                  <p>About</p>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a href="/Contact" class="nav-link">
+                  <i class="nav-icon far fa-envelope"></i>
+                  <p>Contact</p>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a href="/Profile/ConfirmLogout" class="nav-link">
+                  <i class="nav-icon fas fa-power-off"></i>
+                  <p>
+                      Logout
+                  </p>
+              </a>
+          </li>
+
+      </ul>
   </nav>
   <!-- /.sidebar-menu -->
   </div>
