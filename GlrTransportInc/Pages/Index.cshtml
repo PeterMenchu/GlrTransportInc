@@ -9,8 +9,9 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <!-- header image, desktop then mobile style, toggled via the media query -->
+        <!-- DESKTOP -->
         <div class="mainBanner">
-            <h1 class="centered" style="color: #0080ff; font-weight: bold; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: white;">Hello, @IndexModel.Name!</h1> 
+            <h1 class="centered" style="color: #0080ff; font-weight: bold; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: white;">Hello, @IndexModel.Name!</h1>
             <div class="text-center">
                 <img src="~/Images/Iphone_Icon.png" class="img-fluid" style="margin-top: 275px;" alt="Company Logo">
             </div>
@@ -19,15 +20,24 @@
                 <img src="~/Images/Iphone_Icon.png" alt="Company Logo">
             </div>-->
         </div>
-        
+        <!-- MOBILE -->
         <div class="mainMobileBanner">
             <!-- <h5 class="mobileCentered" style="font-weight: bold; color: #0080FE">Hello, @IndexModel.Name!</h5> -->
         </div>
         <!-- Content, notice that Recent Announcements also has two styles -->
         <div about="row" class="text-center main">
+            <!-- Links to other pages -->
+            <h3 class="mainSize">Quick Links</h3>
+            <p class="mobileSize">Quick Links</p>
+            <div class="col">
+                <a asp-page="./Calendar/MainCalendar" class="btn btn-primary">To Calendar</a>
+                <a>: : :</a>
+                <a asp-page="./Timesheets/Index" class="btn btn-primary">Timesheets</a>
+            </div>
+            <!-- Ancmnts+events -->
             <h3 class="mainSize">Recent Events and Announcements</h3>
             <p class="mobileSize">Recent Events and Announcements</p>
-            @foreach (var item in Model.Announcement.Take(4)) 
+            @foreach (var item in Model.Announcement.Take(4))
             {
                 if (item.eventFlag == 0)
                 {
@@ -39,10 +49,11 @@
                 }
             }
         </div>
-        
+
     }
     else
     {
+        <!-- LOGGED OUT / DEFAULT VIEW -->
         <!-- follows the same format as above, but for logged out view -->
         <div class="mainBanner">
             <h1 class="centered" style="color: #0080ff; font-weight: bold; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: white;">Welcome!</h1>
