@@ -63,11 +63,14 @@ namespace GlrTransportInc.Models
         public string ReceivedBy { get; set; } 
         [DataType(DataType.Date)]
         public DateTime? CompletionDate { get; set; } 
+        // names of receivers 1 and 2 
         public string SiteName { get; set; } 
         public string SiteName2 { get; set; }
         public string SitePhoneNumber { get; set; }
         public string Phone2 { get; set; }
+        // 3 and 4 associated with sitename 2
         public string phone3 { get; set; }
+        public string phone4 { get; set; }
         [DataType(DataType.Date)]
         public DateTime? DueDate { get; set; } 
         public string EmailAddress { get; set; } 
