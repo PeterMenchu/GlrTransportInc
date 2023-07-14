@@ -34,31 +34,36 @@
         </div>
     </div>
     <!-- Code for the mobile list -->
-    <div class="mobileList">
-        <body>
-            @foreach (var item in Model.FreightBill)
-            {
-                <div class="listStyle">
-                    <hr />
-                    <h2>@Html.DisplayFor(modelItem => item.Customer)</h2>
-                    <h5>#: @Html.DisplayFor(modelItem => item.FreightBillNumber)</h5>
-                    <p>Driver: @Html.DisplayFor(modelItem => item.Driver)</p>
-                    <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
-                    
-                    <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
-                        <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
-                    </a>
-                    <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
-                        <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
-                    </a>
-                    
-                    <a asp-page="./Files" asp-route-id="@item.ID">Files -</a>
-                    <a asp-page="./Details" asp-route-id="@item.ID">Details -</a>
-                    <a asp-page="./AddSignature" asp-route-id="@item.ID">Signature</a>
-                </div>
-            }
-        </body>
-    </div>
+<div class="mobileList">
+
+    @foreach (var item in Model.FreightBill)
+    {
+        <div class="listStyle">
+            <hr />
+            <h2>@Html.DisplayFor(modelItem => item.Customer)</h2>
+            <h5>#: @Html.DisplayFor(modelItem => item.FreightBillNumber)</h5>
+            <p>Driver: @Html.DisplayFor(modelItem => item.Driver)</p>
+            <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
+
+            <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
+                <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+            </a>
+            <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
+                <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+            </a>
+
+            <a asp-page="./Files" asp-route-id="@item.ID">Files -</a>
+            <a asp-page="./Details" asp-route-id="@item.ID">Details -</a>
+            <a asp-page="./AddSignature" asp-route-id="@item.ID">Signature</a>
+        </div>
+        @if ((Model.IDmax - item.ID) > 30)
+        {
+            break;
+        }
+
+    }
+
+</div>
     <!-- End mobile, start desktop -->
     <div class="table-responsive d-none d-sm-none d-md-block d-lg-block d-xl-block">
         <table class="table">
@@ -111,6 +116,10 @@
                     </td>
 
                 </tr>
+                @if((Model.IDmax - item.ID)> 30)
+                {
+                    break;
+                }
             }
             </tbody>
         </table>

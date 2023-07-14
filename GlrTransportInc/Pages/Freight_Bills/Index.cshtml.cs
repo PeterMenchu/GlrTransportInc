@@ -18,8 +18,9 @@ namespace GlrTransportInc.Pages.Freight_Bills
         {
             _context = context;
         }
-
+        public int IDmax = 0;
         public IList<FreightBill> FreightBill { get;set; }
+        public IList<FreightBill> DisplayBills { get; set; }
         public IList<FreightBill> indexBills { get;set; }
         public IList<UserModel> Users { get; set; }
         public string Current;
@@ -38,6 +39,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
                     Position = item.Position;
                 }
             }
+            // load freight bills so newest is at top (by descending ID)
             indexBills = await _context.FreightBill.OrderByDescending(a => a.ID).ToListAsync();
             /*
             IList<FreightBill> indexBills = from index in _context.FreightBill
@@ -76,6 +78,15 @@ namespace GlrTransportInc.Pages.Freight_Bills
                                                                  || index.ToZip.Contains(input)
                                                                  || index.FromZip.Contains(input)
                                                                  || index.Permit.Contains(input)).ToList();
+                
+            }
+            else
+            {
+                foreach(var item in indexBills)
+                {
+                    IDmax = item.ID;
+                    break;
+                }
             }
 
             FreightBill = indexBills;
