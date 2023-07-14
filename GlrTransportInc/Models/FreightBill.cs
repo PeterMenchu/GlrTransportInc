@@ -64,6 +64,7 @@ namespace GlrTransportInc.Models
         [DataType(DataType.Date)]
         public DateTime? CompletionDate { get; set; } 
         public string SiteName { get; set; } 
+        public string SiteName2 { get; set; }
         public string SitePhoneNumber { get; set; }
         public string Phone2 { get; set; }
         public string phone3 { get; set; }
