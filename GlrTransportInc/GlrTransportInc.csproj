@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <Folder Include="Pages\Calendar\" />
-    <Folder Include="Pages\Map\" />
   </ItemGroup>
 
 
