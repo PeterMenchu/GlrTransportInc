@@ -37,7 +37,7 @@
                     <hr />
                 }
             </div>
-            <!-- oof -->
+            <!-- fields for editing starts here -->
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -558,24 +558,34 @@
                     <div class="col-md-12">
                         <h3>Site Contact:</h3>
                         <div class="form-group">
-                            <label asp-for="FreightBill.SiteName" class="control-label">Name</label>
+                            <label asp-for="FreightBill.SiteName" class="control-label">Contact Name</label>
                             <input asp-for="FreightBill.SiteName" class="form-control" />
                             <span asp-validation-for="FreightBill.SiteName" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="FreightBill.SitePhoneNumber" class="control-label">Phone Number</label>
+                            <label asp-for="FreightBill.SitePhoneNumber" class="control-label">Contact Phone Number</label>
                             <input asp-for="FreightBill.SitePhoneNumber" class="form-control" />
                             <span asp-validation-for="FreightBill.SitePhoneNumber" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="FreightBill.Phone2" class="control-label">Phone Number 2</label>
+                            <label asp-for="FreightBill.Phone2" class="control-label">Contact Phone Number 2</label>
                             <input asp-for="FreightBill.Phone2" class="form-control" />
                             <span asp-validation-for="FreightBill.Phone2" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="FreightBill.phone3" class="control-label">Phone Number 3</label>
+                            <label asp-for="FreightBill.SiteName2" class="control-label">Contact Name 2</label>
+                            <input asp-for="FreightBill.SiteName2" class="form-control" />
+                            <span asp-validation-for="FreightBill.SiteName2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FreightBill.phone3" class="control-label">Contact 2 Phone 1</label>
                             <input asp-for="FreightBill.phone3" class="form-control" />
                             <span asp-validation-for="FreightBill.phone3" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FreightBill.phone4" class="control-label">Contact 2 Phone 2</label>
+                            <input asp-for="FreightBill.phone4" class="form-control" />
+                            <span asp-validation-for="FreightBill.phone4" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="FreightBill.EmailAddress" class="control-label">Email address</label>
