@@ -291,6 +291,7 @@
                                     @Html.DisplayFor(model => model.FreightBill.Driver)
                                 </div>
                             </div>
+                            <!--
                             <div class="row">
                                 <div class="col-sm-12">
                                     <b>
@@ -300,6 +301,7 @@
                                     @Html.DisplayFor(model => model.FreightBill.ReceivedBy)
                                 </div>
                             </div>
+                            -->
                         </div>
                         <div class="col-sm-2 border">
                             <b>
@@ -321,7 +323,11 @@
                             </b>
                             <br />
                             @Html.DisplayFor(model => model.FreightBill.SiteName)<br>
-                            <a href="@string.Format("tel:{0}", Model.FreightBill.SitePhoneNumber)">@Model.FreightBill.SitePhoneNumber</a><br />
+                            <a style="display: block" href="@string.Format("tel:{0}", Model.FreightBill.SitePhoneNumber)">@Model.FreightBill.SitePhoneNumber</a>
+                            <a style="display: block" href="@string.Format("tel:{0}", Model.FreightBill.Phone2)">@Model.FreightBill.Phone2</a>
+                            @Html.DisplayFor(model => model.FreightBill.SiteName2)
+                            <a style="display: block" href="@string.Format("tel:{0}", Model.FreightBill.phone3)">@Model.FreightBill.phone3</a>
+                            <a style="display: block" href="@string.Format("tel:{0}", Model.FreightBill.phone4)">@Model.FreightBill.phone4</a>
                             <a href="@string.Format("mailto:{0}", Model.FreightBill.EmailAddress)">@Model.FreightBill.EmailAddress</a>
                         </div>
                         <div class="col-sm-3 border">

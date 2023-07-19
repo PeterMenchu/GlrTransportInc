@@ -69,6 +69,7 @@ namespace GlrTransportInc.Models
         public string SitePhoneNumber { get; set; }
         public string Phone2 { get; set; }
         // 3 and 4 associated with sitename 2
+        // if anyone besides me is reading this, big apologies for screwing up not capitalizing "phone3-4"
         public string phone3 { get; set; }
         public string phone4 { get; set; }
         [DataType(DataType.Date)]
