@@ -1,0 +1,127 @@
+﻿@page
+@model GlrTransportInc.Pages.Freight_Bills.sortDateAscModel
+@{
+    ViewData["Title"] = "Freight bills by date asc.";
+}
+@using GlrTransportInc.Models
+@inject SignInManager<UserModel> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+    <br />
+    <div>
+        <h1>@ViewData["Title"]</h1>
+        @if (IndexModel.Position != "Placeholder")
+        {
+            <a asp-page="Create" class="btn btn-primary">Create New</a>
+        }
+    </div>
+    <hr />
+    <form asp-page="./Index" method="get">
+        <div class="form-actions no-color">
+            <p>
+                <input type="text" name="input" value="@Model.Current" placeholder="Search all bill fields" />
+                <input type="submit" value="Search" class="btn btn-primary" /> |
+                <a asp-page="./Index">Back to full List</a>
+            </p>
+        </div>
+    </form>
+
+    <div>
+        <div class="row">
+            <div><partial name="FreightNav" /></div>
+        </div>
+    </div>
+    <!-- Code for the mobile list -->
+    <div class="mobileList">
+
+        @foreach (var item in Model.FreightBill.Take(100))
+        {
+            <div class="listStyle">
+                <hr />
+                <h2>@Html.DisplayFor(modelItem => item.Customer)</h2>
+                <h5>#: @Html.DisplayFor(modelItem => item.FreightBillNumber)</h5>
+                <p>Driver: @Html.DisplayFor(modelItem => item.Driver)</p>
+                <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
+
+                <a asp-page="./Edit" asp-route-id="@item.ID" class="optionButton">
+                    <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                </a>
+                <a asp-page="./Delete" asp-route-id="@item.ID" class="optionButton">
+                    <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                </a>
+
+                <a asp-page="./Files" asp-route-id="@item.ID">Files -</a>
+                <a asp-page="./Details" asp-route-id="@item.ID">Details -</a>
+                <a asp-page="./AddSignature" asp-route-id="@item.ID">Signature</a>
+            </div>
+            
+
+        }
+
+    </div>
+    <!-- End mobile, start desktop -->
+    <div class="table-responsive d-none d-sm-none d-md-block d-lg-block d-xl-block">
+        <table class="table">
+            <!-- Table headers -->
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>#</th>
+                    <th>Driver</th>
+                    <th>Status</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>Details</th>
+                    <th>Files</th>
+                    <th>Signature</th>
+                </tr>
+            </thead>
+            <!-- Table body -->
+            <tbody>
+                @foreach (var item in Model.FreightBill.Take(100))
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Customer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FreightBillNumber)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Driver)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Status)</td>
+
+
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.ID">
+                                <img src="~/Images/edit-icon.png" style="width:25px; height:25px;" alt="Edit">
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-page="./Delete" asp-route-id="@item.ID">
+                                <img src="~/Images/delete-icon.png" style="width:25px; height:25px;" alt="Delete">
+                            </a>
+                        </td>
+
+                        <td>
+                            <a asp-page="./Details" asp-route-id="@item.ID">View</a>
+                        </td>
+
+                        <td>
+                            <!--<a href="@item.Permit">Permit</a>-->
+                            <a asp-page="./Files" asp-route-id="@item.ID">Files</a>
+                        </td>
+                        <td>
+                            <a asp-page="./AddSignature" asp-route-id="@item.ID">Signature</a>
+                        </td>
+
+                    </tr>
+                    
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <h1>You must be logged in to view this page.</h1>
+    </div>
+}

@@ -36,7 +36,7 @@
     <!-- Code for the mobile list -->
 <div class="mobileList">
 
-    @foreach (var item in Model.FreightBill)
+    @foreach (var item in Model.FreightBill.Take(50))
     {
         <div class="listStyle">
             <hr />
@@ -56,10 +56,7 @@
             <a asp-page="./Details" asp-route-id="@item.ID">Details -</a>
             <a asp-page="./AddSignature" asp-route-id="@item.ID">Signature</a>
         </div>
-        @if ((Model.IDmax - item.ID) > 30)
-        {
-            break;
-        }
+        
 
     }
 
@@ -83,7 +80,7 @@
             </thead>
             <!-- Table body -->
             <tbody>
-            @foreach (var item in Model.FreightBill)
+            @foreach (var item in Model.FreightBill.Take(50))
             {
                 <tr>
                     <td>@Html.DisplayFor(modelItem => item.Customer)</td>
@@ -116,10 +113,7 @@
                     </td>
 
                 </tr>
-                @if((Model.IDmax - item.ID)> 30)
-                {
-                    break;
-                }
+                
             }
             </tbody>
         </table>

@@ -2,7 +2,13 @@
 <ul class="nav nav-pills flex-row text-center sortNav">
     <li class="nav-item"><a class="nav-link" id="All" asp-page="./Index">All</a></li>
     <li class="nav-item"><a class="nav-link" id="Pending" asp-page="./PendingFreights">Pending</a></li>
-    <li class="nav-item"><a class="nav-link" id="change-password" asp-page="./Shipped">Confirmed</a></li>
+    <li class="nav-item"><a class="nav-link" id="Confirmed" asp-page="./Shipped">Confirmed</a></li>
     <li class="nav-item"><a class="nav-link" id="Completed" asp-page="./Completed">Completed</a></li>
     <li class="nav-item"><a class="nav-link" id="Cancelled" asp-page="./Cancelled">Cancelled</a></li>
+</ul>
+<!-- Links to sort freight bills -->
+<ul class="nav nav-pills flex-row text-center sortNav">
+    <li class="nav-item"><a class="nav-link" id="SortDate" asp-page="./sortDate">Sort by Date desc.</a></li>
+    <li class="nav-item"><a class="nav-link" id="SortDateAsc" asp-page="./sortDateAsc">Sort by Date asc.</a></li>
+    <!--<li class="nav-item"><a class="nav-link" id="sortNumber" asp-page="./sortNumber">Sort by FB Number</a></li>-->
 </ul>
