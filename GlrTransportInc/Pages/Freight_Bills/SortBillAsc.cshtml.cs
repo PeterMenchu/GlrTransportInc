@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,24 +10,24 @@ using GlrTransportInc.Models;
 
 namespace GlrTransportInc.Pages.Freight_Bills
 {
-    public class IndexModel : PageModel
+    public class SortBillAscModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        public IndexModel(ApplicationDbContext context)
+        public SortBillAscModel(ApplicationDbContext context)
         {
             _context = context;
         }
         public int IDmax = 0;
-        public IList<FreightBill> FreightBill { get;set; }
+        public IList<FreightBill> FreightBill { get; set; }
         public IList<FreightBill> DisplayBills { get; set; }
-        public IList<FreightBill> indexBills { get;set; }
+        public IList<FreightBill> indexBills { get; set; }
         public IList<UserModel> Users { get; set; }
         public string Current;
         public static string Name;
         public static string Position;
         // Search function is below, this declaration will be used with ALL directory pages
-        
+
         public async Task OnGetAsync(string input)
         {
             Users = await _context.UserModel.ToListAsync();
@@ -40,11 +40,11 @@ namespace GlrTransportInc.Pages.Freight_Bills
                 }
             }
             // load freight bills so newest is at top (by descending ID)
-            indexBills = await _context.FreightBill.OrderByDescending(a => a.ID).ToListAsync();
+            indexBills = await _context.FreightBill.OrderBy(a => a.FreightBillNumber).ToListAsync();
             /*
             IList<FreightBill> indexBills = from index in _context.FreightBill
                 select index;*/
-            
+
             if (!String.IsNullOrEmpty(input))
             {
                 indexBills = _context.FreightBill.Where(index => index.Customer.Contains(input)
@@ -78,7 +78,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
                                                                  || index.ToZip.Contains(input)
                                                                  || index.FromZip.Contains(input)
                                                                  || index.Permit.Contains(input)).ToList();
-                
+
             }
             
 

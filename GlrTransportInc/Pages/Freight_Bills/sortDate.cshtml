@@ -36,7 +36,7 @@
     <!-- Code for the mobile list -->
     <div class="mobileList">
 
-        @foreach (var item in Model.FreightBill.Take(100))
+        @foreach (var item in Model.FreightBill.Take(150))
         {
             <div class="listStyle">
                 <hr />
@@ -80,7 +80,7 @@
             </thead>
             <!-- Table body -->
             <tbody>
-                @foreach (var item in Model.FreightBill.Take(100))
+                @foreach (var item in Model.FreightBill.Take(150))
                 {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Customer)</td>

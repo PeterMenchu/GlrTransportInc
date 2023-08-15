@@ -80,14 +80,7 @@ namespace GlrTransportInc.Pages.Freight_Bills
                                                                  || index.Permit.Contains(input)).ToList();
 
             }
-            else
-            {
-                foreach (var item in indexBills)
-                {
-                    IDmax = item.ID;
-                    break;
-                }
-            }
+            
 
             FreightBill = indexBills;
         }

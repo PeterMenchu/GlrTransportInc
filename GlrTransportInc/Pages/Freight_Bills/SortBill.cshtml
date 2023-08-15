@@ -1,7 +1,7 @@
 ﻿@page
-@model GlrTransportInc.Pages.Freight_Bills.sortDateAscModel
+@model GlrTransportInc.Pages.Freight_Bills.sortBillModel
 @{
-    ViewData["Title"] = "Freight bills by date asc.";
+    ViewData["Title"] = "Freight bills by date desc.";
 }
 @using GlrTransportInc.Models
 @inject SignInManager<UserModel> SignInManager
@@ -38,8 +38,6 @@
 
         @foreach (var item in Model.FreightBill.Take(200))
         {
-            if (item.ScheduledDate != null)
-            {
             <div class="listStyle">
                 <hr />
                 <h2>@Html.DisplayFor(modelItem => item.Customer)</h2>
@@ -58,7 +56,7 @@
                 <a asp-page="./Details" asp-route-id="@item.ID">Details -</a>
                 <a asp-page="./AddSignature" asp-route-id="@item.ID">Signature</a>
             </div>
-            }
+
 
         }
 
@@ -84,8 +82,6 @@
             <tbody>
                 @foreach (var item in Model.FreightBill.Take(200))
                 {
-                    if (item.ScheduledDate != null)
-                    {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Customer)</td>
                         <td>@Html.DisplayFor(modelItem => item.FreightBillNumber)</td>
@@ -117,7 +113,7 @@
                         </td>
 
                     </tr>
-                    }
+
                 }
             </tbody>
         </table>
