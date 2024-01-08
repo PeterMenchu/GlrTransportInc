@@ -1,4 +1,4 @@
-﻿@page
+﻿@page  
 @model DetailsModel3
 @using GlrTransportInc.Models
 @inject SignInManager<UserModel> SignInManager
@@ -6,90 +6,106 @@
 
 @if (SignInManager.IsSignedIn(User) && (DetailsModel3.Position == "Manager" || DetailsModel3.Name == Model.Timesheet.Email))
 {
-    <div>
-        <h4>Timesheet</h4>
-        <hr />
-        <div class="container-fluid">
+    <script language="javascript">
+        function printDiv(divName, ommit) {
+            var originalContents = document.body.innerHTML;
+            document.getElementById(ommit).remove();
+
+            var printContents = document.getElementById(divName).innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+    <div id="PrintDiv">
+
+        <div class="container">
+            <h4>Timesheet for @Html.DisplayFor(model => model.Timesheet.Email), @Model.Timesheet.Week.ToShortDateString()</h4>
+            <hr />
             <div class="row">
-                <div class="col-md-3 border">
+
+                <div class="col-md-6 border">
                     Week of:
                     @Model.Timesheet.Week.ToShortDateString()
                     to
                     @Model.Timesheet.End.ToShortDateString()
                 </div>
-                <div class="col-md-9 border">
+                <div class="col-md-6 border">
                     Employee: <br />
                     @Html.DisplayFor(model => model.Timesheet.Email)
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 border">
+                <div class="col-md-3 border">
                     Friday <br />
                     @Html.DisplayFor(model => model.Timesheet.Hours1) hrs.
                 </div>
-                <div class="col-md-8 border">
+                <div class="col-md-6 border">
                     @Html.DisplayFor(model => model.Timesheet.Comments1)
                 </div>
-                <div class="col-md-2 border">
+                <div class="col-md-3 border">
                     @Html.DisplayFor(model => model.Timesheet.Jobs1) jobs
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 border">
+                <div class="col-md-3 border ">
                     Monday <br />
                     @Html.DisplayFor(model => model.Timesheet.Hours2) hrs.
                 </div>
-                <div class="col-md-8 border">
+                <div class="col-md-6 border">
                     @Html.DisplayFor(model => model.Timesheet.Comments2)
                 </div>
-                <div class="col-md-2 border">
+                <div class="col-md-3 border">
                     @Html.DisplayFor(model => model.Timesheet.Jobs2) jobs
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 border">
+                <div class="col-md-3 border">
                     Tuesday <br />
                     @Html.DisplayFor(model => model.Timesheet.Hours3) hrs.
                 </div>
-                <div class="col-md-8 border">
+                <div class="col-md-6 border">
                     @Html.DisplayFor(model => model.Timesheet.Comments3)
                 </div>
-                <div class="col-md-2 border">
+                <div class="col-md-3 border">
                     @Html.DisplayFor(model => model.Timesheet.Jobs3) jobs
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 border">
+                <div class="col-md-3 border">
                     Wednesday <br />
                     @Html.DisplayFor(model => model.Timesheet.Hours4) hrs.
                 </div>
-                <div class="col-md-8 border">
+                <div class="col-md-6 border">
                     @Html.DisplayFor(model => model.Timesheet.Comments4)
                 </div>
-                <div class="col-md-2 border">
+                <div class="col-md-3 border">
                     @Html.DisplayFor(model => model.Timesheet.Jobs4) jobs
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 border">
+                <div class="col-md-3 border">
                     Thursday <br>
                     @Html.DisplayFor(model => model.Timesheet.Hours5) hrs.
                 </div>
-                <div class="col-md-8 border">
+                <div class="col-md-6 border">
                     @Html.DisplayFor(model => model.Timesheet.Comments5)
                 </div>
-                <div class="col-md-2 border">
+                <div class="col-md-3 border">
                     @Html.DisplayFor(model => model.Timesheet.Jobs5) jobs
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 border">
+                <div class="col-md-3 border">
                     @Html.DisplayFor(model => model.Timesheet.TotalHours) hrs. =
                 </div>
-                <div class="col-md-4 border">
+                <div class="col-md-6 border">
                     $@Html.DisplayFor(model => model.Timesheet.PerHour) /hr.
                 </div>
-                <div class="col-md-4 border">
+                <div class="col-md-3 border">
                     If 40 hrs. then $ @Html.DisplayFor(model => model.Timesheet.Over40PerHour) /hr.
                 </div>
             </div>
@@ -100,39 +116,47 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 border">
+                <div class="col-md-3 border">
                     Total jobs <br />
                     @Html.DisplayFor(model => model.Timesheet.Total)
                 </div>
-                <div class="col-md-2 border">
+                <div class="col-md-3 border">
                     Pay date <br />
                     @Model.Timesheet.PayDate.ToShortDateString()
                 </div>
-                <div class="col-md-6 border">
+                <div class="col-md-3 border">
                     Net Pay <br />
                     @Html.DisplayFor(model => model.Timesheet.NetPay)
                 </div>
-                <div class="col-md-2 border">
+                <div class="col-md-3 border">
                     Personal days off <br />
                     @Html.DisplayFor(model => model.Timesheet.DaysOff)
                 </div>
             </div>
         </div>
     </div>
-    @if (DetailsModel3.Position == "Manager")
-    {
-        <div>
-            <a asp-page="./Edit" asp-route-id="@Model.Timesheet.ID">Edit</a> |
-            <a asp-page="./Index">Back to List</a>
+    <div id="ommitThis">
+        <div class="container">
+            @if (DetailsModel3.Position == "Manager")
+            {
+                <div>
+                    <a asp-page="./Edit" asp-route-id="@Model.Timesheet.ID">Edit</a> |
+                    <a asp-page="./Index">Back to List</a>
+                    <br />
+                    <button type="submit" class="btn btn-primary text-white" style="color: #0080ff" onclick="printDiv('PrintDiv', 'ommitThis')">Print</button>
+                </div>
+            }
+            else
+            {
+                <div>
+                    <a asp-page="./Edit" asp-route-id="@Model.Timesheet.ID">Edit</a> |
+                    <a asp-page="./MyIndex">Back to list</a>
+                    <br />
+                    <button type="submit" class="btn btn-primary text-white" style="color: #0080ff" onclick="printDiv('PrintDiv', 'ommitThis')">Print</button>
+                </div>
+            }
         </div>
-    }
-    else
-    {
-        <div>
-            <a asp-page="./Edit" asp-route-id="@Model.Timesheet.ID">Edit</a> |
-            <a asp-page="./MyIndex">Back to list</a>
-        </div>
-    }
+    </div>
 }
 else
 {
@@ -143,3 +167,4 @@ else
         </div>
     </body>
 }
+
