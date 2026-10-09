@@ -8,7 +8,8 @@ namespace GlrTransportInc.Models
         Confirmed,
         Completed,
         Cancelled,
-        NA
+        NA,
+        Service
     }
 
     public class FreightBill

@@ -36,6 +36,8 @@
             var StartDate2 = JSON.parse(StartDate);
             var Status = '@Html.Raw(Json.Serialize(UserCalendarModel.Status))';
             var Status2 = JSON.parse(Status);
+            var init = '@Html.Raw(Json.Serialize(MainCalendarModel.DriverInit))';
+            var name = JSON.parse(init);
             //var StatusColor;
             //var data = JSON.parse(model);
             var tempevents = [];
@@ -44,25 +46,39 @@
             for (i = 0; i < BillName2.length; i++) {
                 var temp = new Object();
                 temp["id"] = Id2[i];
+                temp["name"] = name[i];
                 temp["title"] = BillName2[i];
                 temp["start"] = StartDate2[i];
                 temp["status"] = Status2[i];
+                temp["display"] = BillName2[i];
+
                 //IF statements for different colors
                 if (Status2[i] == 0) {
                     //Status Pending Color
                     temp["color"] = "#00b2ff";
+                    temp["status"] = "- Pending";
                 }
                 else if (Status2[i] == 1) {
                     //Status Shipped Color
                     temp["color"] = "#f3f315";
+                    temp["status"] = "- Shipped";
                 }
                 else if (Status2[i] == 2) {
                     //Status Complete Color
                     temp["color"] = "#2ef429";
+                    temp["status"] = "- Complete";
                 }
-                else {
-                    //Status Cancelled or Error Color
+                else if (Status2[i] == 3) {
+                    //Status Cancelled
                     temp["color"] = "#ff2400";
+                    temp["status"] = "- Cancelled";
+                }else if (Status2[i] == 5) {
+                    //Status -> Service Needed
+                    temp["color"] = "#C91DC3";
+                    temp["status"] = "- Service Needed";
+                } else {
+                    //Status NA
+                    temp["color"] = "#f48f3a";
                 }
                 tempevents.push(temp);
             }
@@ -88,13 +104,14 @@
                         month: 'Month',
                         today: 'Today'
                     },
-                   
+
                     defaultView: 'month',
                     eventLimit: true,
                     eventColor: '#5cb85c',
                     events: events,
-                    eventRender: function(event, element) {
-                        $(element).tooltip({title: event.title});
+                    eventRender: function (event, element) {
+                        $(element).tooltip({ title: event.display + '\n' + event.status }, { title: event.status });
+                        //$(element).tooltip({title: event.title});
                     },
                     //Clicking on a Freight Bill on the calendar will redirect the user to the Details Page of that Freight Bill
                     eventClick: function (event) {

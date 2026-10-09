@@ -1,4 +1,4 @@
-﻿@page  
+﻿@page
 @model DetailsModel3
 @using GlrTransportInc.Models
 @inject SignInManager<UserModel> SignInManager
@@ -20,13 +20,13 @@
             document.body.innerHTML = originalContents;
         }
     </script>
-    <div id="PrintDiv">
+    <div id="PrintDiv" >
 
-        <div class="container">
+        <div class="container" >
             <h4>Timesheet for @Html.DisplayFor(model => model.Timesheet.Email), @Model.Timesheet.Week.ToShortDateString()</h4>
             <hr />
             <div class="row">
-
+                <!-- original version with printing issue -> width adds to 12. Changing 3->2 6->4 to try to fix. -->
                 <div class="col-md-6 border">
                     Week of:
                     @Model.Timesheet.Week.ToShortDateString()
@@ -135,8 +135,10 @@
             </div>
         </div>
     </div>
-    <div id="ommitThis">
-        <div class="container">
+    <div id="ommitThis" >
+        <div class="container" >
+            <br />
+            <p>If the print format is different than the displayed page, change "scale" to 96 under "more settings" in the print window.</p>
             @if (DetailsModel3.Position == "Manager")
             {
                 <div>

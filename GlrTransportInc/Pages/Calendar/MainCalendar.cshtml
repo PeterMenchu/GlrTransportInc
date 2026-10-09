@@ -74,6 +74,9 @@
                 temp["start"] = StartDate2[i];
                 temp["status"] = Status2[i];
                 temp["display"] = BillName2[i];
+                // I don't remember why we used the name and display variables (used for the mouse-over) instead of just using title.
+                // This was different in the other calendar pages, but they also didn't display status. However, I'm changing them to
+                // match this page.
 
                 //IF statements for different colors
                 if (Status2[i] == 0) {
@@ -95,7 +98,13 @@
                     //Status Cancelled 
                     temp["color"] = "#ff2400";
                     temp["status"] = "- Cancelled";
+                }
+                else if (Status2[i] == 5) {
+                    //Status -> Service Needed 
+                    temp["color"] = "#C91DC3";
+                    temp["status"] = "- Service Needed";
                 } else {
+                    // Status NA
                     temp["color"] = "#f48f3a";
                     temp["status"] = "";
                 }
@@ -138,7 +147,8 @@
                     },*/
                     
                     eventRender: function(event, element) {
-                        
+                        // I can't remember why this is written like it is. I don't think I worked on the mouse-over effect.
+                        // It works as intended, so I'm not going to change it.
                         $(element).tooltip({title: event.name + event.display + '\n' + event.status}, {title: event.status});
                          
                         
